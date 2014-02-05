@@ -1,6 +1,5 @@
 *.log
 *.aux
-*.pdf
 *.swp
 *.DS_Store
 *.make
@@ -14,10 +13,6 @@
 *.table
 *.toc
 *.synctex.gz
-
-# bibtex
-*.bbl
-*.blg
 
 # latexmk
 *.fdb_latexmk
