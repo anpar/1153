@@ -5,13 +5,12 @@ Page GitHub du groupe 1153.
 To do list :
 ------------
 
-| Tâche   | Date          | Responsable | 
+| Tâche  | Date          | Responsable | 
 | ---     |:-------------:| ----------- |
+|Test     | Test          | Test        | 
 |         |               |             | 
 |         |               |             | 
 |         |               |             | 
 |         |               |             | 
 |         |               |             | 
-|         |               |             | 
-|         |               |             | 
-|         |               |             | 
+|         |               |             |  
