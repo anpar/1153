@@ -1,19 +1,6 @@
 To do list :
 ------------
-
-| TÃ¢che       | Date          | Responsable | 
-| ---         |:-------------:| ----------- |
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             |  
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             | 
-|             | 00-00         |             |  
+- Trouver les équations pour le circuit RC (lundi) ;
+- Faire le devoir 2 de chimie (lundi) ;
+- Ecrire le cahier des charges ;
+- Documentation sur le haut parleur ;
