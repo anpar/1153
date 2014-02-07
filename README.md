@@ -1,7 +1,8 @@
 To do list :
 ------------
-- Trouver les �quations pour le circuit RC (lundi) ;
-- Faire le devoir 2 de chimie (lundi) ;
-- Ecrire le cahier des charges ;
-- Documentation sur le haut parleur ;
-- Se renseigner sur la distorsion harmon,ique (Virgile? Thibaut?).
+- Trouver les equations pour le circuit RC (lundi) : DONE.
+- Faire le devoir 2 de chimie (lundi) : à vérifier.
+- Ecrire le cahier des charges.
+- Documentation sur le haut parleur.
+- Se renseigner sur la distorsion harmonique (Virgile? Thibaut?).
+- Créer la dropbox de groupe.
