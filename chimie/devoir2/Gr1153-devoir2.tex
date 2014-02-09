@@ -3,9 +3,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
-\usepackage{chemist}
-\newcommand{\wbal}
-\newcommand{\wbal}
+\usepackage{chemist} 
+
+\newcommand\exercice[1]{%
+\paragraph{#1}%
+~\par
+~\par}
 
 \title{Chimie-Physique I - Devoir 2}
 \author{Groupe 115.3}
@@ -15,7 +18,7 @@
 
 \maketitle
 
-\section{Exerice 1.78, page 52}
+\exercice{Exerice 1.78, page 52}
 
 \begin{enumerate}
   \item \chemform{Zn} : $1s^22s^22p^63s^23p^64s^23d^{10}$ : 1 électron en moins sur la couche $4s$ ;
@@ -24,7 +27,7 @@
   \item \chemform{Cu} : $1s^22s^22p^63s^23p^64s^13d^{10}$ : 1 électron en moins sur la couche $4s$.
 \end{enumerate}
 
-\section{Exercice 1.90, page 52}
+\exercice{Exercice 1.90, page 52}
 
 \begin{enumerate}
 	\item \chemform{Ca^{2+}}, \chemform{Ba^{2+}} : \chemform{Ba^{2+}} car $n = 5$ contre $n = 3$ pour \chemform{Ca^{2+}} ;
@@ -32,26 +35,24 @@
 	\item \chemform{Sn^{2+}}, \chemform{Sn^{4+}} : \chemform{Sn^{2+}} car $n = 5$ contre $n = 4$ pour \chemform{Sn^{4+}}.
 \end{enumerate}
 
-\section{Exercice 1.124, page 54}
+\exercice{Exercice 1.124, page 54}
 
 On sait que :
 
-$$E_n = -\frac{hR}{n^2} = -\frac{2.18 \cdot 10^{-18}}{n^2}$$
+% Formule page 37 dans les slides
+$$\Delta E = Ry(\frac{1}{n^2_f} - \frac{1}{n^2_i})$$
 
-Et que :
-
-$$\Delta E = E_f - E_i$$
-
+où $Ry = 2.178 \cdot 10^{-18} J$.
 
 \begin{enumerate}
 	\item Pour qu'un électron passe de l'orbitale $4d$ à $1s$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{1^2} - \frac{1}{4^2}) = 2.04 
+				$$\Delta E = E_1 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{1^2} - \frac{1}{4^2}) = 2.04 
 				\cdot 10^{-18} J$$
 	\item	Pour qu'un électron passe de l'orbitale $4d$ à $2p$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
+				$$\Delta E = E_1 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
 				\cdot 10^{-19} J$$
 	\item Pour qu'un électron passe de l'orbitale $4d$ à $2s$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
+				$$\Delta E = E_1 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
 				\cdot 10^{-19} J$$
 				
 				On remarque que l'énergie est la même que pour passer de la couche $4s$ à $2p$ car les couches
