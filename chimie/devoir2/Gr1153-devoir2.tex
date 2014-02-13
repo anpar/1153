@@ -3,9 +3,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
-\usepackage{chemist}
-\newcommand{\wbal}
-\newcommand{\wbal}
+\usepackage{chemist} 
+
+\newcommand\exercice[1]{%
+\paragraph{#1}%
+~\par
+~\par}
 
 \title{Chimie-Physique I - Devoir 2}
 \author{Groupe 115.3}
@@ -15,50 +18,48 @@
 
 \maketitle
 
-\section{Exerice 1.78, page 52}
+\exercice{Exerice 1.78, page 52}
 
 \begin{enumerate}
-  \item \chemform{Zn} : $1S^2^22p^63s^23p^64s^23d^10$ :1 electron en moins sur la couche $4s$ ;
-  \item \chemform{Cl} : $1S^2^22p^63s^23p^5$ : 1 electron en moins sur la couche $3p$ ;
-  \item \chemform{Al} : $1S^2^22p^63s^23p^1$ : 1 electron en moins sur la couche $3p$ ;
-  \item \chemform{Cu} : $1S^2^22p^63s^23p^64s^13d^10$ : 1 electron en moins sur la couche $4s$.
+  \item \chemform{Zn} : $1s^22s^22p^63s^23p^64s^23d^{10}$ : 1 électron en moins sur la couche $4s$ ;
+  \item \chemform{Cl} : $1s^22s^22p^63s^23p^5$ : 1 électron en moins sur la couche $3p$ ;
+  \item \chemform{Al} : $1s^22s^22p^63s^23p^1$ : 1 électron en moins sur la couche $3p$ ;
+  \item \chemform{Cu} : $1s^22s^22p^63s^23p^64s^13d^{10}$ : 1 électron en moins sur la couche $4s$.
 \end{enumerate}
 
-\section{Exercice 1.90, page 52}
+\exercice{Exercice 1.90, page 52}
 
 \begin{enumerate}
-	\item \chemform{Ca^{2+}}, \chemform{Ba^{2+}} : \chemform{Ba^{2+}} car $n = 5$ contre $n = 3$ pour \chemform{Ca^{2+}} ;
-	\item \chemform{As^{3-}}, \chemform{Se^{2-}} : \chemform{As^{3-}} et \chemform{Se^{2-}} ont le meme rayon 	ionique car leur configuration electronique est identique $1s^2 2s^2 2p^6 3s^2 3p^6 3d^{10}4s^2 4p^6$ ;
-	\item \chemform{Sn^{2+}}, \chemform{Sn^{4+}} : \chemform{Sn^{2+}} car $n = 5$ contre $n = 4$ pour \chemform{Sn^{4+}}.
+	\item \chemform{Ba^{2+}} car $n = 5$ contre $n = 3$ pour \chemform{Ca^{2+}} ;
+	\item \chemform{As^{3-}} car le noyeau de \chemform{Se^2-} est plus attractif.
+	\item \chemform{Sn^{2+}} car $n = 5$ contre $n = 4$ pour \chemform{Sn^{4+}}.
 \end{enumerate}
 
-\section{Exercice 1.124, page 54}
+\exercice{Exercice 1.124, page 54}
 
-On sait que : %expliquer mieux de quoi il s'agit
+On sait que :
 
-$$E_n = \frac{hR}{n^2} = -\frac{2.18 \cdot 10^{-18}}{n^2}$$
+% Formule page 37 dans les slides
+$$\Delta E = Ry(\frac{1}{n^2_f} - \frac{1}{n^2_i})$$
 
-Et que : %expliquer mieux aussi
-
-$$\Delta E = E_f - E_0$$
-
+où $Ry = 2.178 \cdot 10^{-18} J$.
 
 \begin{enumerate}
-	\item Pour qu'on électron passe de l'orbitale $4d$ à $1s$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{1^2} - \frac{1}{4^2}) = -2.04 
+	\item Pour qu'un électron passe de l'orbitale $4d$ à $1s$, l'énergie du photon doit être :
+				$$\Delta E = E_1 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{1^2} - \frac{1}{4^2}) = 2.04 
 				\cdot 10^{-18} J$$
-	\item	Pour qu'on électron passe de l'orbitale $4d$ à $2p$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = -4.088 
+	\item	Pour qu'un électron passe de l'orbitale $4d$ à $2p$, l'énergie du photon doit être :
+				$$\Delta E = E_2 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
 				\cdot 10^{-19} J$$
-	\item Pour qu'on électron passe de l'orbitale $4d$ à $2s$, l'énergie du photon doit être :
-				$$\Delta E = E_1 - E_4 = -2.18 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = -4.088 
+	\item Pour qu'un électron passe de l'orbitale $4d$ à $2s$, l'énergie du photon doit être :
+				$$\Delta E = E_2 - E_4 = 2.178 \cdot 10^{-18} \cdot (\frac{1}{2^2} - \frac{1}{4^2}) = 4.088 
 				\cdot 10^{-19} J$$
 				
 				On remarque que l'énergie est la même que pour passer de la couche $4s$ à $2p$ car les couches
-				avec le même nombre quantique principal ont la même énergie.
+				avec le même nombre quantique principal ont la même énergie (dans le cas de l'Hydrogène). % Voir page 26 du livre
 	\item	Par la même formule, on trouve 0. Cela s'explique aussi par le fait que les couches avec le même 
-				nombre quantique ont la même énergie.
-	\item %TODO
+				nombre quantique ont la même énergie (dans le cas de l'Hydrogène). % Voir page 26 du livre
+	\item Il y a plus de lignes de spectres parce qu'il y a plus d'électrons, et donc plus de niveaux d'énergie différents.
 \end{enumerate}
 
 \end{document}
