@@ -4,12 +4,18 @@
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
 \usepackage{chemist}
-\usepackage{lewis} 
+\usepackage{chemfig} 
+\usepackage{lewis}
 
 \newcommand\exercice[1]{%
 \paragraph{#1}%
 ~\par
 ~\par}
+
+\newcommand\chemfigc[1]{
+\vspace{0.5cm}
+\begin{center}\chemfig{#1}\end{center}
+\vspace{0.5cm}}
 
 \title{Chimie-Physique I - Devoir 3}
 \author{Groupe 115.3}
@@ -21,6 +27,57 @@
 
 \exercice{Exercice 3.22, page 125}
 
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+	\item La structure de Lewis du \chemform{CI_4} est :
+		
+				\chemfigc{\lewis{246, I}-C(-[:90]\lewis{024, I})(-[:-90]\lewis{046, I})-\lewis{026,I}}
+				
+				La molécule est \textbf{apolaire} (à cause de la symétrie).
+	\item	La structure de Lewis du \chemform{CH_3OH} est :
+		
+				\chemfigc{H-C(-[:90]H)(-[:-90]H)-\lewis{26, O}-H}
+				
+				La molécule est \textbf{polaire}.
+	\item La structure de Lewis du \chemform{CH_3COCH_3} est :	
+				
+				\chemfigc{H-C(-[:90]H)(-[:-90]H)-C(=[:90]O)-C(-[:90]H)(-[:-90]H)-H}
+				
+				La molécule est \textbf{polaire}.
+\end{enumerate}
+
 \exercice{Exercice 3.100, page 129}
+
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+	\item 
+				\begin{itemize}
+					\item La structure de Lewis du \chemform{H_2CCH_2} est :
+		
+								\chemfigc{C(-[:135]H)(-[:-135]H)=C(-[:45]H)(-[:-45]H)}
+					\item La structure de Lewis du \chemform{H_2CCCH_2} est :
+					
+								\chemfigc{C(-[:135]H)(-[:-135]H)=C=C(-[:45]H)(-[:-45]H)}
+					\item La structure de Lewis du \chemform{H_2CCCCH_2} est :
+					
+								\chemfigc{C(-[:135]H)(-[:-135]H)=C=C=C(-[:45]H)(-[:-45]H)}
+				\end{itemize}
+				
+	\item	Dans l'ordre, les hybridations pour chaque atomes \chemform{C} sont :
+	
+				\begin{itemize}
+					\item $sp^2$, $sp^2$ ;
+					\item $sp^2$, $sp$, $sp^2$ ;
+					\item $sp^2$, $sp$, $sp$, $sp^2$.
+				\end{itemize}
+				
+	\item	Dans les trois molécules, les liaisons entre les atomes de carbones sont doubles. On a donc
+				une liaison $\sigma$ et une laision $\pi$ entre chaque atome de carbone.
+				
+				Les liaisons \chemfig{C-H} sont simples, on a donc une liasion $\sigma$.
+	\item Les liaisons \chemform{HCH} forment un angle $<$ 120 degrés.
+				Les liaisons \chemform{HCC} forment un angle $>$ 120 degrés.
+				Les liaisons \chemform{CCC} forment un angle de 180 degrés.
+	\item	Oui.
+	\item	%TODO.
+\end{enumerate}
 
 \end{document}
