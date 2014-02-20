@@ -1,11 +1,23 @@
 \documentclass{article}
 
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
 \usepackage{chemist}
+\usepackage{chemfig} 
+\usepackage{lewis}
 
-\title{Chimie-Physique I - Devoir 2}
+\newcommand\exercice[1]{%
+\paragraph{#1}%
+~\par
+~\par}
+
+\newcommand\chemfigc[1]{
+\vspace{0.5cm}
+\begin{center}\chemfig{#1}\end{center}
+\vspace{0.5cm}}
+
+\title{Chimie-Physique I - Devoir 4}
 \author{Groupe 115.3}
 \date{\today}
 
@@ -13,4 +25,70 @@
 
 \maketitle
 
+\exercice{Exercice 2.88}
+
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+	\item La structure de Lewis du \chemform{NHCH_2} est :
+	
+	\chemfigc{H-\lewis{2, N}=C(-[:90]H)(-H)}
+	
+	On a donc une double liaison entre l'atome de carbone et
+	l'atome d'azote.
+	
+	\item La structure de Lewis du \chemform{NH_2CH_3} est :
+	
+	\chemfigc{H-\lewis{6, N}(-[:90]H)-C(-[:90]H)(-[:-90]H)-H}
+	
+	On a donc une simple liaison entre l'atome de carbone et 
+	l'atome d'azote.
+	
+	\item La structure de Lewis du \chemform{HCN} est :
+	
+	\chemfigc{H-C~\lewis{0, N}}
+	
+	On a donc une triple liaision entre l'atome de carbone et
+	l'atome d'azote.
+\end{enumerate}
+
+\textbf{En conclusion}, le composé ayant la liaison \chemform{C-N}
+la plus forte est le \chemform{HCN}.
+
+\exercice{Exercice 5.34}
+
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+	\item 
+		\begin{itemize}
+			\item
+				\chemform{CH_3CL} : interactions dipôle permanent -
+				dipôle permanent (force de Keesom) et interactions
+				dipôle induit - dipôle induit (force de London).
+				% Src : http://tinyurl.com/devoir4src1
+			\item
+				\chemform{CH_4} : interaction dipôle induit - dipôle 
+				induit (force de London). 
+				% Src : http://fr.wikipedia.org/wiki/Dipôle_induit
+			\item
+				\chemform{CH_3COOH} : deux ponts hydrogène (entre
+				\chemform{O} et \chemform{H}).
+				% Src : http://tinyurl.com/devoir4src2
+			\end{itemize}
+	\item Plus il y a d'interactions intermoléculaires et plus
+				elles sont fortes, plus la températeur d'ébullition 
+				et de fusion augmente. On a donc : \chemform{CH_3COOH}
+				$>$ \chemform{CH_3CL} $>$ \chemform{CH_4}. En effet : 
+				ponts H $>$ Keesom $>$ Debye $>$ London. 
+\end{enumerate}	
+
+\exercice{Exercice 5.36}
+
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+	\item	\chemform{FeS_2} :
+	\item	\chemform{C_8H_{19}} :
+	\item	\chemform{BN} :
+	\item	\chemform{CaSO_4} :
+	\item	\chemform{Cr_2} :
+	% Bizarre comme exercice, je suppose qu'il ne suffit pas de 
+	% calculer la différence d'électronégativité?
+\end{enumerate}	
+				
 \end{document}
