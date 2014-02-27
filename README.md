@@ -14,4 +14,5 @@ To do list :
 - Comprendre les différents blocs du circuit + rapport (Antoine) ;
 - Amener un petit tournevis pour le labo (Antoine) ;
 - Slides pour le pré-jury ;
+- Mesurer la constante de raideur de la membrane ;
 
