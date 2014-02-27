@@ -1,32 +1,27 @@
-\documentclass{report}
+\documentclass{article}
 
-
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{amsmath,amssymb,array}
  
-      
-\title{Résultats filtre passe-haut et passe-bas}
-\author{Groupe 11.53}
-\date{fevrier 2014}
 \begin{document}
  
-\maketitle
+\section{Approximation de la fréquence de coupure}
 
-\chapter{Passe-bas}
-\section{Equation de la droite horizontale}
+\subsection{Pour le filtre passe-bas}
 
-Nous savons que la droite a une valeur initiale de 2.5 V et donc \[y=2.5\]
+\subsubsection{Equation de la droite horizontale} % A refaire avec la méthode d'approximation
+Nous savons que la droite horizontale a une valeur initiale de 2.5 V et donc \[y=2.5\]
 
-\section{Equation de la droite diagonale}
+\subsubsection{Equation de la droite diagonale}
 
 Nous savons que l'équation de la droite est de type $y=a*x+b$
 \\
 Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
 
-
 Voici 3 résultats mesurés en laboratoire.
+
 \bigbreak
 \\
 \begin{tabular}{|c|c|c|}
@@ -42,8 +37,9 @@ V_c & f & log{ f} \\
 \end{tabular}
 
 \bigbreak
-Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante:
+Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante :
 \bigbreak
+
 $$
 \begin{pmatrix}  
  4.204 & 1\\
@@ -61,6 +57,7 @@ b
 1.45
 \end{pmatrix}
 $$
+
 \bigbreak
 
 Ce qui nous donne les vecteurs suivants:
@@ -97,13 +94,13 @@ Cela nous semble correct car en théorie nous devons arriver à une valeur f tel
 avec $R=7.5+50=57.5 ohms$ et $C=470\times 10^{-9} F$  Notre valeur théorique de la fréquence est donc $$f=5889.2 Hz$$
 
 
-\chapter{Passe-haut}
+\subsection{Pour le filtre passe-haut}
 
-\section{Equation de la droite horizontale}
+\subsubection{Equation de la droite horizontale}
 
 Nous savons que la droite a une valeur initiale de 0.75 V et donc \[y=0.75\]
 
-\section{Equation de la droite diagonale}
+\subsubsection{Equation de la droite diagonale}
 
 Nous savons que l'équation de la droite est de type $y=a*x+b$
 \\
@@ -175,8 +172,5 @@ $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
 \bigbreak
 Pour trouver la fréquence d'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous égalisons les y et nous trouvons $$\fbox{x=439.4 Hz$$} 
-
-
-
 
 \end{document}
