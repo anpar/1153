@@ -1,2 +1,182 @@
-% Ce fichier sera inclut automatiquement dans le rapport final via une commande LaTex
-% Il est donc inutile d'indiquer l'ent�te habituelle, il suffit de commencer par \section{}
+\documentclass{report}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,array}
+ 
+      
+\title{Résultats filtre passe-haut et passe-bas}
+\author{Groupe 11.53}
+\date{fevrier 2014}
+\begin{document}
+ 
+\maketitle
+
+\chapter{Passe-bas}
+\section{Equation de la droite horizontale}
+
+Nous savons que la droite a une valeur initiale de 2.5 V et donc \[y=2.5\]
+
+\section{Equation de la droite diagonale}
+
+Nous savons que l'équation de la droite est de type $y=a*x+b$
+\\
+Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
+
+
+Voici 3 résultats mesurés en laboratoire.
+\bigbreak
+\\
+\begin{tabular}{|c|c|c|}
+\hline
+V_c & f & log{ f} \\
+\hline
+1.7 & 16000 & 4.204\\
+\hline
+1.55 & 18000 & 4.255\\
+\hline
+1.45 & 20000 & 4.301 \\
+\hline
+\end{tabular}
+
+\bigbreak
+Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante:
+\bigbreak
+$$
+\begin{pmatrix}  
+ 4.204 & 1\\
+ 4.255 & 1 \\
+ 4.301 & 1 
+\end{pmatrix}
+\begin{pmatrix}  
+a\\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+1.7\\
+1.55\\
+1.45
+\end{pmatrix}
+$$
+\bigbreak
+
+Ce qui nous donne les vecteurs suivants:
+
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+
+\\ et
+
+\\
+\[e_2=( -0.68, 0.03, 0.73)\]
+
+\bigbreak
+Ce qui nous donne une projection de 
+$$
+\begin{pmatrix}  
+1.6\\
+1.5\\
+1.4
+\end{pmatrix}$$
+$$
+
+\bigbreak
+Nous en déduisons la valeur des coefficients a et b:  
+\[ a =-1.96 \]
+\[ b= 9.84 \]
+
+$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+
+\bigbreak
+Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous égalisons les y et nous trouvons $$\fbox{x=5557.7 Hz$$} 
+
+\\
+Cela nous semble correct car en théorie nous devons arriver à une valeur f tel que $$f=\frac{1}{2\times \pi\times R\times C}$$
+avec $R=7.5+50=57.5 ohms$ et $C=470\times 10^{-9} F$  Notre valeur théorique de la fréquence est donc $$f=5889.2 Hz$$
+
+
+\chapter{Passe-haut}
+
+\section{Equation de la droite horizontale}
+
+Nous savons que la droite a une valeur initiale de 0.75 V et donc \[y=0.75\]
+
+\section{Equation de la droite diagonale}
+
+Nous savons que l'équation de la droite est de type $y=a*x+b$
+\\
+Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
+
+
+Voici 3 résultats mesurés en laboratoire.
+\bigbreak
+\\
+\begin{tabular}{|c|c|c|}
+\hline
+V_c & f & log{ f} \\
+\hline
+127 & 0.4 & 2.1\\
+\hline
+191 & 0.5 & 2.3\\
+\hline
+356 & 0.6 & 2.6 \\
+\hline
+\end{tabular}
+
+\bigbreak
+Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante:
+\bigbreak
+$$
+\begin{pmatrix}  
+ 2.1 & 1\\
+ 2.3 & 1 \\
+ 2.6 & 1 
+\end{pmatrix}
+\begin{pmatrix}  
+a\\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+0.4\\
+0.5\\
+0.6
+\end{pmatrix}
+$$
+\bigbreak
+
+Ce qui nous donne les vecteurs suivants:
+
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+
+\\ et
+
+\\
+\[e_2=( -0.6, 0, 0.8)\]
+
+\bigbreak
+Ce qui nous donne une projection de 
+$$
+\begin{pmatrix}  
+0.36\\
+0.5\\
+0.69
+\end{pmatrix}$$
+$$
+
+\bigbreak
+Nous en déduisons la valeur des coefficients a et b:  
+\[ a =0.7 \]
+\[ b= -1.11 \]
+
+$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+
+\bigbreak
+Pour trouver la fréquence d'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous égalisons les y et nous trouvons $$\fbox{x=439.4 Hz$$} 
+
+
+
+
+\end{document}
