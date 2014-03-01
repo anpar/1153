@@ -1,1 +1,87 @@
-%TODO
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{circuitikz}
+\usepackage{graphicx}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+
+% Circuit électriquer à refaire en LaTeX, là ils sont vraiment
+% dégeulasses.
+
+\begin{document}
+
+\section{Analyse séquentielle du circuit}
+Dans cette section, nous allons décrire le fonctionnement du circuit
+de notre haut-parleur de la manière la plus précise et la plus complète
+possible. 
+
+Cette section est découpée en quatres sections, une pour chaque bloc 
+principal du circuit. Chaque bloc est associé à un rôle bien précis du
+haut-parleur.
+
+\subsection{Bloc 1 : la connexion avec la prise Jack}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{img/bloc1.png}
+	\caption{Premier bloc du circuit, contenant 
+					la prise jack femelle.}
+	\label{bloc1}
+\end{figure}
+
+Sur ce premier bloc (Figure \ref{bloc1}), chargé de faire la connexion entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack mâle dont nous disposons (Figure \ref{jack}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.1]{img/jack.png}
+	\caption{Prise Jack mâle 3.5mm, contact en 3 points.}
+	\label{jack}
+\end{figure}
+
+Cette prise Jack mâke sert à transporter un signal stéréophonique, qui sépare le canal gauche et le canal droit.
+Le canal gauche correspond à la pointe de la prise (L sur la figure), le canal droit correspond à l'anneau de la prise (R sur la figure). Le manchon de la prise correspond quant à lui à la masse.
+
+Sur le schéma du bloc 1 (Figure \ref{bloc1}), on peut alors voir que le signal du canal droit sera traité par le circuit, tandis que le signal du canal gauche sera redirigé vers le point \textit{IN2} où il pourra être connecté à notre deuxième haut-parleur pour être traité à son tour.
+
+\subsection{Bloc 2 : le réglage du volume}
+
+Le fonctionnement de ce bloc est relativement simple à comprendre, il est constitué d'un potentiomètre (P1 sur la Figure \ref{bloc2}) dont la résistance varie entre $\unit{10}{\ohm}$ et $\unit{2 \cdot 10^{6}}{\ohm}$. Selon la valeur de la résistance, par la loi d'Ohm, l'amplitude du signal sera plus ou moins réduite et donc le volume sera plus ou moins grand.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{img/bloc2.png}
+	\caption{Schéma du bloc 2, chargé du réglage du volume.}
+	\label{bloc2}
+\end{figure}
+
+\subsection{Bloc 3 : le réglage des graves et des aigus}
+
+Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constitué d'un filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves). Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}), le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). Ces deux amplificateurs sont ce qu'on appelle des amplificateurs \textit{suiveurs}. Leur rôle est de permettre le règlage des graves et des aigus de manière indépendantes. Sans ces amplificateurs suiveurs, faire varier le potentiomètre \textit{P2} influencerait non-seulement le filtre passe-haut, mais influencerait aussi le filtre passe-bas (car les potentiomètres \textit{P2} et \textit{P3} sont en série).
+
+Un autre point intéressant à relever sur le schéma du bloc 3 est la présence d'une boucle reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées "boucles de contre-réaction". Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. Grâce aux boucles de contre-réaction, on peut contrôller le gain d'un amplificateur. Dans notre cas, le gain de l'amplificateur est ramené à $1$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/bloc3.png}
+	\caption{Schéma du bloc 3, chargé du réglage des aigus et des graves.}
+	\label{bloc3}
+\end{figure}
+
+% To be continued
+
+\subsection{Bloc 4 : l'amplificateur de puissance}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{img/bloc4.png}
+	\caption{Schéma du bloc 4, l'amplificateur de puissance.}
+	\label{bloc4}
+\end{figure}
+
+% To undestand and then, to do.
+
+\end{document}
