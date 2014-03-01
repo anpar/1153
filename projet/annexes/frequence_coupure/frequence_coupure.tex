@@ -9,18 +9,28 @@
  
 \section{Approximation de la fréquence de coupure}
 
+Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure dans un circuit passe-bas et passe-haut. 
+
+Définissons tout d'abord ce qu'est la fréquence de coupure: c'est la fréquence à partir de laquelle la tension dans un circuit passe-bas (resp. passe-haut) commence à diminuer (resp. se stabiliser) lorsque la fréquence augmente.
+Nous devions donc trouver l'équation de deux droites: une droite horizontale, et une droite oblique. L'intersection de ces droites est appelée "fréquence de coupure".
+
+Pour ce faire, nous avons tout d'abord procédé à une expérience en laboratoire. 
+Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans chacun des circuits considérés. 
+Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour le passe-haut, et cela nous a ensuite permis de modéliser notre problème, et de trouver une fréquence de coupure expérimentale.
+
+
 \subsection{Pour le filtre passe-bas}
 
 \subsubsection{Equation de la droite horizontale} % A refaire avec la méthode d'approximation
-Nous savons que la droite horizontale a une valeur initiale de 2.5 V et donc \[y=2.5\]
+Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de 2.5 V et donc \[y=2.5\]
 
 \subsubsection{Equation de la droite diagonale}
 
-Nous savons que l'équation de la droite est de type $y=a*x+b$
+Nous savons que l'équation de la droite est de type $y=a*x+b$, avec a la pente et b l'ordonnée à l'origine.
 \\
 Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
 
-Voici 3 résultats mesurés en laboratoire.
+Voici 3 résultats mesurés en laboratoire, où V_c est la tension de sortie, et f la fréquence:
 
 \bigbreak
 \\
@@ -37,7 +47,9 @@ V_c & f & log{ f} \\
 \end{tabular}
 
 \bigbreak
-Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante :
+Dès maintenant les fréquences sont exprimées en base logarithmique.
+Nus écrivons maintenant un système ayant pour inconnues la pente (a) et l'ordonnée à l'origne (b) de notre droite inconnue. Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
+Voici le système sous forme de matrice:
 \bigbreak
 
 $$
@@ -59,8 +71,7 @@ b
 $$
 
 \bigbreak
-
-Ce qui nous donne les vecteurs suivants:
+Nous devons maitenant trouver une solution approchée du système. Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
 
 \[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
 
@@ -70,7 +81,7 @@ Ce qui nous donne les vecteurs suivants:
 \[e_2=( -0.68, 0.03, 0.73)\]
 
 \bigbreak
-Ce qui nous donne une projection de 
+Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises:
 $$
 \begin{pmatrix}  
 1.6\\
@@ -80,17 +91,17 @@ $$
 $$
 
 \bigbreak
-Nous en déduisons la valeur des coefficients a et b:  
+Nous en déduisons la valeur des coefficients a et b:
 \[ a =-1.96 \]
 \[ b= 9.84 \]
 
 $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
 \bigbreak
-Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous égalisons les y et nous trouvons $$\fbox{x=5557.7 Hz$$} 
+Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous résolvons le système, et nous trouvons $$\fbox{x=5557.7 Hz$$} 
 
 \\
-Cela nous semble correct car en théorie nous devons arriver à une valeur f tel que $$f=\frac{1}{2\times \pi\times R\times C}$$
+Cela nous semble correct car en théorie nous devions arriver à une valeur f telle que $$f=\frac{1}{2\times \pi\times R\times C}$$
 avec $R=7.5+50=57.5 ohms$ et $C=470\times 10^{-9} F$  Notre valeur théorique de la fréquence est donc $$f=5889.2 Hz$$
 
 
@@ -104,7 +115,7 @@ Nous savons que la droite a une valeur initiale de 0.75 V et donc \[y=0.75\]
 
 Nous savons que l'équation de la droite est de type $y=a*x+b$
 \\
-Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
+Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. Ce qui donne: $y=a*\log{x}+b$
 
 
 Voici 3 résultats mesurés en laboratoire.
@@ -123,7 +134,7 @@ V_c & f & log{ f} \\
 \end{tabular}
 
 \bigbreak
-Des maintenant les fréquences sont exprimées en base logarithmique et nous obtenons la matrice suivante:
+De manière analogue que pour le premier filtre, nous obtenons la matrice suivante:
 \bigbreak
 $$
 \begin{pmatrix}  
@@ -154,7 +165,7 @@ Ce qui nous donne les vecteurs suivants:
 \[e_2=( -0.6, 0, 0.8)\]
 
 \bigbreak
-Ce qui nous donne une projection de 
+Et nous obtenons une projection:
 $$
 \begin{pmatrix}  
 0.36\\
@@ -171,6 +182,6 @@ Nous en déduisons la valeur des coefficients a et b:
 $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
 \bigbreak
-Pour trouver la fréquence d'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous égalisons les y et nous trouvons $$\fbox{x=439.4 Hz$$} 
+Pour trouver la fréquence d'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons $$\fbox{x=439.4 Hz$$} 
 
 \end{document}
