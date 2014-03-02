@@ -64,6 +64,10 @@ Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constit
 
 Un autre point intéressant à relever sur le schéma du bloc 3 est la présence d'une boucle reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées "boucles de contre-réaction". Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. Grâce aux boucles de contre-réaction, on peut contrôller le gain d'un amplificateur. Dans notre cas, le gain de l'amplificateur est ramené à $1$.
 
+Concernant le cable reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), il s'agit en quelque sorte d'un cable de "`sécurité"' que l'on peut connecter afin que le signal ne passe pas par les filtres passe-haut et passe-bas. Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse ou un des filtres ne fonctionnerait pas.
+
+Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3}) au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un cable "`dans le vide"', et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{img/bloc3.png}
@@ -71,7 +75,7 @@ Un autre point intéressant à relever sur le schéma du bloc 3 est la présence
 	\label{bloc3}
 \end{figure}
 
-% To be continued
+
 
 \subsection{Bloc 4 : l'amplificateur de puissance}
 
