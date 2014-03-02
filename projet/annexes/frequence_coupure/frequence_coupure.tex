@@ -4,6 +4,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{amsmath,amssymb,array}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
  
 \begin{document}
  
@@ -18,9 +21,7 @@ Pour ce faire, nous avons tout d'abord procédé à une expérience en laboratoi
 Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans chacun des circuits considérés. 
 Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour le passe-haut, et cela nous a ensuite permis de modéliser notre problème, et de trouver une fréquence de coupure expérimentale.
 
-
 \subsection{Pour le filtre passe-bas}
-
 
 \begin{figure}[h]
    \centering
@@ -28,70 +29,81 @@ Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour 
    \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-bas}
 \end{figure}
 
-
-
-
 \subsubsection{Equation de la droite horizontale} % A refaire avec la méthode d'approximation
-Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de 2.5 V et donc \[y=2.5\]
+Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de $\unit{2.5}{\volt}$ et donc \[y=2.5\]
 
 \subsubsection{Equation de la droite diagonale}
 
-Nous savons que l'équation de la droite est de type $y=a*x+b$, avec a la pente et b l'ordonnée à l'origine.
-\\
-Mais pour cette situation-ci, nous allons utiliser une base logarithmique pour la pente.  En effet, les différentes fréquences utilisées sont tellement éloignées les unes des autres que le graphique serait gigantesque et la pente diagonale serait en fait une courbe.  Ce qui donne: $y=a*\log{x}+b$
+Avec les mesures effectuées en laboratoires, nous n'obtenons non pas une droite mais bien une exponentielle. Pour faciliter le calcul de l'intersection de l'exponentielle et de la droite, nous passons donc en repère semi-logarithmique. En procédant de la sorte, l'exponentielle se transforme en droite, et le calcul devient plus facile.
 
-Voici 3 résultats mesurés en laboratoire, où V_c est la tension de sortie, et f la fréquence:
+Nous savons que l'équation d'une droite dans un repère cartésien est de type $y=ax+b$, avec $a$ la pente et $b$ l'ordonnée à l'origine.
 
-\bigbreak
-\\
-\begin{tabular}{|c|c|c|}
-\hline
-V_c & f & log{ f} \\
-\hline
-1.7 & 16000 & 4.204\\
-\hline
-1.55 & 18000 & 4.255\\
-\hline
-1.45 & 20000 & 4.301 \\
-\hline
-\end{tabular}
+Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répère semi-logarithmique (en $x$). L'équation de la droite devient alors : $y=a\log{x}+b$
 
-\bigbreak
+\paragraph{Mesures en laboratoires}
+
+Voici 3 résultats choisi (de manière cohérente) parmis toute les mesures effectuées en laboratoire, où $V_c$ est la tension de sortie et $f$ la fréquence :
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$V_c$ & $f$ & $\log{f}$ \\
+		\hline
+		1.7 & 16000 & 4.204 \\
+		\hline
+		1.55 & 18000 & 4.255 \\
+		\hline
+		1.45 & 20000 & 4.301 \\
+		\hline
+	\end{tabular}
+\end{center}
+
 Dès maintenant les fréquences sont exprimées en base logarithmique.
-Nous écrivons maintenant un système ayant pour inconnues la pente (a) et l'ordonnée à l'origne (b) de notre droite inconnue. Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
-Voici le système sous forme de matrice:
-\bigbreak
+Nous écrivons maintenant un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origne ($b$) de notre droite inconnue. Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
 
-$$
-\begin{pmatrix}  
- 4.204 & 1\\
- 4.255 & 1 \\
- 4.301 & 1 
-\end{pmatrix}
-\begin{pmatrix}  
-a\\
-b
-\end{pmatrix}
-=
-\begin{pmatrix}  
-1.7\\
-1.55\\
-1.45
-\end{pmatrix}
-$$
+Voici le système sous forme matricielle :
 
-\bigbreak
-Nous devons maitenant trouver une solution approchée du système. Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
+$$A \cdot \vec{x} = \vec{b}$$
 
-\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+\begin{center}
+	\begin{array}{rcel}
+		$$
+		\begin{pmatrix}  
+			4.204 & 1\\
+			4.255 & 1 \\
+			4.301 & 1 
+		\end{pmatrix} &
 
-\\ et
+		\begin{pmatrix}  
+			a\\
+			b
+		\end{pmatrix} &
 
-\\
-\[e_2=( -0.68, 0.03, 0.73)\]
+		= &
 
-\bigbreak
-Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises:
+		\begin{pmatrix}  
+			1.7\\
+			1.55\\
+			1.45
+		\end{pmatrix}
+		$$
+	\end{array}
+\end{center}	
+	
+Le système n'admet pas de solutions car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
+
+Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
+
+$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+
+et
+
+$$e_2=(-0.68 ; 0.03 ; 0.73)$$
+
+%	Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ? 
+
+Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises :
+
 $$
 \begin{pmatrix}  
 1.6\\
@@ -100,20 +112,24 @@ $$
 \end{pmatrix}$$
 $$
 
-\bigbreak
-Nous en déduisons la valeur des coefficients a et b:
-\[ a =-1.96 \]
-\[ b= 9.84 \]
+Nous en déduisons la valeur des coefficients $a$ et $b$ :
+
+$$a = -1.96$$
+$$b= 9.84$$
 
 $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
-\bigbreak
-Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous résolvons le système, et nous trouvons $$\fbox{x=5557.7 Hz$$} 
+Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous résolvons le système, et nous trouvons : 
 
-\\
-Cela nous semble correct car en théorie nous devions arriver à une valeur f telle que $$f=\frac{1}{2\times \pi\times R\times C}$$
-avec $R=7.5+50=57.5 ohms$ et $C=470\times 10^{-9} F$  Notre valeur théorique de la fréquence est donc $$f=5889.2 Hz$$
+$$\fbox{x = \unit{5557.7}{\hertz}}$$ 
 
+Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ telle que : 
+
+$$f=\frac{1}{2\pi RC}$$
+
+avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ et $C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de la fréquence de coupure est donc :
+
+$$f= \unit{5889.2}{\hertz}$$
 
 \subsection{Pour le filtre passe-haut}
 
@@ -123,82 +139,89 @@ avec $R=7.5+50=57.5 ohms$ et $C=470\times 10^{-9} F$  Notre valeur théorique de
    \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-haut}
 \end{figure}
 
-
 \subsubection{Equation de la droite horizontale}
 
-Nous savons que la droite a une valeur initiale de 0.75 V et donc \[y=0.75\]
+% Pareil ici, normalement à refaire avec la même méthode d'approximation si on veut que ce soit parfait
+
+Nous savons que la droite a une valeur initiale de $\unit{0.75}{\volt}$ et donc $y = 0.75$.
 
 \subsubsection{Equation de la droite diagonale}
 
-Nous savons que l'équation de la droite est de type $y=a*x+b$
-\\
-Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. Ce qui donne: $y=a*\log{x}+b$
+Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. L'équation de la droite est donc de la forme : $y=a\log{x}+b$.
 
+Voici 3 résultats choisis parmis les mesures effectuée en laboratoire :
 
-Voici 3 résultats mesurés en laboratoire.
-\bigbreak
-\\
-\begin{tabular}{|c|c|c|}
-\hline
-V_c & f & log{ f} \\
-\hline
-127 & 0.4 & 2.1\\
-\hline
-191 & 0.5 & 2.3\\
-\hline
-356 & 0.6 & 2.6 \\
-\hline
-\end{tabular}
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$V_c$ & $f$ & $\log{f}$ \\
+		\hline
+		127 & 0.4 & 2.1\\
+		\hline
+		191 & 0.5 & 2.3\\
+		\hline
+		356 & 0.6 & 2.6 \\
+		\hline
+	\end{tabular}
+\end{center}
 
-\bigbreak
-De manière analogue que pour le premier filtre, nous obtenons la matrice suivante:
-\bigbreak
+De manière analogue que pour le premier filtre, nous obtenons le système suivant :
+
+\begin{center}
+	\begin{array}{rcel}
+		$$
+		\begin{pmatrix}  
+			 2.1 & 1\\
+			 2.3 & 1 \\
+			 2.6 & 1 
+		\end{pmatrix}&
+
+		\begin{pmatrix}  
+			a\\
+			b
+		\end{pmatrix}&
+
+		=&
+
+		\begin{pmatrix}  
+			0.4\\
+			0.5\\
+			0.6
+		\end{pmatrix}
+		$$
+	\end{array}
+\end{center}
+
+Ce qui nous donne les vecteurs suivants :
+
+$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+
+et
+
+$$e_2=( -0.6, 0, 0.8)$$
+
+Et nous obtenons comme vecteur projeté :
+
 $$
 \begin{pmatrix}  
- 2.1 & 1\\
- 2.3 & 1 \\
- 2.6 & 1 
+	0.36\\
+	0.5\\
+	0.69
 \end{pmatrix}
-\begin{pmatrix}  
-a\\
-b
-\end{pmatrix}
-=
-\begin{pmatrix}  
-0.4\\
-0.5\\
-0.6
-\end{pmatrix}
-$$
-\bigbreak
-
-Ce qui nous donne les vecteurs suivants:
-
-\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
-
-\\ et
-
-\\
-\[e_2=( -0.6, 0, 0.8)\]
-
-\bigbreak
-Et nous obtenons une projection:
-$$
-\begin{pmatrix}  
-0.36\\
-0.5\\
-0.69
-\end{pmatrix}$$
 $$
 
-\bigbreak
-Nous en déduisons la valeur des coefficients a et b:  
-\[ a =0.7 \]
-\[ b= -1.11 \]
+Nous en déduisons la valeur des coefficients $a$ et $b$ :  
+
+$$a =0.7$$
+
+$$b= -1.11$$
+
+L'équation de la droite est alors :
 
 $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
-\bigbreak
-Pour trouver la fréquence d'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons $$\fbox{x=439.4 Hz$$} 
+Pour trouver l'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons: 
+
+$$\fbox{x = \unit{439.4}{\hertz}}$$ 
 
 \end{document}
