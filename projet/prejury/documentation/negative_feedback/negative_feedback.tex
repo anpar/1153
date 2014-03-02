@@ -1,2 +1,115 @@
-% Ce fichier sera inclut automatiquement dans le rapport final via une commande LaTex
-% Il est donc inutile d'indiquer l'entête habituelle, il suffit de commencer par \section{}
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{circuitikz}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{PGFPlots}
+
+\begin{document}
+
+\section{Recherche documentaire : la contre-réaction}
+En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous somme alors interrogés sur le rôle de ces boucles.
+
+Nous allons, dans un premier temps, vous décrire brièvement notre méthode de recherche. Nous rentrerons ensuite dans le vif du sujet en expliquant les raisons d'être des boucles de contre-réaction en général et nous finirons par l'explication complète de leur raison d'être dans le cas particulier de notre circuit.
+
+\paragraph{Méthode de recherche}
+Comme suggeré lors de la séance d'information sur la recherche bibliographique nous avons appliqué la méthode de l'entonnoir. Comme les boucles de contre-réaction sont directement liées aux amplificateurs, nous avons commencé nos recherche avec les termes plutôt généraux : \textit{amplificateurs} et \textit{amplifiers}. Nous nous avons ensuite associé à ces mots clés les termes plus précis : \textit{contre-réaction} et \textit{negative feedback}.
+
+Les différents ouvrages et documents que nous avons utilisés sont listés dans la bibliographie.
+
+\subsection{Principe de la réaction}
+Le principe de la réaction est présent dans un grand nombre de circuits électroniques. Il consiste en une réinjection d'une partie du signal de sortie à l'entrée du circuit pour le combiner avec le signal d'entrée extérieur.
+
+Il existe deux types de réactions :
+
+\begin{itemize}
+	\item \textbf{La réaction positive} : le signal réinjecté est en phase avec le signal d'entrée de telle sorte qu'ils  s'additionnent.
+	\item \textbf{La réaction négative} (ou contre-réaction) : le signal réinjecté est en opposition de phase avec le signal d'entrée, de telle sorte qu'ils se soustraient.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	% Circuit à redessiner, j'ai pas fais ça très proprement.
+	\begin{circuitikz}
+		\draw (0, 0) node[ocirc];
+		\draw (0, 0)	to[short] (2, 0);
+		\draw (0, -1) node[ocirc];
+		\draw (0, -1) to[short] (2, -1);
+		\draw (3.1, -0.5) node [op amp, yscale=-1.022] (op amp) {}
+					(opamp.-)node[left]
+					(opamp.+)node[left]
+					(opamp.out)node[right];
+		\draw (3.85, -0.5) to[short] (5.6, -0.5);
+		\draw (5.6, -0.5) node[ocirc];
+		\draw (5.4, -0.5) to[short] (5.4, -2);
+		\draw (5.4, -2) to[short] (1.4, -2);
+		\draw (1.4, -2) to[short] (1.4, -1);
+	\end{circuitikz}
+	\caption{Schéma électrique d'une boucle de réaction sur un 	amplificateur.}
+	\label{reaction1}
+\end{figure}
+
+\subsection{Effets des boucles de contre-réaction}
+
+\subsubsection{En général}
+Les effets des boucles de contre-réaction sur un amplificateurs sont nombreux :
+
+\begin{itemize}
+	\item La boucle de contre-réaction rend indépendant le gain de l'amplificateur des différentes variations du circuits ;
+	\item Le signal de sortie est plus proche du signal d'entrée que si l'amplificateur avait été en boucle ouverte ;
+	\item Réduction des signaux électriques parasites dûs à l'amplificateur ;
+	\item Contrôle du gain de l'amplificateur (qui est, en boucle ouverte, de l'ordre de $10^6$ ;
+	\item Elargissement de la bande passante de l'amplificateur.
+\end{itemize}
+
+\subsubsection{Dans notre cas particulier}
+Dans notre cas particulier, le principal effet de la boucle de contre-réaction est le contrôle du gain de l'amplificateur qui ramène à $1$ le gain.
+
+\begin{figure}[h]
+	\centering
+	\begin{circuitikz}
+		\draw (0,0) node[ocirc];
+		\draw (3,0) to[short] (opamp+);
+		\draw (4, -0.5) node [op amp, yscale=-1.022] (op amp) {}
+			(opamp.-)node[left] (opamp-)
+			(opamp.+)node[left] (opamp+)
+			(opamp.out)node[right] (opampout);
+		\draw (5, -0.5) to[short] (7, -0.5);
+		\draw (7, -0.5) node[ocirc];
+		\draw (2, -1) to[short] (3, -1);
+		\draw (2, -1) to[short] (2, -3);
+		\draw (2, -3) to[R=$R_1$] (2, -4);
+		\draw (2, -4) to[short] (2, -4.5);
+		\draw (2, -4) node[ground];
+		\draw (2, -2) to[short] (6, -2);
+		\draw (6, -2) to[R=$R_2$] (6, -0.5);
+	\end{circuitikz}
+	\caption{Schéma électrique d'une boucle de réaction sur un 	amplificateur avec un diviseur résistif.}
+	\label{reaction2}
+\end{figure}
+
+Sur la Figure \ref{reaction2}, on remarque que la tension de sortie et la tension d'entrée sont liées par la formule des diviseurs résistifs :
+
+$$V_{in} = \frac{R_1}{R_1 + R_2} V_{out}$$
+
+Le gain est alors donné par :
+
+$$A = \frac{V_{out}}{V_{in}} = \frac{R_1 + R_2}{R_1}$$
+
+Pour réduire le gain $A$ à $1$, on alors deux possibilités :
+
+\begin{enumerate}
+	\item	Choisir $R_1 >> R_2$ ;
+	\item Choisir $R_2 = 0$ ;
+\end{enumerate}
+
+La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, $A = 1$. On choisi alors $R_1$ si petit, que le remplacer par un court-circuit a le même effet.
+
+\bibliographystyle{plain}
+\bibliography{source}
+
+\end{document}

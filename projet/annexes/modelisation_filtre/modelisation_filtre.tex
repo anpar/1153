@@ -32,15 +32,17 @@ sortie du filtre.
 
 \begin{center}
 	\begin{circuitikz}
-		\draw (0,0) node[ocirc] {};
+		\draw (0,0) node[ocirc] (A);
 		\draw (0,0) to [R=$R$] (2,0);
 		\draw (2,0) to [short] (4,0);
-		\draw (4,0) node[ocirc] {};
+		\draw (4,0) node[ocirc] (C);
 		\draw (2,0) to [C=$C$] (2,-2);
 		\draw (2,-2) to [short] (4,-2);
-		\draw (4,-2) node[ocirc] {};
+		\draw (4,-2) node[ocirc] (D);
 		\draw (0,-2) to [short] (2,-2);
-		\draw (0,-2) node[ocirc] {};
+		\draw (0,-2) node[ocirc] (B);
+		\draw (A) to[open, v=$V_ {in}$] (B);
+		\draw (C) to[open, v=$V_{out}$] (D);
 	\end{circuitikz}
 \end{center}
 
@@ -166,15 +168,17 @@ sortie du filtre.
 
 \begin{center}
 	\begin{circuitikz}
-		\draw (0,0) node[ocirc] {};
+		\draw (0,0) node[ocirc] (A);
 		\draw (0,0) to [C=$C$] (2,0);
 		\draw (2,0) to [short] (4,0);
-		\draw (4,0) node[ocirc] {};
+		\draw (4,0) node[ocirc] (C);
 		\draw (2,0) to [R=$R$] (2,-2);
 		\draw (2,-2) to [short] (4,-2);
-		\draw (4,-2) node[ocirc] {};
+		\draw (4,-2) node[ocirc] (D);
 		\draw (0,-2) to [short] (2,-2);
-		\draw (0,-2) node[ocirc] {};
+		\draw (0,-2) node[ocirc] (B);
+		\draw (A) to[open, v=$V_ {in}$] (B);
+		\draw (C) to[open, v=$V_{out}$] (D);
 	\end{circuitikz}
 \end{center}
 
