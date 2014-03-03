@@ -3,6 +3,8 @@
 \usepackage[latin1]{inputenc} 
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel} 
+\usepackage{graphicx}
+
 
 \begin{document}
 
@@ -29,41 +31,50 @@ trouvé le plus d'informations. Nous avons gardé une trace de toutes les source
 consultées, et cela a rendu l'écriture de la bibliographie nettement plus facile.
 
 \subsection{Définition}
-Commençons tout d'abord par comprendre la notion de distorsion du son: par définition, c'est est
-une transformation d'un signal audio. Ces distorsions ne sont pas souvent recherchées, étant donné
+Commençons tout d'abord par comprendre la notion de distorsion du son: par définition, c'est
+une transformation du signal audio par rapport à celui de sortie. Ces distorsions ne sont pas vraiment souhaitées, étant donné
 que le signal en est déformé. Cependant, certains audiophiles en tirent avantage, vu que que quelques
 transformations peuvent mener à un son plus chaud et agréable.
 
 \paragraph{La distorsion harnomique}
-La distorsion harmonique est, par exemple, une distorsion responsable 
-d'un son plus "chaud", et agréable à écouter. Elle joue sur l'ajout de différentes fréquences, se 
-supperposant à la fréquence fondamentale. On parle de deuxième, troisième,... harmonique lorque la 
-fréquence sortante vaut deux, trois,... fois la fréquence entrante. Elles s'organisent en deux familles : 
-Les harmoniques paires qui correspondent aux octaves (H2 pour la 1ère octave, H4 pour la 2ème octave, etc...) 
-et qui tendent à "arrondir" les sonorités et leur donnant un coté "chaleureux".
-- Les harmoniques impaires qui elles tendent plutôt à engendrer un son "dissonant" et sont souvent à 
-l'origine de "duretés". Elles ont ainsi tendance a accentuer les défauts intrinsèques des haut-parleurs.
-% A REFORMULER + SCHEMA
+La distorsion harmonique joue sur la superposition de différentes fréquences:
+la fréquence fondamentale et ses harmoniques. Un haut-parleur parfait émettrait seulement la fréquence fondamentale, sans les harmoniques, qui sont donc des "parasites".
+On parle d'harmonique pour désigner les multiples entiers de la fréquence fondamentale.
+Par exemple, la seconde harmonique d'une fréquence de 50 Hz vaut 100Hz, la troisième 150Hz, etc.
+Elles s'organisent en deux familles : 
+Les harmoniques paires sont les moins incommodantes, étant donné qu'elles représentent la même note, mais à quelques octaves de différence.
+Les harmoniques impaires, elles, sont plus gênantes étant donné que la note est différente.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{image2.png}
+\caption{Superposition d'une fréquence fondamentale et de ses premières hamoniques.}
+\label{Superposition d'une fréquence fondamentale et de ses premières hamoniques.}
+\end{figure}
+
+
 
 \subsection{Causes}
 Une des causes principales de la distorsion harmonique est le haut parleur, qui ajoute des distorsions au signal.
 Les vibrations dans l'enceinte sont également uen source de distorsion du signal.
-% A complteter
+
 
 \subsection{Conséquences}
 Lorsque les fréquences sont correctement ajustées, l'ajout d'harmoniques peut rendre le son plus chaud et 
 agréable à écouter. C'est pour cela que certains la recherchent.
+TIMBRE
 Ces distorsions sont parfois peu audibles, et un certain pourcentage est tout à fait acceptable puisuqe notre
 oreille y est tolérante.
-% A COMPLETER
+TAUX DE DISTORTION
+
 
 \subsection{Solutions}
 Pour éviter les mauvaises distorsion, ou tout simplement pour émettre un son pur et exact, il existe différentes
 solutions.
-%A COMPLETER
+Certains auiophiles cherchent aussi à accentuer ces distortions. Les différents  moyens d'y parvenir sont...
 
-%Si vous injectez un signal sinusoïdal dans un haut-parleur, l'onde acoustique émise par le haut-parleur contiendra la fréquence fondamentale et différentes harmoniques. Ces dernières correspondent à la distorsion. Le rapport de puissance entre les harmoniques et la fréquence fondamentale est le taux de distorsion. 
-%http://www.audiophile-scientifique.com/theorie-acoustique/distorsion/distorsion-harmonique.php
 
 \bibliographystyle{plain}
 \bibliography{source}
