@@ -75,8 +75,6 @@ Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre
 	\label{bloc3}
 \end{figure}
 
-
-
 \subsection{Bloc 4 : l'amplificateur de puissance}
 
 \begin{figure}[h]
@@ -86,6 +84,19 @@ Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre
 	\label{bloc4}
 \end{figure}
 
-% To undestand and then, to do.
+Cette partie contient l'amplificateur de puissance (aussi appelé amplificateur audio). 
+Cet amplificateur a pour but d'amplifier un signal électrique audio pour
+permettre le fonctionnement d'un haut-parleur ou d'une enceinte acoustique.
+
+Le nom amplificateur de puissance peut induire en erreur. En effet, comme toute amplificateur,
+l'amplificateur de puissance agit sur la tension mais son impédance de sortie étant très faible,
+il peut délivrer une grande puissance (ce qui lui vaut son nom).
+
+Dans notre cas, l'amplificateur a un gain en tension de $50$.
+
+Le premier condensateur (\textit{C1} sur la Figure \ref{bloc4}) sert à stabiliser la tension d'alimentation. Ce relativement "gros" condensateur
+agit en quelque sorte comme un réservoir.
+
+Le deuxième condensateur (\textit{COUT}) permet de ne laisser passer que les signaux alternatifs. Il bloque tous les courants continus parasites.
 
 \end{document}
