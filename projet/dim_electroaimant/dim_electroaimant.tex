@@ -1,9 +1,21 @@
 \input{../head.tex}
 
-\section{Dimensionnement de l'électroaimant fixe}
+\section{Dimensionnement de l'électroaimant et de la bobine mobile}
+Pour fabriquer notre haut-parleur, nous ne disposions pas d'aimant permanent. Nous avons donc
+dû créer un électroaimant à partir d'un matériau ferromagnétique qui nous a été fourni.
+Cette section présente dans un premier le dimensionnement de cet électroaimant, c'est à dire le
+nombre de spires choisi, la résistance totale de la bobine, son inductance, le champ magnétique
+induit, etc.
 
-Etant donné que nous ne disposons pas d'aimant permanent, nous avons dû fabriquer un électroaimant. 
-Nous avons donc bobiné un fil de cuivre autour du matériau ferromagnétique qui nous avait été fourni. 
+Nous calculerons ensuite, de manière expérimentale, la constante de raideur de la membrane de
+notre haut-parleur. A partir de cela et de l'écartement maximal par rapport à sa position d'origine, 
+nous pourons calculer la force nécessaire pour déplacer la membrane, et par conséquent, le nombre
+de spires nécessaire sur la bobine mobile.
+
+\subsection{Fonctionnement et dimensionnement de la bobine fixe}
+Lorsqu'un courant traverse la bobine de cuivre, un champ magnétique est formé.  Nous obtenons 
+donc un électroaimant fixe générant le champ nécessaire au déplacement de la seconde bobine. 
+C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 
 \begin{figure}[h]
 \centering
@@ -12,10 +24,65 @@ Nous avons donc bobiné un fil de cuivre autour du matériau ferromagnétique qu
 \label{modélisation de l'électroaimant}
 \end{figure}
 
-\paragraph{Fonctionnement}
-Lorsqu'un courant traverse la bobine de cuivre, un champ magnétique est formé.  Nous obtenons 
-donc un électroaimant fixe générant le champ nécessaire au déplacement de la seconde bobine. 
-C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
+Le nombre de spire de la bobine fixe, appelons le $N_1$, a été choisi arbitrairement de manière à produire un
+champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à 500. 
+Nous allons maintenant calculer les caractéristiques suivant de notre électroaimant :
+
+\begin{itemize}
+	\item Résistance totale de la bobine ;
+	\item Champ magnétique induit ;
+	\item Inductance.
+\end{itemize}
+
+\paragraph{Résistance totale de la bobine}
+Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
+Pour cela nous utilisons la formule suivante :
+
+$$L{tot} = N_1 \cdot 2(a + b)$$
+
+Où $N_1 = 500$ est le nombre de spires de la bobine fixe, et $a$ et $b$ sont les longueurs des côtés des spires. Pour
+$a = \unit{}{\meter}$ et $b = \unit{}{\meter}$, on trouve :
+
+$$L_{fil} = \unit{}{\meter}$$
+
+Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
+($R_{lin} = \unit{}{\ohm\per\meter}$ :
+
+$$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
+
+\paragraph{Champ magnétique induit}
+En connaissant la longueur de la bobine $L_{bob}$, le nombre de spires $N_1$, le courant traversant la bobine $I$ et
+la perméabilité du matériau $\mu_r$ on peut facilement trouver le champ magnétique induit $B $à l'intérieur de la bobine 
+par la loi d'Ampère :
+
+$$B = \mu_rI \frac{N_1}{L} = \unit{}{\tesla}$$
+
+Pour $L_{bob} = \unit{}{\meter}$, $\mu_r = 1600$ et $I = \unit{2.5}{\ampere}$.
+
+\paragraph{Inductance de la bobine}
+Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
+
+$$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+
+\paragraph{Tableau récapitulatif}
+% TODO
+
+\subsection{Calcul de la constante de raideur de la membrane}
+% TODO
+
+\subsection{Fonctionnement et dimensionnement de la bobine mobile}
+% TODO
+
+\paragraph{Calcul du nombre de spires}
+En fonction de la constante de raideur de la membrane trouvé dans la sous-section précédente et de l'écartement
+maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$, nous sommes en
+mesures de trouver le nombre de spires de la bobine mobile $N_2$ :
+
+$$N_2IlB = kx$$
+
+\paragraph{Calcul de la résistance totale de la bobine mobile}
+
+\paragraph{Calcul de l'inductance de la bobine mobile}
 
 \begin{figure}[h]
 \centering
@@ -23,28 +90,5 @@ C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 \caption{Vue d'ensemble avec la seconde bobine}
 \label{Vue d'ensemble avec la seconde bobine}
 \end{figure}
-
-\paragraph{Calul du nombre de spires}
-% On doit plutôt dire qu'on fixe le nombre de spires servant à créer le champ
-% magnétique à un nombre assez important (Sobieski avait dit 400-500)
-% et qu'ensuite on adapte le nombre de spires sur la bobine mobile
-% selon les calculs qu'on pourra faire une fois qu'on aura calculer
-% la constante de raideur de la membrane.
-Dans cete situation, la majorité du champ magnétisant se retrouve dans l'"`entrefer"' de $11$ mm. En supposant qu'il n'y a pas de perte de flux, et que le champ magnétique B vaut  ... T, nous sommes en mesure de calculer le nombre de spires nécessaires pour faire bouger la membrane de $3$ mm. % Peut-être se renseigner sur une valeur typique dans les haut-parleurs
-En utilisant les formules suivantes:
-
-$$\oint \vec{H}\cdot\vec{dl}\cong H_m * L + H_e * e = N*I$$ \\
-et:
-$$B_e = \mu_0*H_e$$\\
-
-Nous obtenons finalement ... spires.
-
-%  ENCORE A DETERMINER
-
-%* nbre de spires
-%* éloigné?
-%* longueur de la bobine
-%* aire du matériau ferromagnétique (combien de plaques)
-%* constante de raideur de la membrane
 
 \end{document}
