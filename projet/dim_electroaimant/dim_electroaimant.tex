@@ -65,7 +65,14 @@ Une fois le champ magnétique induit connu, l'inductance dans la bobine peut êt
 $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
 
 \paragraph{Tableau récapitulatif}
-% TODO
+
+\begin{center}
+	\begin{tabular}{c|c|c|c}
+		$N_1$ & $B$ & $R$ & $L$ \\
+		\hline
+		500 & $\unit{}{\tesla}$ & $\unit{}{\ohm}$ & $\unit{}{\henry}$ \\
+	\end{tabular}
+\end{center}
 
 \subsection{Calcul de la constante de raideur de la membrane}
 % TODO
@@ -75,14 +82,44 @@ $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
 
 \paragraph{Calcul du nombre de spires}
 En fonction de la constante de raideur de la membrane trouvé dans la sous-section précédente et de l'écartement
-maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$, nous sommes en
+maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
 mesures de trouver le nombre de spires de la bobine mobile $N_2$ :
 
 $$N_2IlB = kx$$
 
+%A continuer
+
 \paragraph{Calcul de la résistance totale de la bobine mobile}
+Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
+Pour cela nous utilisons la formule suivante :
+
+$$L{tot} = N_2 \cdot 2\pi r$$
+
+Où $N_2 = $ est le nombre de spires de la bobine fixe, et $r$ et le diamètre d'une spire. Pour
+$r = \unit{}{\meter}$, on trouve :
+
+$$L_{fil} = \unit{}{\meter}$$
+
+Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
+($R_{lin} = \unit{}{\ohm\per\meter}$ :
+
+$$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
 
 \paragraph{Calcul de l'inductance de la bobine mobile}
+
+Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
+
+$$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+
+\paragraph{Tableau récapitulatif}
+
+\begin{center}
+	\begin{tabular}{c|c|c|c}
+		$N_2$ & $I$ & $R$ & $L$ \\
+		\hline
+		 $x$ & $\unit{}{\ampere}$ & $\unit{}{\ohm}$ & $\unit{}{\henry}$ \\
+	\end{tabular}
+\end{center}
 
 \begin{figure}[h]
 \centering
