@@ -1,16 +1,3 @@
-\documentclass{article}
-
-\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
-\usepackage{circuitikz}
-\usepackage[squaren, Gray]{SIunits}
-\usepackage{sistyle}
-\usepackage[autolanguage]{numprint}
-\usepackage{PGFPlots}
-
-\begin{document}
-
 \section{Recherche documentaire : la contre-réaction}
 En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous somme alors interrogés sur le rôle de ces boucles.
 
@@ -108,8 +95,3 @@ Pour réduire le gain $A$ à $1$, on alors deux possibilités :
 \end{enumerate}
 
 La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, $A = 1$. On choisi alors $R_1$ si petit, que le remplacer par un court-circuit a le même effet.
-
-\bibliographystyle{plain}
-\bibliography{source}
-
-\end{document}
