@@ -32,7 +32,7 @@ Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répè
 
 \paragraph{Mesures en laboratoires}
 
-Voici 3 résultats choisi (de manière cohérente) parmis toute les mesures effectuées en laboratoire, où $V_c$ est la tension de sortie et $f$ la fréquence :
+Voici 3 résultats choisi (de manière cohérente) parmi toutes les mesures effectuées en laboratoire, où $V_c$ est la tension de sortie et $f$ la fréquence :
 
 \begin{center}
 	\begin{tabular}{|c|c|c|}
@@ -49,7 +49,9 @@ Voici 3 résultats choisi (de manière cohérente) parmis toute les mesures effe
 \end{center}
 
 Dès maintenant les fréquences sont exprimées en base logarithmique.
-Nous écrivons maintenant un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origne ($b$) de notre droite inconnue. Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
+Nous écrivons maintenant un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origne ($b$) de notre droite inconnue. 
+Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. 
+Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
 
 Voici le système sous forme matricielle :
 
@@ -80,7 +82,7 @@ $$A \cdot \vec{x} = \vec{b}$$
 	\end{array}
 \end{center}	
 	
-Le système n'admet pas de solutions car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
+Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
 
 Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
 
@@ -137,9 +139,10 @@ Nous savons que la droite a une valeur initiale de $\unit{0.75}{\volt}$ et donc 
 
 \subsubsection{Equation de la droite diagonale}
 
-Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. L'équation de la droite est donc de la forme : $y=a\log{x}+b$.
+Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. 
+L'équation de la droite est donc de la forme : $y=a\log{x}+b$.
 
-Voici 3 résultats choisis parmis les mesures effectuée en laboratoire :
+Voici 3 résultats choisis parmis les mesures effectuées en laboratoire :
 
 \begin{center}
 	\begin{tabular}{|c|c|c|}
