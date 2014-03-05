@@ -8,7 +8,7 @@ Dans cette section, nous allons décrire le fonctionnement du circuit
 de notre haut-parleur de la manière la plus précise et la plus complète
 possible. 
 
-Cette section est découpée en quatres sections, une pour chaque bloc 
+Cette section est découpée en quatre sections, une pour chaque bloc 
 principal du circuit. Chaque bloc est associé à un rôle bien précis du
 haut-parleur.
 
@@ -18,11 +18,12 @@ haut-parleur.
 	\centering
 	\includegraphics[scale=0.6]{img/bloc1.png}
 	\caption{Premier bloc du circuit, contenant 
-					la prise jack femelle.}
+					la prise Jack femelle.}
 	\label{bloc1}
 \end{figure}
 
-Sur ce premier bloc (Figure \ref{bloc1}), chargé de faire la connexion entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack mâle dont nous disposons (Figure \ref{jack}).
+Sur ce premier bloc (Figure \ref{bloc1}), chargé de faire la connexion entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. 
+Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack mâle dont nous disposons (Figure \ref{jack}).
 
 \begin{figure}[h]
 	\centering
@@ -49,13 +50,19 @@ Le fonctionnement de ce bloc est relativement simple à comprendre, il est const
 
 \subsection{Bloc 3 : le réglage des graves et des aigus}
 
-Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constitué d'un filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves). Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}), le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). Ces deux amplificateurs sont ce qu'on appelle des amplificateurs \textit{suiveurs}. Leur rôle est de permettre le règlage des graves et des aigus de manière indépendantes. Sans ces amplificateurs suiveurs, faire varier le potentiomètre \textit{P2} influencerait non-seulement le filtre passe-haut, mais influencerait aussi le filtre passe-bas (car les potentiomètres \textit{P2} et \textit{P3} sont en série).
+Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constitué d'un filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves).
+Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}), le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). 
+Ces deux amplificateurs sont ce qu'on appelle des amplificateurs \textit{suiveurs}. Leur rôle est de permettre le règlage des graves et des aigus de manière indépendante.
+Sans ces amplificateurs suiveurs, faire varier le potentiomètre \textit{P2} influencerait non seulement le filtre passe-haut, mais influencerait aussi le filtre passe-bas (car les potentiomètres \textit{P2} et \textit{P3} sont en série).
 
-Un autre point intéressant à relever sur le schéma du bloc 3 est la présence d'une boucle reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées "boucles de contre-réaction". Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. Grâce aux boucles de contre-réaction, on peut contrôller le gain d'un amplificateur. Dans notre cas, le gain de l'amplificateur est ramené à $1$.
+Un autre point intéressant à relever sur le schéma du bloc 3 est la présence d'une boucle reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées "boucles de contre-réaction". 
+Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. Grâce aux boucles de contre-réaction, on peut contrôler le gain d'un amplificateur. 
+Dans notre cas, le gain de l'amplificateur est ramené à $1$.
 
-Concernant le cable reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), il s'agit en quelque sorte d'un cable de "`sécurité"' que l'on peut connecter afin que le signal ne passe pas par les filtres passe-haut et passe-bas. Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse ou un des filtres ne fonctionnerait pas.
+Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), il s'agit en quelque sorte d'un câble de "`sécurité"' que l'on peut connecter afin que le signal ne passe pas par les filtres passe-haut et passe-bas. 
+Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse où un des filtres ne fonctionnerait pas.
 
-Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3}) au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un cable "`dans le vide"', et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
+Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3}) au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un câble "`dans le vide"', et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
 
 \begin{figure}[h]
 	\centering
@@ -77,7 +84,7 @@ Cette partie contient l'amplificateur de puissance (aussi appelé amplificateur 
 Cet amplificateur a pour but d'amplifier un signal électrique audio pour
 permettre le fonctionnement d'un haut-parleur ou d'une enceinte acoustique.
 
-Le nom amplificateur de puissance peut induire en erreur. En effet, comme toute amplificateur,
+Le nom amplificateur de puissance peut induire en erreur. En effet, comme tout amplificateur,
 l'amplificateur de puissance agit sur la tension mais son impédance de sortie étant très faible,
 il peut délivrer une grande puissance (ce qui lui vaut son nom).
 
