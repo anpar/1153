@@ -3,7 +3,7 @@
 \section{Dimensionnement de l'électroaimant et de la bobine mobile}
 Pour fabriquer notre haut-parleur, nous ne disposions pas d'aimant permanent. Nous avons donc
 dû créer un électroaimant à partir d'un matériau ferromagnétique qui nous a été fourni.
-Cette section présente dans un premier le dimensionnement de cet électroaimant, c'est à dire le
+Cette section présente dans un premier temps le dimensionnement de cet électroaimant, c'est-à-dire le
 nombre de spires choisi, la résistance totale de la bobine, son inductance, le champ magnétique
 induit, etc.
 
@@ -24,9 +24,9 @@ C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 \label{modélisation de l'électroaimant}
 \end{figure}
 
-Le nombre de spire de la bobine fixe, appelons le $N_1$, a été choisi arbitrairement de manière à produire un
+Le nombre de spires de la bobine fixe, appelons-le $N_1$, a été choisi arbitrairement de manière à produire un
 champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à 500. 
-Nous allons maintenant calculer les caractéristiques suivant de notre électroaimant :
+Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
 	\item Résistance totale de la bobine ;
@@ -46,16 +46,16 @@ $a = \unit{}{\meter}$ et $b = \unit{}{\meter}$, on trouve :
 $$L_{fil} = \unit{}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
-($R_{lin} = \unit{}{\ohm\per\meter}$ :
+($R_{lin} = \unit{}{\ohm\per\meter}$) :
 
 $$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
 
 \paragraph{Champ magnétique induit}
 En connaissant la longueur de la bobine $L_{bob}$, le nombre de spires $N_1$, le courant traversant la bobine $I$ et
-la perméabilité du matériau $\mu_r$ on peut facilement trouver le champ magnétique induit $B $à l'intérieur de la bobine 
+la perméabilité du matériau $\mu_r$, on peut facilement trouver le champ magnétique induit $B$ à l'intérieur de la bobine 
 par la loi d'Ampère :
 
-$$B = \mu_rI \frac{N_1}{L} = \unit{}{\tesla}$$
+$$B = \mu_rmu_0I \frac{N_1}{L} = \unit{}{\tesla}$$
 
 Pour $L_{bob} = \unit{}{\meter}$, $\mu_r = 1600$ et $I = \unit{2.5}{\ampere}$.
 
@@ -81,9 +81,9 @@ $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
 % TODO
 
 \paragraph{Calcul du nombre de spires}
-En fonction de la constante de raideur de la membrane trouvé dans la sous-section précédente et de l'écartement
+En fonction de la constante de raideur de la membrane trouvée dans la sous-section précédente et de l'écartement
 maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
-mesures de trouver le nombre de spires de la bobine mobile $N_2$ :
+mesure de trouver le nombre de spires de la bobine mobile $N_2$ :
 
 $$N_2IlB = kx$$
 
@@ -101,7 +101,7 @@ $r = \unit{}{\meter}$, on trouve :
 $$L_{fil} = \unit{}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
-($R_{lin} = \unit{}{\ohm\per\meter}$ :
+($R_{lin} = \unit{}{\ohm\per\meter}$) :
 
 $$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
 
