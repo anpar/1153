@@ -25,7 +25,7 @@ C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 \end{figure}
 
 Le nombre de spires de la bobine fixe, appelons-le $N_1$, a été choisi arbitrairement de manière à produire un
-champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à 500. 
+champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à 400. 
 Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
@@ -34,6 +34,18 @@ Nous allons maintenant calculer les caractéristiques suivantes de notre électr
 	\item Inductance.
 \end{itemize}
 
+\paragraph{Champ magnétique dans l'entrefer}
+Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{0.011}{\meter}$ en 
+utilisant la conservation des flux. Pour ce calcul, nous utilisons l'hypothèse que tout le champ
+se trouve dans l'entrefer.
+
+$$H_e \cdot e = N_1 I \Rightarrow \frac{B_e}{\mu_0 \mu_r} e = N_1 I$$
+
+Pour $N_1 = 400$, l'entrefer $e = \unit{0.011}{\meter}$, $\mu_r = 1.0000004$ la perméabilité magnétique
+de l'air et $I = \unit{2.5}{\ampere}$, on trouve alors :
+
+$B = \unit{0.1142389}{\tesla}$
+
 \paragraph{Résistance totale de la bobine}
 Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
 Pour cela nous utilisons la formule suivante :
@@ -41,28 +53,24 @@ Pour cela nous utilisons la formule suivante :
 $$L{tot} = N_1 \cdot 2(a + b)$$
 
 Où $N_1 = 500$ est le nombre de spires de la bobine fixe, et $a$ et $b$ sont les longueurs des côtés des spires. Pour
-$a = \unit{}{\meter}$ et $b = \unit{}{\meter}$, on trouve :
+$a = \unit{0.019}{\meter}$ et $b = \unit{0.022}{\meter}$, on trouve :
 
-$$L_{fil} = \unit{}{\meter}$$
+$$L_{fil} = \unit{32.8}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
-($R_{lin} = \unit{}{\ohm\per\meter}$) :
+($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
-
-\paragraph{Champ magnétique induit}
-En connaissant la longueur de la bobine $L_{bob}$, le nombre de spires $N_1$, le courant traversant la bobine $I$ et
-la perméabilité du matériau $\mu_r$, on peut facilement trouver le champ magnétique induit $B$ à l'intérieur de la bobine 
-par la loi d'Ampère :
-
-$$B = \mu_rmu_0I \frac{N_1}{L} = \unit{}{\tesla}$$
-
-Pour $L_{bob} = \unit{}{\meter}$, $\mu_r = 1600$ et $I = \unit{2.5}{\ampere}$.
+$$R = L_{fil} \cdot R_{lin} = \unit{5.904}{\ohm}$$
 
 \paragraph{Inductance de la bobine}
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
 $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+
+Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
+On trouve alors :
+
+$L = \unit{7.6403 \cdot 10^{-3}}{\henry}$
 
 \paragraph{Tableau récapitulatif}
 
@@ -70,7 +78,7 @@ $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
 	\begin{tabular}{c|c|c|c}
 		$N_1$ & $B$ & $R$ & $L$ \\
 		\hline
-		500 & $\unit{}{\tesla}$ & $\unit{}{\ohm}$ & $\unit{}{\henry}$ \\
+		400 & $B = \unit{0.1142389}{\tesla}$ & \unit{5.904}{\ohm} & $L = \unit{7.6403 \cdot 10^{-3}}{\henry}$ \\
 	\end{tabular}
 \end{center}
 
