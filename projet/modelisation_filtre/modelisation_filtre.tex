@@ -133,7 +133,7 @@ par un logiciel de simulation de circuit électronique comme LTSpiceIV.
 \begin{tikzpicture}[>=stealth]
     \begin{axis}[
         xmin=0,xmax=6,
-        ymin=-5,ymax=5,
+        ymin=-1,ymax=1,
         axis x line=middle,
         axis y line=middle,
         axis line style=->,
@@ -141,7 +141,11 @@ par un logiciel de simulation de circuit électronique comme LTSpiceIV.
         ylabel={$y$},
         ]
         \addplot[no marks,black,-] expression[domain=0:25,samples=1000]
-				{(15)/(1 + 628.32^2 * 10000^2 * (0.000001)^2) * (cos(628.32*x) + 10000*628.32*(0.000001)*sin(628.32*x) - 2.718^(-x/(10000*0.000001)))} 
+				%{(15)/(1 + 628.32^2 * 10000^2 * (0.000001)^2) * (cos(628.32*x) + 10000*628.32*(0.000001)*sin(628.32*x) - 2.718^(-x/(10000*0.000001)))} 
+				{(15 * cos(atan(-1000*0.00001*20) + 20*x) - 2.718^((-x)/(1000*0.00001)))/(sqrt((1 + (1000)^2 + (0.00001)^2 + (20)^2))} 
+                    node[pos=0.65,anchor=south west]{$$}; 
+				\addplot[no marks,blue,-] expression[domain=0:25,samples=1000]
+				{15 * cos(20 * x)} 
                     node[pos=0.65,anchor=south west]{$$}; 
     \end{axis}
 \end{tikzpicture}
