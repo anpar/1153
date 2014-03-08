@@ -12,6 +12,10 @@ To do list :
 - Dimensionnement du haut parleur (plus ou moins fait, à argumener et à mettre au propre) (M-C) ;
 - Membrane : acheter différents cartons + faire quelques essais + mesurer le constante de raideur;
 - Comprendre les différents blocs du circuit + rapport (Antoine) (EN COURS) ;
+- Répondre aux questions de Vitale (Virgile)
+- Rédiger une bibliographie
+- Esquisse du haut-parleur
+- Planning
 - Slides pour le pré-jury ;
 
 
