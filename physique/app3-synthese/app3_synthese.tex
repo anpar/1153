@@ -1,0 +1,86 @@
+\documentclass{report}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,array}
+\usepackage{gensymb}
+      
+\title{Résultats filtre passe-haut et passe-bas}
+\author{Groupe 11.53}
+\date{fevrier 2014}
+\begin{document}
+ 
+\maketitle
+
+\chapter{}
+\section{Question 1}
+\begin{enumerate}
+\item L'appareil est constitué de 4 pièces principales:
+      \begin{enumerate}
+      \item Les chenilles
+			\item La base rotative
+			\item Le bras articulé
+			\item Le godet
+			\end{enumerate}
+\item Ces différentes parties sont liées les unes aux autres dans un certain ordre: chenille-base-bras-godet.
+      Quand les chenilles bougent, tout le reste bouge (sauf dans quelques cas précis: si le bras compense le déplacement des chenilles alors le godet ne se déplace pas par rapport à la terre).
+			On peut dire que le degré de liberté augmente au fur et à mesure que l'on descend dans la liste.  En effet, le godet peut se trouver un peu partout autour de la grue(dans un rayon égale à la longueur du bras) tandis que les chenilles ne peuvent pas se trouver en l'air, elle ne peuvent que se déplacer dans un plan à 2 dimensions (si on néglige le fait que le sol n'est pas plat).
+			\item Les mouvements que peuvent faire les différentes pièces sont:
+			\begin{enumerate}
+			\item Pour les chenilles: avancer, reculer, tourner(quand la vitesse des deux trains de chenilles sont différentes)
+			\item Pour la base: pivoter sur elle même sans restriction( 360$^{\circ}$)
+			\item Pour le bras: avancer, reculer, monter, descendre. ( On néglige le fait qu'il y a un angle entre la base et le bras et entre les deux parties du bras articulé)
+			\item Pour le godet: Pivoter vers le haut ou vers le bas au bout du bras.
+			
+			\textbf{ Attention! Tous les déplacements qui sont possible avec une pièce située plus haut dans la liste le sont automatiquement avec une pièce située plus bas, en effet si la base pivote de 60°, la godet pivote également du même nombre de degré.}
+      \end{enumerate}
+\item Prenons comme repère 3 axes x, y et z tel que x est parallèle au sol, y l'est aussi et l'est également par rapport à x et z pointe vers le haut.  
+\begin{enumerate}
+\item Les chenilles peuvent être repertiorées avec juste les axes x et y.
+\item La base a une valeur de plus: la rotation que l'on note $\theta 1$.
+\item Le bras peut se déplacer dans le repère x et z.
+\item Le godet pivote avec un angle $\theta 2$.
+\end{enumerate}
+
+
+\section{Question 2}
+
+Les caractéristiques géométriques sont très importantes pour que les pièces tiennent entre elles.  Les pièces les plus volumineuses et les plus lourdes doivent se trouver près du sol et près du centre de gravité.  Au plus les pièces ont une géométrie restreinte au plus leur degré de liberté est grand.
+
+
+\section{Question 3}
+
+Nous avons pris un repère en 3 dimensions avec les axes només x, y et z.  Les angles de pivot sont appelés $\theta 1$ pour l'angle parallèle au sol et $\theta 2$ perpendiculaire à celui-ci.
+
+
+\section{Question 4}
+
+Pour la position, nous pouvons positionner le godet 'g' en fonction de 
+\begin{array}[pos]{spalten}
+	x\\
+	y\\
+	z
+\end{array}
+ et plus précisement en fonction de 
+ \begin{array}[pos]{spalten}
+x\\
+y	 
+ \end{array}
+de la base et du
+\begin{array}[pos]{spalten}
+	x\\
+	z
+\end{array}
+du bras.
+
+\\
+Pour la rotation il faut prendre la rotation perpendiculaire au sol comme étant $\theta 1$ et celle perpendiculaire $\theta 2$
+\section{Question 5}
+
+Il nous est impossible de calculer la vitesse du godet car une fonction à plusieurs variables se cache quelque part et nous n'avons pas encore vu les méthodes pour les dérivées.
+		
+
+
+\end{document}
