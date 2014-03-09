@@ -84,24 +84,52 @@ $$A \cdot \vec{x} = \vec{b}$$
 	
 Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
 
-Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
+Soit $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
+Pour ce faire, trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
+la méthode de Gram-Schmidt :
 
-$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
 
 et
 
-$$e_2=(-0.68 ; 0.03 ; 0.73)$$
+$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.684 ; 0.03 ; 0.729)$$
 
 %	Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ? 
 
-Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises :
+Nous sommes maintenant en mesure de trouver une projection du vecteur $b$ contenant nos données expérimentales peu précises :
 
 $$
+b'
+=
+(b|e_1) \cdot e_1 + (b|e_2) \cdot e_2
+=
 \begin{pmatrix}  
 1.6\\
 1.5\\
-1.4
+1.5
 \end{pmatrix}$$
+$$
+
+On peut alors réecrire le système comme ceci :
+
+En réécrivant le système comme cela on peut trouver des solutions:
+ 
+$$
+\begin{pmatrix}  
+	4.204 & 1\\
+	4.255 & 1 \\
+	4.301 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+	a\\
+	b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+	1.607\\
+	1.565\\
+	1.524
+\end{pmatrix}
 $$
 
 Nous en déduisons la valeur des coefficients $a$ et $b$ :
@@ -158,7 +186,7 @@ Voici 3 résultats choisis parmis les mesures effectuées en laboratoire :
 	\end{tabular}
 \end{center}
 
-De manière analogue que pour le premier filtre, nous obtenons le système suivant :
+De manière analogue que pour le premier filtre, nous formons le système suivant :
 
 \begin{center}
 	\begin{array}{rcel}
@@ -185,13 +213,15 @@ De manière analogue que pour le premier filtre, nous obtenons le système suiva
 	\end{array}
 \end{center}
 
-Ce qui nous donne les vecteurs suivants :
+Transformons maintenant la base quelconque $(f_1, f_2)$ de l'espace des
+colonnes de $A$ en une base orthonormée $(e_1, e_2)$ afin de pouvoir 
+calculer la projection orthogonale ensuite :
 
-$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
 
 et
 
-$$e_2=( -0.6, 0, 0.8)$$
+$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.6, 0, 0.8)$$
 
 Et nous obtenons comme vecteur projeté :
 
@@ -203,6 +233,26 @@ $$
 \end{pmatrix}
 $$
 
+On peut alors réecrire le système comme ceci :
+
+$$
+ \begin{pmatrix}  
+  2.1 & 1\\
+  2.3 & 1 \\
+  2.6 & 1 
+ \end{pmatrix}
+ \begin{pmatrix}  
+ a\\
+ b
+ \end{pmatrix}
+ =
+ \begin{pmatrix}  
+ 0.36\\
+ 0.5\\
+ 0.69
+ \end{pmatrix}
+$$
+
 Nous en déduisons la valeur des coefficients $a$ et $b$ :  
 
 $$a =0.7$$
@@ -211,7 +261,7 @@ $$b= -1.11$$
 
 L'équation de la droite est alors :
 
-$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+$$\fbox{y=  0.7 \log{x} - 1.11}$$
 
 Pour trouver l'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons: 
 

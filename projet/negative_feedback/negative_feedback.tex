@@ -1,26 +1,28 @@
-\section{Recherche documentaire : la contre-réaction}
-En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous somme alors interrogés sur le rôle de ces boucles.
+\input{../head.tex}
 
-Nous allons, dans un premier temps, vous décrire brièvement notre méthode de recherche. Nous rentrerons ensuite dans le vif du sujet en expliquant les raisons d'être des boucles de contre-réaction en général et nous finirons par l'explication complète de leur raison d'être dans le cas particulier de notre circuit.
+\section{Recherche documentaire : la contre-rÃ©action}
+En analysant le circuit de notre haut-parleur, nous avons dÃ©couvert la prÃ©sence de boucle reliant la sortie et la borne nÃ©gative des amplificateurs. Nous nous somme alors interrogÃ©s sur le rÃ´le de ces boucles.
 
-\paragraph{Méthode de recherche}
-Comme suggeré lors de la séance d'information sur la recherche bibliographique nous avons appliqué la méthode de l'entonnoir. Comme les boucles de contre-réaction sont directement liées aux amplificateurs, nous avons commencé nos recherche avec les termes plutôt généraux : \textit{amplificateurs} et \textit{amplifiers}. Nous nous avons ensuite associé à ces mots clés les termes plus précis : \textit{contre-réaction} et \textit{negative feedback}.
+Nous allons, dans un premier temps, vous dÃ©crire briÃ¨vement notre mÃ©thode de recherche. Nous rentrerons ensuite dans le vif du sujet en expliquant les raisons d'Ãªtre des boucles de contre-rÃ©action en gÃ©nÃ©ral et nous finirons par l'explication complÃ¨te de leur raison d'Ãªtre dans le cas particulier de notre circuit.
 
-Les différents ouvrages et documents que nous avons utilisés sont listés dans la bibliographie.
+\paragraph{MÃ©thode de recherche}
+Comme suggerÃ© lors de la sÃ©ance d'information sur la recherche bibliographique nous avons appliquÃ© la mÃ©thode de l'entonnoir. Comme les boucles de contre-rÃ©action sont directement liÃ©es aux amplificateurs, nous avons commencÃ© nos recherche avec les termes plutÃ´t gÃ©nÃ©raux : \textit{amplificateurs} et \textit{amplifiers}. Nous nous avons ensuite associÃ© Ã  ces mots clÃ©s les termes plus prÃ©cis : \textit{contre-rÃ©action} et \textit{negative feedback}.
 
-\subsection{Principe de la réaction}
-Le principe de la réaction est présent dans un grand nombre de circuits électroniques. Il consiste en une réinjection d'une partie du signal de sortie à l'entrée du circuit pour le combiner avec le signal d'entrée extérieur.
+Les diffÃ©rents ouvrages et documents que nous avons utilisÃ©s sont listÃ©s dans la bibliographie.
 
-Il existe deux types de réactions :
+\subsection{Principe de la rÃ©action}
+Le principe de la rÃ©action est prÃ©sent dans un grand nombre de circuits Ã©lectroniques. Il consiste en une rÃ©injection d'une partie du signal de sortie Ã  l'entrÃ©e du circuit pour le combiner avec le signal d'entrÃ©e extÃ©rieur.
+
+Il existe deux types de rÃ©actions :
 
 \begin{itemize}
-	\item \textbf{La réaction positive} : le signal réinjecté est en phase avec le signal d'entrée de telle sorte qu'ils  s'additionnent.
-	\item \textbf{La réaction négative} (ou contre-réaction) : le signal réinjecté est en opposition de phase avec le signal d'entrée, de telle sorte qu'ils se soustraient.
+	\item \textbf{La rÃ©action positive} : le signal rÃ©injectÃ© est en phase avec le signal d'entrÃ©e de telle sorte qu'ils  s'additionnent.
+	\item \textbf{La rÃ©action nÃ©gative} (ou contre-rÃ©action) : le signal rÃ©injectÃ© est en opposition de phase avec le signal d'entrÃ©e, de telle sorte qu'ils se soustraient.
 \end{itemize}
 
 \begin{figure}[h]
 	\centering
-	% Circuit à redessiner, j'ai pas fais ça très proprement.
+	% Circuit Ã  redessiner, j'ai pas fais Ã§a trÃ¨s proprement.
 	\begin{circuitikz}
 		\draw (0, 0) node[ocirc];
 		\draw (0, 0)	to[short] (2, 0);
@@ -36,25 +38,25 @@ Il existe deux types de réactions :
 		\draw (5.4, -2) to[short] (1.4, -2);
 		\draw (1.4, -2) to[short] (1.4, -1);
 	\end{circuitikz}
-	\caption{Schéma électrique d'une boucle de réaction sur un 	amplificateur.}
+	\caption{SchÃ©ma Ã©lectrique d'une boucle de rÃ©action sur un 	amplificateur.}
 	\label{reaction1}
 \end{figure}
 
-\subsection{Effets des boucles de contre-réaction}
+\subsection{Effets des boucles de contre-rÃ©action}
 
-\subsubsection{En général}
-Les effets des boucles de contre-réaction sur un amplificateurs sont nombreux :
+\subsubsection{En gÃ©nÃ©ral}
+Les effets des boucles de contre-rÃ©action sur un amplificateurs sont nombreux :
 
 \begin{itemize}
-	\item La boucle de contre-réaction rend indépendant le gain de l'amplificateur des différentes variations du circuits ;
-	\item Le signal de sortie est plus proche du signal d'entrée que si l'amplificateur avait été en boucle ouverte ;
-	\item Réduction des signaux électriques parasites dûs à l'amplificateur ;
-	\item Contrôle du gain de l'amplificateur (qui est, en boucle ouverte, de l'ordre de $10^6$ ;
+	\item La boucle de contre-rÃ©action rend indÃ©pendant le gain de l'amplificateur des diffÃ©rentes variations du circuits ;
+	\item Le signal de sortie est plus proche du signal d'entrÃ©e que si l'amplificateur avait Ã©tÃ© en boucle ouverte ;
+	\item RÃ©duction des signaux Ã©lectriques parasites dÃ»s Ã  l'amplificateur ;
+	\item ContrÃ´le du gain de l'amplificateur (qui est, en boucle ouverte, de l'ordre de $10^6$ ;
 	\item Elargissement de la bande passante de l'amplificateur.
 \end{itemize}
 
 \subsubsection{Dans notre cas particulier}
-Dans notre cas particulier, le principal effet de la boucle de contre-réaction est le contrôle du gain de l'amplificateur qui ramène à $1$ le gain.
+Dans notre cas particulier, le principal effet de la boucle de contre-rÃ©action est le contrÃ´le du gain de l'amplificateur qui ramÃ¨ne Ã  $1$ le gain.
 
 \begin{figure}[h]
 	\centering
@@ -75,33 +77,29 @@ Dans notre cas particulier, le principal effet de la boucle de contre-réaction e
 		\draw (2, -2) to[short] (6, -2);
 		\draw (6, -2) to[R=$R_2$] (6, -0.5);
 	\end{circuitikz}
-	\caption{Schéma électrique d'une boucle de réaction sur un 	amplificateur avec un diviseur résistif.}
+	\caption{SchÃ©ma Ã©lectrique d'une boucle de rÃ©action sur un 	amplificateur avec un diviseur rÃ©sistif.}
 	\label{reaction2}
 \end{figure}
 
-Sur la Figure \ref{reaction2}, on remarque que la tension de sortie et la tension d'entrée sont liées par la formule des diviseurs résistifs :
+Sur la Figure \ref{reaction2}, on remarque que la tension de sortie et la tension d'entrÃ©e sont liÃ©es par la formule des diviseurs rÃ©sistifs :
 
 $$V_{in} = \frac{R_1}{R_1 + R_2} V_{out}$$
 
-Le gain est alors donné par :
+Le gain est alors donnÃ© par :
 
 $$A = \frac{V_{out}}{V_{in}} = \frac{R_1 + R_2}{R_1}$$
 
-Pour réduire le gain $A$ à $1$, on alors deux possibilités :
+Pour rÃ©duire le gain $A$ Ã  $1$, on alors deux possibilitÃ©s :
 
 \begin{enumerate}
 	\item	Choisir $R_1 >> R_2$ ;
 	\item Choisir $R_2 = 0$ ;
 \end{enumerate}
 
-<<<<<<< HEAD:projet/prejury/documentation/negative_feedback/negative_feedback.tex
-La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, $A = 1$. On choisi alors $R_1$ si petit, que le remplacer par un court-circuit a le même effet.
+La possibilitÃ© la plus simple est la deuxiÃ¨me, car en choississant $R_2 = 0$, le gain est donnÃ© par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, $A = 1$. On choisi alors $R_1$ si petit, que le remplacer par un court-circuit a le mÃªme effet.
 
 \nocite{*} 
 \bibliographystyle{plain}
 \bibliography{source}
 
 \end{document}
-=======
-La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, $A = 1$. On choisi alors $R_1$ si petit, que le remplacer par un court-circuit a le même effet.
->>>>>>> 5e801e9a81cbe8962ef2873a74e38067572f3bc2:projet/negative_feedback/negative_feedback.tex
