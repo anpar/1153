@@ -1,5 +1,21 @@
-\input{../head.tex}
+%\documentclass{report}
 
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[francais]{babel}
+%\usepackage{amsmath,amssymb,array}
+ 
+      
+%\title{Résultats filtre passe-haut et passe-bas}
+%\author{Groupe 11.53}
+%\date{fevrier 2014}
+%\begin{document}
+ 
+%\maketitle
+
+
+\input{../head.tex}
 \section{Approximation de la fréquence de coupure}
 
 Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure dans un circuit passe-bas et passe-haut. 
@@ -13,11 +29,11 @@ Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour 
 
 \subsection{Pour le filtre passe-bas}
 
-\begin{figure}[h]
-   \centering
-   \input{image1.tex}
-   \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-bas}
-\end{figure}
+%\begin{figure}[h]
+%   \centering
+%   \input{image1.tex}
+%   \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-bas}
+%\end{figure}
 
 \subsubsection{Equation de la droite horizontale} % A refaire avec la méthode d'approximation
 Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de $\unit{2.5}{\volt}$ et donc \[y=2.5\]
@@ -86,25 +102,71 @@ Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace d
 
 Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
 
-$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
+\\
+Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
 
-et
+Ce qui nous donne la base suivante:
 
-$$e_2=(-0.68 ; 0.03 ; 0.73)$$
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+
+\\ 
+Pour la deuxième base orthonormée, voiçi la formule:  $e_2=(\frac{f_2-(f_2|e_1)e_1}{||e_2||})$
+
+\\Et nous obtenons
+\[e_2=( -0.684, 0.03, 0.729)\]
+
+\bigbreak
+Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises :
+nous projetons les vecteurs grâce à la formule de la projection: $b'=((b|e_1)e_1+(b|e_2)e_2)$
+\[b'=\frac{4.7}{\sqrt[]{3}e_1}+(-0.059)e_2=(1.567,1.567,1.567)+(0.04,-1.77\times 10^{-3},-0.043)\]
 
 %	Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ? 
-
-Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises :
 
 $$
 \begin{pmatrix}  
 1.6\\
 1.5\\
-1.4
+1.5
 \end{pmatrix}$$
 $$
 
-Nous en déduisons la valeur des coefficients $a$ et $b$ :
+\bigbreak
+En réécrivant le système comme cela on peut trouver des solutions:
+
+$$
+\begin{pmatrix}  
+ 4.204 & 1\\
+ 4.255 & 1 \\
+ 4.301 & 1 
+\end{pmatrix}
+\begin{pmatrix}  
+a\\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+1.607\\
+1.565\\
+1.524
+\end{pmatrix}
+$$
+
+\bigbreak
+
+\\
+Nous avons donc $a\times log{x} + b=y$ \Rightarrow 
+$$
+y'=
+\begin{pmatrix}  
+1.607\\
+1.565\\
+1.524
+\end{pmatrix}
+$$
+\\
+
+Nous en déduisons la valeur des coefficients a et b:  
 
 $$a = -1.96$$
 $$b= 9.84$$
@@ -125,11 +187,11 @@ $$f= \unit{5889.2}{\hertz}$$
 
 \subsection{Pour le filtre passe-haut}
 
-\begin{figure}[h]
-   \centering
-   \input{image2.tex}
-   \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-haut}
-\end{figure}
+%\begin{figure}[h]
+%   \centering
+%   \input{image2.tex}
+%   \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-haut}
+%\end{figure}
 
 \subsubection{Equation de la droite horizontale}
 
@@ -185,13 +247,23 @@ De manière analogue que pour le premier filtre, nous obtenons le système suiva
 	\end{array}
 \end{center}
 
-Ce qui nous donne les vecteurs suivants :
+Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
+\\
+Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
 
-$$e_1=( \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+Ce qui nous donne la base suivante:
 
-et
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
 
-$$e_2=( -0.6, 0, 0.8)$$
+\\ 
+Pour la deuxième base orthonormée, voiçi la formule:  $e_2=(\frac{f_2-(f_2|e_1)e_1}{||e_2||})$
+
+\\Et nous obtenons
+\[e_2=( -0.6, 0.0, 0.8)\]
+
+\bigbreak
+Ensuite, nous projetons les vecteurs grâce à la formule de la projection: $b'=((b|e_1)e_1+(b|e_2)e_2)$
+\[b'=\frac{1.5}{\sqrt[]{3}e_1}+0.24e_2=(0.5,0.5,0.5)+(-0.14,0,0.19)\]
 
 Et nous obtenons comme vecteur projeté :
 
@@ -203,6 +275,42 @@ $$
 \end{pmatrix}
 $$
 
+\bigbreak
+En réécrivant le système comme cela on peut trouver des solutions:
+
+$$
+\begin{pmatrix}  
+ 2.1 & 1\\
+ 2.3 & 1 \\
+ 2.6 & 1 
+\end{pmatrix}
+\begin{pmatrix}  
+a\\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+0.36\\
+0.5\\
+0.69
+\end{pmatrix}
+$$
+
+\bigbreak
+
+\\
+Nous avons donc $a\times log{x} + b=y$ \Rightarrow 
+
+$$
+y'=
+\begin{pmatrix}  
+0.36\\
+0.5\\
+0.69
+\end{pmatrix}
+$$
+\\
+
 Nous en déduisons la valeur des coefficients $a$ et $b$ :  
 
 $$a =0.7$$
@@ -211,7 +319,7 @@ $$b= -1.11$$
 
 L'équation de la droite est alors :
 
-$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+$$\fbox{y= 0.7 log{x} -1.11}$$
 
 Pour trouver l'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons: 
 
