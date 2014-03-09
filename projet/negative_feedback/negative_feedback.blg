@@ -1,0 +1,11 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: negative_feedback.aux
+The style file: plain.bst
+Database file #1: source.bib
+I was expecting a `,' or a `}'---line 17 of file source.bib
+ :   
+ :   author = {S. Dusausay},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author, organization, or key in dusausay
+Warning--empty title in dusausay
+(There was 1 error message)
