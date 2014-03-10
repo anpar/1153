@@ -1,13 +1,13 @@
 A faire :
 =========
 
-- Terminer cahier des charges + traduire (*en cours*) ;
+- Terminer cahier des charges (*fréquence entre...(?) et ...(?) Hz*) ;
 - Terminer le dimensionnement de l'électro-aimant (*en attente de la constante de raideur*);
 - Répondre aux question de Vitale pour la fréquence de coupure ;
 - Sources pour la recherche documentaire ;
 - Expliquer la méthode de recherche pour la recherche documentaire (en annexes) (*terminé*) ;
 - Membrane : mesurer le constante de raideur ;
-- Bobinage ;
+- Bobinage - apporter pvc (Virgile et Antoine) ;
 - Soudure ;
 - Esquisse du haut-parleur ;
 - Boitier ;
