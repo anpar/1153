@@ -1,20 +1,18 @@
 A faire :
 =========
 
-- Terminer cahier des charges, mesures (Lise) ;
-- Terminer le dimensionnement de l'électro-aimant ;
+- Terminer cahier des charges + traduire (*en cours*) ;
+- Terminer le dimensionnement de l'électro-aimant (*en attente de la constante de raideur*);
 - Répondre aux question de Vitale pour la fréquence de coupure ;
 - Sources pour la recherche documentaire ;
-- Expliquer la méthode de recherche pour la recherche documentaire (en annexes) ;
+- Expliquer la méthode de recherche pour la recherche documentaire (en annexes) (*terminé*) ;
 - Membrane : mesurer le constante de raideur ;
 - Bobinage ;
 - Soudure ;
 - Esquisse du haut-parleur ;
 - Boitier ;
 - Planning ;
-- Slides pour le pré-jury ;
-- Traduire cahier des charges.
-
+- Slides pour le pré-jury (*en cours*) ;
 
 A vérifier :
 ============
