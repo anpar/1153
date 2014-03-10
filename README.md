@@ -12,7 +12,8 @@ A faire :
 - Esquisse du haut-parleur ;
 - Boitier ;
 - Planning ;
-- Slides pour le pré-jury.
+- Slides pour le pré-jury ;
+- Traduire cahier des charges.
 
 
 A vérifier :
@@ -21,4 +22,4 @@ A vérifier :
 - DOC : Relire boucle de contre-réaction (Lise, Marie-Charlotte, Nibor) ;
 - DOC : Relire distorision (Antoine, Thibaut et Virgile) ;
 - Relire modélisation des filtres passe-haut et passe-bas ;
-- Relire les calculs de la fréquence de coupure ;
+- Relire les calculs de la fréquence de coupure.
