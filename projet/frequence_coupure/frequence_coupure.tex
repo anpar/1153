@@ -13,8 +13,13 @@
 %\begin{document}
  
 %\maketitle
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 \input{../head.tex}
 \section{Approximation de la fréquence de coupure}
 
@@ -100,8 +105,11 @@ $$A \cdot \vec{x} = \vec{b}$$
 	
 Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
 
-Pour ce faire, trouvons une base orthonormée de l'espace colonnes de la matrice:
+Soit $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
+Pour ce faire, trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
+la méthode de Gram-Schmidt :
 
+<<<<<<< HEAD
 Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
 \\
 Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
@@ -109,10 +117,33 @@ Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1|
 Ce qui nous donne la base suivante:
 
 \[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+=======
+<<<<<<< HEAD
+$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+=======
+Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
+\\
+Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+
+Ce qui nous donne la base suivante:
+
+<<<<<<< HEAD
+$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.684 ; 0.03 ; 0.729)$$
+=======
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 
 \\ 
 Pour la deuxième base orthonormée, voiçi la formule:  $e_2=(\frac{f_2-(f_2|e_1)e_1}{||e_2||})$
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Nous sommes maintenant en mesure de trouver une projection du vecteur $b$ contenant nos données expérimentales peu précises :
+=======
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 \\Et nous obtenons
 \[e_2=( -0.684, 0.03, 0.729)\]
 
@@ -122,8 +153,16 @@ nous projetons les vecteurs grâce à la formule de la projection: $b'=((b|e_1)e
 \[b'=\frac{4.7}{\sqrt[]{3}e_1}+(-0.059)e_2=(1.567,1.567,1.567)+(0.04,-1.77\times 10^{-3},-0.043)\]
 
 %	Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ? 
+<<<<<<< HEAD
+=======
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 
 $$
+b'
+=
+(b|e_1) \cdot e_1 + (b|e_2) \cdot e_2
+=
 \begin{pmatrix}  
 1.6\\
 1.5\\
@@ -131,6 +170,34 @@ $$
 \end{pmatrix}$$
 $$
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+On peut alors réecrire le système comme ceci :
+
+En réécrivant le système comme cela on peut trouver des solutions:
+ 
+$$
+\begin{pmatrix}  
+	4.204 & 1\\
+	4.255 & 1 \\
+	4.301 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+	a\\
+	b
+\end{pmatrix}
+=
+\begin{pmatrix}  
+	1.607\\
+	1.565\\
+	1.524
+\end{pmatrix}
+$$
+
+Nous en déduisons la valeur des coefficients $a$ et $b$ :
+=======
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 \bigbreak
 En réécrivant le système comme cela on peut trouver des solutions:
 
@@ -167,6 +234,10 @@ $$
 \\
 
 Nous en déduisons la valeur des coefficients a et b:  
+<<<<<<< HEAD
+=======
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 
 $$a = -1.96$$
 $$b= 9.84$$
@@ -220,7 +291,7 @@ Voici 3 résultats choisis parmis les mesures effectuées en laboratoire :
 	\end{tabular}
 \end{center}
 
-De manière analogue que pour le premier filtre, nous obtenons le système suivant :
+De manière analogue que pour le premier filtre, nous formons le système suivant :
 
 \begin{center}
 	\begin{array}{rcel}
@@ -247,6 +318,7 @@ De manière analogue que pour le premier filtre, nous obtenons le système suiva
 	\end{array}
 \end{center}
 
+<<<<<<< HEAD
 Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
 \\
 Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
@@ -258,12 +330,40 @@ Ce qui nous donne la base suivante:
 \\ 
 Pour la deuxième base orthonormée, voiçi la formule:  $e_2=(\frac{f_2-(f_2|e_1)e_1}{||e_2||})$
 
+=======
+<<<<<<< HEAD
+Transformons maintenant la base quelconque $(f_1, f_2)$ de l'espace des
+colonnes de $A$ en une base orthonormée $(e_1, e_2)$ afin de pouvoir 
+calculer la projection orthogonale ensuite :
+
+$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+=======
+Pour trouver les bases orthonormées, on utilise la méthode de Gram-Schmidt.
+\\
+Pour trouver la première base, on a la formule suivante: $e_1=\frac{f_1}{||f_1||}$
+
+Ce qui nous donne la base suivante:
+
+\[e_1=( \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}} \frac{1}{\sqrt[]{3}})\]
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+
+\\ 
+Pour la deuxième base orthonormée, voiçi la formule:  $e_2=(\frac{f_2-(f_2|e_1)e_1}{||e_2||})$
+
+<<<<<<< HEAD
+$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.6, 0, 0.8)$$
+=======
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 \\Et nous obtenons
 \[e_2=( -0.6, 0.0, 0.8)\]
 
 \bigbreak
 Ensuite, nous projetons les vecteurs grâce à la formule de la projection: $b'=((b|e_1)e_1+(b|e_2)e_2)$
 \[b'=\frac{1.5}{\sqrt[]{3}e_1}+0.24e_2=(0.5,0.5,0.5)+(-0.14,0,0.19)\]
+<<<<<<< HEAD
+=======
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 
 Et nous obtenons comme vecteur projeté :
 
@@ -275,6 +375,31 @@ $$
 \end{pmatrix}
 $$
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+On peut alors réecrire le système comme ceci :
+
+$$
+ \begin{pmatrix}  
+  2.1 & 1\\
+  2.3 & 1 \\
+  2.6 & 1 
+ \end{pmatrix}
+ \begin{pmatrix}  
+ a\\
+ b
+ \end{pmatrix}
+ =
+ \begin{pmatrix}  
+ 0.36\\
+ 0.5\\
+ 0.69
+ \end{pmatrix}
+$$
+
+=======
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 \bigbreak
 En réécrivant le système comme cela on peut trouver des solutions:
 
@@ -311,6 +436,10 @@ y'=
 $$
 \\
 
+<<<<<<< HEAD
+=======
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 Nous en déduisons la valeur des coefficients $a$ et $b$ :  
 
 $$a =0.7$$
@@ -319,7 +448,15 @@ $$b= -1.11$$
 
 L'équation de la droite est alors :
 
+<<<<<<< HEAD
 $$\fbox{y= 0.7 log{x} -1.11}$$
+=======
+<<<<<<< HEAD
+$$\fbox{y=  0.7 \log{x} - 1.11}$$
+=======
+$$\fbox{y= 0.7 log{x} -1.11}$$
+>>>>>>> 723fb471ccf22e5c8ab5740d145328676420cc73
+>>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
 
 Pour trouver l'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \times log{x} -1.11$$ nous résolvons le système, et nous trouvons: 
 
