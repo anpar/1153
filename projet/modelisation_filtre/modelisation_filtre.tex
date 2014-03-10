@@ -140,7 +140,7 @@ lorsque $\omega$ tend vers l'infini. C'est bien le cas ici puisqu'on a $\omega^2
 On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$. %et $V_{out} / V_{in}$
 
 Pour le graphe, les valeurs suivantes ont été utilisées : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
-$R = \unit{1000}{\ohm}$ et $\omega = \unit{63.66}{\hertz}$.
+$R = \unit{1000}{\ohm}$ et $f = \unit{63.66}{\hertz}$.
 
 \begin{center}
 \begin{tikzpicture}[>=stealth]
@@ -150,25 +150,40 @@ $R = \unit{1000}{\ohm}$ et $\omega = \unit{63.66}{\hertz}$.
         axis x line=middle,
         axis y line=middle,
         axis line style=->,
-        xlabel={$x$},
-        ylabel={$y$},
+        xlabel={$V$},
+        ylabel={$t$},
         ]
 				
-        \addplot[no marks,black,-] expression[domain=0:25,samples=1000]
+        \addplot[no marks,black,-] expression[domain=0:6,samples=1000]
 						%{(7.5)/(1 + 20^2 * 1000^2 * (0.00001)^2) * (cos(20*x) + 1000*20*(0.00001)*sin(20*x) - 2.718^(-x/(1000*0.00001)))} 
 						{((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) 
 						+ cos(atan(-1000*0.00001*400) + 400*x))} 
 						node[pos=0.65,anchor=south west]{$V_{out}$};
 						
-				\addplot[no marks,blue,-] expression[domain=0:25,samples=1000]
+				\addplot[no marks,blue,-] expression[domain=0:6,samples=1000]
 						{7.5 * cos(400 * x)} 
 						node[pos=0.65,anchor=south west]{$V_{in}$}; 
+			
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \begin{axis}[
+        xmin=0,xmax=100,
+        ymin=0,ymax=2,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=->,
+        xlabel={$V_{out} / V_{in}$},
+        ylabel={$f$},
+        ]
 				
 				% D'abord trouver une explication	
-				%\addplot[no marks,green,-] expression[domain=0:25,samples=1000]
-				%		{(((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) 
-				%		+ cos(	atan(-1000*0.00001*400) + 400*x)))/(7.5 * cos(400 * x))}
-				%		node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
+				\addplot[no marks,green,-] expression[domain=0:100,samples=1000]
+						{(((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-1)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14							*x)^2))) + cos(atan(-1000*0.00001*2*3.14*x) + 2*3.14*x)))/(7.5 * cos(2*3.14*x))}
+						node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
     \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -217,7 +232,7 @@ $V_{out}$ qui tend vers 0 également. Une fois de plus, c'est bien le cas.
 On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$. %et $V_{out} / V_{in}$
 
 Pour le graphe, les valeurs suivantes ont été utilisées : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
-$R = \unit{1000}{\ohm}$ et $\omega = \unit{15.91}{\hertz}$.
+$R = \unit{1000}{\ohm}$ et $f = \unit{15.91}{\hertz}$.
 
 \begin{center}
 \begin{tikzpicture}[>=stealth]
@@ -227,11 +242,11 @@ $R = \unit{1000}{\ohm}$ et $\omega = \unit{15.91}{\hertz}$.
         axis x line=middle,
         axis y line=middle,
         axis line style=->,
-        xlabel={$x$},
-        ylabel={$y$},
+        xlabel={$V$},
+        ylabel={$t$},
         ]
 				
-        \addplot[no marks,black,-] expression[domain=0:25,samples=1000]
+        \addplot[no marks,black,-] expression[domain=0:6,samples=1000]
 						{(7.5 * cos(100*x)) - ((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 100^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 *
 						0.00001^2 * 100^2))) + cos(atan(-1000*0.00001*100) + 100*x))} 
 						node[pos=0.65,anchor=south west]{$V_{out}$};
@@ -240,11 +255,26 @@ $R = \unit{1000}{\ohm}$ et $\omega = \unit{15.91}{\hertz}$.
 						{7.5 * cos(100 * x)} 
 						node[pos=0.65,anchor=south west]{$V_{in}$}; 
 				
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \begin{axis}[
+        xmin=0,xmax=100,
+        ymin=0,ymax=2,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=->,
+        xlabel={$V_{out}/V_{in}$},
+        ylabel={$f$},
+        ]
+				
 				% D'abord trouver une explication	
-				%\addplot[no marks,green,-] expression[domain=0:25,samples=1000]
-				%		{((7.5 * cos(100*x)) - ((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 100^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 *
-				%		0.00001^2 * 100^2))) + cos(atan(-1000*0.00001*100) + 100*x)))/(7.5 * cos(100 * x))}
-				%		node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
+				\addplot[no marks,green,-] expression[domain=0:100,samples=1000]
+						{((7.5 * cos(2*3.14*x)) - ((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-1)/(1000*0.00001)))/(sqrt(1 + 1000							^2 *0.00001^2 * (2*3.14*x)^2))) + cos(atan(-1000*0.00001*100) + 2*3.14*x)))/(7.5 * cos(2*3.14*x))}
+						node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
     \end{axis}
 \end{tikzpicture}
 \end{center}
