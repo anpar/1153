@@ -19,7 +19,8 @@ Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{center}
+\begin{figure}[h]
+	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
 		\draw (0,0) to [R=$R$] (2,0);
@@ -33,9 +34,11 @@ sortie du filtre.
 		\draw (A) to[open, v=$V_ {in}$] (B);
 		\draw (C) to[open, v=$V_{out}$] (D);
 	\end{circuitikz}
-\end{center}
+	\caption{Schéma électrique d'un filtre passe-bas}
+	\label{lwp_scheme}
+\end{figure}
 
-Sur le circuit ci-dessus, on peut utiliser la loi des tensions de Kirchhoff :
+Sur le circuit ci-dessus (Figure \ref{lwp_scheme}), on peut utiliser la loi des tensions de Kirchhoff :
 
 $$V_{in} = V_R + V_{out}$$
 
@@ -130,24 +133,19 @@ on trouve, après quelques simplifications et mises en évidence :
 $$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
 (-\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} + \cos(\arctan(-RC\omega) + \omega t))$$
 
-On remarque donc que le déphasage entre $V_{out}$ et $V_{in}$ est $\arctan(-RC\omega)$.
+On remarque donc que le déphasage entre $V_{out}$ et $V_{in}$ est $-\arctan(RC\omega) = -\arctan(2\pi fRC)$.
 
 \subsubsection{Vérification des résultats}
 
 Une première vérification que l'on peut faire est de vérifier que $V_{out}$ tend vers 0
 lorsque $\omega$ tend vers l'infini. C'est bien le cas ici puisqu'on a $\omega^2$ au dénominateur.
 
-On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$. %et $V_{out} / V_{in}$
+On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_voltages}) et $V_{out} / V_{in}$
+(Figure \ref{lwp_ratio}).
 
-Pour le graphe, les valeurs suivantes ont été utilisées : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
-<<<<<<< HEAD
-$R = \unit{1000}{\ohm}$ et $f = \unit{63.66}{\hertz}$.
-=======
-$R = \unit{1000}{\ohm}$ et $\omega = \unit{63.66}{\hertz}$.
->>>>>>> 28f33dfb01f833bd3303b3fb758080cc9e6ede46
-
-\begin{center}
-\begin{tikzpicture}[>=stealth]
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
         xmin=0,xmax=6,
         ymin=-8,ymax=8,
@@ -161,35 +159,45 @@ $R = \unit{1000}{\ohm}$ et $\omega = \unit{63.66}{\hertz}$.
         \addplot[no marks,black,-] expression[domain=0:6,samples=1000]
 						{((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) 
 						+ cos(atan(-1000*0.00001*400) + 400*x))} 
-						node[pos=0.65,anchor=south west]{$V_{out}$};
+						node[pos=0.65,anchor=south west]{$$};
 						
 				\addplot[no marks,blue,-] expression[domain=0:6,samples=1000]
 						{7.5 * cos(400 * x)} 
-						node[pos=0.65,anchor=south west]{$V_{in}$}; 
+						node[pos=0.65,anchor=south west]{$$}; 
 
     \end{axis}
-\end{tikzpicture}
-\end{center}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out}$ (en noir) et $V_{in}$ (en bleu) pour les valeurs suivantes : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
+						$R = \unit{1000}{\ohm}$ et $f = \unit{63.66}{\hertz}$}
+	\label{lwp_voltages}
+\end{figure}
 
-\begin{center}
-\begin{tikzpicture}[>=stealth]
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
-        xmin=0,xmax=100,
-        ymin=0,ymax=2,
+        xmin=0,xmax=1400,
+        ymin=0,ymax=1.2,
         axis x line=middle,
         axis y line=middle,
         axis line style=->,
-        xlabel={$V_{out} / V_{in}$},
-        ylabel={$f$},
+        xlabel={$f$},
+        ylabel={$V_{out} / V_{in}$},
         ]
 				
-				% D'abord trouver une explication	
-				\addplot[no marks,green,-] expression[domain=0:100,samples=1000]
-						{(((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-1)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14							*x)^2))) + cos(atan(-1000*0.00001*2*3.14*x) + 2*3.14*x)))/(7.5 * cos(2*3.14*x))}
-						node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
+				\addplot[no marks,green,-] expression[domain=0:1400,samples=100]
+						% Formule par rapport aux expressions obtenues, un peu décallée
+						% {(((7.5)/(sqrt(1 + 100^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-100*0.00001)/(100*0.00001)))/(sqrt(1 + 100^2 * 
+						% 0.00001^2 * (2*3.14*x)^2))) + cos(atan(-100*0.00001*2*3.14*x) + 2*3.14*x*100*0.00001)))/(7.5 * cos(2*3.14*x*100*0.00001))}
+						{(1 + (2*3.14*x*100*0.00001)^2)^(-0.5)}
+						node[pos=0.65,anchor=south west]{$$}; 
     \end{axis}
-\end{tikzpicture}
-\end{center}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out} / V_{in}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.0001}{\farad}}$.}
+	\label{lwp_ratio}
+\end{figure}
+
+\bigbreak
 
 \subsection{Le filtre passe-haut}
 
@@ -197,7 +205,8 @@ Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{center}
+\begin{figure}[h]
+	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
 		\draw (0,0) to [C=$C$] (2,0);
@@ -211,9 +220,11 @@ sortie du filtre.
 		\draw (A) to[open, v=$V_ {in}$] (B);
 		\draw (C) to[open, v=$V_{out}$] (D);
 	\end{circuitikz}
-\end{center}
+	\caption{Schéma électrique d'un filtre passe-haut.}
+	\label{hgp_scheme}
+\end{figure}
 
-La loi des tensions de Kirchhoff donne la même équation que pour le filtre passe-bas :
+Sur la Figure \ref{hgp_scheme}, la loi des tensions de Kirchhoff donne la même équation que pour le filtre passe-bas :
 
 $$V_{in} = V_R + V_C$$
 
@@ -224,21 +235,19 @@ $$V_R = V_{in} - V_C$$
 
 $$V_{out} = V \cdot (\cos(\omega t) + \frac{e^{-\frac{t}{RC}}}{1 + R^2C^2\omega^2} - \frac{\cos(\arctan(-RC\omega) + \omega t))}{\sqrt(1 + R^2C^2\omega^2)})$$
 
-% On arrive au même résultat en utilisant le faite que le courant dans le circuit est égal à
-% $i(t) = C\frac{dV_C}{dt}$ et que la tension dans la résistance vaut $Ri(t)$.
+Le déphasage reste donc le même que pour le filtre passe-bas.
 
 \subsubsection{Vérification des résultats}
 
 Pour le filtre passe-haut, on va cette fois vérifier que lorsque $\omega$ tend vers 0, on a
 $V_{out}$ qui tend vers 0 également. Une fois de plus, c'est bien le cas.
 
-On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$. %et $V_{out} / V_{in}$
+On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_voltages}) et $V_{out} / V_{in}$
+(Figure \ref{hgp_ratio}).
 
-Pour le graphe, les valeurs suivantes ont été utilisées : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
-$R = \unit{1000}{\ohm}$ et $f = \unit{15.91}{\hertz}$.
-
-\begin{center}
-\begin{tikzpicture}[>=stealth]
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
         xmin=0,xmax=6,
         ymin=-8,ymax=8,
@@ -259,28 +268,37 @@ $R = \unit{1000}{\ohm}$ et $f = \unit{15.91}{\hertz}$.
 						node[pos=0.65,anchor=south west]{$V_{in}$}; 
 				
     \end{axis}
-\end{tikzpicture}
-\end{center}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out}$ et $V_{in}$ pour les valeurs suivantes : $V_{max} = \unit{7.5}{\volt}$, $C = \unit{0.00001}{\farad}$,
+					$R = \unit{1000}{\ohm}$ et $f = \unit{15.91}{\hertz}$}
+	\label{hgp_voltages}
+\end{figure}
 
-\begin{center}
-\begin{tikzpicture}[>=stealth]
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
-        xmin=0,xmax=100,
-        ymin=0,ymax=2,
+        xmin=0,xmax=1400,
+        ymin=0,ymax=1,
         axis x line=middle,
         axis y line=middle,
         axis line style=->,
-        xlabel={$V_{out}/V_{in}$},
-        ylabel={$f$},
+        xlabel={$f$},
+        ylabel={$V_{out}/V_{in}$},
         ]
-				
-				% D'abord trouver une explication	
-				\addplot[no marks,green,-] expression[domain=0:100,samples=1000]
-						{((7.5 * cos(2*3.14*x)) - ((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-1)/(1000*0.00001)))/(sqrt(1 + 1000							^2 *0.00001^2 * (2*3.14*x)^2))) + cos(atan(-1000*0.00001*100) + 2*3.14*x)))/(7.5 * cos(2*3.14*x))}
-						node[pos=0.65,anchor=south west]{$V_{out} / V_{in}$}; 
+
+				\addplot[no marks,green,-] expression[domain=0:1400,samples=100]
+				% Formule obtenue avec nos expressions, décallée de 0.4 vers le haut.
+				%		{((7.5 * cos(2*3.14*x*100*0.00001)) - ((7.5)/(sqrt(1 + 100^2 * 0.00001^2 * (2*3.14*x)^2))) * 		
+				%	(((-2.718^((-100*0.00001)/(100*0.00001)))/(sqrt(1 + 100^2 *0.00001^2 * (2*3.14*x)^2))) + cos(atan(-100*0.00001*2*3.14*x) +
+				%	2*3.14*x*100*0.00001)))/(7.5 * cos(2*3.14*x*100*0.00001))}
+				{(1 + (1)/((2*3.14*x*100*0.00001)^2))^(-0.5)}
+						node[pos=0.65,anchor=south west]{$$}; 
 
     \end{axis}
-\end{tikzpicture}
-\end{center}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out} / V_{in}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.0001}{\farad}}$.}
+	\label{hgp_ratio}
+\end{figure}
 
 \end{document}
