@@ -8,12 +8,12 @@ A faire :
 - Terminer le dimensionnement de l'électro-aimant (*en attente de la constante de raideur*) ;
 - Membrane : mesurer le constante de raideur ;
 - Bobinage : apporter tubes PVC (Virgile et Antoine) ;
-- Esquisse du haut-parleur : Virgile ;
-- Bibliographie ;
+- Esquisse du haut-parleur (Lise) ;
+- Bibliographie (Virgile) ;
 - Slides pour le pré-jury (*en cours*) ;
 -> Modélisations des filtres : Antoine ;
 -> Negative feedback : Antoine ;
--> Distorsion : ;
+-> Distorsion : Robin ;
 -> Fréquence de coupure : Thibaut ;
 -> Etat d'avancement + planning : Thibaut ;
 -> Dimensionnement de l'electroaimant : Marie-Charlotte ;
