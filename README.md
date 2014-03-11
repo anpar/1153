@@ -12,6 +12,7 @@ A faire :
 - Esquisse du haut-parleur ;
 - Boitier ;
 - Planning ;
+- Bibliographie ;
 - Slides pour le pré-jury (*en cours*) ;
 
 A vérifier :
