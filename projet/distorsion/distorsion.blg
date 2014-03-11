@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: distorsion.aux
+The style file: plain.bst
+Database file #1: source.bib
+I was expecting a `,' or a `}'---line 38 of file source.bib
+ : 
+ : @book{hartmann,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 49 of file source.bib
+ : 
+ : @book{brevet1,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 56 of file source.bib
+ : 
+ : @book{brevet2,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author, editor, or key in encyclopedia
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1049 of file plain.bst
+Too many commas in name 2 of "Donald J. Lucas and Edwin W. Rowand Jr., title = {Method and apparatus for harmonic distortion correction}, misc = {US5377092}, year = {1994}" for entry brevet1
+while executing---line 1049 of file plain.bst
+Warning--empty author and editor in encyclopedia
+Warning--empty publisher in encyclopedia
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Frederick Emmons Terman, title = {Radio engineering}, year = {1947}, publisher = {McGraw-Hill}, chapter = {Loudspeaker}, pages = {226-230, 881-882}" for entry termans
+while executing---line 1090 of file plain.bst
+Warning--empty title in termans
+Warning--empty publisher in termans
+Warning--empty year in termans
+Warning--empty publisher in brevet2
+Too many commas in name 2 of "Donald J. Lucas and Edwin W. Rowand Jr., title = {Method and apparatus for harmonic distortion correction}, misc = {US5377092}, year = {1994}" for entry brevet1
+while executing---line 1090 of file plain.bst
+Warning--empty title in brevet1
+Warning--empty publisher in brevet1
+Warning--empty year in brevet1
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "William M. Hartmann, title = {Principles of Musical Acoustics}, chapter = {Distortion and noise}, publisher = {Springer}, pages = {179-185}, misc = {ISBN: 978-1-4614-6786-1}, year = {2013}" for entry hartmann
+while executing---line 1090 of file plain.bst
+Warning--empty title in hartmann
+Warning--empty publisher in hartmann
+Warning--empty year in hartmann
+(There were 19 error messages)
