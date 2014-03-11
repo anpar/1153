@@ -10,6 +10,7 @@ A faire :
 - Boitier ;
 - Bibliographie ;
 - Slides pour le pré-jury (*en cours*) ;
+- Rapport pré-jury ;
 
 A vérifier :
 ============
