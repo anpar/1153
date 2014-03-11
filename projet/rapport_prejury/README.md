@@ -1,11 +1,11 @@
 Structure du rapport :
 =====================
 
-0.    Table des matières 
-1.    Introduction
-2.    Contenu du rapport
-2.1.     Fonctionnement et dimenssionement
-2.1.1.     Dimensionnement du haut-parleur
+0.    Table des matières // 
+1.    Introduction //
+2.    Contenu du rapport //
+2.1.     Fonctionnement et dimenssionement //
+2.1.1.     Dimensionnement du haut-parleur //
 2.1.2.     Dimensionnement des bobines 
 3.1.     Résultats du problème mathématique
 3.1.1.     Modélisation des filtres
