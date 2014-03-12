@@ -49,27 +49,27 @@ $B_e = \unit{0.1142389}{\tesla}$
 Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
 Pour cela nous utilisons la formule suivante :
 
-$$L{fil} = N_1 \cdot 2(a + b)$$
+$$L{fil} = N_1 \cdot 2\pi r$$  
 
-Où $N_1 = 400$ est le nombre de spires de la bobine fixe, et $a$ et $b$ sont les longueurs des côtés des spires. Pour
-$a = \unit{0.019}{\meter}$ et $b = \unit{0.022}{\meter}$, on trouve :
+Où $N_1 = 400$ est le nombre de spires de la bobine fixe, et $r$ est la rayon des spires. Pour
+$r = \unit{0.016}{\meter}$, on trouve :
 
-$$L_{fil} = \unit{32.8}{\meter}$$
+$$L_{fil} = \unit{40.3}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{5.904}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{7.254}{\ohm}$$
 
 \paragraph{Inductance de la bobine}
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+$$L = N_1 \frac{\phi_B}{I}
 
 Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
 On trouve alors :
 
-$L = \unit{7.6403 \cdot 10^{-3}}{\henry}$
+$L = \unit{0.01475}{\henry}$
 
 \paragraph{Tableau récapitulatif}
 
@@ -77,13 +77,15 @@ $L = \unit{7.6403 \cdot 10^{-3}}{\henry}$
 	\begin{tabular}{c|c|c|c|c}
 		$N_1$ & $B_e$ & $R$ & $L$ & $L_{fil}$ \\
 		\hline
-		400 & $\unit{0.1142389}{\tesla}$ & \unit{5.904}{\ohm} & $\unit{7.6403 \cdot 10^{-3}}{\henry}$ & $\unit{32.8}{\meter}$\\
+		400 & $\unit{0.1142389}{\tesla}$ & \unit{7.254}{\ohm} & $\unit{0.01475}{\henry}$ & $\unit{40.3}{\meter}$\\
 	\end{tabular}
 \end{center}
 
 \subsection{Calcul de la constante de raideur de la membrane}
-Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer expérimentalement la constante de raideur de notre papier pour faire la membrane.
-Notre procédure a été la suivante: nous avons suspendu notre membrane, pour ensuite déposer un poids dessus, et finalemet mesurer l'élongation du matériau.
+Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
+expérimentalement la constante de raideur de notre papier pour faire la membrane.
+Notre procédure a été la suivante: nous avons suspendu notre membrane, pour ensuite 
+déposer un poids dessus, et finalemet mesurer l'élongation du matériau.
 Nous obtenons ainsi une constante de raideur d'à peu près \unit {80}{N/m}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
@@ -107,9 +109,9 @@ donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur
 
 $$25.8 = \frac{N_2}{L_{bobine}}$$
 
-En fixant le rayon à \unit{30}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
+En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = 69$$
+$$N_2 =  \frac{L_{fil}}{2\pi r} = 118$$
 
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
@@ -123,7 +125,7 @@ $$R = L_{fil} \cdot R_{lin} = \unit{2.38}{\ohm}$$
 
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_1 \frac{\phi_B}{I} = \unit{0.0134}{\henry}$$
+$$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 
 \paragraph{Tableau récapitulatif}
 
@@ -131,7 +133,7 @@ $$L = N_1 \frac{\phi_B}{I} = \unit{0.0134}{\henry}$$
 	\begin{tabular}{c|c|c|c}
 		$N_2$ & $I$ & $R$ & $L$ \\
 		\hline
-		 $69$ & $\unit{0.1667}{\ampere}$ & $\unit{2.38}{\ohm}$ & $\unit{0.0134}{\henry}$ \\
+		 $118$ & $\unit{0.1667}{\ampere}$ & $\unit{2.38}{\ohm}$ & $\unit{0.0734}{\henry}$ \\
 	\end{tabular}
 \end{center}
 
