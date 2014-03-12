@@ -1,6 +1,16 @@
 \documentclass[pdf]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{pgfplots}
+\usepackage{amsmath,amssymb,array}
+\usepackage{wrapfig}
 
 \usetheme{warsaw}
 \mode<presentation>{}
@@ -18,15 +28,13 @@
 
 \begin{frame}
 	\frametitle{Etat d'avancement du projet}	
-	% Contenu
+
 \end{frame}
 
 \begin{frame}
 	\frametitle{Recherche documentaire}
 	\framesubtitle{La contre-réaction (ou contre réaction négative)}
-	
-	
-	
+	 
 \end{frame}
 
 \begin{frame}
@@ -41,13 +49,80 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Modélisation du filtre passe-haut}
-	% Contenu
-\end{frame}
-
-\begin{frame}
 	\frametitle{Modélisation du filtre passe-bas}
-	% Contenu
+
+	\begin{minipage}{0.5\linewidth}
+	{
+		\center
+		{
+			\scalebox{0.50}{\begin{tikzpicture}[>=stealth]
+			\begin{axis}[
+					xmin=0,xmax=6,
+					ymin=-8,ymax=8,
+					axis x line=middle,
+					axis y line=middle,
+					axis line style=->,
+					xlabel={$V$},
+					ylabel={$t$},
+					]
+					
+					\addplot[no marks,black,-] expression[domain=0:6,samples=1000]
+							{((7.5)/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) * (((-2.718^((-x)/(1000*0.00001)))/(sqrt(1 + 1000^2 * 0.00001^2 * 400^2))) 
+							+ cos(atan(-1000*0.00001*400) + 400*x))} 
+							node[pos=0.65,anchor=south west]{$$};
+							
+					\addplot[no marks,blue,-] expression[domain=0:6,samples=1000]
+							{7.5 * cos(400 * x)} 
+							node[pos=0.65,anchor=south west]{$$}; 
+
+			\end{axis}
+			\end{tikzpicture}}
+		}
+	}
+	\end{minipage}
+	
+	\begin{flushright}
+	\begin{minipage}{0.4\linewidth}
+			-	$V_{out}$ est en retard de $\arctan{RC\omega}$ par rapport à $V_{in}$ ;
+			- Le déphasage augmente avec la fréquence ;
+	\end{minipage}
+	\end{flushright}
+	
+	\hfill
+	
+	\begin{minipage}{0.5\linewidth}
+	{
+		\center
+		{
+			\scalebox{0.5}{\begin{tikzpicture}[>=stealth]
+			\begin{axis}[
+				xmin=0,xmax=1400,
+				ymin=0,ymax=1.2,
+				axis x line=middle,
+				axis y line=middle,
+				axis line style=->,
+				xlabel={$f$},
+				ylabel={$V_{out} / V_{in}$},
+				]
+				
+				\addplot[no marks,green,-] expression[domain=0:1400,samples=100]
+						{(1 + (2*3.14*x*100*0.00001)^2)^(-0.5)}
+						node[pos=0.65,anchor=south west]{$$}; 
+			\end{axis}
+			\end{tikzpicture}}
+		}
+	}
+	\end{minipage}
+	
+	\begin{minipage}{0.5\linewidth}
+			- Atténue les hautes fréquences, laisse passer les basses fréquences ;		
+	\end{minipage}
+
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Modélisation du filtre passe-haut}
+	
 \end{frame}
 
 \begin{frame}
