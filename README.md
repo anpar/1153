@@ -5,7 +5,6 @@ A faire :
 ---------
 
 - Terminer cahier des charges (*fréquence entre...(?) et ...(?) Hz*) ;
-- Terminer le dimensionnement de l'électro-aimant (*en attente de la constante de raideur*) ;
 - Membrane : mesurer le constante de raideur ;
 - Bobinage : apporter tubes PVC (Virgile et Antoine) ;
 - Esquisse du haut-parleur (Lise) ;
@@ -23,7 +22,6 @@ A faire :
 A vérifier :
 ------------
 
-- DOC : Relire boucle de contre-réaction (Lise, Marie-Charlotte, Robin) ;
 - DOC : Relire distorision (Antoine, Thibaut et Virgile) ;
 - Relire les calculs de la fréquence de coupure (Robin) ;
 
@@ -36,3 +34,5 @@ Terminé :
 - Traduire cahier des charges ;
 - Relire modélisation des filtres passe-haut et passe-bas ;
 - Relire planning ;
+- DOC : Relire boucle de contre-réaction (Lise, Marie-Charlotte, Robin) ;
+- Dimensionnement de l'électro-aimant;
