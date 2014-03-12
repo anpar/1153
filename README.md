@@ -4,7 +4,6 @@ Pré-jury :
 A faire :
 ---------
 
-- Terminer cahier des charges (*fréquence entre...(?) et ...(?) Hz*) ;
 - Membrane : mesurer le constante de raideur ;
 - Bobinage : apporter tubes PVC (Virgile et Antoine) ;
 - Esquisse du haut-parleur (Lise) ;
@@ -36,3 +35,4 @@ Terminé :
 - Relire planning ;
 - DOC : Relire boucle de contre-réaction (Lise, Marie-Charlotte, Robin) ;
 - Dimensionnement de l'électro-aimant;
+- Cahier des charges ;
