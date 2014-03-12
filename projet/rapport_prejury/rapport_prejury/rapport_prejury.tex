@@ -1,0 +1,69 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{amsmath,amssymb,array}
+
+\title{Projet 2 - Rapport de Pré-jury}
+\author{Groupe 115.3}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\makeatletter
+\let\toc@pre\relax
+\let\toc@post\relax
+\makeatother
+
+\part{Introduction}
+
+\part{Contenu du rapport}
+
+\chapter{Fonctionnement et dimensionnement}
+
+\input{../../dim_haut_parleur/dim_haut_parleur}
+
+\input{../../dim_electroaimant/dim_electroaimant}
+
+\chapter{Résultats des problèmes mathématiques}
+
+\input{../../modelisation_filtre/modelisation_filtre}
+
+\input{../../frequence_coupure/frequence_coupure}
+
+\chapter{Recherches documentaires}
+
+\input{../../negative_feedback/negative_feedback}
+
+\input{../../distorsion/distorsion}
+
+\part{Conclusion}
+
+\clearpage
+
+\nocite{*} 
+\bibliographystyle{plain}
+\bibliography{../../sources/sources}
+
+\part{Annexes}
+\appendix
+
+\input{../../cahier_des_charges/cahier_des_charges}
+
+\bigbreak
+
+\input{../../methode_recherche/methode_recherche}
+
+%\input{../../constante_raideur/constante_raideur}
+
+\end{document}

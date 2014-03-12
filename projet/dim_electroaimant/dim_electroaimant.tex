@@ -4,8 +4,7 @@
 Pour fabriquer notre haut-parleur, nous ne disposions pas d'aimant permanent. Nous avons donc
 dû créer un électroaimant à partir d'un matériau ferromagnétique qui nous a été fourni.
 Cette section présente dans un premier temps le dimensionnement de cet électroaimant, c'est-à-dire le
-nombre de spires choisi, la résistance totale de la bobine, son inductance, le champ magnétique
-induit, etc.
+nombre de spires choisi, la résistance totale de la bobine, son inductance, etc.
 
 Nous calculerons ensuite, de manière expérimentale, la constante de raideur de la membrane de
 notre haut-parleur. A partir de cela et de l'écartement maximal par rapport à sa position d'origine, 
@@ -17,7 +16,7 @@ Lorsqu'un courant traverse la bobine de cuivre, un champ magnétique est formé.
 donc un électroaimant fixe générant le champ nécessaire au déplacement de la seconde bobine. 
 C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.6]{electroaimant.png}
 \caption{Modélisation d'un électroaimant}
@@ -50,27 +49,27 @@ $B_e = \unit{0.1142389}{\tesla}$
 Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
 Pour cela nous utilisons la formule suivante :
 
-$$L{fil} = N_1 \cdot 2(a + b)$$
+$$L{fil} = N_1 \cdot 2\pi r$$  
 
-Où $N_1 = 400$ est le nombre de spires de la bobine fixe, et $a$ et $b$ sont les longueurs des côtés des spires. Pour
-$a = \unit{0.019}{\meter}$ et $b = \unit{0.022}{\meter}$, on trouve :
+Où $N_1 = 400$ est le nombre de spires de la bobine fixe, et $r$ est la rayon des spires. Pour
+$r = \unit{0.016}{\meter}$, on trouve :
 
-$$L_{fil} = \unit{32.8}{\meter}$$
+$$L_{fil} = \unit{40.3}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{5.904}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{7.254}{\ohm}$$
 
 \paragraph{Inductance de la bobine}
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+$$L = N_1 \frac{\phi_B}{I}
 
 Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
 On trouve alors :
 
-$L = \unit{7.6403 \cdot 10^{-3}}{\henry}$
+$L = \unit{0.01475}{\henry}$
 
 \paragraph{Tableau récapitulatif}
 
@@ -78,15 +77,18 @@ $L = \unit{7.6403 \cdot 10^{-3}}{\henry}$
 	\begin{tabular}{c|c|c|c|c}
 		$N_1$ & $B_e$ & $R$ & $L$ & $L_{fil}$ \\
 		\hline
-		400 & $\unit{0.1142389}{\tesla}$ & \unit{5.904}{\ohm} & $\unit{7.6403 \cdot 10^{-3}}{\henry}$ & $\unit{32.8}{\meter}$\\
+		400 & $\unit{0.1142389}{\tesla}$ & \unit{7.254}{\ohm} & $\unit{0.01475}{\henry}$ & $\unit{40.3}{\meter}$\\
 	\end{tabular}
 \end{center}
 
 \subsection{Calcul de la constante de raideur de la membrane}
-% TODO
+Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
+expérimentalement la constante de raideur de notre papier pour faire la membrane.
+Notre procédure a été la suivante: nous avons suspendu notre membrane, pour ensuite 
+déposer un poids dessus, et finalemet mesurer l'élongation du matériau.
+Nous obtenons ainsi une constante de raideur d'à peu près \unit {80}{N/m}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
-% TODO
 
 \paragraph{Calcul du nombre de spires}
 Etant donné que nous disposons d'un amplificateur qui, selon la datasheet, a une puissance de sortie de 
@@ -100,32 +102,30 @@ maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit
 mesure de trouver la longueur du fil de la bobine:
 
 $$IL_{fil}B = kx$$
-$$L_{fil} = \frac{kx}{IB} =  cm$$
+$$L_{fil} = \frac{kx}{IB} = 12.6 m$$
 
 Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
 donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine:
 
 $$25.8 = \frac{N_2}{L_{bobine}}$$
 
-En fixant le rayon à ...cm, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
+En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = $$
-$$L_{bobine} = \frac{L_{fil}}{0.258 \cdot 2\pi r} = m$$
-
+$$N_2 =  \frac{L_{fil}}{2\pi r} = 118$$
 
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
 Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à multiplier la longueur de fil trouvée 
 précédemment par la résistance linéique du fil de cuivre
-($R_{lin} = \unit{}{\ohm\per\meter}$) :
+($R_{lin} = \unit{2.38}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{2.38}{\ohm}$$
 
 \paragraph{Calcul de l'inductance de la bobine mobile}
 
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
+$$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 
 \paragraph{Tableau récapitulatif}
 
@@ -133,15 +133,15 @@ $$L = N_1 \frac{\phi_B}{I} = \unit{}{\henry}$$
 	\begin{tabular}{c|c|c|c}
 		$N_2$ & $I$ & $R$ & $L$ \\
 		\hline
-		 $x$ & $\unit{}{\ampere}$ & $\unit{}{\ohm}$ & $\unit{}{\henry}$ \\
+		 $118$ & $\unit{0.1667}{\ampere}$ & $\unit{2.38}{\ohm}$ & $\unit{0.0734}{\henry}$ \\
 	\end{tabular}
 \end{center}
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[scale=0.3]{hautparleur.png}
 \caption{Vue d'ensemble avec la seconde bobine}
 \label{Vue d'ensemble avec la seconde bobine}
 \end{figure}
 
-\end{document}
+\input{../foot.tex}

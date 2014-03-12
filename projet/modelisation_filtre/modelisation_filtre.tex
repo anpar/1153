@@ -2,10 +2,10 @@
 
 \section{Modélisation des filtres passe-haut et passe-bas}
 Dans cette section, nous allons expliquer la méthode que nous avons
-utiliser pour trouver une expression analytique de la tension de sortie 
-dans un filtre passe-bas, la démarche étant la même pour le filtre passe-bas.
+utiliseé pour trouver une expression analytique de la tension de sortie 
+dans un filtre passe-bas, la démarche étant la même pour le filtre passe-haut.
 
-Nous avons en réalité utiliser deux méthodes différentes qui, heureusement, 
+Nous avons en réalité utilisé deux méthodes différentes qui, heureusement, 
 aboutissent à la même solution. La première méthode utilise ce que nous
 avons appris au premier quadrimestre concernant les équations différentielles.
 Cette méthode est plus longue et plus compliquée que la deuxième, c'est pourquoi
@@ -19,7 +19,7 @@ Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
@@ -143,7 +143,7 @@ lorsque $\omega$ tend vers l'infini. C'est bien le cas ici puisqu'on a $\omega^2
 On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_voltages}) et $V_{out} / V_{in}$
 (Figure \ref{lwp_ratio}).
 
-\begin{figure}[!h]
+\begin{figure}[ht!]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -172,7 +172,7 @@ On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_vol
 	\label{lwp_voltages}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[ht!]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -205,7 +205,7 @@ Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
@@ -245,7 +245,7 @@ $V_{out}$ qui tend vers 0 également. Une fois de plus, c'est bien le cas.
 On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_voltages}) et $V_{out} / V_{in}$
 (Figure \ref{hgp_ratio}).
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -274,7 +274,7 @@ On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_vol
 	\label{hgp_voltages}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -301,4 +301,4 @@ On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_vol
 	\label{hgp_ratio}
 \end{figure}
 
-\end{document}
+\input{../foot.tex}

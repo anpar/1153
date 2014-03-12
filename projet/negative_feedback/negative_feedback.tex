@@ -1,15 +1,9 @@
 \input{../head.tex}
 
-\section{Recherche documentaire : la contre-réaction}
-En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous somme alors interrogés sur le rôle de ces boucles.
+\section{La contre-réaction ou réaction négative}
+En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous sommes alors interrogés sur le rôle de ces boucles.
 
 Nous allons dans un premier temps expliquer les raisons d'être des boucles de contre-réaction en général et nous finirons par l'explication complète de leur raison d'être dans le cas particulier de notre circuit.
-
-% A déplacer dans les annexes
-%\paragraph{Méthode de recherche}
-%Comme suggeré lors de la séance d'information sur la recherche bibliographique nous avons appliqué la méthode de l'entonnoir. Comme les boucles de contre-réaction sont directement %liées aux amplificateurs, nous avons commencé nos recherche avec les termes plutôt généraux : \textit{amplificateurs} et \textit{amplifiers}. Nous nous avons ensuite associé à ces %mots clés les termes plus précis : \textit{contre-réaction} et \textit{negative feedback}.
-
-%Les différents ouvrages et documents que nous avons utilisés sont listés dans la bibliographie.
 
 \subsection{Principe de la réaction}
 Le principe de la réaction est présent dans un grand nombre de circuits électroniques. Il consiste en une réinjection d'une partie du signal de sortie à l'entrée du circuit pour le combiner avec le signal d'entrée extérieur.
@@ -46,7 +40,7 @@ Il existe deux types de réactions :
 \subsection{Effets des boucles de contre-réaction}
 
 \subsubsection{En général}
-Les effets des boucles de contre-réaction sur un amplificateurs sont nombreux :
+Les effets des boucles de contre-réaction sur un amplificateur sont nombreux :
 
 \begin{itemize}
 	\item La boucle de contre-réaction rend indépendant le gain de l'amplificateur des différentes variations du circuits ;
@@ -91,19 +85,15 @@ Le gain est alors donné par :
 
 $$A = \frac{V_{out}}{V_{in}} = \frac{R_1 + R_2}{R_1}$$
 
-Pour réduire le gain $A$ à $1$, on alors deux possibilités :
+Pour réduire le gain $A$ à $1$, on a alors deux possibilités :
 
 \begin{enumerate}
 	\item	Choisir $R_1 >> R_2$ ;
 	\item Choisir $R_2 = 0$ ;
 \end{enumerate}
 
-La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, on a $A = 1$ de telle sorte que $V_{in} = V_{out}$. On choisi alors $R_1$ si petit, que le remplacer par un simple court-circuit a le même effet.
+La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, on a $A = 1$ de telle sorte que $V_{in} = V_{out}$. On choisi alors $R_1$ si petit que le remplacer par un simple court-circuit a le même effet.
 
-Dans un tel montage (appelé \texit{suiveur de tension}), la résistance d'entrée est infinie alors que la résistance de sortie est faible. Le courant de sortie est alors plus grand que le courant d'entrée (qui est presque nul).
+Dans un tel montage (appelé \textit{suiveur de tension}), la résistance d'entrée est infinie alors que la résistance de sortie est faible. Le courant de sortie est alors plus grand que le courant d'entrée (qui est presque nul).
 
-\nocite{*} 
-\bibliographystyle{plain}
-\bibliography{source}
-
-\end{document}
+\input{../foot.tex}
