@@ -235,7 +235,9 @@ le section précédente. On a alors simplement :
 
 $$V_R = V_{in} - V_C$$
 
-$$V_{out} = V \cdot (\cos(\omega t) + \frac{e^{-\frac{t}{RC}}}{1 + R^2C^2\omega^2} - \frac{\cos(\arctan(-RC\omega) + \omega t))}{\sqrt(1 + R^2C^2\omega^2)})$$
+$$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
+(\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} - \cos(\arctan(-RC\omega) + \omega t) + \cos(\omega t)\cdot (\sqrt{1 + R^2\omega^2C^2}))$$
+
 
 Le déphasage reste donc le même que pour le filtre passe-bas.
 
