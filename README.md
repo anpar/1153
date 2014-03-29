@@ -4,6 +4,8 @@ Divers :
 - Membrane : mesurer le constante de raideur ;
 - Faire les calculs pour le filtre passe-bance ;
 - Analogie RLC et mouvement de la membrane ;
+- Réondre aux questions de Vitale
+- Modélisation baffle
 
 Laboratoire
 -----------
