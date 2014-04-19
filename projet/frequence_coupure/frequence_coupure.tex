@@ -1,16 +1,17 @@
 \input{../head.tex}
-\section{Approximation de la fréquence de coupure}
+\section{Identification polynômiale et étude mathématique}
 
-Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure dans un circuit passe-bas et passe-haut. 
+Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure dans un circuit passe-bas et passe-haut. Trois méthodes nous étaient proposées, et nous avons adopté la première pour les raison explicitées plus bas.
 
 Définissons tout d'abord ce qu'est la fréquence de coupure: c'est la fréquence à partir de laquelle la tension dans un circuit passe-bas (resp. passe-haut) commence à diminuer (resp. se stabiliser) lorsque la fréquence augmente.
 Nous devions donc trouver l'équation de deux droites: une droite horizontale, et une droite oblique. L'intersection de ces droites est appelée "fréquence de coupure".
 
-Pour ce faire, nous avons tout d'abord procédé à une expérience en laboratoire. 
-Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans chacun des circuits considérés. 
+Pour ce faire, nous avons tout d'abord procédé à une expérience en laboratoire.
+Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans chacun des circuits considérés.
 Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour le passe-haut, et cela nous a ensuite permis de modéliser notre problème, et de trouver une fréquence de coupure expérimentale.
 
-\subsection{Pour le filtre passe-bas}
+\subsection{Approximation de la fréquence de coupure}
+\subsubsection{Filtre passe-bas}
 
 \begin{figure}[h]
    \centering
@@ -18,38 +19,38 @@ Nous avons donc procédé aux mesures pour le circuit passe-bas, ainsi que pour 
   \caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-bas}
 \end{figure}
 
-\subsubsection{Equation de la droite horizontale} % A refaire avec la méthode d'approximation
-Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de $\unit{2.5}{\volt}$ et donc \[y=2.5\]
+\paragraph{Équation de la droite horizontale} % A refaire avec la méthode d'approximation
+Expérimentalement, nous obtenons une droite horizontale d'une valeur initiale de $\unit{2.5}{\volt}$ et donc l'équation de la droite horizontale est \[y=2.5\]
 
-\subsubsection{Equation de la droite diagonale}
+\paragraph{Équation de la droite diagonale}
 
-Avec les mesures effectuées en laboratoires, nous n'obtenons non pas une droite mais bien une exponentielle. Pour faciliter le calcul de l'intersection de l'exponentielle et de la droite, nous passons donc en repère semi-logarithmique. En procédant de la sorte, l'exponentielle se transforme en droite, et le calcul devient plus facile.
+Avec les mesures effectuées en laboratoires, nous n'obtenons non pas une droite mais bien une exponentielle. Pour faciliter le calcul de l'intersection de l'exponentielle et de la droite, nous passons donc en repère semi-logarithmique. Ce procédé explicité en profondeur dans la sous-section "Passage en échelle logarithmique"'.
 
 Nous savons que l'équation d'une droite dans un repère cartésien est de type $y=ax+b$, avec $a$ la pente et $b$ l'ordonnée à l'origine.
 
-Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répère semi-logarithmique (en $x$). L'équation de la droite devient alors : $y=a\log{x}+b$
+Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répère semi-log selon l'axe des abscisses. L'équation de la droite devient alors : $y=a\log{x}+b$
 
 \paragraph{Mesures en laboratoires}
 
-Voici 3 résultats choisi (de manière cohérente) parmi toutes les mesures effectuées en laboratoire, où $V_c$ est la tension de sortie et $f$ la fréquence :
+Voici 3 résultats choisis de manière cohérente parmi toutes les mesures effectuées en laboratoire, où $V_c$ est la tension de sortie et $f$ la fréquence :
 
 \begin{center}
-	\begin{tabular}{|c|c|c|}
-		\hline
-		$V_c$ & $f$ & $\log{f}$ \\
-		\hline
-		1.7 & 16000 & 4.204 \\
-		\hline
-		1.55 & 18000 & 4.255 \\
-		\hline
-		1.45 & 20000 & 4.301 \\
-		\hline
-	\end{tabular}
+\begin{tabular}{|c|c|c|}
+\hline
+$V_c$ & $f$ & $\log{f}$ \\
+\hline
+1.7 & 16000 & 4.204 \\
+\hline
+1.55 & 18000 & 4.255 \\
+\hline
+1.45 & 20000 & 4.301 \\
+\hline
+\end{tabular}
 \end{center}
 
-Dès maintenant les fréquences sont exprimées en base logarithmique.
-Nous écrivons maintenant un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origne ($b$) de notre droite inconnue. 
-Nous avons trois équations à deux inconnues, et le systène n'admet pas de solution. 
+Dès maintenant, les fréquences sont exprimées en base logarithmique.
+Écrivons un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origine ($b$) de notre droite inconnue.
+Nous avons trois équations à deux inconnues, et le système n'admet pas de solution.
 Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
 
 Voici le système sous forme matricielle :
@@ -57,34 +58,34 @@ Voici le système sous forme matricielle :
 $$A \cdot \vec{x} = \vec{b}$$
 
 \begin{center}
-	\begin{array}{rcel}
-		$$
-		\begin{pmatrix}  
-			4.204 & 1\\
-			4.255 & 1 \\
-			4.301 & 1 
-		\end{pmatrix} &
+\begin{array}{rcel}
+$$
+\begin{pmatrix}
+4.204 & 1\\
+4.255 & 1 \\
+4.301 & 1
+\end{pmatrix} &
 
-		\begin{pmatrix}  
-			a\\
-			b
-		\end{pmatrix} &
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix} &
 
-		= &
+= &
 
-		\begin{pmatrix}  
-			1.7\\
-			1.55\\
-			1.45
-		\end{pmatrix}
-		$$
-	\end{array}
+\begin{pmatrix}
+1.7\\
+1.55\\
+1.45
+\end{pmatrix}
+$$
+\end{array}
 \end{center}	
-	
-Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée du système.
 
-Soit $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
-Pour ce faire, trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
+Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée.
+
+Soient $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
+Trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
 la méthode de Gram-Schmidt :
 
 $$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
@@ -95,34 +96,34 @@ $$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.684 ; 0.03 ; 0.729)$$
 Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales peu précises :
 nous projetons les vecteurs grâce à la formule de la projection :
 
-%	Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ? 
+% Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ?
 
 $$
 b'
 =
 (b|e_1) \cdot e_1 + (b|e_2) \cdot e_2
 =
-\begin{pmatrix}  
-1.6\\
-1.5\\
-1.5
+\begin{pmatrix}
+1.607\\
+1.556\\
+1.524
 \end{pmatrix}$$
 $$
 
-On peut alors réecrire le système comme cela :
+Nous pouvons alors réécrire le système comme cela :
 
 $$
-\begin{pmatrix}  
+\begin{pmatrix}
  4.204 & 1\\
  4.255 & 1 \\
- 4.301 & 1 
+ 4.301 & 1
 \end{pmatrix}
-\begin{pmatrix}  
+\begin{pmatrix}
 a\\
 b
 \end{pmatrix}
 =
-\begin{pmatrix}  
+\begin{pmatrix}
 1.607\\
 1.565\\
 1.524
@@ -130,29 +131,19 @@ b
 $$
 
 
-Nous avons donc $a\times \log{x} + b = y$ \Rightarrow 
-$$
-\{b'}=
-\begin{pmatrix}  
-1.607\\
-1.565\\
-1.524
-\end{pmatrix}
-$$
-\\
-
-Nous en déduisons la valeur des coefficients $a$ et $b$ :  
+Nous en déduisons la valeur des coefficients $a$ et $b$ :
 
 $$a = -1.96$$
 $$b= 9.84$$
 
+La droite oblique a donc pour équation
 $$\fbox{y= -1.96 \timeslog{x} +9.84}$$
 
-Pour trouver la fréquence d'intersection entre les deux droites $$y=2.5$$ et $$y= -1.96 \times log{x} +9.84$$ nous résolvons le système, et nous trouvons : 
+Pour trouver la fréquence d'intersection entre les deux droites, nous résolvons le système, et nous trouvons :
 
-$$\fbox{x = \unit{5557.7}{\hertz}}$$ 
+$$\fbox{x = \unit{5557.7}{\hertz}}$$
 
-Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ telle que : 
+Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ telle que :
 
 $$f=\frac{1}{2\pi RC}$$
 
@@ -160,71 +151,71 @@ avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ et $C= \unit{470 \cdot 10^{-9}}{\farad}$,
 
 $$f= \unit{5889.2}{\hertz}$$
 
-\subsection{Pour le filtre passe-haut}
+\subsubsection{Filtre passe-haut}
 
 \begin{figure}[h]
-		\centering
-   \input{image2.tex}
-		\caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-haut}
+\centering
+\input{image2.tex}
+\caption{\label{premierebissectrice}Tension en fonction de la fréquence dans un filtre passe-haut}
 \end{figure}
 
-\subsubection{Equation de la droite horizontale}
+\paragraph{Équation de la droite horizontale}
 
 % Pareil ici, normalement à refaire avec la même méthode d'approximation si on veut que ce soit parfait
 
-Nous savons que la droite a une valeur initiale de $\unit{0.75}{\volt}$ et donc $y = 0.75$.
+Nous savons que l'équation de la droite horizontales est $y = 0.75$.
 
-\subsubsection{Equation de la droite diagonale}
+\paragraph{Équation de la droite diagonale}
 
-Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas. 
+Nous allons encore utiliser une base logarithmique pour la pente, pour les mêmes raison explicitées pour le filtre passe-bas.
 L'équation de la droite est donc de la forme : $y=a \log{x}+b$.
 
-Voici 3 résultats choisis parmis les mesures effectuées en laboratoire :
+Voici 3 résultats choisis parmi les mesures effectuées en laboratoire :
 
 \begin{center}
-	\begin{tabular}{|c|c|c|}
-		\hline
-		$V_c$ & $f$ & $\log{f}$ \\
-		\hline
-		127 & 0.4 & 2.1\\
-		\hline
-		191 & 0.5 & 2.3\\
-		\hline
-		356 & 0.6 & 2.6 \\
-		\hline
-	\end{tabular}
+\begin{tabular}{|c|c|c|}
+\hline
+$V_c$ & $f$ & $\log{f}$ \\
+\hline
+127 & 0.4 & 2.1\\
+\hline
+191 & 0.5 & 2.3\\
+\hline
+356 & 0.6 & 2.6 \\
+\hline
+\end{tabular}
 \end{center}
 
 De manière analogue que pour le premier filtre, nous formons le système suivant :
 
 \begin{center}
-	\begin{array}{rcel}
-		$$
-		\begin{pmatrix}  
-			 2.1 & 1\\
-			 2.3 & 1 \\
-			 2.6 & 1 
-		\end{pmatrix}&
+\begin{array}{rcel}
+$$
+\begin{pmatrix}
+2.1 & 1\\
+2.3 & 1 \\
+2.6 & 1
+\end{pmatrix}&
 
-		\begin{pmatrix}  
-			a\\
-			b
-		\end{pmatrix}&
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}&
 
-		=&
+=&
 
-		\begin{pmatrix}  
-			0.4\\
-			0.5\\
-			0.6
-		\end{pmatrix}
-		$$
-	\end{array}
+\begin{pmatrix}
+0.4\\
+0.5\\
+0.6
+\end{pmatrix}
+$$
+\end{array}
 \end{center}
 
 
 Transformons maintenant la base quelconque $(f_1, f_2)$ de l'espace des
-colonnes de $A$ en une base orthonormée $(e_1, e_2)$ afin de pouvoir 
+colonnes de $A$ en une base orthonormée $(e_1, e_2)$ afin de pouvoir
 calculer la projection orthogonale ensuite :
 
 $$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
@@ -234,45 +225,73 @@ $$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.6, 0, 0.8)$$
 Et nous obtenons comme vecteur projeté $\vec{b}'$ :
 
 $$
-\begin{pmatrix}  
-	0.36\\
-	0.5\\
-	0.69
+\begin{pmatrix}
+0.36\\
+0.5\\
+0.69
 \end{pmatrix}
 $$
 
-On peut alors réecrire le système comme ceci :
+Nous pouvons alors réécrire le système comme ceci :
 
 $$
- \begin{pmatrix}  
+ \begin{pmatrix}
   2.1 & 1\\
   2.3 & 1 \\
-  2.6 & 1 
+  2.6 & 1
  \end{pmatrix}
- \begin{pmatrix}  
+ \begin{pmatrix}
  a\\
  b
  \end{pmatrix}
  =
- \begin{pmatrix}  
+ \begin{pmatrix}
  0.36\\
  0.5\\
  0.69
  \end{pmatrix}
 $$
 
-Nous en déduisons la valeur des coefficients $a$ et $b$ :  
+Nous en déduisons la valeur des coefficients $a$ et $b$ :
 
-$$a =0.7$$
-
+$$a =0.7$$ 
 $$b= -1.11$$
 
 L'équation de la droite est alors :
 
-$$\fbox{y=  0.7 \log{x} - 1.11}$$
+$$ \fbox{y= 0.7 \log{x} - 1.11} $$
 
-Pour trouver l'intersection entre les deux droites $$y=0.75$$ et $$y= 0.7 \cdot \log{x} - 1.11$$ nous résolvons le système, et nous trouvons: 
+Pour trouver l'intersection entre les deux droites nous résolvons le système, et nous trouvons:
 
-$$\fbox{x = \unit{439.4}{\hertz}}$$ 
+$$ x = \unit{439.4}{\hertz}$$
+
+% wtf, ne concorde pas avec la valeur théorique?
+
+\subsection{Choix de la méthode}
+
+Une démarche d'approximation n'est évidemment pas unique. Nous avions le choix entre trois méthodes 
+distinctes, et nous avons opté pour celle utilisant les bases orthonormées. Elle présente de nombreux
+avantages par rapport aux autres: la seconde est moins précise (à vérifier, ms on n'a pas encore vu la
+matière pr vrmt le faire dnc je complèterai ca plus tard). En ce qui concerne la troisième procédure, 
+nous devons utiliser le produit scalaire canonique de $\mathbb{R}^3$. Or, étant donné que nous sommes 
+passés en échelle semi-log, la notion de distance est modifiée, et les résultats escomptés sont faussés (?).
+La première méthode était donc le choix évident.
+
+\subsection{Meilleure approximation}
+
+Pour arriver à une meilleure approximation, nous pourrions imaginer considérer $n$ points avec un $n$
+très grand. Cependant, ...
+% à creuser encore
+
+\subsection{Passage en échelle logarithmique}
+
+Lors de notre approximation, nous avons mentionné le fait que nous "passions en échelle logarithmique".
+Généralement, nous utilisons des échelles linéaires, avec des graduations dont la différence est constante.
+Ici, dans un soucis de facilité, nous avons utilisé une représentation semi-logarithmique. Cela signifie 
+que les graduations ont un rapport constant, et non plus une différence constante pour l'axe des abscisses.
+Cela nous permet de travailler à grande échelle, et de représenter l'exponentielle comme une droite, de
+manière simple. L'équation de la droite est, en toute généralité : $y=a\log{x}+b$ .
+
+\end{document}
 
 \input{../foot.tex}
