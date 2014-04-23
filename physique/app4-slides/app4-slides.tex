@@ -1,1 +1,56 @@
-%TODO
+\documentclass[pdf]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{amsmath,amssymb,array}
+
+\usetheme{warsaw}
+\mode<presentation>{}
+
+\title{APP2 - Mécanique}
+\author{Groupe 115.3}
+\date{\today}
+
+\begin{document}
+
+% =======================================================================
+\begin{frame}
+	\titlepage
+\end{frame}
+
+% =======================================================================
+\begin{frame}
+	\frametitle{APP2.1 - Mesurer l'inertie d'un rotor}
+	
+	Pour mesurer l'inertie de notre rotor, nous avons envisagé une expérience
+	qui consiste à accrocher notre rotor au bout d'un fil et à le faire osciller.
+	Il est alors possible, à partir de la période des oscillations que l'on peut
+	facilement mesurer, de retrouver l'inertie recherchée.
+	
+\end{frame}
+
+% =======================================================================
+\begin{frame}
+	\frametitle{APP2.2 - Estimer l'inertie d'un camion}	
+
+	Pour estimer l'inertie d'un camion, nous avons suivi le cheminement suivant :
+	
+	\begin{enumerate}
+		\item Décomposition du camion en 3 corps : le remorque (que l'on considère
+		pleine), la cabine (que l'on considère creuse) et le moteur (que l'on considère
+		plein également). Les trois corps sont supposés être parallélipèdique ;
+		\item Calcul du tenseur d'inertie central de chaque corps ;
+		\item Calcul du centre de gravité du camion ;
+		\item Utilisation de Steiner pour ramener les trois tenseurs d'inertie
+		au centre de gravité du camion :
+		\item Addition des tenseurs d'inertie ;
+	\end{enumerate}
+	
+\end{frame}
+
+\end{document}
