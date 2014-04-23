@@ -13,8 +13,8 @@ Voici la liste des choses à faire pour le rapport. N'hésitez pas à l'éditer 
 - Recherche documentaire: voir consignes annexes (scans, etc);
 - Ecrire la conclusion ;
 - Ecrire l'introduction ;
-- Ecrire l'abstract-fr ;
-- Ecrire l'abstract-en ;
+- Ecrire l'abstract-fr (Tibo);
+- Ecrire l'abstract-en (Tibo);
 - Paufiner/relire/perfectionner tout.
 
 Ce serait bien que le rapport soit vraiment parfait, puisque le baffle risque de pas marcher hyper bien!
