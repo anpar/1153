@@ -44,13 +44,20 @@
 		\item Décomposition du camion en 3 corps : le remorque (que l'on considère
 		pleine), la cabine (que l'on considère creuse) et le moteur (que l'on considère
 		plein également). Les trois corps sont supposés être parallélipèdique ;
-		\item Calcul du tenseur d'inertie central de chaque corps ;
+		\item Calcul du tenseur d'inertie central de chaque corps séparément ;
 		\item Calcul du centre de gravité du camion ;
-		\item Utilisation de Steiner pour ramener les trois tenseurs d'inertie
-		au centre de gravité du camion :
+		\item Utilisation de Steiner pour exprimer les trois tenseurs d'inertie
+		par rapport centre de gravité du camion :
 		\item Addition des tenseurs d'inertie ;
 	\end{enumerate}
 	
+	Les axes principaux d'inerties sont donc :
+	
+	$$I_1 = \SI{483252}{\kilograms\meter\squared}$$
+	$$I_2 = \SI{357667}{\kilograms\meter\squared}$$
+	$$I_3 = \SI{748274}{\kilograms\meter\squared}$$
+	
+	Avec $Î_2$ parallèle au camion et $Î_3$ vertical.
 \end{frame}
 
 \end{document}
