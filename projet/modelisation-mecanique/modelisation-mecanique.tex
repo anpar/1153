@@ -1,1 +1,110 @@
-%TODO
+\input{../head.tex}
+
+\section{Modélisation mécanique du haut-parleur}
+
+\subsection{Composition du haut-parleur}
+Le haut-parleur est constitué de différentes parties : une membrane
+attachée par des fixations qui jouent le rôle de ressorts et reliée à 
+une bobine mobile et une bobine fixe qui s'emboîte (sans frottement) 
+dans la bobine mobile.
+
+La bobine fixe va permettre à la bobine mobile de se déplacer exclusivement de gauche
+à droite (voir Figure \ref{hp-scheme}), permettant ainsi à la membrane de vibrer 
+(et donc de produire un son). Tout déplacement dans une autre direction serait dommageable
+car risquerait d'abîmer la membrane.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.6]{haut-parleur.png}
+	\caption{Schéma d'un haut-parleur}
+	\label{hp-scheme}
+\end{figure}
+
+\subsection{Etude du mouvement de la bobine mobile}
+Nous allons maintenant écrire les équations du mouvement de la bobine mobile.
+Pour ce faire, nous plaçons un repère fixe $\{\ui\}$ dont l'origine $O$ se trouve
+au centre de gravité de la bobine mobile lors de sa position d'équilibre (au 
+temps $t=0$). $\uv{I}_1$ est parallèle à la bobine et dirigé vers la gauche, tandis que
+$\uv{I}_2$ est dirigée perpendiculairement à la bobine mobile, vers le haut.
+La bobine mobile ne possède qu'un seul degré de liberté, qui
+est la distance entre $O$ et son centre de gravité, notons la $\fv{x}(t)$.
+La positon de la bobine est donc donnée par :
+
+$$R(t) = \fv{x}(t) \uv{I}_1$$ 
+
+\paragraph{Inventaire des forces}
+Avant d'écrire l'équation du mouvement de la bobine, établissons l'inventaire
+des forces qui agissent sur celle-ci :
+
+\begin{itemize}
+	\item Son poids, dont la résultante agit sur son centre de gravité : $-mg\uv{I}_2$ ;
+	\item La force de rappel des fixations (que l'on suppose agir comme des simples
+	ressorts) : $-k \fv{x}(t) \uv{I}_1$ où $k$ est la constante de raideur des fixations ;
+	\item La force électromagnétique causé par l'électroaimant : $BLi(t) \uv{I}_1$ où
+	$B$ est le champ magnétique produit par l'électroaimant, $L$ la longeur de fil de cuivre
+	utilisé et $i(t)$ le courant électrique ;
+	% FIX ME : L est la longeur de fil ou la longeur de la bobine?
+	\item Le frottement dû à l'air ;
+\end{itemize}
+
+Parmis toute ces forces, nous négligeons le frottement dû à l'air ainsi que le poids
+de la bobine mobile (sa masse étant relativement faible).
+
+\paragraph{Equation du mouvement}
+Nous avons maintenant tous à notre disposition pour écrire les équations du mouvement
+\footnote{Dans cette section, nous utilisons les notations employées au cours de
+mécanique des corps rigides.} :
+
+$$m\fvdd{x}(t) = -k\fv{x}(t) + BLi(t)$$
+
+En sachant que le signal d'entrée est une fonction de la forme $V(t) = V_0 \cos (\omega t)$ et
+que, par la loi d'Ohm, $V(t) = Ri(t)$ où $R$ est la résistance du circuit, 
+nous pouvons réecrire l'équation différentielle du mouvement de la manière suivante :
+
+$$m\fvdd{x}(t) + k\fv{x}(t) = \frac{B2\pi rNV_0}{R}\cos (\omega t)$$
+
+Où nous avons également fait apparaître le nombre de spires $N$ et le rayon de la bobine
+$r$. Il ne reste donc plus qu'à résoudre cette équation différentielle.
+
+\paragraph{Résolution de l'équation différentielle du mouvement}
+Résolvons cette équation différentielle homogène comme appris lors de ce deuxième
+quadrimestre. Cherchons d'abord la solution homogène de cette équation, notée $\fv{x}_h(t)$.
+Pour ce faire, résolvons le polynôme caractéristique :
+
+$$mr^2 + k = 0 \Rightarrow r = \pm i\sqrt{\frac{k}{m}}$$
+
+On a donc, en ne gardant que la partie réelle :
+
+$$\fv{x}_h(t) = x_0 \cos(\sqrt{\frac{k}{m}}t)$$
+
+Penchons-nous maintenant sur la solution particulière, notée $\fv{x}_p(t)$. Pour
+cette partie de la résolution, nous réecrivons le terme non-homogène sous la forme d'une
+exponentielle complexe. La solution particulière est de la forme :
+
+$$\fv{x}_p(t) = \alpha e^{\omega it}}$$
+
+En injectant $\fv{x}_p(t)$ et sa dérivée seconde dans l'équation de départ, on trouve :
+
+$$\alpha = \frac{V2\pi rNV_0}{R(-m\omega^2 + k)} \Rightarrow \fv{x}_p(t) = \frac{V2\pi rNV_0}{R(-m\omega^2 + k)}e^{wit}$$
+
+En ne gardant que la partie réelle de l'exponentielle, on a finalement :
+
+$$\fv{x}_p(t) = \frac{V2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+
+Par le principe de superposition des solutions des équations différentielles :
+
+$$\fv{x}(t) = \fv{x}_h(t) + \fv{x}_p(t) = x_0 \cos(\sqrt{\frac{k}{m}}t) + \frac{V2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+
+Enfin, en utilisant la condition initiale $\fv{x}(0) = 0$, on trouve que $x_0 = 0$, la solution devient
+alors simplement :
+
+$$\fv{x}(t) = \frac{V2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+
+\subsection{Fréquence de résonance}
+On remarque que si $\omega \rightarrow \sqrt{\frac{k}{m}}$, le dénominateur de l'amplitude du mouvement
+tend vers 0, et donc l'amplitude du mouvement tend vers $\infty$. Cette situation n'a physiquement
+pas de sens. Nous notons cette fréquence $\omega_0$, il s'agit de la \textit{fréquence de résonance}.
+
+% To be continued
+
+\input{../foot.tex}
