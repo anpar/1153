@@ -24,43 +24,58 @@
 \end{frame}
 % =======================================================================
 \begin{frame}
-	\frametitle{APP2.1 - Mesurer l'inertie d'un rotor}
+	\frametitle{2.1 - Mesurer l'inertie d'un rotor}
 	
 	Pour mesurer l'inertie de notre rotor, nous avons envisagé une expérience
 	qui consiste à accrocher notre rotor au bout d'un fil et à le faire osciller.
 	Il est alors possible, à partir de la période des oscillations que l'on peut
-	facilement mesurer, de retrouver l'inertie recherchée.
+	facilement mesurer, de retrouver l'inertie recherchée. 
 	
-	% TODO : ajouter la formule (+ refaire comment la retrouver)
+	\begin{center}
+		\includegraphics[scale=0.5]{experience.png}
+	\end{center}
 \end{frame}
 % =======================================================================
 \begin{frame}
-	\frametitle{APP2.2 - Estimer l'inertie d'un camion}	
+	\frametitle{2.1 - Mesurer l'inertie d'un rotor (suite)}
+	En résolvant l'équation du mouvement du pendule, on trouve :
+	
+	$$I^O_3 = \frac{(L+R)mg}{\omega^2}$$	
+	
+	Où $\omega = \frac{2\pi}{T}$, $T$ est la période mesurée, $L$ la longueur du fil, 
+	$R$ le rayon du rotor, $m$ sa masse et $O$ le point d'attache du fil. On peut
+	ensuite retrouver $I^G_3$ par \textit{Steiner}.
+	
+\end{frame}
+% =======================================================================
+\begin{frame}
+	\frametitle{2.2 - Estimer l'inertie d'un camion}	
 
-	Pour estimer l'inertie d'un camion, nous avons suivi le cheminement suivant :
+	Pour estimer l'inertie d'un camion, nous avons suivi les étapes suivantes :
 	
 	\begin{enumerate}
 		\item Décomposition du camion en 3 corps : le remorque (que l'on considère
 		pleine), la cabine (que l'on considère creuse) et le moteur (que l'on considère
-		plein également). Les trois corps sont supposés être parallélipèdique ;
+		plein également). Les trois corps sont supposés être parallélépipédique ;
 		\item Calcul du tenseur d'inertie central de chaque corps séparément ;
 		\item Calcul du centre de gravité du camion ;
-		\item Utilisation de Steiner pour exprimer les trois tenseurs d'inertie
-		par rapport centre de gravité du camion :
+		\item Utilisation de \textit{Steiner} pour exprimer les trois tenseurs d'inertie
+		par rapport au centre de gravité du camion :
 		\item Addition des tenseurs d'inertie ;
 	\end{enumerate}
 \end{frame}
 % =======================================================================	
 \begin{frame}
 	\frametitle{Axes principaux d'inerties}
+	Pour un camion avec une remorque de longueur totale $\SI{15}{\meter}$
+	et d'une masse totale de $\SI{45000}{\kilogram}$,
+	les axes principaux d'inerties sont donc :
 	
-	Les axes principaux d'inerties sont donc :
+	$$I_1 = \SI{483252}{\kilogram\meter\squared}$$
+	$$I_2 = \SI{357667}{\kilogram\meter\squared}$$
+	$$I_3 = \SI{748274}{\kilogram\meter\squared}$$
 	
-	$$I_1 = \SI{483252}{\kilograms\meter\squared}$$
-	$$I_2 = \SI{357667}{\kilograms\meter\squared}$$
-	$$I_3 = \SI{748274}{\kilograms\meter\squared}$$
-	
-	Avec $Î_2$ parallèle au camion et $Î_3$ vertical.
+	Avec $\hat{I}_2$ parallèle au camion et $\hat{I}_3$ vertical.
 \end{frame}
 %========================================================================
 
