@@ -11,10 +11,29 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.9}
 \usepackage{amsmath,amssymb,array}
+\newenvironment{abstract-fr}
+{
+	\begin{center}
+		\textbf{Résumé} \\[0.5cm]
+	\end{center}
+}
+{}
+
+\newenvironment{abstract-en}
+{
+	\begin{center}
+		\textbf{Summary} \\[0.5cm]
+	\end{center}
+}
+{}
 
 \begin{document}
 
 % Page de garde
 \input{../../title-page/title-page.tex}
+
+% Abstract
+\input{../../abstract-fr/abstract-fr.tex}
+\input{../../abstract-en/abstract-en.tex}
 
 \end{document}
