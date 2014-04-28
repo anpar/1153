@@ -1,5 +1,43 @@
 \input{../head.tex}
 
-% TODO
+\section{Fonctionnement général}
+
+Dans cette première section, nous allons survoler le fonctionnement général de notre haut-parleur, ainsi 
+qu'introduire certains concepts physiques clefs. Les sections suivantes détailleront tout cela plus en 
+profondeur.
+
+\begin{figure}[ht!] 
+\centering 
+\includegraphics[scale=0.25]{vue_d_ensemble.png} 
+\caption{Vue éclatée du haut-parleur} 
+\label{hp-scheme} 
+\end{figure}
+
+\paragraph{Support en "E" et bobine fixe}
+
+Un haut-parleur est en général constitué d'un aimant permanent et d'une bobine mobile faisant vibrer une 
+membrane. Malheureusement, nous ne disposions pas d'un tel aimant; nous avons donc été contraints de créer
+notre propre électroaimant. Ce dernier est constitué du support en "E", un matériau ferromagnétique, et 
+d'une bobine fixe parcourue par un courant continu. La caractéristique principale d'un tel matériau est sa 
+faculté à modifier un champ magnétique, aussi appelée perméabilité magnétique \footnote{Source: Wikipédia, 
+Perméabilité magnétique, \url{http://fr.wikipedia.org/wiki/Perméabilité_magnétique} consulté le 27/04/14 }.
+Lorsque le courant traverse la bobine de cuivre, un champ magnétique est formé. Nous supposerons par la 
+suite que tout le flux passe dans les branches du "E", sans perte. Ce dispositif va se comporter comme un
+aimant.
+% loi d'Ampère?
+
+
+
+\paragraph{Bobine mobile et membrane}
+
+
+Le champ crée par l'électroaimant est intercepté par la bobine dite \textit{mobile}. Lorsqu'une telle bobine
+de longueur $L$, traversée par un courant $I$, est plongée dans un champ magnétique, une force $F$ est exercée
+sur celle-ci. Cette dernière est appelée "force de Laplace". Elle s'exprime comme suit:
+$$\vec{F} = I\vec{l}\times{\vec{B}}$$ 
+Cette force va faire bouger la bobine mobile, et conséquemment faire vibrer la membrane. Un son est alors 
+produit. Les réglages du volume, des aigus et des graves se font sur le PCB, qui est lui-même relié à la
+bobine mobile. L'annexe "Analyse séquentielle du circuit" explicite tout cela en détail.
+
 
 \input{../foot.tex}
