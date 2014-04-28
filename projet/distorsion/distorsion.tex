@@ -28,9 +28,23 @@ Les harmoniques impaires, elles, sont plus gênantes étant donné que la note e
 
 \begin{figure}[ht!]
 \centering
-\scalebox{0.4}{\includegraphics[scale=0.6]{distorsion.jpg}}
-\caption{Superposition d'une fréquence fondamentale et de ses premières hamoniques.}
-\label{Superposition d'une fréquence fondamentale et de ses premières hamoniques.}
+\begin{tikzpicture}
+\begin{axis}[
+xtick=\empty,
+ytick=\empty,
+axis x line=middle,
+axis y line=middle,
+axis line style=->,
+ylabel={$V$},
+legend entries={ fréq. fondamentale, $3$ème harmonique, distorsion}
+]
+\addplot[samples=500,domain=0:2*pi, color=black]{sin(deg(x))};
+\addplot[samples=500, domain=0:2*pi, color=orange]{-sin(3*deg(x))/3};
+\addplot[samples=500, domain=0:2*pi, color=red]{sin(deg(x))-sin(3*deg(x))/3};
+\end{axis}
+\end{tikzpicture}
+\caption{Superposition d'une fréquence fondamentale et de sa 3e harmonique}
+\label{lwp_ratio} 
 \end{figure}
 
 \subsection{Causes}
