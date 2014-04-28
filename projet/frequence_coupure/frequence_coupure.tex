@@ -24,7 +24,9 @@ explicité en profondeur dans la sous-section "Passage en échelle logarithmique
 \begin{figure}[ht!]
 \centering
 \begin{tikzpicture}
-    \begin{axis}
+\begin{axis}[
+xlabel={$f$},
+ylabel={$V_{out}$},]
 \addplot coordinates
 {(0,2.5) (5000,2.5) (10000,2.5) (16000,1.7) (18000,1.55) (20000,1.45)};
 \end{axis}
@@ -32,6 +34,7 @@ explicité en profondeur dans la sous-section "Passage en échelle logarithmique
 \caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
 \label{lwp_ratio}
 \end{figure}
+
 
 \paragraph{Équation de la droite horizontale}
 Expérimentalement, nous obtenons une fréquence de sortie constante (de $\unit{2.5}{\volt}$ ) 
@@ -182,9 +185,6 @@ $$f= \unit{5889.2}{\hertz}$$
 \centering
 \begin{tikzpicture}[>=stealth]
 \begin{axis}[
-axis x line=middle,
-axis y line=middle,
-axis line style=->,
 xlabel={$f$},
 ylabel={$V_{out}$},
 ]
@@ -196,6 +196,8 @@ ylabel={$V_{out}$},
 \caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
 \label{lwp_ratio}
 \end{figure}
+
+
 \paragraph{Équation de la droite horizontale}
 
 Nous savons que l'équation de la droite horizontales est $y = 0.75$.
