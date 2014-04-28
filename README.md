@@ -5,7 +5,7 @@ Voici la liste des choses à faire pour le rapport. N'hésitez pas à l'éditer 
 - Vous attribuer une tâche en indiquant votre nom à côté.
 
 - Choisir une structure logique ; *(groupe)*
-- Terminer les calculs pour le filtre passe-bande ; 
+- Terminer les calculs pour le filtre passe-bande ; *(Marie-Charlotte)*
 - Répondre aux questions de Vitale ;
 - Modélisation mécanique du baffle (analogie RLC, etc) ;
 - Refaire le planning et le commenter ;
