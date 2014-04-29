@@ -1,18 +1,24 @@
 \input{../head.tex}
 
 \section{La contre-réaction ou réaction négative}
-En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant la sortie et la borne négative des amplificateurs. Nous nous sommes alors interrogés sur le rôle de ces boucles.
+En analysant le circuit de notre haut-parleur, nous avons découvert la présence de boucle reliant 
+la sortie et la borne négative des amplificateurs. Nous nous sommes alors interrogés sur le rôle de ces boucles.
 
-Nous allons dans un premier temps expliquer les raisons d'être des boucles de contre-réaction en général et nous finirons par l'explication complète de leur raison d'être dans le cas particulier de notre circuit.
+Nous allons dans un premier temps expliquer les raisons d'être des boucles de contre-réaction en général et 
+nous finirons par l'explication complète de leur raison d'être dans le cas particulier de notre circuit.
 
 \subsection{Principe de la réaction}
-Le principe de la réaction est présent dans un grand nombre de circuits électroniques. Il consiste en une réinjection d'une partie du signal de sortie à l'entrée du circuit pour le combiner avec le signal d'entrée extérieur.
+Le principe de la réaction est présent dans un grand nombre de circuits électroniques. Il consiste en une 
+réinjection d'une partie du signal de sortie à l'entrée du circuit pour le combiner avec le signal d'entrée 
+extérieur\cite{correvon}.
 
-Il existe deux types de réactions :
+Il existe deux types de réactions\cite{correvon} :
 
 \begin{itemize}
-	\item \textbf{La réaction positive} : le signal réinjecté est en phase avec le signal d'entrée de telle sorte que les deux signaux s'additionnent ;
-	\item \textbf{La réaction négative} (ou contre-réaction) : le signal réinjecté est en opposition de phase avec le signal d'entrée, de telle sorte que les deux signaux
+	\item \textbf{La réaction positive} : le signal réinjecté est en phase avec le signal d'entrée de telle 
+	sorte que les deux signaux s'additionnent ;
+	\item \textbf{La réaction négative} (ou contre-réaction) : le signal réinjecté est en opposition de 
+	phase avec le signal d'entrée, de telle sorte que les deux signaux
 	se soustraient.
 \end{itemize}
 
@@ -40,19 +46,21 @@ Il existe deux types de réactions :
 \subsection{Effets des boucles de contre-réaction}
 
 \subsubsection{En général}
-Les effets des boucles de contre-réaction sur un amplificateur sont nombreux :
+Les effets des boucles de contre-réaction sur un amplificateur sont nombreux\cite{sporken}\cite{dusausay} :
 
 \begin{itemize}
 	\item La boucle de contre-réaction rend indépendant le gain de l'amplificateur des différentes variations du circuits ;
 	\item Le signal de sortie est plus proche du signal d'entrée que si l'amplificateur avait été en boucle ouverte ;
-	\item Réduction des signaux électriques parasites et de la distorsion dûs à l'amplificateur : en boucle ouverte, le taux de distorsion d'un amplificateur est typiquement de 1\%. La boucle de contre-réaction permet de diminuer ce taux à 0.001\% ;
+	\item Réduction des signaux électriques parasites et de la distorsion dûs à l'amplificateur : en boucle ouverte, 
+	le taux de distorsion d'un amplificateur est typiquement de 1\%. La boucle de contre-réaction permet de diminuer ce taux à 0.001\% ;
 	\item Contrôle du gain de l'amplificateur (qui est, en boucle ouverte, de l'ordre de $10^6$) ;
 	\item Elargissement de la bande passante de l'amplificateur ;
 	\item Réduction de l'impédance de sortie.
 \end{itemize}
 
-\subsubsection{Dans notre cas particulier}
-Dans notre cas particulier, le principal effet de la boucle de contre-réaction est le contrôle du gain de l'amplificateur qui ramène à $1$ le gain.
+\subsubsection{Intégration dans le circuit du haut-parleur}
+Dans notre cas particulier, le principal effet de la boucle de contre-réaction est le contrôle du gain de l'amplificateur 
+qui ramène à $1$ le gain.
 
 \begin{figure}[h]
 	\centering
@@ -77,7 +85,8 @@ Dans notre cas particulier, le principal effet de la boucle de contre-réaction 
 	\label{reaction2}
 \end{figure}
 
-Sur la Figure \ref{reaction2}, on remarque que la tension de sortie et la tension d'entrée sont liées par la formule des diviseurs résistifs :
+Sur la Figure \ref{reaction2}, on remarque que la tension de sortie et la tension d'entrée sont liées 
+par la formule des diviseurs résistifs :
 
 $$V_{in} = \frac{R_1}{R_1 + R_2} V_{out}$$
 
@@ -92,8 +101,15 @@ Pour réduire le gain $A$ à $1$, on a alors deux possibilités :
 	\item Choisir $R_2 = 0$ ;
 \end{enumerate}
 
-La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. Autrement dit : quelque soit $R_1$, on a $A = 1$ de telle sorte que $V_{in} = V_{out}$. On choisi alors $R_1$ si petit que le remplacer par un simple court-circuit a le même effet.
+La possibilité la plus simple est la deuxième, car en choississant $R_2 = 0$, le gain est donné par $\frac{R_1}{R_1}$. 
+Autrement dit : quelque soit $R_1$, on a $A = 1$ de telle sorte que $V_{in} = V_{out}$. On choisi alors $R_1$ si petit 
+que le remplacer par un simple court-circuit a le même effet.
 
-Dans un tel montage (appelé \textit{suiveur de tension}), la résistance d'entrée est infinie alors que la résistance de sortie est faible. Le courant de sortie est alors plus grand que le courant d'entrée (qui est presque nul).
+Dans un tel montage (appelé \textit{suiveur de tension}), la résistance d'entrée est infinie alors que la résistance de 
+sortie est faible. Le courant de sortie est alors plus grand que le courant d'entrée (qui est presque nul).
+
+Dans notre circuit, ces suiveurs de tension ont un rôle important puisqu'ils permettent le règlage indépendant des
+graves et des aigus. Sans eux, modifier la résitance dans le filtre passe-bas modifierait aussi la résistance dans
+le filtre passe-haut.
 
 \input{../foot.tex}

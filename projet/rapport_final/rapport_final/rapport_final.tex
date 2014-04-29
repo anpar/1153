@@ -11,7 +11,6 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.9}
 \usepackage{amsmath,amssymb,array}
-\usepackage{subfigure}
 \newenvironment{abstract-fr}
 {
 	\begin{center}
@@ -27,8 +26,41 @@
 	\end{center}
 }
 {}
-\definecolor{bblue}{HTML}{4F81BD}
-\definecolor{rred}{HTML}{C0504D}
+% New command pour la modélisation mécanique, tri à effectuer
+\newcommand\fv[1]{{\bf #1}} % free vector
+\newcommand\fvd[1]{\dot{\bf #1}} % free vector derivated
+\newcommand\fvdd[1]{\ddot{\bf #1}} % free vector derivated
+\newcommand\fvr[1]{\mathring{\bf #1}} % free vector relatively derivated
+\newcommand\fvrr[1]{\overset{\circ\circ}{\bf #1}} % free vector relatively derivated
+\newcommand\uv[1]{{\bf\hat{ #1}}} % unit vector
+\newcommand\ui{{\bf\hat{I}}} % unit vector I
+\newcommand\uj{{\bf\hat{J}}} % unit vector J
+\newcommand\uk{{\bf\hat{K}}} % unit vector K
+\newcommand\wrt[2]{\ensuremath{\tensor*[_{ #1}]{ #2}{}}} % With Respect To
+\newcommand\wtr[3]{\ensuremath{\tensor*[_{ #1}]{ #2}{^{ #3}}}} % With Two Respect
+\newcommand\omegaf{{\bm \omega}}
+\newcommand\omegafr{\mathring{\bm \omega}}
+\newcommand\omegafd{\dot{\bm \omega}}
+\newcommand\omegaft{\tilde{\bm \omega}}
+\newcommand\omegaftr{\mathring{\tilde{\bm \omega}}}
+\newcommand\omegat{\tilde{\omega}}
+\newcommand\omegatd{\tilde{\dot{\omega}}}
+\newcommand\ine{{\bf I}}
+\newcommand\st{{\bf L}}
+\newcommand\pst{{\bf M}}
+\newcommand\lm{{\bf N}}
+\newcommand\am{{\bf H}}
+\newcommand\amd{\dot{\am}}
+\newcommand\fo{{\bf F}}
+\newcommand\po{\mathcal{P}}
+\newcommand\xg{\ensuremath{\fv{R}}}
+\newcommand\xgd{\ensuremath{\fvd{R}}}
+\newcommand\xgdd{\ensuremath{\fvdd{R}}}
+\newcommand\dvec[1]{\dot{\vec{ #1}}}
+\newcommand\ddvec[1]{\ddot{\vec{ #1}}}
+\newcommand\qp{\dot{q}}
+\newcommand\dqp{\Delta \dot{q}}
+\usepackage{url} 
 
 \begin{document}
 
@@ -49,13 +81,13 @@
 
 \chapter{Fonctionnement du haut-parleur}
 
-\input{../../overview/overview.tex}
-\clearpage
+% Il faut décider si on garde un fichier comme
+% ça, étant donné que l'introduction explique
+% déjà le fonctionnement général.
+% \input{../../overview/overview.tex}
+% \clearpage
 
 \input{../../modelisation_filtre/modelisation_filtre.tex}
-\clearpage
-
-\input{../../frequence_coupure/frequence_coupure.tex}
 \clearpage
 
 \input{../../dim_electroaimant/dim_electroaimant.tex}
@@ -66,6 +98,7 @@
 \chapter{Recherche documentaire}
 
 \input{../../negative_feedback/negative_feedback.tex}
+\clearpage
 
 \input{../../distorsion/distorsion.tex}
 
@@ -79,7 +112,7 @@
 
 \chapter{Annexes}
 
-\input{../../analyse_circuit/analyse_circuit.tex}
+\input{../../frequence_coupure/frequence_coupure.tex}
 \clearpage
 
 \input{../../cahier_des_charges/cahier_des_charges.tex}
@@ -89,5 +122,9 @@
 \clearpage
 
 \input{../../methode_recherche/methode_recherche.tex}
+\clearpage
+
+% Annexe facultative
+\input{../../analyse_circuit/analyse_circuit.tex}
 
 \end{document}

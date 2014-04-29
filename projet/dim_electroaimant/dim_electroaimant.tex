@@ -7,12 +7,13 @@ Cette section présente dans un premier temps le dimensionnement de cet électro
 nombre de spires choisi, la résistance totale de la bobine, son inductance, etc.
 
 Nous calculerons ensuite, de manière expérimentale, la constante de raideur de la membrane de
-notre haut-parleur. A partir de cela et de l'écartement maximal par rapport à sa position d'origine, 
+notre haut-parleur. A partir de cela et de l'écartement maximal par rapport à sa position d'origine 
+(choisi arbitrairement), 
 nous pourons calculer la force nécessaire pour déplacer la membrane, et par conséquent, le nombre
 de spires nécessaire sur la bobine mobile.
 
 \subsection{Fonctionnement et dimensionnement de la bobine fixe}
-Lorsqu'un courant traverse la bobine de cuivre, un champ magnétique est formé.  Nous obtenons 
+Lorsqu'un courant traverse la bobine de cuivre, un champ magnétique est créé.  Nous obtenons 
 donc un électroaimant fixe générant le champ nécessaire au déplacement de la seconde bobine. 
 C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 
@@ -24,7 +25,7 @@ C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 \end{figure}
 
 Le nombre de spires de la bobine fixe, appelons-le $N_1$, a été choisi arbitrairement de manière à produire un
-champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à 400. 
+champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à \numprint{400}. 
 Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
@@ -33,10 +34,12 @@ Nous allons maintenant calculer les caractéristiques suivantes de notre électr
 	\item Inductance.
 \end{itemize}
 
+% Section à revoir, l'entrefer a changé, le courant qu'on fait passé aussi !
 \paragraph{Champ magnétique dans l'entrefer}
-Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{0.011}{\meter}$ en 
-utilisant la conservation des flux. Pour ce calcul, nous utilisons l'hypothèse que tout le champ
-se trouve dans l'entrefer.
+Pour céer un champ magnétique plus fort, nous avons réduit l'entrefer de $\unit{x}{\milli\meter}$.
+Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{x}{\milli\meter}$ en 
+utilisant la conservation des flux. Pour ce calcul, nous utilisons l'hypothèse simplificatrice
+assez forte que tout le champ se trouve dans l'entrefer.
 
 $$H_e \cdot e = N_1 I \Rightarrow \frac{B_e}{\mu_0 \mu_r} e = N_1 I$$
 

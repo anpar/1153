@@ -1,8 +1,4 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: negative_feedback.aux
-The style file: plain.bst
-Database file #1: source.bib
-Repeated entry---line 37 of file source.bib
- : @book{black
- :            ,
-I'm skipping whatever remains of this entry
-(There was 1 error message)
+I found no \bibdata command---while reading file negative_feedback.aux
+I found no \bibstyle command---while reading file negative_feedback.aux
+(There were 2 error messages)
