@@ -113,9 +113,11 @@ Soient $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'
 Trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
 la méthode de Gram-Schmidt :
 
-$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+$$ \vec {e_1} = \frac{f_1}{||f_1||} = \begin{pmatrix} \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}}) \end{pmatrix}$$
 
-$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.684 ; 0.03 ; 0.729)$$
+
+$$ \vec {e_2} = \frac{ \vec{f_2} - (\vec{e_1}|\vec{f_2})}{||\vec{f_2} - (\vec{e_1}|\vec{f_2})||} = \begin{pmatrix}
+-0.684 & 0.03 & 0.729 \end{pmatrix} $$
 
 
 Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales
@@ -125,9 +127,9 @@ nous projetons les vecteurs grâce à la formule de la projection :
 % Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ?
 
 $$
-b'
+\vec{b'}
 =
-(b|e_1) \cdot e_1 + (b|e_2) \cdot e_2
+(\vec{b}|\vec{e_1}) \cdot \vec{e_1} + (\vec{b}|\vec{e_2}) \cdot \vec{e_2}
 =
 \begin{pmatrix}
 1.607\\
@@ -252,13 +254,13 @@ $$
 \end{center}
 
 
-Transformons maintenant la base quelconque $(f_1, f_2)$ de l'espace des
-colonnes de $A$ en une base orthonormée $(e_1, e_2)$ afin de pouvoir
+Transformons maintenant la base quelconque $(\vec{f_1}, \vec{f_2}$ de l'espace des
+colonnes de $A$ en une base orthonormée $(\vec{e_1}, \vec{e_2})$ afin de pouvoir
 calculer la projection orthogonale ensuite :
 
-$$e_1 = \frac{f_1}{||f_1||} = (\frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}} ; \frac{1}{\sqrt{3}})$$
+$$\vec{e_1} = \frac{\vec{f_1}}{||\vec{f_1}||} = \begin{pmatrix}(\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}}) \end{pmatrix}$$
 
-$$e_2 = \frac{f_2 - (e_1|f_2)}{||f_2 - (e_1|f_2)||} = (-0.6, 0, 0.8)$$
+$$\vec{e_2} = \frac{\vec{f_2} - (\vec{e_1}|\vec{f_2})}{||\vec{f_2} - (\vec{e_1}|\vec{f_2})||} = \begin{pmatrix}-0.6 & 0 & 0.8 \end{pmatrix}$$
 
 Et nous obtenons comme vecteur projeté $\vec{b}'$ :
 
