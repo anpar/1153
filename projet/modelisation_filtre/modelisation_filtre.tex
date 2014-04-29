@@ -3,7 +3,7 @@
 \section{Modélisation des filtres passe-haut et passe-bas}
 Dans cette section, nous allons expliquer la méthode que nous avons
 utiliseé pour trouver une expression analytique de la tension de sortie 
-dans un filtre passe-bas, la démarche étant la même pour le filtre passe-haut.
+dans un filtre passe-bas et dans un filtre passe-haut.
 
 Nous avons en réalité utilisé deux méthodes différentes qui, heureusement, 
 aboutissent à la même solution. La première méthode utilise ce que nous
@@ -14,12 +14,14 @@ La deuxième méthode utilise ce que nous avons appris au deuxième quadrimestre
 concernant les équations différentielles et les complexes. 
 
 \subsection{Le filtre passe-bas}
+Le filtre passe-bas dans notre haut-parleur a pour but de laisser
+passer les hautes-fréquences et d'atténuer les hautes fréquences.
 
 Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
@@ -145,7 +147,7 @@ lorsque $\omega$ tend vers l'infini. C'est bien le cas ici puisqu'on a $\omega^2
 On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_voltages}) et $V_{out} / V_{in}$
 (Figure \ref{lwp_ratio}).
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -174,7 +176,7 @@ On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_vol
 	\label{lwp_voltages}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -195,19 +197,21 @@ On peut ensuite regarder les graphes de $V_{out}$, $V_{in}$ (Figure \ref{lwp_vol
 						node[pos=0.65,anchor=south west]{$$}; 
     \end{axis}
 	\end{tikzpicture}
-	\caption{Graphe de $V_{out} / V_{in}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.0001}{\farad}}$.}
+	\caption{Graphe de $V_{out} / V_{in} = \frac{1}{\sqrt{1 + (RC\omega)^2}}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.00001}{\farad}}$.}
 	\label{lwp_ratio}
 \end{figure}
 
 \bigbreak
 
 \subsection{Le filtre passe-haut}
+Le filtre passe-haut a le rôle inverse du filtre passe-bas : il atténue les
+basses fréquences et laisse passer les hautes fréquences.
 
 Soit $V_R$ la tension à travers la résistance $R$, $V_C$ la tension à travers
 le condensateur $C$, $V_{in}$ la tension d'entrée et $V_{out}$ la tension de
 sortie du filtre.
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{circuitikz}
 		\draw (0,0) node[ocirc] (A);
@@ -249,7 +253,7 @@ $V_{out}$ qui tend vers 0 également. Une fois de plus, c'est bien le cas.
 On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_voltages}) et $V_{out} / V_{in}$
 (Figure \ref{hgp_ratio}).
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -278,7 +282,7 @@ On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_vol
 	\label{hgp_voltages}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[!htb]
 	\centering
 	\begin{tikzpicture}[>=stealth]
     \begin{axis}[
@@ -301,12 +305,73 @@ On peut ensuite comparer les graphes de $V_{out}$, $V_{in}$ (Figure \ref{hgp_vol
 
     \end{axis}
 	\end{tikzpicture}
-	\caption{Graphe de $V_{out} / V_{in}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.0001}{\farad}}$.}
+	\caption{Graphe de $V_{out} / V_{in} = 1 + \frac{1}{\sqrt{1}{\sqrt{1+(RC\omega)^2}}}$ pour les valeurs suivantes : $R = \unit{100}{\ohm}$ et $C = {\unit{0.0001}{\farad}}$.}
 	\label{hgp_ratio}
 \end{figure}
 
+\bigbreak
+
 \subsection{Le filtre passe-bande}
-% TODO
-% J'ai déjà avancé sur une partie, l'autre est à encore à faire.
+Le filtre passe-bande sert, comme son nom l'indique, à laisser passer une certaine
+bande de fréquences. Il est constitué d'un filtre passe-haut suivi d'un passe-bas, 
+ou inversément. Les fréquences de coupure respectives des filtres déterminent 
+l'ampleur de la bande passante. Plus la résistance pour le filtre passe-bas 
+(resp.passe-haut) est petite (resp.grande), plus la bande passante est large, 
+étant donné que la fréquence de coupure est inversément proportionnelle à la 
+résistance. Nous nous intéresserons ici à un signal passant d'abord par un filtre 
+passe-haut, et ensuite par le filtre passe-bas.
+
+Soit $V_{in,1}$ la tension à l'entrée du filtre passe-bas, $R_{1}$ la résistance, 
+et $C_{1}$ la capacité. Dans la section précédente, nous sommes arrivés au résultat suivant:
+
+$$V_{out,1} = \frac{V_{in,1}}{\sqrt{1 + R_{1}^2\omega^2C_{1}^2}}
+
+(-\frac{e^{\frac{-t}{R_{1}C_{1}}}}{\sqrt{1 + R_{1}^2\omega^2C_{1}^2}} + 
+\cos(\arctan(-R_{1}C_{1}\omega) + \omega t))$$
+
+Cette tension de sortie du filtre passe-bas sera notre tension d'entrée pour le 
+filtre passe-haut. Précédemment, dans la section concernant le filtre passe haut,
+nous trouvions :
+
+$$V_{out,2} = \frac{V_{in,2}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}}
+(\frac{e^{\frac{-t}{R_{2}C_{2}}}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}} - 
+\cos(\arctan(-R_{2}C_{2}\omega) + \omega t)\right) + V_{in2}\cos(\omega t)$$
+
+où $V_{in,2}$ est la tension à l'entrée du filtre passe-haut, $R_{2}$ la résistance, 
+et $C_{2}$ la capacité. 
+En remplaçant $V_{in,2}$ par $V_{out,1}$, la tension à la sortie du passe-bas, nous 
+trouverons $V_{out,3}$, la tension de sortie finale.
+Après simplification, nous obtenons:
+
+$$V_{out3} = \frac{V_{out1} \cdot V_{out2}}{V_{in1}}$$
+
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}[>=stealth]
+	\begin{axis}[
+	xmin=0,xmax=50000,
+	ymin=0,ymax=0.02,
+	axis x line=middle,
+	axis y line=middle,
+	axis line style=->,
+	xlabel={$f$},
+	ylabel={$V_{out}/V_{in}$},]
+	\addplot[no marks,red,-] expression[domain=0:100000,samples=500]
+	% Formule par rapport aux expressions obtenues, un peu décallée
+	% {(((7.5)/(sqrt(1 + 100^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-100*0.00001)/(100*0.00001)))/(sqrt(1 + 100^2 *
+	% 0.00001^2 * (2*3.14*x)^2))) + cos(atan(-100*0.00001*2*3.14*x) + 2*3.14*x*100*0.00001)))/(7.5 * cos(2*3.14*x*100*0.00001))}
+	{ (((1 + (2*3.14*x*1000*0.000000470)^2)^(-0.5))*((1 + (1)/((2*3.14*x*10*0.000000470)^2))^(-0.5))/7.5)}
+	node[pos=0.65,anchor=south west]{$$};
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out,3} / V_{in,1}$ pour le filtre passe-bande.}
+	\label{pbd_ratio}
+\end{figure}
+
+\subsubsection{Vérification des résultats}
+
+Au vu du graphe de $V_{out,3} / V_{in1,}$ de l'équation obtenue pour le passe-bande, nous pouvons
+valider notre résultat, étant donné que l'allure du graphique correspond à nos attentes. En effet,
+nous pouvons apercevoir très nettement une première fréquence de coupure, et en envisager une autre.
 
 \input{../foot.tex}
