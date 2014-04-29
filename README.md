@@ -50,7 +50,11 @@ PGFPlots : http://pgfplots.sourceforge.net/pgfplots.pdf
 **Pour faire un circuit**
 Circuitikz : http://ctan.math.washington.edu/tex-archive/graphics/pgf/contrib/circuitikz/circuitikzmanual.pdf
 
+**Pour les noms propres placés au milieu d'un texte**
 
+```
+\textsc{Laplace}
+```
 
 
 
