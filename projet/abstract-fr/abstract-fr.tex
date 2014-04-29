@@ -1,41 +1,56 @@
 \input{../head.tex}
 
 \begin{abstract-fr}
-Le haut-parleur est un outil permettant de transformer un signal 
+% Contexe et tâche
+Dans le cadre du cours \textit{Projet 2}, il nous a été demandé
+de concevoir un haut-parleur que l'on puisse connecter à un smartphone
+par le biais d'une prise jack.
+% Besoin
+Un haut-parleur est un outil permettant de transformer un signal 
 électrique en un son. Grâce à un électro-aimant constituée d'une 
 bobine fixe dans laquelle passe du courant, une bobine mobile 
 oscille et fait vibrer la membrane à laquelle elle est attachée. 
 Cette oscillation, qui dépend de la fréquence du signal électrique, 
 crée une onde sonore.
-
+% Objet
 Lors des différentes étapes de modélisations mathématiques et physiques
 de ce projet, nous avons utiliser de nombreuses hypothèses simplificatrices. 
 Ces hypothèses simplificatrices aboutissent à des modèles simplifiés de la
 réalité. Cependant, les approximations effectués sont en général assez proche
-des mesures faites en laboratoires.
- 
+des mesures faites en laboratoires comme le montre la Figure \ref{comparaison}.
+Ce document reprend en détails la modélisation de plusieurs parties d'un haut-parleur.
+% Conclusion et perspective
+Tout au long de ce projet, nous avons appris à modéliser des situations réelles
+complexes de manière simplifiée en utilisant des hypothèses simplificatrices
+
 \end{abstract-fr}
 
-% Différents calculs de pourcentages à effectuer
-\begin{figure}[ht]
+\begin{figure}
 	\centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            symbolic x coords={1, 2, 3, 4, 5},
-            xtick = data
-          ]
-            \addplot[ybar,fill=bblue] coordinates {
-                (1, 12)
-                (2, 6)
-                (3, 9)
-								(4, 5)
-								(5, 3)
-            };
-        \end{axis}
-    \end{tikzpicture}
-		\caption{Comparaison entre le modèle et la réalité (erreure exprimée en
-		pourcentage). Comparison between model and reality (error in percentage).}
-		\label{comparaison}
+	
+	\caption{}
 \end{figure}
+
+% Bar charts de l'erreur exprimée en pourcentage
+%\begin{figure}[ht]
+	%\centering
+    %\begin{tikzpicture}
+        %\begin{axis}[
+            %symbolic x coords={1, 2, 3, 4, 5},
+            %xtick = data
+          %]
+            %\addplot[ybar,fill=bblue] coordinates {
+                %(1, 12)
+                %(2, 6)
+                %(3, 9)
+								%(4, 5)
+								%(5, 3)
+            %};
+        %\end{axis}
+    %\end{tikzpicture}
+		%\caption{Comparaison entre le modèle et la réalité (erreure exprimée en
+		%pourcentage). Comparison between model and reality (error in percentage).}
+		%\label{comparaison}
+%\end{figure}
 
 \input{../foot.tex}
