@@ -1,34 +1,36 @@
 \input{../head.tex}
 
-Dans le cadre du projet de bac 2, notre groupe a été amené à 
-construire un haut-parleur fonctionnel permettant d’entendre 
-un son sortant d’un Gsm ou mp3.  Durant tout le quadrimestre 
-nous avons avancé par petites étapes.  Nous avons dû faire preuve 
-d’organisation et de détermination pour achever ce projet.  
-Pour la plupart d’entre nous, cela était notre 2ème projet de 
-groupe donc nous avons pu nous améliorer par rapport au premier 
-projet même si il nous faut encore progresser. 
+% L'objectif du projet + les spécifications attendues + cahier des charges (ref)
+Dans le cadre du cours \textit{Projet 2} du deuxième quadrimestre, notre groupe a été amené à 
+concevoir un haut-parleur connectable, via une prise Jack \unit{3.5}{\milli\meter}, à un 
+GSM ou un MP3 (les contraintes et spécifications sont détailles dans l'annexe ´´Cahier des charges''). 
+En plus de cela, notre haut-parleur doit permette un règlage du volume, des graves
+et des aigus. Un autre objectif du projet est d'apprendre un travailler et à s'organiser \textit{en groupe}, 
+comme le font tous les jours les ingénieurs.
 
-Le but précis de notre projet était de créer un haut-parleur qui 
-puisse émettre le son sortant d’un Gsm ou mp3.  L’appareil doit 
-aussi être capable de modifier le volume de ce son et de changer 
-les aigus et les graves.  L’autre objectif recherché était de
-réaliser un projet en groupe, comme sont amené à le faire les ingénieurs.  
-
-Dans ce rapport, on peut trouver les idées générales qui ont permis
-l’élaboration du haut-parleur.  Tel que la modélisation de l’appareil,
+% L'organisation du rapport
+Ce rapport reprend les différentes modélisations mathématiques et physiques
+qui nout ont guidé
 les calculs mathématiques qui ont permis de définir cette modélisation, 
 les recherches documentaires concernant les points plus subtils que nous 
 avons voulu abordé, les différents blocs formant le haut-parleur en 
 lui-même, la validation du système comprenant les tests effectués et 
-les mesures prises […]  En annexe, tous les calculs nécessaires sont présents.
+les mesures prises, etc. En annexe, tous les calculs nécessaires sont présents.
+
+% Description générale du système
+Un haut-parleur est un outil permettant de transformer un signal 
+électrique en un son. Grâce à un électro-aimant constituée d'une 
+bobine fixe dans laquelle passe du courant, une bobine mobile 
+oscille et fait vibrer la membrane à laquelle elle est attachée. 
+Cette oscillation, qui dépend de la fréquence du signal électrique, 
+crée une onde sonore.
 
 Dans notre haut-parleur nous pouvons retrouver la membrane, la plaquette électrique, l
 a bobine fixe et mobile, les sources de tension et le caisson.  Chaque partie a 
 une particularité et ensemble, le haut-parleur peut remplir sa fonction.  Deux sources
-de tension sont relié à la plaquette qui est elle-même relié au Gsm d’une part et à 
+de tension sont relié à la plaquette qui est elle-même relié au GSM d’une part et à 
 la bobine mobile d’autre part.  Une autre source de tension permet à la bobine fixe de 
-créer un champ magnétique constant.  La fréquence émise par le Gsm permet à la bobine 
+créer un champ magnétique constant.  La fréquence émise par le GSM permet à la bobine 
 mobile de bouger selon la musique et la membrane vibre pour émettre le son souhaité.
 
 \input{../foot.tex}
