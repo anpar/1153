@@ -11,11 +11,15 @@ Pour passer un espace.
 
 **Insèrer un nombre**
 Pour insèrer un nombre *seul* (sans unité) : utiliser 
-```\numprint{42}```
+```
+\numprint{42}
+```
 
 **Insèrer une grandeur**
 Pour insèrer une grandeur physique avec unité : utiliser
-```\SI{42}{\meter}```
+```
+\SI{42}{\meter}
+```
 Documentation : ftp://ftp.tex.ac.uk/ctan%3A/macros/latex/exptl/siunitx/siunitx.pdf
 
 **Insèrer une figure**
@@ -31,8 +35,14 @@ Utiliser :
 ```
 
 **Formules mathématiques**
-En ligne (dans une phrase) : ```$x=42$```
-En bloc (saut à la ligne automatique et centré) : ```$$x=42$$```
+En ligne (dans une phrase) : 
+```
+$x=42$
+```
+En bloc (saut à la ligne automatique et centré) : 
+```
+$$x=42$$
+```
 
 **Pour faire un grapgique**
 PGFPlots : http://pgfplots.sourceforge.net/pgfplots.pdf
