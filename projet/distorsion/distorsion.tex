@@ -14,17 +14,18 @@ et les moyens de diminution.
 \subsection{Définition}
 Commençons tout d'abord par comprendre la notion de distorsion du son: par définition, c'est
 une transformation du signal audio par rapport à celui de sortie. Une distorsion n'est généralement pas vraiment souhaitée, étant donné
-que le signal en est déformé. Cependant, certains audiophiles en tirent avantage, vu que que quelques
-transformations peuvent mener à un son plus agréable.
+que le signal en est déformé.\cite{dico} Cependant, certains audiophiles en tirent avantage, vu que que quelques
+transformations peuvent mener à un son plus agréable.\cite{encyclopedie}
 
-\paragraph{La distorsion harnomique}
+\paragraph{La distorsion harmonique}
 La distorsion harmonique joue sur la superposition de différentes fréquences:
 la fréquence fondamentale et ses harmoniques. Un haut-parleur parfait émettrait seulement la fréquence fondamentale, sans les harmoniques, qui sont donc des "parasites".
-On parle d'harmonique pour désigner les multiples entiers de la fréquence fondamentale.
+On parle d'harmonique pour désigner les multiples entiers de la fréquence fondamentale.\cite{encyclopedia}
 Par exemple, la seconde harmonique d'une fréquence de 50 Hz vaut 100Hz, la troisième 150Hz, etc. La figure 
 ci-dessous illustre adéquatement cette notion.
 Les harmoniques paires sont les moins incommodantes, étant donné qu'elles représentent la même note, mais à quelques octaves de différence.
-Les harmoniques impaires, elles, sont plus gênantes étant donné que la note est différente.
+Les harmoniques impaires, elles, sont plus gênantes étant donné que la note est différente.\cite{hartmann}
+
 
 \begin{figure}[ht!]
 \centering
@@ -51,17 +52,21 @@ legend entries={ fréq. fondamentale, $3$ème harmonique, distorsion}
 À cause de la distorsion harmonique, le signal que nous faisons circuler dans notre haut-parleur n'est pas
 une sinusoïdale parfaite mais plutôt une série de Fourier, c'est-à-dire une somme de sinusoïdes de 
 fréquence et d'amplitude différentes. C'est l'appareil en lui-même qui crée la distorsion, à cause de la qualité
-de certains composants.
+de certains composants.\cite{cuccia} \cite{termans}
 Les charges non-linéaires sont les principales causes de distorsion harmonique. Celles-ci causent 
 l'apparition des courants harmoniques qui sont eux-mêmes responsables de la distorsion harmonique. Elles sont 
-surtout présentes dans la grande distribution d'électricité et ont posé problème autrefois, avant réglementation.
+surtout présentes dans la grande distribution d'électricité et ont posé problème autrefois, avant réglementation.\cite{chargeslin}
 
 \subsection{Conséquences}
 La distorsion harmonique a plusieurs conséquences néfastes.
 La plus importante de toutes vient du fait que les harmoniques impaires génèrent un son dur, et peu agréable. De plus, la distorsion cause un accroissement 
 du courant dans un système. Il va en résulter une surchauffe des composantes électriques (conducteurs, 
-capacités,...). À la longue, des disfonctionnements non souhaités peuvent provoquer un vieillissement 
-précoce du circuit électrique. Il existe de nombreuses autres conséquences néfastes, mais n'oublions pas de préciser que certaines personnes recherchent tout de même ces distorsions pour produire un son plus agréable, au moyen d'harmoniques paires.
+capacités,...). À la longue, des dysfonctionnements non souhaités peuvent provoquer un vieillissement 
+précoce du circuit électrique.\cite{brevet2} Il existe de nombreuses autres conséquences néfastes, 
+mais n'oublions pas de préciser que certaines personnes recherchent tout de même ces distorsions pour 
+produire un son plus agréable, au moyen d'harmoniques paires. Dans le domaine de la musique, le timbre 
+d'un instrument est déterminé par l'agencement des harmoniques qu'il produit. C'est ainsi qu'une même note
+"sonne" différemment d'un instrument à un autre.
 
 \subsection{Solutions}
 Pour éviter toute distorsion, ou tout simplement pour émettre un son plus pur et exact, 
@@ -70,6 +75,9 @@ même si de nombreuses autres pistes de solution ont été exploitées.
 Les filtres actifs permettent d'éliminer les harmoniques perturbatrices en injectant des courants
 harmoniques de mêmes fréquences mais déphasés d'une demi-période. Cela cause des interférences
 destructrices avec les harmoniques dont on souhaite se débarrasser. La résultante est une droite constante
-nulle n'influençant pas notre signal.
+nulle n'influençant pas notre signal.\cite{brevet1}
+
+
+
 
 \input{../foot.tex}
