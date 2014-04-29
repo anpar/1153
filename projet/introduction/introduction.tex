@@ -26,19 +26,40 @@ distorsion harmonique. Le deuxième quant à lui concerne un concept lié au cir
 compose notre haut-parleur, il s'agit du principe de la contre-réaction.
 
 % Description générale du système
-Un haut-parleur est un outil permettant de transformer un signal 
-électrique en un son. Grâce à un électro-aimant constituée d'une 
-bobine fixe dans laquelle passe du courant, une bobine mobile 
-oscille et fait vibrer la membrane à laquelle elle est attachée. 
-Cette oscillation, qui dépend de la fréquence du signal électrique, 
-crée une onde sonore.
+Penchons-nous sans plus tarder sur une description générale du système. Notre haut-parleur
+peut-être représenté schématiquement comme sur la Figure \ref{block-diagram-hp}.
 
-Dans notre haut-parleur nous pouvons retrouver la membrane, la plaquette électrique, l
-a bobine fixe et mobile, les sources de tension et le caisson.  Chaque partie a 
-une particularité et ensemble, le haut-parleur peut remplir sa fonction.  Deux sources
-de tension sont relié à la plaquette qui est elle-même relié au GSM d’une part et à 
-la bobine mobile d’autre part.  Une autre source de tension permet à la bobine fixe de 
-créer un champ magnétique constant.  La fréquence émise par le GSM permet à la bobine 
-mobile de bouger selon la musique et la membrane vibre pour émettre le son souhaité.
+% Schéma montrant le bonne compréhension du système
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.68]{schema_fonctionnel.png}
+	\caption{Schéma fonctionnel du haut-parleur.}
+	\label{block-diagram-hp}
+\end{figure}
+
+Le GSM ou le MP3 va dans un premier temps envoyé un signal audio via le cable Jack au circuit
+imprimé, par la suite nous qualifierons ce signal de \textit{brute}. Le circuit imprimé permet
+quant à lui de modifier ce signal brute de plusieurs façon : 
+
+\begin{itemize}
+	\item En règlant le volume, c'est à dire en modifiant l'amplitude du signal audio ;
+	\item En règlant les graves et les aigus, c'est à dire en atténuant les basses ou les hautes
+	fréquences. Il s'agit du rôle des filtres passe-bas et passe-haut qui combiné forme un filtre 
+	passe-bande ;
+	\item En amplifiant le signal : c'est le rôle de l'amplifcateur audio du circuit.
+\end{itemize}
+
+A la sortie du circuit imprimé, le signal est alors \textit{filtré} et \textit{amplifié}.
+Ce signal traité ira ensuite alimenter en courant la bobine mobile. Cette 
+dernière intercepte un champ magnétique constant, noté $B$, produit par l'électroaimant.
+Elle subit donc une force de \textsc{Laplace} dont l'expression est :
+
+$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
+
+Où $L$ est la longueur du fil et$i(t)$ le courant le traversant. Cette force est proportionnelle
+au courant traversant
+la bobine mobile. La membrane se déplacera donc de manière cohérente avec le signal audio
+et reproduira le son voulu. Enfin, la membrane pourra revenir à son position d'équilibre
+grâce à des attaches qui, à la manière de ressorts, produisent une force de rappel.
 
 \input{../foot.tex}
