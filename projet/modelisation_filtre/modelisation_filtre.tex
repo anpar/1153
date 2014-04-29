@@ -133,7 +133,8 @@ $a+bi$ et en utilisant ensuite la notation trigonométrique d'une exponentielle 
 on trouve, après quelques simplifications et mises en évidence :
 
 $$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
-(-\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} + \cos(\arctan(-RC\omega) + \omega t))$$
+\left(-\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} + \cos(\arctan(-RC\omega) + \omega t)\right)
+$$
 
 On remarque donc que le déphasage entre $V_{out}$ et $V_{in}$ est $-\arctan(RC\omega) = -\arctan(2\pi fRC)$.
 Ce déphasage augmente donc linéairement avec $\omega$ et est dû au temps que met le condensateur
@@ -240,8 +241,7 @@ le section précédente. On a alors simplement :
 $$V_R = V_{in} - V_C$$
 
 $$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
-(\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} - \cos(\arctan(-RC\omega) + \omega t) + \cos(\omega t)\cdot (\sqrt{1 + R^2\omega^2C^2}))$$
-
+\left(\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} - \cos(\arctan(-RC\omega) + \omega t) \right) + \cos(\omega t)$$
 
 Le déphasage reste donc le même que pour le filtre passe-bas.
 
@@ -333,8 +333,8 @@ Cette tension de sortie du filtre passe-bas sera notre tension d'entrée pour le
 filtre passe-haut. Précédemment, dans la section concernant le filtre passe haut,
 nous trouvions :
 
-$$V_{out,2} = \frac{V_{in,2}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}}
-(\frac{e^{\frac{-t}{R_{2}C_{2}}}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}} - 
+$$V_{out2} = \frac{V_{in2}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}}
+\left(\frac{e^{\frac{-t}{R_{2}C_{2}}}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}} - 
 \cos(\arctan(-R_{2}C_{2}\omega) + \omega t)\right) + V_{in2}\cos(\omega t)$$
 
 où $V_{in,2}$ est la tension à l'entrée du filtre passe-haut, $R_{2}$ la résistance, 
@@ -343,7 +343,7 @@ En remplaçant $V_{in,2}$ par $V_{out,1}$, la tension à la sortie du passe-bas,
 trouverons $V_{out,3}$, la tension de sortie finale.
 Après simplification, nous obtenons:
 
-$$V_{out3} = \frac{V_{out1} \cdot V_{out2}}{V_{in1}}$$
+$$V_{out,3} = \frac{V_{out,1} \cdot V_{out,2}}{V_{in1}}$$
 
 \begin{figure}[!htb]
 	\centering
@@ -370,7 +370,7 @@ $$V_{out3} = \frac{V_{out1} \cdot V_{out2}}{V_{in1}}$$
 
 \subsubsection{Vérification des résultats}
 
-Au vu du graphe de $V_{out,3} / V_{in1,}$ de l'équation obtenue pour le passe-bande, nous pouvons
+Au vu du graphe de $V_{out,3} / V_{in,1}$ de l'équation obtenue pour le passe-bande, nous pouvons
 valider notre résultat, étant donné que l'allure du graphique correspond à nos attentes. En effet,
 nous pouvons apercevoir très nettement une première fréquence de coupure, et en envisager une autre.
 
