@@ -3,7 +3,7 @@
 % L'objectif du projet + les spécifications attendues + cahier des charges (ref)
 Dans le cadre du cours \textit{Projet 2} du deuxième quadrimestre, notre groupe a été amené à 
 concevoir un haut-parleur connectable, via une prise Jack \unit{3.5}{\milli\meter}, à un 
-GSM ou un MP3 (les contraintes et spécifications sont détaillées dans l'annexe ''Cahier des charges''). 
+GSM ou un MP3 (les contraintes et spécifications sont détaillées dans le ''Cahier des charges''). 
 En plus de cela, notre haut-parleur doit permette un règlage du volume, des graves
 et des aigus. Un autre objectif du projet est d'apprendre un travailler et à s'organiser \textit{en groupe}, 
 comme le font tous les jours les ingénieurs.
@@ -15,7 +15,7 @@ et physiques de composants du haut-parleur. Dans ce chapitre, nous
 commencerons par une vue générale du haut-parleur qui nous
 permettra d'introduire les concepts physiques clés. Nous continuerons
 ensuite par la modélisation des filtres passe-bas, passe-haut et passe bande.
-Après cela, nous nous attarderons  sur le dimensionnement de l'électroaimant et
+Après cela, nous nous attarderons  sur le dimensionnement de l'électroaimant, du haut parleur et
 de la bobine mobile pour enfin terminer par la modélisation mécanique de la bobine
 mobile.
 
@@ -25,7 +25,28 @@ concerne plutôt l'acoustique, il s'agit de la
 distorsion harmonique. Le deuxième quant à lui concerne un concept lié au circuit électrique qui
 compose notre haut-parleur, il s'agit du principe de la contre-réaction.
 
-% Description générale du système
+% Description générale du système intro
+
+Penchons-nous sans plus tarder sur une description générale du système ; 
+
+Le GSM ou le MP3 connecté au haut-parleur via le cable Jack va dans un premier temps envoyé un signal audio dans le 
+circuit imprimé. Ce signal peut être modififié de trois façons :
+
+\begin{itemize}
+	\item En règlant le volume, c'est à dire en modifiant l'amplitude du signal audio ;
+	\item En règlant les graves et les aigus, c'est à dire en atténuant les basses ou les hautes
+	fréquences. Il s'agit du rôle des filtres passe-bas et passe-haut qui combiné forme un filtre 
+	passe-bande ;
+	\item En amplifiant le signal : c'est le rôle de l'amplifcateur audio du circuit.
+\end{itemize}
+
+A la sortie du circuit imprimé, le signal \textit{filtré} et \textit{amplifié} va alimenter en courant la bobine mobile.
+Cette dernière va intercepté le champ magnétique constant produit par l'électroaimant, dimensionné préalablement
+pour répondre à notre cahier des charges. La bobine mobile va subir une force qui déplacera la membrane en fonction
+du signal audio et produira le son voulu.
+
+
+% Description générale du système détaillée
 Penchons-nous sans plus tarder sur une description générale du système. Notre haut-parleur
 peut-être représenté schématiquement comme sur la Figure \ref{block-diagram-hp}.
 
