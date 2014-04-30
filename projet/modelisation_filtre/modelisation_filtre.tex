@@ -338,36 +338,42 @@ $$V_{out2} = \frac{V_{in2}}{\sqrt{1 + R_{2}^2\omega^2C_{2}^2}}
 \cos(\arctan(-R_{2}C_{2}\omega) + \omega t)\right) + V_{in2}\cos(\omega t)$$
 
 où $V_{in,2}$ est la tension à l'entrée du filtre passe-haut, $R_{2}$ la résistance, 
-et $C_{2}$ la capacité. 
+et $C_{2}$ la capacité. Étant donné que nous disposons d'un adaptateur d'impédance, 
+nous pouvons nous permettre d'utiliser ces deux équations obtenues séparément.
 En remplaçant $V_{in,2}$ par $V_{out,1}$, la tension à la sortie du passe-bas, nous 
 trouverons $V_{out,3}$, la tension de sortie finale.
 Après simplification, nous obtenons:
 
 $$V_{out,3} = \frac{V_{out,1} \cdot V_{out,2}}{V_{in1}}$$
 
-\begin{figure}[!htb]
-	\centering
-	\begin{tikzpicture}[>=stealth]
-	\begin{axis}[
-	xmin=0,xmax=50000,
-	ymin=0,ymax=0.02,
-	axis x line=middle,
-	axis y line=middle,
-	axis line style=->,
-	xlabel={$f$},
-	ylabel={$V_{out}/V_{in}$},]
-	\addplot[no marks,red,-] expression[domain=0:100000,samples=500]
-	% Formule par rapport aux expressions obtenues, un peu décallée
-	% {(((7.5)/(sqrt(1 + 100^2 * 0.00001^2 * (2*3.14*x)^2))) * (((-2.718^((-100*0.00001)/(100*0.00001)))/(sqrt(1 + 100^2 *
-	% 0.00001^2 * (2*3.14*x)^2))) + cos(atan(-100*0.00001*2*3.14*x) + 2*3.14*x*100*0.00001)))/(7.5 * cos(2*3.14*x*100*0.00001))}
-	{ (((1 + (2*3.14*x*1000*0.000000470)^2)^(-0.5))*((1 + (1)/((2*3.14*x*10*0.000000470)^2))^(-0.5))/7.5)}
-	node[pos=0.65,anchor=south west]{$$};
-	\end{axis}
-	\end{tikzpicture}
-	\caption{Graphe de $V_{out,3} / V_{in,1}$ pour le filtre passe-bande.}
-	\label{pbd_ratio}
-\end{figure}
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[>=stealth]
+    \begin{axis}[
+        xmin=0,xmax=2000,
+        ymin=0,ymax=1.2,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=->,
+        xlabel={$f$},
+        ylabel={$V_{out} / V_{in}$},
+				legend entries = {passe-bande, fréq. coupure1, fréq. coupure 2}
+        ]
 
+\addplot[no marks,red,-] expression[domain=0:2000,samples=100]
+{(((2*3.14*x*10000*0.00000047)*(1 + (2*3.14*x*10000*0.00000047)^2)^(-0.5))*
+((1 + (2*3.14*x*500*0.00000047)^2)^(-0.5)))};
+\addplot[no marks, gray] coordinates
+{(33.86,0) (33.86,1.1)};
+\addplot[no marks, gray] coordinates
+{(677.26,0) (677.26,1.1)};
+
+
+\end{axis}
+\end{tikzpicture}
+\caption{Graphe de $V_{out} / V_{in}$ pour le filtre passe-bande}
+\label{lwp_ratio}
+\end{figure}
 \subsubsection{Vérification des résultats}
 
 Au vu du graphe de $V_{out,3} / V_{in,1}$ de l'équation obtenue pour le passe-bande, nous pouvons
