@@ -328,4 +328,238 @@ que les graduations ont un rapport constant, et non plus une différence constan
 Cela nous permet de travailler à grande échelle, et de représenter l'exponentielle comme une droite, de
 manière simple. L'équation de la droite est, en toute généralité : $y=a\log{x}+b$ .
 
+\textbf{Correction sans passe-haut}
+
+
+\section{Identification polynômiale et étude mathématique}
+
+Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure
+dans un circuit passe-bas. Trois méthodes nous étaient proposées et nous avons adopté
+la première pour les raison explicitées plus bas.
+
+Définissons tout d'abord ce qu'est la fréquence de coupure: c'est la fréquence à partir de laquelle
+la tension dans un circuit passe-bas commence à diminuer
+lorsque la fréquence augmente.
+
+Pour la déterminer, nous avons tout d'abord procédé à une expérience en laboratoire.
+Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans
+ce circuit considéré.
+Graphiquement, le tracé du rapport des tensions d'entrée et de sortie du filtre en fonction de la
+fréquence à l'allure d'une exponentielle. Pour faciliter le calcul, nous sommes passés en repère
+semi-logarithmique, réduisant ainsi l'exponentielle à une intersection de deux droites. Ce procédé
+explicité en profondeur dans la sous-section "Passage en échelle logarithmique"'.
+
+\subsection{Approximation de la fréquence de coupure}
+
+\subsubsection{Filtre passe-bas}
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+xlabel={$f$},
+ylabel={$V_{out}$},]
+\addplot coordinates
+{(0,2.5) (5000,2.5) (10000,2.5) (16000,1.7) (18000,1.55) (20000,1.45)};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
+\label{lwp_ratio}
+\end{figure}
+
+
+\paragraph{Équation de la droite horizontale}
+Expérimentalement, nous obtenons une fréquence de sortie constante (de $\unit{2.5}{\volt}$ )
+pour les plus basses fréquences. L'équation de la droite horizontale est donc \[y=2.5\]
+
+\paragraph{Équation de la droite diagonale}
+
+Avec les mesures effectuées en laboratoires, nous n'obtenons non pas une droite mais bien une exponentielle.
+Pour faciliter le calcul de l'intersection de l'exponentielle et de la droite, nous passons donc en repère
+semi-logarithmique.
+
+Nous savons que l'équation d'une droite dans un repère cartésien est de type $y=ax+b$, avec $a$ la pente
+et $b$ l'ordonnée à l'origine.
+
+Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répère semi-log selon l'axe des
+abscisses. L'équation de la droite devient alors : $y=a\log{x}+b$
+
+\paragraph{Mesures en laboratoires}
+
+Voici 3 résultats choisis de manière cohérente parmi toutes les mesures effectuées en laboratoire, où
+$V_c$ est la tension de sortie et $f$ la fréquence :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$V_c$ & $f$ & $\log{f}$ \\
+\hline
+1.7 & 16000 & 4.204 \\
+\hline
+1.55 & 18000 & 4.255 \\
+\hline
+1.45 & 20000 & 4.301 \\
+\hline
+\end{tabular}
+\end{center}
+
+Dès maintenant, les fréquences sont exprimées en base logarithmique.
+Écrivons un système ayant pour inconnues la pente ($a$) et l'ordonnée à l'origine ($b$) de notre droite
+inconnue.
+Nous avons trois équations à deux inconnues, et le système n'admet pas de solution.
+Cela n'est pas étonnant, étant donné que les résultats expérimentaux ne sont jamais très précis.
+
+Voici le système sous forme matricielle :
+
+$$A \cdot \vec{x} = \vec{b}$$
+
+\begin{center}
+\begin{array}{rcel}
+$$
+\begin{pmatrix}
+4.204 & 1\\
+4.255 & 1 \\
+4.301 & 1
+\end{pmatrix} &
+
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix} &
+
+= &
+
+\begin{pmatrix}
+1.7\\
+1.55\\
+1.45
+\end{pmatrix}
+$$
+\end{array}
+\end{center}	
+
+Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous
+allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée.
+
+Soient $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
+Trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
+la méthode de Gram-Schmidt :
+
+$$ \vec {e_1} = \frac{f_1}{||f_1||} = \begin{pmatrix} \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}}) \end{pmatrix}$$
+
+
+$$ \vec {e_2} = \frac{ \vec{f_2} - (\vec{e_1}|\vec{f_2})}{||\vec{f_2} - (\vec{e_1}|\vec{f_2})||} = \begin{pmatrix}
+-0.684 & 0.03 & 0.729 \end{pmatrix} $$
+
+
+Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales
+peu précises :
+nous projetons les vecteurs grâce à la formule de la projection :
+
+% Peut-être parler ici du fait qu'on projete plutôt sur A orthogonal pour gagner du temps en calcul ?
+
+$$
+\vec{b'}
+=
+(\vec{b}|\vec{e_1}) \cdot \vec{e_1} + (\vec{b}|\vec{e_2}) \cdot \vec{e_2}
+=
+\begin{pmatrix}
+1.607\\
+1.556\\
+1.524
+\end{pmatrix}$$
+$$
+
+Nous pouvons alors réécrire le système comme cela :
+
+$$
+\begin{pmatrix}
+ 4.204 & 1\\
+ 4.255 & 1 \\
+ 4.301 & 1
+\end{pmatrix}
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}
+1.607\\
+1.565\\
+1.524
+\end{pmatrix}
+$$
+
+
+Nous en déduisons la valeur des coefficients $a$ et $b$ :
+
+$$a = -1.96$$
+$$b= 9.84$$
+
+La droite oblique a donc pour équation
+$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+
+Pour trouver la fréquence d'intersection entre les deux droites, nous résolvons le système, et nous
+trouvons :
+
+$$\fbox{x = \unit{5557.7}{\hertz}}$$
+
+Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ telle que :
+
+$$f=\frac{1}{2\pi RC}$$
+
+avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ et $C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de
+la fréquence de coupure est donc :
+
+$$f= \unit{5889.2}{\hertz}$$
+
+
+\subsection{Choix de la méthode}
+
+Une démarche d'approximation n'est évidemment pas unique. Nous avions le choix entre trois méthodes
+distinctes, et nous avons opté pour celle utilisant les bases orthonormées.
+
+Les trois méthodes proposées suivaient la même démarche, minimiser une distance afin de déterminer une droite. 
+
+Pour la première méthode,  nous devions minimiser la distance entre un polynôme de degré deux passant par nos points pris au laboratoire et la droite à déterminer :
+
+Soient la droite à déterminer H(x) = ax + b et le polynôme q(x) = $\alpha x^2$ + $\beta$x + $\gamma$, nous cherchons à déterminer la distance :
+
+dist$^2$ = \| H - q \| $^2$ = ( H - q | H - q ) = ( H($x_1$) - q($x_1$) )$^2$ + ( H($x_2$) - q($x_2$) )$^2$ + ( H($x_3$) - q($x_3$) )$^2$
+
+Sachant que q($x_i$) = $y_i$, nous arrivons finalement :
+
+dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + b - $y_3$ )$^2$
+
+Nous arrivons exactement à la même solution pour la seconde méthode qui minimise la fonction distance. 
+
+Pour la troisième méthode, nous avons calculer la projection orthogonale de la colonne y sur l'espace  des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur y et la projection y' :
+
+dist$^2$ = \| y' - y \|$^2$ = ( y' - y | y' - y )
+
+Nous savons que y'$_i$ = ax$_1$ + b, nous pouvons donc dire que  
+
+dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + b - $y_3$ )$^2$
+
+Ce qui nous redonne la même solution que les deux autres méthodes. 
+
+Néanmoins, les différents arrondit durant les calculs nous a donné des réponses sensiblement différentes. Pour cette raison, nous avons garder la troisième méthode qui nous donne une fréquence de coupure la plus proche de la fréquence théorique du filtre passe-bas.
+ 
+
+\subsection{Meilleure approximation}
+
+Pour arriver à une meilleure approximation, nous pourrions imaginer considérer $n$ points avec un
+$n$ très grand. Cependant, déterminer l'unique polynôme de degré n-1 passant par les trois points seraient assez vite difficile à déterminer. Le produit scalaire définie pour ce problème dépendant des n points, résoudre ce problème sans logiciel devient impossible quand n est grand.  
+
+\subsection{Passage en échelle logarithmique}
+
+Lors de notre approximation, nous avons mentionné le fait que nous "passions en échelle logarithmique".
+Généralement, nous utilisons des échelles linéaires, avec des graduations dont la différence est constante.
+Ici, dans un soucis de facilité, nous avons utilisé une représentation semi-logarithmique. Cela signifie
+que les graduations ont un rapport constant, et non plus une différence constante pour l'axe des abscisses.
+Cela nous permet de travailler à grande échelle, et de représenter l'exponentielle comme une droite, de
+manière simple. L'équation de la droite est, en toute généralité : $y=a\log{x}+b$ .
+
+
+
 \input{../foot.tex}
