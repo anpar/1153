@@ -25,7 +25,7 @@ C'est cette seconde bobine qui sera responsable du tremblement de la membrane.
 \end{figure}
 
 Le nombre de spires de la bobine fixe, appelons-le $N_1$, a été choisi arbitrairement de manière à produire un
-champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à \numprint{400}. 
+champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de notre tuteur, à \numprint{420}. 
 Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
@@ -34,19 +34,18 @@ Nous allons maintenant calculer les caractéristiques suivantes de notre électr
 	\item Inductance.
 \end{itemize}
 
-% Section à revoir, l'entrefer a changé, le courant qu'on fait passé aussi !
 \paragraph{Champ magnétique dans l'entrefer}
-Pour céer un champ magnétique plus fort, nous avons réduit l'entrefer de $\unit{x}{\milli\meter}$.
-Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{x}{\milli\meter}$ en 
+Pour céer un champ magnétique plus fort, nous avons réduit l'entrefer de $\unit{7}{\milli\meter}$.
+Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{7}{\milli\meter}$ en 
 utilisant la conservation des flux. Pour ce calcul, nous utilisons l'hypothèse simplificatrice
 assez forte que tout le champ se trouve dans l'entrefer.
 
 $$H_e \cdot e = N_1 I \Rightarrow \frac{B_e}{\mu_0 \mu_r} e = N_1 I$$
 
-Pour $N_1 = 400$, l'entrefer $e = \unit{0.011}{\meter}$, $\mu_r = 1.0000004$ la perméabilité magnétique
-de l'air et $I = \unit{2.5}{\ampere}$, on trouve alors :
+Pour $N_1 = 420$, l'entrefer $e = \unit{0.007}{\meter}$, $\mu_r = 1.0000004$ la perméabilité magnétique
+de l'air et $I = \unit{1}{\ampere}$, on trouve alors :
 
-$B_e = \unit{0.1142389}{\tesla}$
+$B_e = \unit{0.07539825}{\tesla}$
 
 \paragraph{Résistance totale de la bobine}
 Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
@@ -54,25 +53,25 @@ Pour cela nous utilisons la formule suivante :
 
 $$L{fil} = N_1 \cdot 2\pi r$$  
 
-Où $N_1 = 400$ est le nombre de spires de la bobine fixe, et $r$ est la rayon des spires. Pour
+Où $N_1 = 420$ est le nombre de spires de la bobine fixe, et $r$ est la rayon des spires. Pour
 $r = \unit{0.016}{\meter}$, on trouve :
 
-$$L_{fil} = \unit{40.3}{\meter}$$
+$$L_{fil} = \unit{42.22}{\meter}$$
 
 Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la résistance linéique des fils de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{7.254}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{7.6}{\ohm}$$
 
 \paragraph{Inductance de la bobine}
 Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_1 \frac{\phi_B}{I}
+$$L = N_1 \frac{\phi_B}{I}$$
 
 Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
 On trouve alors :
 
-$L = \unit{0.01475}{\henry}$
+$L = \unit{0.025468}{\henry}$
 
 \paragraph{Tableau récapitulatif}
 
@@ -80,9 +79,11 @@ $L = \unit{0.01475}{\henry}$
 	\begin{tabular}{c|c|c|c|c}
 		$N_1$ & $B_e$ & $R$ & $L$ & $L_{fil}$ \\
 		\hline
-		400 & $\unit{0.1142389}{\tesla}$ & \unit{7.254}{\ohm} & $\unit{0.01475}{\henry}$ & $\unit{40.3}{\meter}$\\
+		420 & $\unit{0.07539825}{\tesla}$ & \unit{7.6}{\ohm} & $\unit{0.0254683}{\henry}$ & $\unit{42.22}{\meter}$\\
 	\end{tabular}
 \end{center}
+
+%Il faut encore recalculer la constante de raideur de la menbranne!
 
 \subsection{Calcul de la constante de raideur de la membrane}
 Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
@@ -148,3 +149,5 @@ $$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 \end{figure}
 
 \input{../foot.tex}
+
+\end{document}
