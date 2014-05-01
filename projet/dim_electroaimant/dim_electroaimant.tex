@@ -100,11 +100,11 @@ maximal passant dans la bobine mobile :
 $$I = \frac{P}{V} \cdot{\sqrt{2}} = \unit{0.2357}{\ampere}$$
 
 En fonction de la constante de raideur de la membrane trouvée dans la sous-section précédente et de l'écartement
-maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
+maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{2}{\milli\meter}$), nous sommes en
 mesure de trouver la longueur du fil de la bobine:
 
 $$IL_{fil}B = kx$$
-$$L_{fil} = \frac{kx}{IB} = 12.6 m$$
+$$L_{fil} = \frac{kx}{IB} = 12.84 m$$
 
 Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
 donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine :
@@ -113,15 +113,17 @@ $$25.8 = \frac{N_2}{L_{bobine}}$$
 
 En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = 118$$
+$$N_2 =  \frac{L_{fil}}{2\pi r} = 1203$$
+% 1203, vraiment? A verifier
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
 Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à multiplier la longueur de fil trouvée 
 précédemment par la résistance linéique du fil de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{2.38}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{2.31}{\ohm}$$
 
+% Tout ce qui suit est à recalculer
 \paragraph{Calcul de l'inductance de la bobine mobile}
 
 Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
