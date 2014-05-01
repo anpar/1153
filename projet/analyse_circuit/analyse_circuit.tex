@@ -41,13 +41,13 @@ canal gauche et le canal droit. Le canal gauche correspond à la pointe de la pr
 (L sur la figure), le canal droit correspond à l'anneau de la prise (R sur la figure). 
 Le manchon de la prise correspond quant à lui à la masse.
 
-Sur le schéma du la prise jack femelle (Figure \ref{jack-female}), on peut alors
+Sur le schéma de la prise Jack femelle (Figure \ref{jack-female}), on peut alors
 voir que le signal du canal droit sortira du point \numprint{6}, tandis que le signal du 
 canal gauche sortira du point \numprint{7}. La terre est quant à elle reliée au point
 \numprint{3}. Sur le dessin de la plaquette (Figure \ref{dessin-pcb}), on remarque alors
 que c'est le signal du canal droit qui sera traité par la plaquette, celui-ci se dirigeant vers
 le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \textit{IN2} pourrait
-être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soit en stéréo.
+être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soient en stéréo.
 
 \begin{figure}[!hbt]
 	\centering
@@ -57,8 +57,8 @@ le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \text
 \end{figure}
 
 \subsection{Le réglage du volume}
-Le fonctionnement de ce bloc est relativement simple à comprendre, il est constitué d'un potentiomètre 
-(P1 sur la Figure \ref{dessin-pcb}), c'est à dire d'une résistance variable.
+Le fonctionnement de ce bloc est relativement simple à comprendre. Il est constitué d'un potentiomètre 
+(P1 sur la Figure \ref{dessin-pcb}), c'est-à-dire d'une résistance variable.
 Selon la valeur de la résistance, par la loi d'Ohm, l'amplitude du signal
 sera plus ou moins réduite et donc le volume sera plus ou moins grand.
 
@@ -90,7 +90,7 @@ Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constit
 filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves).
 Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}),
 le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). 
-La combinaison des deux filtres forment un filtre passe-bande, représenté sur la
+La combinaison des deux filtres forme un filtre passe-bande, représenté sur la
 Figure \ref{filtre}. 
 
 \begin{figure}[!hbt]
@@ -101,7 +101,7 @@ Figure \ref{filtre}.
 	\label{filtre}
 \end{figure}
 
-Ce bloc est plus un petit peu compliqué à situé sur la Figure
+Ce bloc est un petit peu plus compliqué à situer sur la Figure
 \ref{dessin-pcb} car les deux amplificateurs sont situés dans le Dual ampli-op (LM358N) 
 représenté à la Figure \ref{dual-ampli-op}. 
 
@@ -109,7 +109,7 @@ représenté à la Figure \ref{dual-ampli-op}.
 	\centering
 	\includegraphics[scale=0.6]{dual-opamp.png}
 	\includegraphics[scale=0.45]{dual-opamp-r.jpg}
-	\caption{Le dual op-amp. (Soure : datasheet du composant sur Farnell.com)}
+	\caption{Le dual op-amp. (Source : datasheet du composant sur Farnell.com)}
 	\label{dual-ampli-op}
 \end{figure}
 
@@ -140,17 +140,17 @@ Chaque filtre (passe-haut et passe-bas) est composé d'un potentiomètre et d'un
 % A VERIFIER
 Afin d'assurer à notre haut-parleur la plus grande bande passante, nous avons utilisé le potentiomètre
 dont la résistance maximale est de \unit{1000}{\ohm}) pour le filtre passe-haut et
-l'autre (dont la résistance maximale est de \unit{100}{\ohm}) pour le filtre passe-bas. En effet, soient
-$f_1$ et $f_2$ les fréquences de coupures respectives des filtres passe-haut et passe-bas, la bande passante
+l'autre (dont la résistance maximale est de \unit{100}{\ohm}) pour le filtre passe-bas. En effet: soient
+$f_1$ et $f_2$ les fréquences de coupures respectives des filtres passe-haut et passe-bas. La bande passante
 est donnée par :
 
 $$f_2 - f_1$$
 
-Pur avoir la plus grande bande passante, il faut donc :
+Pour avoir la plus grande bande passante, il faut donc :
 
 $$f_1 < f_2 \Rightarrow \frac{1}{2\pi R_1C} < \frac{1}{2\pi R_2C} \Rightarrow R_2 < R_1$$
 
-Le choix inverse aurait pu aboutir des bandes passantes nulles.
+Le choix inverse aurait pu à aboutir une bande passante nulle.
 
 Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), 
 il s'agit en quelque sorte d'un câble de "`sécurité"' que l'on peut connecter afin que le signal 
