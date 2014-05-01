@@ -1,21 +1,21 @@
 \input{../head.tex}
 
-
-\section{Identification polynômiale et étude mathématique}
-
 Cette section a pour but d'expliquer notre démarche pour l'approximation de la fréquence de coupure
-dans un circuit passe-bas. Trois méthodes nous étaient proposées et nous avons adopté
-la première pour les raison explicitées plus bas.
+dans un circuit passe-bas et passe-haut. Trois méthodes nous étaient proposées, et nous avons adopté
+la première pour les raisons explicitées plus bas.
 
-Définissons tout d'abord ce qu'est la fréquence de coupure: c'est la fréquence à partir de laquelle
-la tension dans un circuit passe-bas commence à diminuer
-lorsque la fréquence augmente.
+Définissons tout d'abord ce qu'est la fréquence de coupure. Dans le cas d'un filtre passe-bas, toutes les fréquences qui
+lui sont supérieures ne passent pas et, inversément, pour un passe-haut seules les fréquences supérieures passent.
+En terme de tension, dans le premier cas, la tension de sortie reste constante jusqu'à qu'à la fréquence de coupure,
+à partir de laquelle elle diminue exponentionnellement. Inversément, pour un filtre CR, la tension croît
+exponentiellement avant de se stabiliser après la fréquence de coupure.
 
 Pour la déterminer, nous avons tout d'abord procédé à une expérience en laboratoire.
 Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans
-ce circuit considéré.
-Graphiquement, le tracé du rapport des tensions d'entrée et de sortie du filtre en fonction de la
-fréquence à l'allure d'une exponentielle. Pour faciliter le calcul, nous sommes passés en repère
+chacun des circuits considérés. Nous ne vous présenterons ici que la démarche pour le filtre passe-bas, 
+la méthode étant similaire pour le passe-haut.
+Graphiquement, le tracé du rapport des tensions d'entrée et de sortie des filtres en fonction de la
+fréquence a l'allure d'une exponentielle. Pour faciliter le calcul, nous sommes passés en repère
 semi-logarithmique, réduisant ainsi l'exponentielle à une intersection de deux droites. Ce procédé
 explicité en profondeur dans la sous-section "Passage en échelle logarithmique"'.
 
@@ -182,7 +182,6 @@ avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ et $C= \unit{470 \cdot 10^{-9}}{\farad}$,
 la fréquence de coupure est donc :
 
 $$f= \unit{5889.2}{\hertz}$$
-
 
 
 \subsection{Choix de la méthode}
