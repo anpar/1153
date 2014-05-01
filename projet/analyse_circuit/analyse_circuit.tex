@@ -1,8 +1,5 @@
 \input{../head.tex}
 
-% Circuit électriquer à refaire en LaTeX, là ils sont vraiment
-% dégeulasses.
-
 \section{Analyse séquentielle du circuit}
 Dans cette section, nous allons décrire le fonctionnement du circuit
 de notre haut-parleur de la manière la plus précise et la plus complète
@@ -12,72 +9,167 @@ Cette section est découpée en quatre sections, une pour chaque bloc
 principal du circuit. Chaque bloc est associé à un rôle bien précis du
 haut-parleur.
 
-\subsection{Bloc 1 : la connexion avec la prise Jack}
+\paragraph{Remarque}
+Dans cette section, la figure associé à chaque composant sera constituée
+d'un schéma de ce composant à gauche et d'une photo de ce composant à droite.
 
-\begin{figure}[h]
+\subsection{La connexion avec la prise Jack}
+
+\begin{figure}[!hbt]
 	\centering
-	\includegraphics[scale=0.6]{img/bloc1.png}
-	\caption{Premier bloc du circuit, contenant 
-					la prise Jack femelle.}
-	\label{bloc1}
+	\includegraphics[scale=0.6]{jack-female.png}
+	\includegraphics[scale=0.24]{jack-female-r.jpg}
+	\caption{Premier bloc du circuit :
+					la prise Jack femelle. (Source : datasheet du composant sur Farnell.com)}
+	\label{jack-female}
 \end{figure}
 
-Sur ce premier bloc (Figure \ref{bloc1}), chargé de faire la connexion entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. 
-Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack mâle dont nous disposons (Figure \ref{jack}).
+Sur ce premier bloc (Figure \ref{jack-female}), chargé de faire la connexion 
+entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. 
+Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack
+mâle dont nous disposons (Figure \ref{jack-plug}).
 
-\begin{figure}[h]
+\begin{figure}[!hbt]
 	\centering
-	\includegraphics[scale=0.1]{img/jack.png}
-	\caption{Prise Jack mâle 3.5mm, contact en 3 points.}
-	\label{jack}
+	\includegraphics[scale=0.1]{jack-plug.png}
+	\caption{Prise Jack mâle \unit{3.5}{\milli\meter}, contact en 3 points. (Source : Wikipédia)}
+	\label{jack-plug}
 \end{figure}
 
-Cette prise Jack mâke sert à transporter un signal stéréophonique, qui sépare le canal gauche et le canal droit.
-Le canal gauche correspond à la pointe de la prise (L sur la figure), le canal droit correspond à l'anneau de la prise (R sur la figure). Le manchon de la prise correspond quant à lui à la masse.
+Cette prise Jack mâle sert à transporter un signal stéréophonique, qui sépare le 
+canal gauche et le canal droit. Le canal gauche correspond à la pointe de la prise 
+(L sur la figure), le canal droit correspond à l'anneau de la prise (R sur la figure). 
+Le manchon de la prise correspond quant à lui à la masse.
 
-Sur le schéma du bloc 1 (Figure \ref{bloc1}), on peut alors voir que le signal du canal droit sera traité par le circuit, tandis que le signal du canal gauche sera redirigé vers le point \textit{IN2} où il pourra être connecté à notre deuxième haut-parleur pour être traité à son tour.
+Sur le schéma du la prise jack femelle (Figure \ref{jack-female}), on peut alors
+voir que le signal du canal droit sortira du point \numprint{6}, tandis que le signal du 
+canal gauche sortira du point \numprint{7}. La terre est quant à elle reliée au point
+\numprint{3}. Sur le dessin de la plaquette (Figure \ref{dessin-pcb}), on remarque alors
+que c'est le signal du canal droit qui sera traité par la plaquette, celui-ci se dirigeant vers
+le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \textit{IN2} pourrait
+être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soit en stéréo.
 
-\subsection{Bloc 2 : le réglage du volume}
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics[scale=0.5]{dessin-pcb.png}
+	\caption{Dessin de la face avant du circuit imprimé. (Source : Composants pour le projet P2, iCampus)}
+	\label{dessin-pcb}
+\end{figure}
 
-Le fonctionnement de ce bloc est relativement simple à comprendre, il est constitué d'un potentiomètre (P1 sur la Figure \ref{bloc2}) dont la résistance varie entre $\unit{10}{\ohm}$ et $\unit{2 \cdot 10^{6}}{\ohm}$. Selon la valeur de la résistance, par la loi d'Ohm, l'amplitude du signal sera plus ou moins réduite et donc le volume sera plus ou moins grand.
+\subsection{Le réglage du volume}
+Le fonctionnement de ce bloc est relativement simple à comprendre, il est constitué d'un potentiomètre 
+(P1 sur la Figure \ref{dessin-pcb}), c'est à dire d'une résistance variable.
+Selon la valeur de la résistance, par la loi d'Ohm, l'amplitude du signal
+sera plus ou moins réduite et donc le volume sera plus ou moins grand.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{img/bloc2.png}
-	\caption{Schéma du bloc 2, chargé du réglage du volume.}
+	\includegraphics[scale=1.1]{pot.png}
+	\includegraphics[scale=0.30]{pot-r.jpg}
+	\caption{Schéma du bloc 2, chargé du réglage du volume. (Soure : datasheet du composant sur Farnell.com)}
 	\label{bloc2}
 \end{figure}
 
-\subsection{Bloc 3 : le réglage des graves et des aigus}
+Nous disposions de 3 potentiomètres pour réaliser notre haut-parleur, possédant
+tous une résistance maximale différente :
 
-Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constitué d'un filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves).
-Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}), le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). 
-Ces deux amplificateurs sont ce qu'on appelle des amplificateurs \textit{suiveurs}. Leur rôle est de permettre le règlage des graves et des aigus de manière indépendante.
-Sans ces amplificateurs suiveurs, faire varier le potentiomètre \textit{P2} influencerait non seulement le filtre passe-haut, mais influencerait aussi le filtre passe-bas (car les potentiomètres \textit{P2} et \textit{P3} sont en série).
+\begin{center}
+	\begin{tabular}{l|r}
+	3386W-1-101-LF & \unit{100}{\ohm} \\
+	3386W-1-102-LF & \unit{1000}{\ohm} \\
+	3386W-1-103-LF & \unit{10000}{\ohm} 
+	\end{tabular}
+\end{center}
 
-Un autre point intéressant à relever sur le schéma du bloc 3 est la présence d'une boucle reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées "boucles de contre-réaction". 
-Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. Grâce aux boucles de contre-réaction, on peut contrôler le gain d'un amplificateur. 
-Dans notre cas, le gain de l'amplificateur est ramené à $1$.
+% A verifier
+Afin de permettre une plus grande variation du volume, nous avons décidé d'utiliser
+le potentiomètre avec la plus grande résistance maximale en \textit{P1}.
 
-Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), il s'agit en quelque sorte d'un câble de "`sécurité"' que l'on peut connecter afin que le signal ne passe pas par les filtres passe-haut et passe-bas. 
-Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse où un des filtres ne fonctionnerait pas.
+\subsection{Le réglage des graves et des aigus}
+Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constitué d'un 
+filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves).
+Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}),
+le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). 
+La combinaison des deux filtres forment un filtre passe-bande, représenté sur la
+Figure \ref{filtre}. 
 
-Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3}) au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un câble "`dans le vide"', et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
-
-\begin{figure}[h]
+\begin{figure}[!hbt]
 	\centering
-	\includegraphics[scale=0.5]{img/bloc3.png}
-	\caption{Schéma du bloc 3, chargé du réglage des aigus et des graves.}
-	\label{bloc3}
+	\includegraphics[scale=0.6]{filtre-passe-bande.png}
+	\caption{Schéma électrique du filtre passe-bande de notre haut-parleur.
+	(Source : Composants pour le projet P2, iCampus)}
+	\label{filtre}
 \end{figure}
 
-\subsection{Bloc 4 : l'amplificateur de puissance}
+Ce bloc est plus un petit peu compliqué à situé sur la Figure
+\ref{dessin-pcb} car les deux amplificateurs sont situés dans le Dual ampli-op (LM358N) 
+représenté à la Figure \ref{dual-ampli-op}. 
 
-\begin{figure}[h]
+\begin{figure}[!hbt]
 	\centering
-	\includegraphics[scale=0.6]{img/bloc4.png}
-	\caption{Schéma du bloc 4, l'amplificateur de puissance.}
-	\label{bloc4}
+	\includegraphics[scale=0.6]{dual-opamp.png}
+	\includegraphics[scale=0.45]{dual-opamp-r.jpg}
+	\caption{Le dual op-amp. (Soure : datasheet du composant sur Farnell.com)}
+	\label{dual-ampli-op}
+\end{figure}
+
+Ce dual ampli-op est alimenté en $\unit{\pm15}{\volt}$ par l'intermédiaire
+d'un bornier.
+
+Un autre point intéressant à relever sur le schéma du filtre est la présence d'une boucle 
+reliant la sortie à la borne négative de chaque amplificateur. Ces boucles sont appelées
+"boucles de contre-réaction".  Le gain normal d'un amplificateur est de l'ordre de $10^{6}$. 
+Grâce aux boucles de contre-réaction, on peut contrôler le gain d'un amplificateur. 
+Dans notre cas, le gain de l'amplificateur est ramené à $1$. 
+Les deux amplificateurs sont ce qu'on appelle des \textit{suiveurs de tensions}. 
+Leur rôle est de permettre le règlage des graves et des aigus de manière indépendante.
+Sans ces amplificateurs suiveurs, faire varier le potentiomètre \textit{P2} influencerait 
+non seulement le filtre passe-haut, mais influencerait aussi le filtre passe-bas 
+(car les potentiomètres \textit{P2} et \textit{P3} sont en série).
+
+Chaque filtre (passe-haut et passe-bas) est composé d'un potentiomètre et d'une capacité céramique
+(Figure \ref{capac-r}) de \unit{470}{\nano\farad}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{capac-r.jpg}
+	\caption{Capacité céramique utilisé dans les filtres. (Source : datasheet du composant sur Farnell.com)}
+	\label{capac-r}
+\end{figure}
+
+% A VERIFIER
+Afin d'assurer à notre haut-parleur la plus grande bande passante, nous avons utilisé le potentiomètre
+dont la résistance maximale est de \unit{1000}{\ohm}) pour le filtre passe-haut et
+l'autre (dont la résistance maximale est de \unit{100}{\ohm}) pour le filtre passe-bas. En effet, soient
+$f_1$ et $f_2$ les fréquences de coupures respectives des filtres passe-haut et passe-bas, la bande passante
+est donnée par :
+
+$$f_2 - f_1$$
+
+Pur avoir la plus grande bande passante, il faut donc :
+
+$$f_1 < f_2 \Rightarrow \frac{1}{2\pi R_1C} < \frac{1}{2\pi R_2C} \Rightarrow R_2 < R_1$$
+
+Le choix inverse aurait pu aboutir des bandes passantes nulles.
+
+Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), 
+il s'agit en quelque sorte d'un câble de "`sécurité"' que l'on peut connecter afin que le signal 
+ne passe pas par les filtres passe-haut et passe-bas. 
+Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse où un des filtres 
+ne fonctionnerait pas.
+
+Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3})
+au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un câble "`dans le vide"',
+et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
+
+\subsection{L'amplificateur de puissance}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.48]{ampli-audio.png}
+	\includegraphics[scale=0.35]{ampli-audio-r.jpg}
+	\caption{L'amplificateur de puissance. (Source : datasheet du composant sur Farnell.com)}
+	\label{ampli-audio}
 \end{figure}
 
 Cette partie contient l'amplificateur de puissance (aussi appelé amplificateur audio). 
@@ -88,11 +180,22 @@ Le nom amplificateur de puissance peut induire en erreur. En effet, comme tout a
 l'amplificateur de puissance agit sur la tension mais son impédance de sortie étant très faible,
 il peut délivrer une grande puissance (ce qui lui vaut son nom).
 
-Dans notre cas, l'amplificateur a un gain en tension de $50$.
+Dans notre cas, l'amplificateur a un gain en tension de \numprint{50} et une puissance de $\unit
+{2.5}{\watt}$.
+% A vérifier pour la puissance, la liste des composants laisse penser qu'il s'agit plutôt de 2W
 
-Le premier condensateur (\textit{C1} sur la Figure \ref{bloc4}) sert à stabiliser la tension d'alimentation. Ce relativement "gros" condensateur
-agit en quelque sorte comme un réservoir.
+Le premier condensateur \textit{C1} (Figure \ref{dessin-pcb}) sert à stabiliser la tension 
+d'alimentation de l'amplificateur audio, qui est de \unit{15}{\volt}. 
 
-Le deuxième condensateur (\textit{COUT}) permet de ne laisser passer que les signaux alternatifs. Il bloque tous les courants continus parasites.
+Le deuxième condensateur (\textit{COUT}) (Figure \ref{dessin-pcb}) permet de ne laisser passer 
+que les signaux alternatifs. Il bloque tous les courants continus parasites.
+
+Ces deux condensateurs polarisés ont une capacitance de \unit{470}{\micro\farad}. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{capap-r.jpg}
+	\caption{Condensateurs électrolytiques. (Source : datasheet du composant sur Farnell.com)}
+\end{figure}
 
 \input{../foot.tex}
