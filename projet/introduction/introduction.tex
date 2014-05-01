@@ -15,8 +15,7 @@ et physiques de composants du haut-parleur. Dans ce chapitre, nous
 commencerons par une vue générale du haut-parleur qui nous
 permettra d'introduire les concepts physiques clés. Nous continuerons
 ensuite par la modélisation des filtres passe-bas, passe-haut et passe bande.
-Après cela, nous nous attarderons  sur le dimensionnement de l'électroaimant et
-de la bobine mobile pour enfin terminer par la modélisation mécanique de la bobine
+Après cela, nous nous attarderons  sur le dimensionnement de l'électroaimant, de la bobine mobile et du haut-parleur pour enfin terminer par la modélisation mécanique de la bobine
 mobile.
 
 Le deuxième chapitre contient quant à lui la synthèse des recherches documentaires
@@ -26,44 +25,23 @@ distorsion harmonique. Le deuxième quant à lui concerne un concept lié au cir
 compose notre haut-parleur, il s'agit du principe de la contre-réaction.
 
 % Description générale du système
-Penchons-nous sans plus tarder sur une description générale du système. Notre haut-parleur
-peut-être représenté schématiquement comme sur la Figure \ref{block-diagram-hp}.
+Penchons-nous sans plus tarder sur une description générale du système\footnote{Une
+description plus détaillée sera faite dans le chapitre suivante.} ; 
 
-% Schéma montrant le bonne compréhension du système
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=0.68]{schema_fonctionnel.png}
-	\caption{Schéma fonctionnel du haut-parleur.}
-	\label{block-diagram-hp}
-\end{figure}
-
-Le GSM ou le MP3 va dans un premier temps envoyé un signal audio via le cable Jack au circuit
-imprimé, par la suite nous qualifierons ce signal de \textit{brute}. Le circuit imprimé permet
-quant à lui de modifier ce signal brute de plusieurs façon : 
+Le GSM ou le MP3 connecté au haut-parleur via le cable Jack va dans un premier temps envoyé un signal audio dans le 
+circuit imprimé. Ce signal peut être modififié de trois façons :
 
 \begin{itemize}
 	\item En règlant le volume, c'est à dire en modifiant l'amplitude du signal audio ;
 	\item En règlant les graves et les aigus, c'est à dire en atténuant les basses ou les hautes
 	fréquences. Il s'agit du rôle des filtres passe-bas et passe-haut qui combiné forme un filtre 
 	passe-bande ;
-	\item En amplifiant le signal : c'est le rôle de l'amplifcateur audio du circuit.
+ \item En amplifiant le signal : c'est le rôle de l'amplifcateur audio du circuit.
 \end{itemize}
-
-A la sortie du circuit imprimé, le signal est alors \textit{filtré} et \textit{amplifié}.
-Ce signal traité ira ensuite alimenter en courant la bobine mobile. Cette 
-dernière intercepte un champ magnétique constant, noté $B$, produit par l'électroaimant.
-L'électroaimant est constitué de fines lamelles de matériau magnétique en forme de ''E'' 
-empilé les unes sur les autres. La perméabilité magnétique élevé de ce matériau
-($\mu_r \approx \ 1600$) permet de créer un champ magnétique plus fort. Autour de la branche
-centrale du ''E'' est enroulée du fil de cuivre, formant ainsi une bobine.
-La bobine mobile subit donc une force de \textsc{Laplace} dont l'expression est :
-
-$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
-
-Où $L$ est la longueur du fil et$i(t)$ le courant le traversant. Cette force est proportionnelle
-au courant traversant
-la bobine mobile. La membrane se déplacera donc de manière cohérente avec le signal audio
-et reproduira le son voulu. Enfin, la membrane pourra revenir à son position d'équilibre
-grâce à des attaches qui, à la manière de ressorts, produisent une force de rappel.
+ 
+A la sortie du circuit imprimé, le signal \textit{filtré} et \textit{amplifié} va alimenter en courant la bobine mobile.
+Cette dernière va intercepté le champ magnétique constant produit par l'électroaimant, dimensionné préalablement
+pour répondre à notre cahier des charges. La bobine mobile va subir une force qui déplacera la membrane en fonction
+du signal audio et produira le son voulu.
 
 \input{../foot.tex}

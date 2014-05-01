@@ -1,40 +1,65 @@
 \input{../head.tex}
 
 \section{Fonctionnement général}
+% Description générale du système + concepts physiques clés
+Notre haut-parleur peut-être représenté schématiquement comme sur la Figure \ref{block-diagram-hp}.
 
-Dans cette première section, nous allons survoler le fonctionnement général de notre haut-parleur, ainsi 
-qu'introduire certains concepts physiques clefs. Les sections suivantes détailleront tout cela plus en 
-profondeur.
-
-\begin{figure}[ht!] 
-\centering 
-\includegraphics[scale=0.25]{vue_d_ensemble.png} 
-\caption{Vue éclatée du haut-parleur} 
-\label{hp-scheme} 
+% Schéma montrant le bonne compréhension du système
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.68]{schema_fonctionnel.png}
+	\caption{Schéma fonctionnel du haut-parleur.}
+	\label{block-diagram-hp}
 \end{figure}
 
-\paragraph{}
+Le GSM ou le MP3 va dans un premier temps envoyé un signal audio via le cable Jack au circuit
+imprimé, par la suite nous qualifierons ce signal de \textit{brut}. Le circuit imprimé permet
+quant à lui de modifier ce signal brut de plusieurs façon : 
 
-\paragraph{Support en "E" et bobine fixe}
-Un haut-parleur est en général constitué d'un aimant permanent et d'une bobine mobile faisant vibrer une 
-membrane. Malheureusement, nous ne disposions pas d'un tel aimant ; nous avons donc été contraints de créer
-notre propre électroaimant. Ce dernier est constitué d'un support en forme de "E", un matériau ferromagnétique, et 
-d'une bobine fixe parcourue par un courant continu. La caractéristique principale d'un tel matériau est sa 
-faculté à amplifier un champ magnétique, aussi appelée perméabilité magnétique \cite{wiki-perm-magn}
-Lorsque le courant traverse la bobine de cuivre, un champ magnétique est formé. Nous supposerons par la 
-suite que tout le flux passe dans les branches du "E", sans perte. Ce dispositif va se comporter comme un
-aimant.
-% loi d'Ampère?
+\begin{itemize}
+	\item En règlant le volume, c'est à dire en modifiant l'amplitude du signal audio ;
+	\item En règlant les graves et les aigus, c'est à dire en atténuant les basses fréquences
+	(rôle du filtre passe-haut, circuit CR) ou les hautes
+	fréquences (rôle du filtre passe-bas, circuit RC). Il s'agit du rôle des filtres passe-bas 
+	et passe-haut qui combiné forme un filtre passe-bande ;
+	\item En amplifiant le signal : c'est le rôle de l'amplificateur audio du circuit.
+\end{itemize}
 
-\paragraph{Bobine mobile et membrane}
-Le champ crée par l'électroaimant est intercepté par la bobine dite \textit{mobile}. Lorsqu'une telle bobine
-de longueur $L$, traversée par un courant $I$, est plongée dans un champ magnétique, une force $F$ est exercée
-sur celle-ci. Cette dernière est appelée \textit{force de Laplace}. Elle s'exprime comme suit:
+A la sortie du circuit imprimé, le signal est alors \textit{filtré} et \textit{amplifié}.
+Ce signal traité ira ensuite alimenter en courant la bobine mobile. Cette 
+dernière intercepte un champ magnétique constant, noté $B$, produit par l'électroaimant.
+L'électroaimant est constitué de fines lamelles de matériau magnétique en forme de ''E'' 
+empilé les unes sur les autres. La perméabilité magnétique élevé de ce matériau
+($\mu_r \approx \ 1600$) permet de créer un champ magnétique plus fort. Autour de la branche
+centrale du ''E'' est enroulée du fil de cuivre, formant ainsi une bobine.
+% Premier concept physique, loi d'Ampère
+Le champ magnétique $B$ produit par l'électroaimant dans l'entrefer peut être calculer par la 
+loi d'\textsc{Ampère} :
 
-$$\vec{F} = I\vec{l}\times{\vec{B}}$$ 
+$$\vec{B} = \mu_0\mu_r\frac{NI}{e}$$
 
-Cette force va faire bouger la bobine mobile, et conséquemment faire vibrer la membrane. Un son est alors 
-produit. Les réglages du volume, des aigus et des graves se font sur le circuit imprimé, qui est lui-même relié à la
-bobine mobile. L'annexe "Analyse séquentielle du circuit" explicite tout cela en détail.
+Où $N$ est le nombre de spires, $I$ le courant traversant la bobine et $e$ la largeur de 
+l'entefer.
+
+% Deuxième concept physique, force de Laplace
+La bobine mobile subit donc une force de \textsc{Laplace} dont l'expression est :
+
+$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
+
+Où $L$ est la longueur du fil et$i(t)$ le courant le traversant. Cette force est proportionnelle
+au courant traversant
+la bobine mobile. La membrane se déplacera donc de manière cohérente avec le signal audio
+et reproduira le son voulu. Enfin, la membrane pourra revenir à son position d'équilibre
+grâce à des attaches qui, à la manière de ressorts, produisent une force de rappel dans la
+direction opposée au mouvement de la bobine mobile :
+
+$$\vec{F} = -kx$$ % Troisième concept physique, loi d'Hook
+
+Ou $k$ est la constante de raideur des attaches et $x$ est le déplacement de la bobine mobile
+par rapport à sa position d'origine (et donc la compression des attaches).
+
+\paragraph{Remarque}
+Une description plus détaillée de chaque composants du circuit électriques est présentée
+dans l'annexe ''Analyse séquentielle du circuit''.
 
 \input{../foot.tex}
