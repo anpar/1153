@@ -83,14 +83,13 @@ $L = \unit{0.025468}{\henry}$
 	\end{tabular}
 \end{center}
 
-%Il faut encore recalculer la constante de raideur de la menbranne!
 
 \subsection{Calcul de la constante de raideur de la membrane}
 Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
 expérimentalement la constante de raideur de notre papier pour faire la membrane.
 Notre procédure a été la suivante: nous avons suspendu notre membrane, pour ensuite 
 déposer un poids dessus, et finalement mesurer l'élongation du matériau.
-Nous obtenons ainsi une constante de raideur d'environ \unit {80}{N/m}.
+Nous obtenons ainsi une constante de raideur d'environ \unit {80.75}{N/m}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
 
@@ -102,11 +101,11 @@ maximal passant dans la bobine mobile:
 $$I = \frac{P}{V} = \unit{0.1667}{\ampere}$$
 
 En fonction de la constante de raideur de la membrane trouvée dans la sous-section précédente et de l'écartement
-maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
+maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.002}{\meter}$), nous sommes en
 mesure de trouver la longueur du fil de la bobine:
 
 $$IL_{fil}B = kx$$
-$$L_{fil} = \frac{kx}{IB} = 12.6 m$$
+$$L_{fil} = \frac{kx}{IB} = 12.84 m$$
 
 Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
 donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine:
@@ -115,7 +114,7 @@ $$25.8 = \frac{N_2}{L_{bobine}}$$
 
 En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = 118$$
+$$N_2 =  \frac{L_{fil}}{2\pi r} = 1203$$
 
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
@@ -123,21 +122,23 @@ Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à mu
 précédemment par la résistance linéique du fil de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{2.38}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{2.31}{\ohm}$$
 
-\paragraph{Calcul de l'inductance de la bobine mobile}
+%\paragraph{Calcul de l'inductance de la bobine mobile}
 
-Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
+%Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
-$$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
+%$$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
+
+%Si on garde l'inductance pour la bobine mobile il faut complèter le tableau ci-dessous en conséquence!
 
 \paragraph{Tableau récapitulatif}
 
 \begin{center}
-	\begin{tabular}{c|c|c|c}
-		$N_2$ & $I$ & $R$ & $L$ \\
+	\begin{tabular}{c|c|c}
+		$N_2$ & $I$ & $R$  \\
 		\hline
-		 $118$ & $\unit{0.1667}{\ampere}$ & $\unit{2.38}{\ohm}$ & $\unit{0.0734}{\henry}$ \\
+		 $1203$ & $\unit{0.1667}{\ampere}$ & $\unit{2.31}{\ohm}$  \\
 	\end{tabular}
 \end{center}
 
@@ -149,5 +150,6 @@ $$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 \end{figure}
 
 \input{../foot.tex}
+
 
 \end{document}
