@@ -29,9 +29,9 @@ champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de 
 Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
+	\item Nombre spires;
 	\item Résistance totale de la bobine ;
 	\item Champ magnétique induit ;
-	\item Inductance.
 \end{itemize}
 
 \paragraph{Champ magnétique dans l'entrefer}
@@ -63,23 +63,14 @@ Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la r
 
 $$R = L_{fil} \cdot R_{lin} = \unit{7.6}{\ohm}$$
 
-\paragraph{Inductance de la bobine}
-Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
-
-$$L = N_1 \frac{\phi_B}{I}$$
-
-Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A$ est l'aire d'une spire.
-Nous obtenons alors :
-
-$L = \unit{0.025468}{\henry}$
 
 \paragraph{Tableau récapitulatif}
 
 \begin{center}
 	\begin{tabular}{c|c|c|c|c}
-		$N_1$ & $B_e$ & $R$ & $L$ & $L_{fil}$ \\
+		$N_1$ & $B_e$ & $R$ & $L_{fil}$ \\
 		\hline
-		420 & $\unit{0.07539825}{\tesla}$ & \unit{7.6}{\ohm} & $\unit{0.0254683}{\henry}$ & $\unit{42.22}{\meter}$\\
+		420 & $\unit{0.07539825}{\tesla}$ & \unit{7.6}{\ohm} &  $\unit{42.22}{\meter}$\\
 	\end{tabular}
 \end{center}
 
@@ -123,19 +114,13 @@ précédemment par la résistance linéique du fil de cuivre
 $$R = L_{fil} \cdot R_{lin} = \unit{1.72}{\ohm}$$
 
 
-\paragraph{Calcul de l'inductance de la bobine mobile}
-
-Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
-
-$$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
-
 \paragraph{Tableau récapitulatif}
 
 \begin{center}
 	\begin{tabular}{c|c|c|c}
-		$N_2$ & $I$ & $R$ & $L$ \\
+		$N_2$ & $I$ & $R$ \\
 		\hline
-		 $90$ & $\unit{0.2357}{\ampere}$ & $\unit{1.72}{\ohm}$ & $\unit{0.026}{\henry}$ \\
+		 $90$ & $\unit{0.2357}{\ampere}$ & $\unit{1.72}{\ohm}$ \\
 	\end{tabular}
 \end{center}
 
