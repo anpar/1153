@@ -97,10 +97,10 @@ Nous obtenons ainsi une constante de raideur d'environ \unit {80}{N/m}.
 \paragraph{Calcul du nombre de spires}
 Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\footnote{LM380 2.5W Audio Power
 Amplifier, \url{www.ti.com/lit/ds/symlink/lm380.pdf}‎, consulté le 10/03/14}, a une puissance de sortie de 
-$\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$, nous pouvons trouver le courant
+$\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$ (en valeur efficace), nous pouvons trouver le courant
 maximal passant dans la bobine mobile:
 
-$$I = \frac{P}{V} = \unit{0.1667}{\ampere}$$
+$$I = \frac{P}{V} \cdot{\sqrt{2}} = \unit{0.2357}{\ampere}$$
 
 En fonction de la constante de raideur de la membrane trouvée dans la sous-section précédente et de l'écartement
 maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
