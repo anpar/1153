@@ -35,8 +35,8 @@ Nous allons maintenant calculer les caractéristiques suivantes de notre électr
 \end{itemize}
 
 \paragraph{Champ magnétique dans l'entrefer}
-Pour céer un champ magnétique plus fort, nous avons réduit l'entrefer de $\unit{7}{\milli\meter}$.
-Calculons dans un premier temps le champ magnétique dans l'entrefer de $\unit{7}{\milli\meter}$ en 
+Pour céer un champ magnétique plus fort, nous avons réduit l'entrefer de $\unit{4}{\milli\meter}$.
+Calculons dans un premier temps le champ magnétique dans l'entrefer en 
 utilisant la conservation des flux. Pour ce calcul, nous utilisons l'hypothèse simplificatrice
 assez forte que tout le champ se trouve dans l'entrefer.
 
@@ -64,11 +64,11 @@ Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la r
 $$R = L_{fil} \cdot R_{lin} = \unit{7.6}{\ohm}$$
 
 \paragraph{Inductance de la bobine}
-Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
+Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
 $$L = N_1 \frac{\phi_B}{I}$$
 
-Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
+Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A$ est l'aire d'une spire.
 Nous obtenons alors :
 
 $L = \unit{0.025468}{\henry}$
@@ -85,15 +85,15 @@ $L = \unit{0.025468}{\henry}$
 
 \subsection{Calcul de la constante de raideur de la membrane}
 Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
-expérimentalement la constante de raideur de notre papier pour faire la membrane.
+expérimentalement la constante de raideur de notre assemblage papier-tissus pour faire la membrane.
 Notre procédure a été la suivante : nous avons suspendu notre membrane, pour ensuite 
-y déposer dffiérentes masse, et finalement mesurer son élongation.
+y déposer dffiérentes masses, et finalement mesurer son élongation.
 Nous obtenons ainsi une constante de raideur d'environ \unit {85}{N/m}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
 
 \paragraph{Calcul du nombre de spires}
-Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}‎, a une puissance de sortie de 
+Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}, a une puissance de sortie de 
 $\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$ (en valeur efficace), nous pouvons trouver le courant
 maximal passant dans la bobine mobile :
 
@@ -104,26 +104,25 @@ maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit
 mesure de trouver la longueur du fil de la bobine:
 
 $$IL_{fil}B = kx$$
-$$L_{fil} = \frac{kx}{IB} = 12.84 m$$
+$$L_{fil} = \frac{kx}{IB} = 9.57 m$$
 
 Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
 donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine :
 
 $$25.8 = \frac{N_2}{L_{bobine}}$$
 
-En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
+En fixant le rayon à \unit{17}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = 1203$$
-% 1203, vraiment? A verifier
+$$N_2 =  \frac{L_{fil}}{2\pi r} = 89.6$$
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
 Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à multiplier la longueur de fil trouvée 
 précédemment par la résistance linéique du fil de cuivre
 ($R_{lin} = \unit{0.18}{\ohm\per\meter}$) :
 
-$$R = L_{fil} \cdot R_{lin} = \unit{2.31}{\ohm}$$
+$$R = L_{fil} \cdot R_{lin} = \unit{1.72}{\ohm}$$
 
-% Tout ce qui suit est à recalculer
+
 \paragraph{Calcul de l'inductance de la bobine mobile}
 
 Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
@@ -136,7 +135,7 @@ $$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 	\begin{tabular}{c|c|c|c}
 		$N_2$ & $I$ & $R$ & $L$ \\
 		\hline
-		 $118$ & $\unit{0.1667}{\ampere}$ & $\unit{2.38}{\ohm}$ & $\unit{0.0734}{\henry}$ \\
+		 $90$ & $\unit{0.2357}{\ampere}$ & $\unit{1.72}{\ohm}$ & $\unit{0.026}{\henry}$ \\
 	\end{tabular}
 \end{center}
 
