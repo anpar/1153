@@ -1,14 +1,8 @@
-A faire mercredi :
+A faire :
 ------------------
 
-- Dimenssionnement de l'électroaimant ;
-- Boucler introduction ;
-- Boucler l'abstract ;
-- Boucler la conclusion ;
-- Boucler le filtre passe bande ;
-- Boucler l'overview du projet ;
-- Citations et références ;
-- Integrer les réponses aux questionnaires guides dans les sections adéquates ;
+Voir l'onglet "Issues".
+
 
 "Règle" de syntaxe lors de l'écriture du rapport :
 --------------------------------------------------
