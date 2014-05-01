@@ -24,16 +24,16 @@ d'un schéma de ce composant à gauche et d'une photo de ce composant à droite.
 	\label{jack-female}
 \end{figure}
 
-Sur ce premier bloc (Figure \ref{jack-female}), chargé de faire la connexion 
-entre la source (smartphone, iPod, etc) et le reste du circuit, on a la prise Jack femelle. 
+Ce premier bloc (Figure \ref{jack-female}), chargé de faire la connexion 
+entre la source (smartphone, iPod, etc) et le reste du circuit, est constitué de la prise Jack femelle. 
 Pour bien comprendre son fonctionnement, regardons d'abord à quoi ressemble la prise Jack
-mâle dont nous disposons (Figure \ref{jack-plug}).
+mâle avec laquelle elle sera couplée (Figure \ref{jack-plug}).
 
 \begin{figure}[!hbt]
 	\centering
 	\includegraphics[scale=0.1]{jack-plug.png}
 	\caption{Prise Jack mâle \unit{3.5}{\milli\meter}, contact en 3 points. (Source : Wikipédia)}
-	\label{jack-plug}
+	\label{Jack-plug}
 \end{figure}
 
 Cette prise Jack mâle sert à transporter un signal stéréophonique, qui sépare le 
@@ -41,13 +41,13 @@ canal gauche et le canal droit. Le canal gauche correspond à la pointe de la pr
 (L sur la figure), le canal droit correspond à l'anneau de la prise (R sur la figure). 
 Le manchon de la prise correspond quant à lui à la masse.
 
-Sur le schéma du la prise jack femelle (Figure \ref{jack-female}), on peut alors
+Sur le schéma de la prise Jack femelle (Figure \ref{jack-female}), nous pouvons alors
 voir que le signal du canal droit sortira du point \numprint{6}, tandis que le signal du 
 canal gauche sortira du point \numprint{7}. La terre est quant à elle reliée au point
 \numprint{3}. Sur le dessin de la plaquette (Figure \ref{dessin-pcb}), on remarque alors
 que c'est le signal du canal droit qui sera traité par la plaquette, celui-ci se dirigeant vers
 le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \textit{IN2} pourrait
-être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soient en stéréo.
+être récupéré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soient en stéréo.
 
 \begin{figure}[!hbt]
 	\centering
@@ -58,7 +58,7 @@ le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \text
 
 \subsection{Le réglage du volume}
 Le fonctionnement de ce bloc est relativement simple à comprendre, il est constitué d'un potentiomètre 
-(P1 sur la Figure \ref{dessin-pcb}), c'est à dire d'une résistance variable.
+(P1 sur la Figure \ref{dessin-pcb}), c'est-à-dire d'une résistance variable.
 Selon la valeur de la résistance, par la loi d'Ohm, l'amplitude du signal
 sera plus ou moins réduite et donc le volume sera plus ou moins grand.
 
@@ -101,7 +101,7 @@ Figure \ref{filtre}.
 	\label{filtre}
 \end{figure}
 
-Ce bloc est un petit peu plus compliqué à situé sur la Figure
+Ce bloc est un petit peu plus compliqué à situer sur la Figure
 \ref{dessin-pcb} car les deux amplificateurs sont situés dans le Dual ampli-op (LM358N) 
 représenté à la Figure \ref{dual-ampli-op}. 
 
@@ -109,7 +109,7 @@ représenté à la Figure \ref{dual-ampli-op}.
 	\centering
 	\includegraphics[scale=0.6]{dual-opamp.png}
 	\includegraphics[scale=0.45]{dual-opamp-r.jpg}
-	\caption{Le dual op-amp. (Soure : datasheet du composant sur Farnell.com)}
+	\caption{Le dual op-amp. (Source : datasheet du composant sur Farnell.com)}
 	\label{dual-ampli-op}
 \end{figure}
 
@@ -133,24 +133,24 @@ Chaque filtre (passe-haut et passe-bas) est composé d'un potentiomètre et d'un
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{capac-r.jpg}
-	\caption{Capacité céramique utilisé dans les filtres. (Source : datasheet du composant sur Farnell.com)}
+	\caption{Capacité céramique utilisée dans les filtres. (Source : datasheet du composant sur Farnell.com)}
 	\label{capac-r}
 \end{figure}
 
-% A VERIFIER
+% VERIFÉ
 Afin d'assurer à notre haut-parleur la plus grande bande passante, nous avons utilisé le potentiomètre
 dont la résistance maximale est de \unit{1000}{\ohm}) pour le filtre passe-haut et
 l'autre (dont la résistance maximale est de \unit{100}{\ohm}) pour le filtre passe-bas. En effet, soient
-$f_1$ et $f_2$ les fréquences de coupures respectives des filtres passe-haut et passe-bas, la bande passante
-est donnée par :
+$f_1$ et $f_2$ les fréquences de coupures respectives des filtres passe-haut et passe-bas, la norme de la 
+bande passante est donnée par :
 
 $$f_2 - f_1$$
 
-Pur avoir la plus grande bande passante, il faut donc :
+Pour avoir la plus grande bande passante, il faut donc :
 
 $$f_1 < f_2 \Rightarrow \frac{1}{2\pi R_1C} < \frac{1}{2\pi R_2C} \Rightarrow R_2 < R_1$$
 
-Le choix inverse aurait pu aboutir des bandes passantes nulles.
+Le choix inverse aurait pu aboutir à une bande passante nulle.
 
 Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), 
 il s'agit en quelque sorte d'un câble de "sécurité" que l'on peut connecter afin que le signal 
@@ -158,9 +158,9 @@ ne passe pas par les filtres passe-haut et passe-bas.
 Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse où un des filtres 
 ne fonctionnerait pas.
 
-Enfin, on peut aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3})
+Enfin, nous pouvons aussi remarquer une boucle qui relie le point 1 du potentiomètre 3 (\textit{P3})
 au reste du circuit. Cette boucle a simplement pour but d'éviter de laisser un câble "`dans le vide"',
-et donc d'éviter les signaux parasites (comme la tension dans les murs, etc).
+et donc d'éviter les signaux parasites.
 
 \subsection{L'amplificateur de puissance}
 
@@ -183,6 +183,7 @@ il peut délivrer une grande puissance (ce qui lui vaut son nom).
 Dans notre cas, l'amplificateur a un gain en tension de \numprint{50} et une puissance de $\unit
 {2.5}{\watt}$.
 % A vérifier pour la puissance, la liste des composants laisse penser qu'il s'agit plutôt de 2W
+% sur la date sheet il est mis 2.5 W
 
 Le premier condensateur \textit{C1} (Figure \ref{dessin-pcb}) sert à stabiliser la tension 
 d'alimentation de l'amplificateur audio, qui est de \unit{15}{\volt}. 
