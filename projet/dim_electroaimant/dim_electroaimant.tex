@@ -9,7 +9,7 @@ nombre de spires choisi, la résistance totale de la bobine, son inductance, etc
 Nous calculerons ensuite, de manière expérimentale, la constante de raideur de la membrane de
 notre haut-parleur. A partir de cela et de l'écartement maximal par rapport à sa position d'origine 
 (choisi arbitrairement), 
-nous pourons calculer la force nécessaire pour déplacer la membrane, et par conséquent, le nombre
+nous pourrons calculer la force nécessaire pour déplacer la membrane, et par conséquent, le nombre
 de spires nécessaire sur la bobine mobile.
 
 \subsection{Fonctionnement et dimensionnement de la bobine fixe}
@@ -42,8 +42,8 @@ assez forte que tout le champ se trouve dans l'entrefer.
 
 $$H_e \cdot e = N_1 I \Rightarrow \frac{B_e}{\mu_0 \mu_r} e = N_1 I$$
 
-Pour $N_1 = 420$, l'entrefer $e = \unit{0.007}{\meter}$, $\mu_r = 1.0000004$ la perméabilité magnétique
-de l'air et $I = \unit{1}{\ampere}$, on trouve alors :
+Pour $N_1 = 420$, l'entrefer $e = \unit{0.007}{\meter}$, $\mu_r = \unit{1.0000004}{\frac{\henry}{\meter}}$ la perméabilité magnétique
+de l'air et $I = \unit{1}{\ampere}$, nous trouvons alors :
 
 $B_e = \unit{0.07539825}{\tesla}$
 
@@ -51,10 +51,10 @@ $B_e = \unit{0.07539825}{\tesla}$
 Pour calculer la résistance totale de la bobine, nous devons connaître la longueur totale de fil de cuivre utilisé.
 Pour cela nous utilisons la formule suivante :
 
-$$L{fil} = N_1 \cdot 2\pi r$$  
+$$L_{fil} = N_1 \cdot 2\pi r$$  
 
 Où $N_1 = 420$ est le nombre de spires de la bobine fixe, et $r$ est la rayon des spires. Pour
-$r = \unit{0.016}{\meter}$, on trouve :
+$r = \unit{0.016}{\meter}$, nous trouvons :
 
 $$L_{fil} = \unit{42.22}{\meter}$$
 
@@ -69,7 +69,7 @@ Une fois le champ magnétique induit connu, l'inductance dans la bobine peut êt
 $$L = N_1 \frac{\phi_B}{I}$$
 
 Dans cette formule, il ne nous reste plus qu'à calculer $\phi_B = B \cdot A$ où $A = ab$ est l'aire d'une spire.
-On trouve alors :
+Nous obtenons alors :
 
 $L = \unit{0.025468}{\henry}$
 
@@ -95,11 +95,11 @@ Nous obtenons ainsi une constante de raideur d'environ \unit {80}{N/m}.
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
 
 \paragraph{Calcul du nombre de spires}
-Etant donné que nous disposons d'un amplificateur qui, selon la datasheet, a une puissance de sortie de 
-$\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$, nous pouvons trouver le courant
+Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}‎, consulté le 10/03/14}, a une puissance de sortie de 
+$\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$ (en valeur efficace), nous pouvons trouver le courant
 maximal passant dans la bobine mobile:
 
-$$I = \frac{P}{V} = \unit{0.1667}{\ampere}$$
+$$I = \frac{P}{V} \cdot{\sqrt{2}} = \unit{0.2357}{\ampere}$$
 
 En fonction de la constante de raideur de la membrane trouvée dans la sous-section précédente et de l'écartement
 maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{0.003}{\meter}$), nous sommes en
@@ -127,7 +127,7 @@ $$R = L_{fil} \cdot R_{lin} = \unit{2.38}{\ohm}$$
 
 \paragraph{Calcul de l'inductance de la bobine mobile}
 
-Une fois le champ magnétique induit connu, l'inductance dans la bobine peut être très facilement calculée par :
+Une fois le champ magnétique produit connu, l'inductance dans la bobine peut être très facilement calculée par :
 
 $$L = N_2 \frac{\phi_B}{I} = \unit{0.0734}{\henry}$$
 
