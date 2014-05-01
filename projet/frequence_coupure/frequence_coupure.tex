@@ -184,18 +184,22 @@ la fréquence de coupure est donc :
 $$f= \unit{5889.2}{\hertz}$$
 
 
+
 \subsection{Choix de la méthode}
 
 Une démarche d'approximation n'est évidemment pas unique. Nous avions le choix entre trois méthodes
 distinctes, et nous avons opté pour celle utilisant les bases orthonormées.
 
-Les trois méthodes proposées suivaient la même démarche, minimiser une distance afin de déterminer une droite. 
+Les trois méthodes proposées suivaient la même démarche: minimiser une distance afin de déterminer une droite. 
 
-Pour la première méthode,  nous devions minimiser la distance entre un polynôme de degré deux passant par nos points pris au laboratoire et la droite à déterminer :
+Pour la première méthode,  nous devions minimiser la distance entre un polynôme de degré deux passant par nos
+points mesurés au laboratoire et la droite à déterminer :
 
-Soient la droite à déterminer H(x) = ax + b et le polynôme q(x) = $\alpha x^2$ + $\beta$x + $\gamma$, nous cherchons à déterminer la distance :
+Soient la droite à déterminer H(x) = ax + b et le polynôme q(x) = $\alpha x^2$ + $\beta$x + $\gamma$, nous
+cherchons à déterminer la distance :
 
-dist$^2$ = \| H - q \| $^2$ = ( H - q | H - q ) = ( H($x_1$) - q($x_1$) )$^2$ + ( H($x_2$) - q($x_2$) )$^2$ + ( H($x_3$) - q($x_3$) )$^2$
+dist$^2$ = \| H - q \| $^2$ = ( H - q | H - q ) = ( H($x_1$) - q($x_1$) )$^2$ +
+( H($x_2$) - q($x_2$) )$^2$ + ( H($x_3$) - q($x_3$) )$^2$
 
 Sachant que q($x_i$) = $y_i$, nous arrivons finalement :
 
@@ -203,7 +207,9 @@ dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + 
 
 Nous arrivons exactement à la même solution pour la seconde méthode qui minimise la fonction distance. 
 
-Pour la troisième méthode, nous avons calculer la projection orthogonale de la colonne y sur l'espace  des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur y et la projection y' :
+Pour la troisième méthode, nous avons calculé la projection orthogonale de la colonne y sur l'espace
+des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur y 
+et la projection y' :
 
 dist$^2$ = \| y' - y \|$^2$ = ( y' - y | y' - y )
 
@@ -212,14 +218,17 @@ Nous savons que y'$_i$ = ax$_1$ + b, nous pouvons donc dire que
 dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + b - $y_3$ )$^2$
 
 Ce qui nous redonne la même solution que les deux autres méthodes. 
-
-Néanmoins, les différents arrondit durant les calculs nous a donné des réponses sensiblement différentes. Pour cette raison, nous avons garder la troisième méthode qui nous donne une fréquence de coupure la plus proche de la fréquence théorique du filtre passe-bas.
+Néanmoins, les différents arrondis durant les calculs ont mené à des réponses sensiblement différentes. 
+Pour cette raison, nous avons gardé la troisième méthode qui nous donne une fréquence de coupure la plus
+proche de la fréquence théorique du filtre passe-bas.
  
 
 \subsection{Meilleure approximation}
 
 Pour arriver à une meilleure approximation, nous pourrions imaginer considérer $n$ points avec un
-$n$ très grand. Cependant, déterminer l'unique polynôme de degré n-1 passant par les trois points seraient assez vite difficile à déterminer. Le produit scalaire définie pour ce problème dépendant des n points, résoudre ce problème sans logiciel devient impossible quand n est grand.  
+$n$ très grand. Cependant, déterminer l'unique polynôme de degré n-1 passant par les trois points 
+serait assez vite difficile à déterminer. Le produit scalaire défini  étant dépendant 
+des n points, résoudre ce problème sans logiciel devient impossible quand n est grand.  
 
 \subsection{Passage en échelle logarithmique}
 
