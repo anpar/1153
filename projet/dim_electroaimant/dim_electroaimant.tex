@@ -83,21 +83,19 @@ $L = \unit{0.025468}{\henry}$
 	\end{tabular}
 \end{center}
 
-%Il faut encore recalculer la constante de raideur de la menbranne!
-
 \subsection{Calcul de la constante de raideur de la membrane}
 Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
 expérimentalement la constante de raideur de notre papier pour faire la membrane.
-Notre procédure a été la suivante: nous avons suspendu notre membrane, pour ensuite 
-déposer un poids dessus, et finalement mesurer l'élongation du matériau.
-Nous obtenons ainsi une constante de raideur d'environ \unit {80}{N/m}.
+Notre procédure a été la suivante : nous avons suspendu notre membrane, pour ensuite 
+y déposer dffiérentes masse, et finalement mesurer son élongation.
+Nous obtenons ainsi une constante de raideur d'environ \unit {85}{N/m}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
 
 \paragraph{Calcul du nombre de spires}
-Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}‎, consulté le 10/03/14}, a une puissance de sortie de 
+Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}‎, a une puissance de sortie de 
 $\unit{2.5}{\watt}$, et que la tension de sortie est de $\unit{15}{\volt}$ (en valeur efficace), nous pouvons trouver le courant
-maximal passant dans la bobine mobile:
+maximal passant dans la bobine mobile :
 
 $$I = \frac{P}{V} \cdot{\sqrt{2}} = \unit{0.2357}{\ampere}$$
 
@@ -109,14 +107,13 @@ $$IL_{fil}B = kx$$
 $$L_{fil} = \frac{kx}{IB} = 12.6 m$$
 
 Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
-donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine:
+donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine :
 
 $$25.8 = \frac{N_2}{L_{bobine}}$$
 
 En fixant le rayon à \unit{1.7}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
 $$L_{fil} = N_2 \cdot 2\pi r$$ 
 $$N_2 =  \frac{L_{fil}}{2\pi r} = 118$$
-
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
 Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à multiplier la longueur de fil trouvée 

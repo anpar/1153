@@ -47,7 +47,7 @@ canal gauche sortira du point \numprint{7}. La terre est quant à elle reliée a
 \numprint{3}. Sur le dessin de la plaquette (Figure \ref{dessin-pcb}), on remarque alors
 que c'est le signal du canal droit qui sera traité par la plaquette, celui-ci se dirigeant vers
 le point \textit{IN1}. Le canal gauche, dirigé quant à lui vers le point \textit{IN2} pourrait
-être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soit en stéréo.
+être récupèré et dirigé vers une deuxième plaquette afin que nos deux haut-parleurs soient en stéréo.
 
 \begin{figure}[!hbt]
 	\centering
@@ -66,7 +66,7 @@ sera plus ou moins réduite et donc le volume sera plus ou moins grand.
 	\centering
 	\includegraphics[scale=1.1]{pot.png}
 	\includegraphics[scale=0.30]{pot-r.jpg}
-	\caption{Schéma du bloc 2, chargé du réglage du volume. (Soure : datasheet du composant sur Farnell.com)}
+	\caption{Potentiomètre. (Soure : datasheet du composant sur Farnell.com)}
 	\label{bloc2}
 \end{figure}
 
@@ -90,7 +90,7 @@ Ce bloc-ci est sans aucun doute le plus compliqué à comprendre. Il est constit
 filtre passe-haut (réglage des aigus) et d'un filtre passe-bas (réglage des graves).
 Le filtre passe-haut est celui qui suit le premier amplificateur (\textit{LM358N-A}),
 le passe-bas est celui qui suit le deuxième amplificateur (\textit{LM358N-B}). 
-La combinaison des deux filtres forment un filtre passe-bande, représenté sur la
+La combinaison des deux filtres forme un filtre passe-bande, représenté sur la
 Figure \ref{filtre}. 
 
 \begin{figure}[!hbt]
@@ -101,7 +101,7 @@ Figure \ref{filtre}.
 	\label{filtre}
 \end{figure}
 
-Ce bloc est plus un petit peu compliqué à situé sur la Figure
+Ce bloc est un petit peu plus compliqué à situé sur la Figure
 \ref{dessin-pcb} car les deux amplificateurs sont situés dans le Dual ampli-op (LM358N) 
 représenté à la Figure \ref{dual-ampli-op}. 
 
@@ -153,7 +153,7 @@ $$f_1 < f_2 \Rightarrow \frac{1}{2\pi R_1C} < \frac{1}{2\pi R_2C} \Rightarrow R_
 Le choix inverse aurait pu aboutir des bandes passantes nulles.
 
 Concernant le câble reliant les points 1 du Jumper 1 (\textit{JP1}) et du Jumper 2 (\textit{JP2}), 
-il s'agit en quelque sorte d'un câble de "`sécurité"' que l'on peut connecter afin que le signal 
+il s'agit en quelque sorte d'un câble de "sécurité" que l'on peut connecter afin que le signal 
 ne passe pas par les filtres passe-haut et passe-bas. 
 Cela pourrait nous être utile pour tester notre haut-parleur dans l'hypothèse où un des filtres 
 ne fonctionnerait pas.

@@ -16,7 +16,7 @@ chacun des circuits considérés. Nous ne vous présenterons ici que la démarch
 la méthode étant similaire pour le passe-haut.
 Graphiquement, le tracé du rapport des tensions d'entrée et de sortie des filtres en fonction de la
 fréquence a l'allure d'une exponentielle. Pour faciliter le calcul, nous sommes passés en repère
-semi-logarithmique, réduisant ainsi l'exponentielle à une intersection de deux droites. Ce procédé
+semi-logarithmique, réduisant ainsi l'exponentielle à une intersection de deux droites. Ce procédé est
 explicité en profondeur dans la sous-section "Passage en échelle logarithmique"'.
 
 \subsection{Approximation de la fréquence de coupure}
@@ -37,14 +37,13 @@ ylabel={$V_{out}$},]
 \label{lwp_ratio}
 \end{figure}
 
-
 \paragraph{Équation de la droite horizontale}
 Expérimentalement, nous obtenons une fréquence de sortie constante (de $\unit{2.5}{\volt}$ )
 pour les plus basses fréquences. L'équation de la droite horizontale est donc \[y=2.5\]
 
 \paragraph{Équation de la droite diagonale}
 
-Avec les mesures effectuées en laboratoires, nous n'obtenons non pas une droite mais bien une exponentielle.
+Avec les mesures effectuées en laboratoire, nous n'obtenons non pas une droite mais bien une exponentielle.
 Pour faciliter le calcul de l'intersection de l'exponentielle et de la droite, nous passons donc en repère
 semi-logarithmique.
 
@@ -52,9 +51,9 @@ Nous savons que l'équation d'une droite dans un repère cartésien est de type 
 et $b$ l'ordonnée à l'origine.
 
 Mais ici nous ne sommes plus dans un repère cartésien mais bien dans un répère semi-log selon l'axe des
-abscisses. L'équation de la droite devient alors : $y=a\log{x}+b$
+abscisses. L'équation de la droite devient alors : $y=a\log{x}+b$.
 
-\paragraph{Mesures en laboratoires}
+\paragraph{Mesures en laboratoire}
 
 Voici 3 résultats choisis de manière cohérente parmi toutes les mesures effectuées en laboratoire, où
 $V_c$ est la tension de sortie et $f$ la fréquence :
@@ -117,10 +116,8 @@ la méthode de Gram-Schmidt :
 
 $$ \vec {e_1} = \frac{f_1}{||f_1||} = \begin{pmatrix} \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}}) \end{pmatrix}$$
 
-
 $$ \vec {e_2} = \frac{ \vec{f_2} - (\vec{e_1}|\vec{f_2})}{||\vec{f_2} - (\vec{e_1}|\vec{f_2})||} = \begin{pmatrix}
 -0.684 & 0.03 & 0.729 \end{pmatrix} $$
-
 
 Nous sommes maintenant en mesure de trouver une projection du vecteur contenant nos données expérimentales
 peu précises :
@@ -160,7 +157,6 @@ b
 \end{pmatrix}
 $$
 
-
 Nous en déduisons la valeur des coefficients $a$ et $b$ :
 
 $$a = -1.96$$
@@ -183,61 +179,54 @@ la fréquence de coupure est donc :
 
 $$f= \unit{5889.2}{\hertz}$$
 
-
 \subsection{Choix de la méthode}
 
 Une démarche d'approximation n'est évidemment pas unique. Nous avions le choix entre trois méthodes
 distinctes, et nous avons opté pour celle utilisant les bases orthonormées.
 
-Les trois méthodes proposées suivaient la même démarche: minimiser une distance afin de déterminer une droite. 
+Les trois méthodes proposées suivaient la même démarche : minimiser une distance afin de déterminer une droite. 
 
-Pour la première méthode,  nous devions minimiser la distance entre un polynôme de degré deux passant par nos
+Pour la première méthode, nous devions minimiser la distance entre un polynôme de degré \numprint{2} passant par nos
 points mesurés au laboratoire et la droite à déterminer :
 
-Soient la droite à déterminer H(x) = ax + b et le polynôme q(x) = $\alpha x^2$ + $\beta$x + $\gamma$, nous
+Soit la droite à déterminer $H(x) = ax + b$ et le polynôme $q(x) = \alpha x^2 + \beta x + \gamma$, nous
 cherchons à déterminer la distance :
 
-dist$^2$ = \| H - q \| $^2$ = ( H - q | H - q ) = ( H($x_1$) - q($x_1$) )$^2$ +
-( H($x_2$) - q($x_2$) )$^2$ + ( H($x_3$) - q($x_3$) )$^2$
+$$\dist{H-q}^2 = (H-q|H-q) = (H(x_1)-q(x_1))^2 + (H(x_2)-q(x_2))^2 + (H(x_3)-q(x_3))^2$$
 
-Sachant que q($x_i$) = $y_i$, nous arrivons finalement :
+Sachant que $q(x_i) = y_i$, nous arrivons finalement :
 
-dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + b - $y_3$ )$^2$
+$$\dist{H-q}^2 = (ax_1 + b - y_1)^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
 
 Nous arrivons exactement à la même solution pour la seconde méthode qui minimise la fonction distance. 
 
-Pour la troisième méthode, nous avons calculé la projection orthogonale de la colonne y sur l'espace
-des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur y 
-et la projection y' :
+Pour la troisième méthode, nous avons calculé la projection orthogonale de la colonne $y$ sur l'espace
+des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur $y$ 
+et la projection $y'$ :
 
-dist$^2$ = \| y' - y \|$^2$ = ( y' - y | y' - y )
+$$\dist{y'-y}^2 = (y'-y|y'-y)$$
 
-Nous savons que y'$_i$ = ax$_1$ + b, nous pouvons donc dire que  
+Nous savons que $y'_i = ax_1 + b$, nous pouvons donc dire que :
 
-dist$^2$ = ( a$x_1$ + b - $y_1$ )$^2$ + ( a$x_2$ + b - $y_2$ )$^2$ + ( a$x_3$ + b - $y_3$ )$^2$
+$$\dist{ax_1 + b - y_1}^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
 
 Ce qui nous redonne la même solution que les deux autres méthodes. 
 Néanmoins, les différents arrondis durant les calculs ont mené à des réponses sensiblement différentes. 
 Pour cette raison, nous avons gardé la troisième méthode qui nous donne une fréquence de coupure la plus
 proche de la fréquence théorique du filtre passe-bas.
  
-
 \subsection{Meilleure approximation}
-
 Pour arriver à une meilleure approximation, nous pourrions imaginer considérer $n$ points avec un
-$n$ très grand. Cependant, déterminer l'unique polynôme de degré n-1 passant par les trois points 
-serait assez vite difficile à déterminer. Le produit scalaire défini  étant dépendant 
-des n points, résoudre ce problème sans logiciel devient impossible quand n est grand.  
+$n$ très grand. Cependant, déterminer l'unique polynôme de degré $n-1$ passant par les trois points 
+serait assez vite difficile à déterminer. Le produit scalaire défini étant dépendant 
+des $n$ points, résoudre ce problème sans logiciel devient impossible quand $n$ est grand.  
 
 \subsection{Passage en échelle logarithmique}
-
 Lors de notre approximation, nous avons mentionné le fait que nous "passions en échelle logarithmique".
 Généralement, nous utilisons des échelles linéaires, avec des graduations dont la différence est constante.
-Ici, dans un soucis de facilité, nous avons utilisé une représentation semi-logarithmique. Cela signifie
+Ici, dans un souci de facilité, nous avons utilisé une représentation semi-logarithmique. Cela signifie
 que les graduations ont un rapport constant, et non plus une différence constante pour l'axe des abscisses.
 Cela nous permet de travailler à grande échelle, et de représenter l'exponentielle comme une droite, de
 manière simple. L'équation de la droite est, en toute généralité : $y=a\log{x}+b$ .
-
-
 
 \input{../foot.tex}
