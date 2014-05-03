@@ -6,13 +6,13 @@ Après avoir réalisé quelques recherches sur les haut-parleurs, nous avons pu 
 choix que nous avons effectués.
 
 \subsection{Pour le boîtier}
-Nous devions pouvoir faire varier les fréquences (voir Cahier des Charges), ce qui signifie que nous ne 
-pouvions pas faire un caisson trop petit. La taille du caisson influence le son restitué par le haut-parleur:
+Nous devions pouvoir faire varier les fréquences (voir annexe "Cahier des Charges"), ce qui signifie que nous ne 
+pouvions pas faire un caisson trop petit. La taille du caisson influence le son restitué par le haut-parleur :
 un volume trop petit ne restituerait pas les extrêmes graves. Effectivement, à de très basses 
 fréquences, l'enceinte close va se comporter comme une raideur supplémentaire qui augmente la fréquence de
-raisonnance\footnote{Fréquence pour laquelle la réponse du circuit est maximale}, et donc augmente la 
+résonance\footnote{Fréquence pour laquelle la réponse du circuit est maximale}, et donc augmente la 
 fréquence de coupure du passe-haut\cite{volume}. Nous avons finalement opté pour un boîtier cubique de 
-$\unit{30}{\centi\meter}$ de côté, étant donné que ces dimensions avaient eu un très beau résultat lors 
+$\unit{25}{\centi\meter}$ de côté, étant donné que ces dimensions avaient eu un très beau résultat lors 
 d'un projet d'une année antérieure. Nous avions pensé placer un évent à l'avant du haut-parleur 
 pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus difficile à construire, et 
 il aurait fallu que l'on accorde l'event, de manière à exploiter l'onde arrière correctement. Nous nous 
@@ -25,7 +25,6 @@ Afin d'améliorer un peu le boîtier, nous avons également pensé aux élément
 				permet de réduire les déplacements dûs aux vibrations du haut-parleur ;
 	\item	Un matériau acoustiquement absorbant à l'intérieur du haut-parleur : le but d'un tel matériau
 				dans un haut-parleur est de supprimer le court-circuit acoustique\cite{absorber}.
-				% Event et aération écartée car contradictoire avec matériau acoustiquement absorbant.
 \end{itemize}
 
 \subsection{Pour la membrane}
@@ -36,29 +35,28 @@ La profondeur de la membrane est de $\unit{0.06}{\meter}$, comme pour la plupart
 diamètre\cite{tlhp}. La membrane est réalisée en papier. Afin d'éviter les difficultés de pliage, nous avons opté pour
 du tissus tendu en guise de ressort. 
 
-~\\\textbf{Tableau récapitulatif:}
-\\
-\begin{table*} [h]
-	
-		\begin{tabular}{|l|c|}
+\paragraph{Tableau récapitulatif}
+
+\begin{table}
+	\centering
+	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		   \textbf{Caractéristique}
-			 & \textbf{Justification} \\
+			 \textbf{Caractéristique} & \textbf{Justification} \\
 		\hline
-			Volume du caisson: & Possibilité de faire varier les fréquences. & 30x30x30cm & \\
+			Volume du caisson : $\unit{25\times25\times25}{\centi\meter}$ & Possibilité de faire varier les fréquences.  \\
 		\hline
-			Matériau du caisson: & Qualité, robustesse et coût. & 18mm, MDF & \\
+			Matériau du caisson : Panneau de 	MDF
+			d'épaisseur \unit{18}{\milli\meter} & Qualité, robustesse et coût. \\
 		\hline
-			Diamètre de membrane: & Avoir une membrane assez large,  & 17cm & pour exploiter le mieux possible la taille du caisson. \\
+			Diamètre de membrane : \unit{17}{\centi\meter} & Avoir une membrane assez large pour exploiter le mieux possible la taille du caisson. \\
 		\hline
-			Profondeur de la membrane: & Déterminé en fonction du diamètre de la membrane. & 6cm &\\
+			Profondeur de la membrane : \unit{6}{\centi\meter} & Déterminé en fonction du diamètre de la membrane. \\
 		\hline
-			Materiau membrane: & Rigidité et petite constante de raideur. & papier et tissus &\\
+			Materiau membrane : papier et tissus & Rigidité et petite constante de raideur. \\
 		\hline
-			Masse surfacique du papier:  & Rigidité et coût. & 200 g/$m^2$ &\\
+			Masse surfacique du papier : \unit{200}{\gram\per\meter\squared} & Rigidité et coût. \\
 		\hline
-		\end{tabular}
-		
-\end{table*}
+	\end{tabularx}
+\end{table}
 
 \input{../foot.tex}
