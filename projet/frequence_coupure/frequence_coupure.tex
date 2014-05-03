@@ -39,7 +39,9 @@ ylabel={$V_{out}$},]
 
 \paragraph{Équation de la droite horizontale}
 Expérimentalement, nous obtenons une fréquence de sortie constante (de $\unit{2.5}{\volt}$ )
-pour les plus basses fréquences. L'équation de la droite horizontale est donc \[y=2.5\]
+pour les plus basses fréquences. L'équation de la droite horizontale est donc :
+
+$y=2.5$
 
 \paragraph{Équation de la droite diagonale}
 
@@ -163,19 +165,20 @@ $$a = -1.96$$
 $$b= 9.84$$
 
 La droite oblique a donc pour équation
-$$\fbox{y= -1.96 \timeslog{x} +9.84}$$
+$$y= -1.96 \log x + 9.84$$
 
 Pour trouver la fréquence d'intersection entre les deux droites, nous résolvons le système, et nous
 trouvons :
 
-$$\fbox{x = \unit{5557.7}{\hertz}}$$
+$$x = \unit{5557.7}{\hertz}$$
 
 Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ telle que :
 
 $$f=\frac{1}{2\pi RC}$$
 
-avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ et $C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de
-la fréquence de coupure est donc :
+avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ \footnote{\unit{50}{\ohm} est la résistance interne du générateur de signaux utilisé
+en laboratoire pour l'expérience et \unit{7.5}{\ohm} est la résistance utilisé pour constitué le filtre.} et 
+$C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de la fréquence de coupure est donc :
 
 $$f= \unit{5889.2}{\hertz}$$
 
