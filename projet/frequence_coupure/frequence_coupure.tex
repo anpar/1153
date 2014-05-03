@@ -177,10 +177,34 @@ Cela nous semble correct car en théorie nous devions arriver à une valeur $f$ 
 $$f=\frac{1}{2\pi RC}$$
 
 avec $R= 7.5 + 50 = \unit{57.5}{\ohm}$ \footnote{\unit{50}{\ohm} est la résistance interne du générateur de signaux utilisé
-en laboratoire pour l'expérience et \unit{7.5}{\ohm} est la résistance utilisé pour constitué le filtre.} et 
+en laboratoire pour l'expérience et \unit{7.5}{\ohm} est la résistance utilisée pour constituer le filtre.} et 
 $C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de la fréquence de coupure est donc :
 
 $$f= \unit{5889.2}{\hertz}$$
+
+Afin de visualiser l'approximation que nous avons effectuée, il est intéressant de comparer la courbe 
+théorique avec les deux droites obtenues. Sur la Figure \ref{lwp_ratio}, nous remarquons que les fréquences
+de coupure se supperposent, tellement elles sont proches l'une de l'autre.
+
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}[>=stealth]
+\begin{semilogxaxis}[legend entries = {graphe théorique, droites exp., , fréq. coupure},legend style={at={(1.03,1)}, anchor=north west}, legend plot pos=right, xlabel=Frequence, ylabel= $\frac{V_{out}}{V_{in}}$, xmin=1, xmax=1000000, ymin=0, ymax=1.2]
+
+\addplot[domain=1:1e6, black] {(1/((1 + (2*3.14*x*57.5*0.00000047)^2)^(0.5))};
+\addplot[no marks, red] coordinates
+{(1,1) (5889,1)};
+\addplot[no marks, red] coordinates
+{(5889,1) (104811,0)};
+\addplot[no marks, gray] coordinates
+{(5889,0) (5889,1.2)};
+
+\end{semilogxaxis}
+	\end{tikzpicture}
+	\label{lwp_ratio}
+	\caption{Confrontation du graphe théorique et des droites expérimentales}
+\end{figure}
+
 
 \subsection{Choix de la méthode}
 
