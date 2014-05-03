@@ -1,27 +1,51 @@
 \input{../head.tex}
 
-%La description de l’appareillage de mesure est claire et complète
-Pour pouvoir tester le circuit, nous avons arrangé les appareils comme cela: Nous relions deux générateurs fournissant +15 et
--15 volts à la plaquette. Elle même est reliée à la bobine mobile. La bobine fixe a quand a elle une source de tension qui
-lui fournit un amperage de 1 A pour produire un champs magnétique suffisant.
+% La description de l’appareillage de mesure est claire et complète
+\section{Description de l'appareillage}
+Afin de tester le circuit de notre haut-parleur, nous avions besoin d'une alimentation
+capable de fournir du $\unit{\pm 15}{\volt}$ (pour alimenter le dual ampli-op ainsi
+que l'amplificateur audio). Nous avions donc besoin de deux alimentations DC Topward 
+\numprint{3303} DS présente au laboratoire. Pour obtenir une tension négative par 
+rapport à une tension de référence, il faut connecter ensemble les deux chassis,
+et les bornes $+$ de la première source, et $-$ de la deuxième source. La première règle
+alors la tension négative et la deuxième la tension positive\cite{dctopward}.
+Au niveau de l'intensité du courant, étant donné que la puissance maximale de l'amplificateur
+audio est de \unit{2.5}{\watt}\cite{datasheetampli} et que la tension d'alimentation est de \unit{15}{\volt}, par
+la formule $P = VI$ en utilisant la valeur RMS, on obient \unit{0.23}{\ampere}. Nous règlons
+donc les deux sources sur cette valeur. Les cables des deux alimentation sont ensuite connectés 
+aux bornier de la plaquette. La sortie de la plaquette est quant à elle relier à la bobine mobile.
 
-Concernant les instruments de mesures, on place la pointe de l'oscilloscope sur la sortie de la plaquette et le fréquence
-de la musique apparait sur l'écran. On peut aussi tester le champs magnétique passant dans la bobine fixe, on utilise le
-teslamètre en mettant le capteur dans l'entrefer, entre la bobine et une barre du 'E'. On se sert aussi d'un multimetre
-pour mesurer la resistance des bobines et du courant qui les traverse.
+L'électroaimant est lui alimenté en courant continu par une troisième source qui 
+fourni un courant de \unit{1}{\ampere}. Le courant maximum supporté par les fils de 
+cuivre dont nous disposons étant de \unit{2}{\ampere}\cite{norme-cuivre}, nous prenons
+une bonne marge de sécurité afin d'éviter la surchauffe des fils.
 
-Nous avons fait de notre mieux pour avoir une aussi bonne précision que possible mais nous savons qu'elle peut être grandement
-améliorée, quand nous tenons le teslametre, il est extrèment dur d'obtenir un champs continue, celui-çi varie légerement donc
-nous avons pris la valeure la plus centrale mais celle-çi n'est pas très précise. Pour l'oscilloscope, on doit régler
-la précision de l'appareil si nous voulons être précis. Même avec cela il est assez difficile de savoir mesurer avec une
-très grande précision l'amplitude du signal.
+Enfin, pour les différentes mesures, nous utilisons :
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[scale=0.05]{P1010039.jpg}
-    \caption{Schéma de la plaquette}
-    \label{plaquette}
-\end{figure}
+\begin{itemize}
+	\item Un oscilloscope lorsque nous désirons le signal passant par un point de notre circuit ;
+	\item Un multimètre pour mesurer un courant, une tension ou une résistane ;
+	\item Un teslamètre pour mesurer l'intensité du champ magnétique produit par notre électroaimant.
+\end{itemize}
+
+\section{Compte-rendu des mesures}
+
+\subsection{Mesures du champ magnétique produit par l'électroaimant}
+Pour mesurer le champ magnétique produit par l'électroaimant, nous nous servons du teslamètre.
+Le champ qui nous intèresse se situe dans l'entrefer de l'électroaimant, il suffit alors de placer
+la sonde du teslamètre dans cet entrefer. Il est difficile d'obtenir une mesure très précise en se
+servant du teslamètre car la valeur qu'il nous indique n'est pas très stable. Cependant, en répétant
+plusieurs fois l'expérience et en notant les valeurs affichées par le teslamètre, on obtient une mesure
+moyenne de \unit{8}{\centi\tesla} ; un résultat qui confirme nos prédictions théoriques
+qui annonçait un champ magnétique de \unit{7.54}{\centi\tesla}.
+
+\subsection{Mesures en différents points du circuit}
+Pour mesurer la tension du signal audio en différent point du circuit, nous utilisons l'oscilloscope
+et sa sonde.
+
+\paragraph{Point d'entrée}
+
+\paragraph{}
 
 %La méthode des mesures est expliquée
 
@@ -43,21 +67,6 @@ passe haut et passe bas. Cela correspond au bloc 1 et 2.
     \caption{Oscilloscope}
     \label{Oscilloscope pour TP2}
 \end{figure}
-
-Pour la bobine fixe, nous voulions savoir quel était le champs produit par les bobines, pour cela nous avons fait passer
-du courant dans les bobines en reliant un générateur avec les fils de la bobine et nous avons mis le capteur du teslamètre
-dans l'entrefer. Après, nous lisions la valeur du champs sur l'écran de l'appareil.
-Quand nous mesurions la resistance des bobines, nous isolions la bobine que nous voulions tester, on la branche au multimètre
-et on regarde la valeur, nous veillons à chaque fois à bien avoir le bon ordre de grandeur. Cela renvoit au bloc 3.
-
-Enfin, nous avons fait des tests sur la sortie de la plaquette, en testant avec l'oscilloscope. Nous regardions l'écran de
-l'appareil pour voir si une fréquence possible sortait de la plaquette. Cela correspond au bloc 4.
-
-\emph{Précautions}
-\begin{enumerate}
-\item Lors de chaque test, il est nécessaire de laisser les objets immobiles pour éviter des erreurs dû à leur mobilité.
-\item Eviter que les fils ne touchent la plaque verte, qui est la masse.
-
 
 %Des tests paramétriques sont effectués
 Nous avons décidé de faire nos essais avec une tension de plus et moins 15 V car l'ampli-op nécéssite une tension
