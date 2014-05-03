@@ -5,18 +5,18 @@
 Afin de tester le circuit de notre haut-parleur, nous avions besoin d'une alimentation
 capable de fournir du $\unit{\pm 15}{\volt}$ (pour alimenter le dual ampli-op ainsi
 que l'amplificateur audio). Nous avions donc besoin de deux alimentations DC Topward 
-\numprint{3303} DS présente au laboratoire. Pour obtenir une tension négative par 
+\numprint{3303} DS présentes au laboratoire. Pour obtenir une tension négative par 
 rapport à une tension de référence, il faut connecter ensemble les deux chassis,
 et les bornes $+$ de la première source, et $-$ de la deuxième source. La première règle
 alors la tension négative et la deuxième la tension positive\cite{dctopward}.
 Au niveau de l'intensité du courant, étant donné que la puissance maximale de l'amplificateur
 audio est de \unit{2.5}{\watt}\cite{datasheetampli} et que la tension d'alimentation est de \unit{15}{\volt}, par
 la formule $P = VI$ en utilisant la valeur RMS, on obient \unit{0.23}{\ampere}. Nous règlons
-donc les deux sources sur cette valeur. Les cables des deux alimentation sont ensuite connectés 
-aux bornier de la plaquette. La sortie de la plaquette est quant à elle relier à la bobine mobile.
+donc les deux sources sur cette valeur. Les câbles des deux alimentations sont ensuite connectés 
+au bornier de la plaquette. La sortie de la plaquette est quant à elle reliée à la bobine mobile.
 
 L'électroaimant est lui alimenté en courant continu par une troisième source qui 
-fourni un courant de \unit{1}{\ampere}. Le courant maximum supporté par les fils de 
+fournit un courant de \unit{1}{\ampere}. Le courant maximum supporté par les fils de 
 cuivre dont nous disposons étant de \unit{2}{\ampere}\cite{norme-cuivre}, nous prenons
 une bonne marge de sécurité afin d'éviter la surchauffe des fils.
 
@@ -32,15 +32,15 @@ Enfin, pour les différentes mesures, nous utilisons :
 
 \subsection{Mesures du champ magnétique produit par l'électroaimant}
 Pour mesurer le champ magnétique produit par l'électroaimant, nous nous servons du teslamètre.
-Le champ qui nous intèresse se situe dans l'entrefer de l'électroaimant, il suffit alors de placer
+Le champ qui nous intéresse se situe dans l'entrefer de l'électroaimant; il suffit alors de placer
 la sonde du teslamètre dans cet entrefer. Il est difficile d'obtenir une mesure très précise en se
 servant du teslamètre car la valeur qu'il nous indique n'est pas très stable. Cependant, en répétant
 plusieurs fois l'expérience et en notant les valeurs affichées par le teslamètre, on obtient une mesure
 moyenne de \unit{8}{\centi\tesla} ; un résultat qui confirme nos prédictions théoriques
-qui annonçait un champ magnétique de \unit{7.54}{\centi\tesla}.
+qui annonçaient un champ magnétique de \unit{7.54}{\centi\tesla}.
 
 \subsection{Mesures en différents points du circuit}
-Pour mesurer la tension du signal audio en différent point du circuit, nous utilisons l'oscilloscope
+Pour mesurer la tension du signal audio en différents points du circuit, nous utilisons l'oscilloscope
 et sa sonde.
 
 \paragraph{Point d'entrée}
@@ -49,17 +49,17 @@ et sa sonde.
 
 %La méthode des mesures est expliquée
 
-Nous avons fait des mesures de voltage en fonction de différentes fréquences pour les filtres RC: ce qui nous a permis
-de trouver les fréquences de coupures. Pour mesurer les différentes valeurs reprises ci dessous, nous avons procédé de la
-façon suivante: nous avons branché deux générateurs à la plaquette: Une source positive branchée à la borne $+15$ de la plaquette.
-Une source négative branchée à la borne $-15$ de la plaquette. La terre est quant à elle branchée au dernier point
-disponible de la plaquette: gnd (pour ground). De plus, la terre est branchée aux sources positives et négatives
+Nous avons fait des mesures de voltage en fonction de différentes fréquences pour les filtres RC, et cela nous a permis
+de trouver les fréquences de coupure. Pour mesurer les différentes valeurs reprises ci-dessous, nous avons procédé de la
+façon suivante: nous avons branché deux générateurs à la plaquette: une source positive branchée à la borne $+15$ de la plaquette, et
+une source négative branchée à la borne $-15$ de la plaquette. La terre est quant à elle reliée au dernier point
+disponible de la plaquette: gnd (pour ground). De plus, la terre est reliée aux sources positives et négatives
 restantes. Quand nous mesurons la tension aux différents points nous nous servons d'un oscilloscope. Avec la sonde,
-nous touchons le circuit où nous voulons savoir la valeur de la tension. Sur l'écran, on voit apparaitre le
-signal, en réglant l'appareil sur le bon ordre de grandeur, nous pouvons mesurer assez précisement la tension en
-tel ou tel point. En annexe, on peut voir des photos des phases de tests.
+nous touchons le circuit où nous voulons savoir la valeur de la tension. Sur l'écran on voit apparaître le
+signal, et en réglant l'appareil sur le bon ordre de grandeur, nous pouvons mesurer assez précisement la tension en
+tel ou tel point. Des photos des phases de tests sont reprises en annexe.
   Nous avons fait ces tests avec les filtres
-passe haut et passe bas. Cela correspond au bloc 1 et 2.
+passe-haut et passe-bas. Cela correspond aux blocs 1 et 2.
 
 \begin{figure}[ht!]
     \centering
@@ -69,15 +69,15 @@ passe haut et passe bas. Cela correspond au bloc 1 et 2.
 \end{figure}
 
 %Des tests paramétriques sont effectués
-Nous avons décidé de faire nos essais avec une tension de plus et moins 15 V car l'ampli-op nécéssite une tension
-de maximum plus et moins 16.5 V, nous prenons un peu moins pour avoir une marge de sécurité.
-Il est clair que si nous changeons cette valeure et que nous mettons plus de tension, le son sera plus amplifié vu que
+Nous avons décidé de faire nos essais avec une tension de plus et moins 15 V car l'ampli-op nécessite une tension
+de maximum plus et moins 16.5 V; nous prenons un peu moins pour avoir une marge de sécurité.
+Il est clair que si nous changeons cette valeur et que nous mettons plus de tension, le son sera plus amplifié vu que
 la plaquette aura une plus grande source de tension.
 
 
-En faisant augmenter les aigus, nous voyons que le signal est plus condensé et vice versa.
+En faisant augmenter les aigus, nous voyons que le signal est plus condensé et vice-versa.
 
-Quand nous mettons plus de courant dans la bobine fixe, un plus grand champs magnétique est créé, mais trop l'augmenter
+Quand nous mettons plus de courant dans la bobine fixe, un plus grand champ magnétique est créé, mais trop l'augmenter
 ferait fondre le fil.
 
 \begin{figure}[ht!]
@@ -103,26 +103,12 @@ $V_c[V]$ & $f[Hz]$ & $\log{f}$ \\
 \end{tabular}
 \end{center}
 
-Pour le filtre passe-haut
+
 
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
-$V_c[V]$ & $f[Hz]$ & $\log{f}$ \\
-\hline
-127 & 0.4 & 2.1\\
-\hline
-191 & 0.5 & 2.3\\
-\hline
-356 & 0.6 & 2.6 \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-$Resistance bobine fixe[\ohms]$ & $Champ magn.[T]$ & $Amperage[A]$ \\
+Résistance bobine fixe[\ohm] & Champ magn.[T] & Amperage[A] \\
 \hline
 2.38 & 0.08 & 0.1667\\
 \hline
@@ -134,7 +120,7 @@ $Resistance bobine fixe[\ohms]$ & $Champ magn.[T]$ & $Amperage[A]$ \\
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$Prise Jack [mV]$ & $IN_1 [mV]$ & $OUT_{avec pentotiomètre} [V]$ & $OUT_{sans pentotiomètre} [V]$ & $TP_2 [mV]$ \\
+Prise Jack [mV] & IN_1 [mV] & OUT_{avec pentotiomètre} [V] & OUT_{sans pentotiomètre} [V] & TP_2 [mV] \\
 \hline
 37.5 & 100.0 & 0.22 & 3.0 & 11.0 \\
 \hline
