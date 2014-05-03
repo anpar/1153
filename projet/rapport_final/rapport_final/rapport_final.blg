@@ -1,45 +1,4 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: rapport_final.aux
-The style file: plain.bst
-Database file #1: ../../sources/sources.bib
-Repeated entry---line 118 of file ../../sources/sources.bib
- : @misc{black
- :            ,
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 148 of file ../../sources/sources.bib
- :   
- :   title = {LM380 2.5W Audio Power Amplifier},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 155 of file ../../sources/sources.bib
- :   
- :   title = {Traitement acoustique: principes de base},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 162 of file ../../sources/sources.bib
- :   
- :   title = {La charge pour le haut-parleur},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 168 of file ../../sources/sources.bib
- :   
- :   title = {Davis acoustics},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 174 of file ../../sources/sources.bib
- :   
- :   title = {Enceintes aux basses frequences},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 180 of file ../../sources/sources.bib
- :   
- :   title = {Harmonic Effects of Power System Loads: An Experimental Study},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--to sort, need author or key in datasheetampli
-Warning--to sort, need author or key in volume
-Warning--to sort, need author or key in close
-Warning--to sort, need author or key in absorber
-Warning--to sort, need author or key in tlhp
-Warning--to sort, need author or key in encyclopedia
-Warning--to sort, need author or key in THD
-(There were 7 error messages)
+I found no \bibdata command---while reading file rapport_final.aux
+I found no \bibstyle command---while reading file rapport_final.aux
+(There were 2 error messages)

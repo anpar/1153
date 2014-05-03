@@ -341,41 +341,43 @@ et $C_{2}$ la capacité. Étant donné que nous disposons d'un adaptateur d'imp�
 nous pouvons nous permettre d'utiliser ces deux équations obtenues séparément.
 En remplaçant $V_{in,2}$ par $V_{out,1}$, la tension à la sortie du passe-bas, nous 
 trouvons $V_{out,3}$, la tension de sortie finale.
-Après simplifications, nous obtenons:
+Après simplifications, nous obtenons :
 
 $$V_{out,3} = \frac{V_{out,1} \cdot V_{out,2}}{V_{in,1}}$$
 
 \begin{figure}[ht!]
-\centering
-\begin{tikzpicture}[>=stealth]
-    \begin{axis}[
-        xmin=0,xmax=2000,
-        ymin=0,ymax=1.2,
-        axis x line=middle,
-        axis y line=middle,
-        axis line style=->,
-        xlabel={$f$},
-        ylabel={$V_{out} / V_{in}$},
-				legend entries = {passe-bande, fréq. coupure 1, fréq. coupure 2}
-        ]
+	\centering
+	\begin{tikzpicture}[>=stealth]
+			\begin{axis}[
+					xmin=0,xmax=2000,
+					ymin=0,ymax=1.2,
+					axis x line=middle,
+					axis y line=middle,
+					axis line style=->,
+					xlabel={$f$},
+					ylabel={$V_{out} / V_{in}$},
+					legend entries = {passe-bande, fréq. coupure 1, fréq. coupure 2}
+					]
 
-\addplot[no marks,red,-] expression[domain=0:2000,samples=100]
-{(((2*3.14*x*10000*0.00000047)*(1 + (2*3.14*x*10000*0.00000047)^2)^(-0.5))*
-((1 + (2*3.14*x*500*0.00000047)^2)^(-0.5)))};
-\addplot[no marks, gray] coordinates
-{(33.86,0) (33.86,1.1)};
-\addplot[no marks, gray] coordinates
-{(677.26,0) (677.26,1.1)};
-
-\end{axis}
-\end{tikzpicture}
-\caption{Graphe de $V_{out} / V_{in}$ pour le filtre passe-bande, pour les valeurs suivantes: $R_{1} = \unit{500}{\ohm}$, $R_{2} = \unit{10000}{\ohm}$, et $C = {\unit{0.00000047}{\farad}}$}
-\label{lwp_ratio}
+					\addplot[no marks,red,-] expression[domain=0:2000,samples=100]
+					{(((2*3.14*x*10000*0.00000047)*(1 + (2*3.14*x*10000*0.00000047)^2)^(-0.5))*
+					((1 + (2*3.14*x*500*0.00000047)^2)^(-0.5)))};
+					\addplot[no marks, gray] coordinates
+					{(33.86,0) (33.86,1.1)};
+					\addplot[no marks, gray] coordinates
+					{(677.26,0) (677.26,1.1)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out} / V_{in}$ pour le filtre passe-bande, pour les valeurs
+	suivantes: $R_{1} = \unit{500}{\ohm}$, $R_{2} = \unit{10000}{\ohm}$, et 
+	$C = {\unit{0.00000047}{\farad}}$}
+	\label{pbf_ratio}
 \end{figure}
+
 \subsubsection{Vérification des résultats}
 
 Au vu du graphe de $V_{out,3} / V_{in,1}$ de l'équation obtenue pour le passe-bande, nous pouvons
-valider notre résultat, étant donné que l'allure du graphique correspond à nos attentes. En effet,
+valider notre résultat, étant donné que l'allure du graphique sur la Figure \ref{pbf_ratio} correspond à nos attentes. En effet,
 les fréquences de coupure théoriques représentées sur la figure semblent concorder avec les courbes.
 
 \input{../foot.tex}
