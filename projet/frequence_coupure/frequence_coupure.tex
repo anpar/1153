@@ -16,25 +16,27 @@ Pour la déterminer, nous avons tout d'abord procédé à une expérience en lab
 Celle-ci consistait à mesurer la tension de sortie en fonction de la fréquence du signal, et ce dans
 chacun des circuits considérés. Nous ne vous présenterons ici que la démarche pour le filtre passe-bas, 
 la méthode étant similaire pour le passe-haut.
-Graphiquement, le tracé du rapport des tensions d'entrée et de sortie des filtres en fonction de la
-fréquence a l'allure d'une exponentielle. Pour faciliter le calcul, nous sommes passés en repère
-semi-logarithmique, réduisant ainsi l'exponentielle à une intersection de deux droites. Ce procédé est
-explicité en profondeur dans la sous-section "Passage en échelle logarithmique"'.
+Graphiquement, le tracé de la tension de sortie du filtre en fonction de la
+fréquence a l'allure d'une droite suivie d'une exponentielle décroissante. Pour faciliter le calcul, 
+nous sommes passés en repère semi-logarithmique\footnote{Ce procédé est expliqué plus en détail
+dans la section ''Passage en échelle logarithmique''.}, réduisant ainsi l'exponentielle à une droite. 
+Pour trouver la fréquence de coupure, il ne reste donc plus qu'à trouver l'intersection entre ces
+deux droites.
 
 \subsection{Filtre passe-bas}
 
-\begin{figure}[ht!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-xlabel={$f$},
-ylabel={$V_{out}$},]
-\addplot coordinates
-{(0,2.5) (5000,2.5) (10000,2.5) (16000,1.7) (18000,1.55) (20000,1.45)};
-\end{axis}
-\end{tikzpicture}
-\caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
-\label{lwp_ratio}
+\begin{figure}[hbt!]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	xlabel={$f$},
+	ylabel={$V_{out}$},]
+	\addplot coordinates
+	{(0,2.5) (5000,2.5) (10000,2.5) (16000,1.7) (18000,1.55) (20000,1.45)};
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
+	\label{experimental_data}
 \end{figure}
 
 \paragraph{Équation de la droite horizontale}
@@ -177,7 +179,7 @@ $C= \unit{470 \cdot 10^{-9}}{\farad}$, la valeur théorique de la fréquence de 
 $$f= \unit{5889.2}{\hertz}$$
 
 Afin de visualiser l'approximation que nous avons effectuée, il est intéressant de comparer la courbe 
-théorique avec les deux droites obtenues. Sur la Figure \ref{label}, nous remarquons que les fréquences
+théorique avec les deux droites obtenues. Sur la Figure \ref{theory_vs_experiment}, nous remarquons que les fréquences
 de coupure se superposent, tellement elles sont proches l'une de l'autre.
 
 \begin{figure}[!htb]
@@ -192,11 +194,10 @@ de coupure se superposent, tellement elles sont proches l'une de l'autre.
 {(5889,1) (104811,0)};
 \addplot[no marks, gray] coordinates
 {(5889,0) (5889,1.2)};
-
 \end{semilogxaxis}
 	\end{tikzpicture}
-	\label{label}
 	\caption{Confrontation du graphe théorique et des droites expérimentales}
+	\label{theory_vs_experiment}
 \end{figure}
 
 \subsection{Choix de la méthode}
