@@ -106,11 +106,11 @@ $$
 Le système n'admet pas de solution car $\vec{b}$ n'appartient pas à l'espace des colonnes de $A$. Nous
 allons donc projeter $\vec{b}$ sur l'espace des colonnes de $A$ afin d'obtenir une solution approchée.
 
-Soient $f_1$, $f_2$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
+Soient $\vec{f_1}$, $ec{f_2}$ les colonnes de $A$, et donc les éléments de la base de l'espace des colonnes de $A$.
 Trouvons une base orthonormée $(e_1, e_2)$ de l'espace colonnes de la matrice en utilisant
 la méthode de \textsc{Gram-Schmidt}:
 
-$$ \vec {e_1} = \frac{f_1}{||f_1||} = \begin{pmatrix} \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}}) \end{pmatrix}$$
+$$ \vec {e_1} = \frac{\vec{f_1}}{||\vec{f_1}||} = \begin{pmatrix} \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}} \end{pmatrix}$$
 
 $$ \vec {e_2} = \frac{ \vec{f_2} - (\vec{e_1}|\vec{f_2})}{||\vec{f_2} - (\vec{e_1}|\vec{f_2})||} = \begin{pmatrix}
 -0.684 & 0.03 & 0.729 \end{pmatrix} $$
@@ -220,11 +220,11 @@ $$\dist({H-q})^2 = (ax_1 + b - y_1)^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$
 
 Nous arrivons exactement à la même solution pour la seconde méthode qui minimise la fonction distance. 
 
-Pour la troisième méthode, nous avons calculé la projection orthogonale de la colonne $y$ sur l'espace
-des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur $y$ 
-et la projection $y'$ :
+Pour la troisième méthode, nous avons calculé la projection orthogonale de la colonne $\vec{y}$ sur l'espace
+des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur $\vec{y}$ 
+et la projection $\vec{y}'$ :
 
-$$\dist({y'-y})^2 = (y'-y|y'-y)$$
+$$\dist({\vec{y}'-\vec{y}})^2 = (\vec{y'}-\vec{y}|\vec{y}'-\vec{y})$$
 
 Nous savons que $y'_i = ax_1 + b$, nous pouvons donc dire que :
 
