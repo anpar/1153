@@ -102,59 +102,27 @@ Par le principe de superposition des solutions des équations différentielles :
 
 $$\fv{x}(t) = \fv{x}_h(t) + \fv{x}_p(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t) + \frac{2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
 
-En utilisant la première condition initiale, $\fv{x}(0) = 0$, nous trouvons:
+Pour trouver l'équation finale sans les coéfficients inconnus $C$ et $D$, il faudrait utiliser deux conditions
+initiales. La première condition initiale est assez simple à trouver. En effet, au temps $t=0$, la bobine
+mobile n'a pas encore commencé à bouger, nous pouvons donc écrire :
 
-$$C = \frac{-BLV_0}{R(-m\omega^2+k}$$
+$$\fv{x}(0) = 0$$
 
-Il reste à trouver une deuxième condition initiale.
+Ce qui nous donne immédiatement $C$. La deuxième condition initiale pourrait par exemple impliquer le fait
+que la vitesse de la bobine est nulle lorsqu'elle atteint son déplacement maximal (donc juste avant qu'elle 
+commencer à retourner vers sa position d'équilibre). Cependant pour écrire cette condition initiale, il faudrait
+connaître le temps $t_f$ que mets la bobine pour atteindre cette position maximale. On pourrait alors écrire :
+
+$$\fvd{x}(t_f) = 0$$
+
+Nous ne connaissons malheureusement pas ce temps qu'il faudrait mesurer expérimentalement.
 
 \subsection{Fréquence de résonance}
-Nous remarquons que si $\omega \rightarrow \sqrt{\frac{k}{m}}$, le dénominateur de l'amplitude du mouvement
+Nous remarquons que si $\omega \rightarrow \sqrt{\frac{k}{m}}$, le dénominateur d'un des termes de l'équation du mouvement
 tend vers \numprint{0}, et donc l'amplitude du mouvement tend vers $\infty$. Cette situation n'a physiquement
 pas de sens. Nous notons cette fréquence $\omega_0$; il s'agit de la \textit{fréquence de résonance}.
 
-% Facultatif, je le laisse quand même encore au cas ou
-%\subsection{Couplage entre mouvement et son émis}
-%Étudions maintenant le mouvement de la deuxième couche
-%d'air representée sur la Figure \ref{wave-sound-scheme}.
-%La couche numérotée \numprint{0} représente la membrane.
-%La pression dans la couche d'air numérotée \numprint{1} 
-%est $p_0 + dp(t)$. Dans les couches suivantes, elle est
-%constante vaut $P_0$. Nous considérons un problème simplifié
-%à une dimension (déplacement de tranche d'air dans un
-%tuyau). Nous prenons également l'hypothèse que les couches
-%d'air sont incompressibles afin de pouvoir appliquer
-%ce que nous avons appris au cours de mécanique des corps
-%rigides.
-%
-%Plaçons le repère inertiel ${\ui}$ tel que $\uv{I}_1$
-%est orienté vers la droite horizontalement et $\uv{I}_2$
-%orienté vers le haut verticalement. Plaçons l'origine
-%$O$ de ce repère à la position initiale de la couche
-%d'air. La position de la couche d'air, notée $\vec{R(t)}$ vaut 
-%donc :
-%
-%$$\vec{R(t)} = \fv{x}(t)\uv{I}_1$$
-%
-%\begin{figure}[ht!]
-	%\centering
-	%\includegraphics[scale=0.85]{sound-waves.png}
-	%\caption{Déplacement de tranche de couche d'air dans un tuyau. (Source : \textit{Modélisation mécanique du haut-parleur} sur iCampus)}
-	%\label{wave-sound-scheme}
-%\end{figure}
-%
-%\paragraph{Inventaire des forces}
-%Comme pour la bobine mobile, faisons l'inventaire
-%des forces qui s'exercent sur la deuxième couche d'air :
-%
-%\begin{itemize}
-	%\item Le poids de la couche d'air : $-\rho A\uv{I}_2$, ou $\rho$ est la densité volumique
-	%de l'air et $A$ est la surface de la couche d'air ;
-	%\item La pression exercée sur la couche \numprint{2} par la pression dans la couche \numprint{1}
-	%: $(p_0 + dp(t))A \uv{I}_1$.
-%\end{itemize}
-%
-%\paragraph{Équation du mouvement}
-%Nous pouvons maintenant écrire l'équation du mouvement
+% Il faudrait peut-être refaire un lien avec les autres endroits ou on parle de fréquence de résonance?
+% Ou bien avec la partie dimensionnement du haut-parleur et de la membrane ?
 
 \input{../foot.tex}
