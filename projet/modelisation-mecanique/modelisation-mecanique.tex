@@ -108,11 +108,20 @@ Par le principe de superposition des solutions des équations différentielles :
 
 $$\fv{x}(t) = \fv{x}_h(t) + \fv{x}_p(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t) + \frac{2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
 
-En utilisant la première condition initiale, $\fv{x}(0) = 0$, nous trouvons:
+Pour trouver l'équation finale sans les coefficients inconnus $C$ et $D$, il faudrait utiliser deux conditions
+initiales. La première condition initiale est assez simple à trouver. En effet, au temps $t=0$, la bobine
+mobile n'a pas encore commencé à bouger, nous pouvons donc écrire :
 
-$$C = \frac{-BLV_0}{R(-m\omega^2+k}$$
+$$\fv{x}(0) = 0$$
 
+Ce qui nous donne immédiatement $C$. La deuxième condition initiale pourrait par exemple impliquer le fait
+que la vitesse de la bobine est nulle lorsqu'elle atteint son déplacement maximal (donc juste avant qu'elle
+commencer à retourner vers sa position d'équilibre). Cependant pour écrire cette condition initiale, il faudrait
+connaître le temps $t_f$ que met la bobine pour atteindre cette position maximale. On pourrait alors écrire :
 
+$$\fvd{x}(t_f) = 0$$
+
+Nous ne connaissons malheureusement pas ce temps qu'il faudrait mesurer expérimentalement.
 
 \subsubsection{Fréquence de résonance}
 %prévisions en fct des paramètres
