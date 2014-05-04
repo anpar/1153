@@ -29,7 +29,7 @@ champ magnétique assez fort. Nous avons fixé ce nombre, selon les conseils de 
 Nous allons maintenant calculer les caractéristiques suivantes de notre électroaimant :
 
 \begin{itemize}
-	\item Nombre spires;
+	\item Nombre de spires;
 	\item Résistance totale de la bobine ;
 	\item Champ magnétique induit ;
 \end{itemize}
@@ -65,25 +65,43 @@ Il ne nous reste donc plus qu'à multiplier la longueur totale trouvée par la r
 
 $$R = L_{fil} \cdot R_{lin} = \unit{7.6}{\ohm}$$
 
-
-\paragraph{Tableau récapitulatif}
-
-\begin{center}
-	\begin{tabular}{c|c|c|c|c}
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{c|c|c|c}
 		$N_1$ & $B_e$ & $R$ & $L_{fil}$ \\
 		\hline
 		420 & $\unit{0.07539825}{\tesla}$ & \unit{7.6}{\ohm} &  $\unit{42.22}{\meter}$\\
 	\end{tabular}
-\end{center}
+	\caption{Tableau récapitulatif pour l'électroaimant.}
+\end{table}
 
 \subsection{Calcul de la constante de raideur de la membrane}
 Avant de pouvoir déterminer le nombre de spires de la bobine mouvante, nous avons dû déterminer
-expérimentalement la constante de raideur de notre assemblage papier-tissus pour faire la membrane.
+expérimentalement la constante de raideur de notre assemblage papier-tissus utilisé pour faire la membrane.
 Notre procédure a été la suivante : nous avons suspendu notre membrane, pour ensuite 
 y déposer différentes masses, et finalement mesurer son élongation.
-Nous obtenons ainsi une constante de raideur d'environ \unit {85}{N/m}.
+Nous obtenons ainsi une constante de raideur d'environ \unit{85}{\newton\per\meter}.
 
 \subsection{Fonctionnement et dimensionnement de la bobine mobile}
+La bobine mobile va intercepter le flux situé dans l'entrefer de l'életroaimant (Figure 
+\ref{overview_mobile_coil}).
+Comme cette bobine mobile est traversé par un courant $i(t)$ qui dépend du signal
+audio envoyé par le circuit du haut-parleur, elle va subir une force de \textsc{Laplace}
+dont l'expression est :
+
+$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
+
+Dans cette sous-section, nous allons calculer le nombre de spires nécessaires
+à cette bobine mobile afin qu'elle subisse une force capable de la faire
+se déplacer de \unit{2}{\milli\meter} (écartement maximal de la membrane 
+par rapport à sa position d'origine, choisi arbitrairement).
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.3]{hautparleur.png}
+\caption{Vue d'ensemble avec la seconde bobine.}
+\label{overview_mobile_coil}
+\end{figure}
 
 \paragraph{Calcul du nombre de spires}
 Etant donné que nous disposons d'un amplificateur qui, selon la datasheet\cite{datasheetampli}, a une puissance de sortie de 
@@ -96,17 +114,17 @@ En fonction de la constante de raideur de la membrane trouvée dans la sous-sect
 maximal de la membrane par rapport à sa position d'origine (fixé à $d = \unit{2}{\milli\meter}$), nous sommes en
 mesure de trouver la longueur du fil de la bobine:
 
-$$IL_{fil}B = kx$$
-$$L_{fil} = \frac{kx}{IB} = 9.57 m$$
+$$IL_{fil}B = kx \Rightarrow L_{fil} = \frac{kx}{IB} = \unit{9.57}{\meter}$$
 
-Le fil à notre disposition au laboratoire a un encombrement de $\unit{25.8}{\frac{spires}{cm}}$. Nous otenons 
-donc une relation entre $N_2$, le nombre de spires, et $L_{bobine}$, la longueur de la bobine :
+En fixant le rayon $r=\unit{17}{\milli\meter}$, nous pouvons déterminer $N_2$ :
 
-$$25.8 = \frac{N_2}{L_{bobine}}$$
+$$L_{fil} = N_2 \cdot 2\pi r \Rightarrow N_2 =  \frac{L_{fil}}{2\pi r} = 89.6$$
 
-En fixant le rayon à \unit{17}{mm}, nous pouvons déterminer $N_2$ ainsi que la longueur de la bobine:
-$$L_{fil} = N_2 \cdot 2\pi r$$ 
-$$N_2 =  \frac{L_{fil}}{2\pi r} = 89.6$$
+Ici aussi, nous avons fait l'hypothèse que les spires constituant la bobine forment des cercles parfaits.
+En connaissant l'encombrement de la bobine, qui est de \numprint{25.8} spires par\unit{}{\centi\meter}, nous
+pouvons également calculer la longueur de la bobine :
+
+$$L_{bobine} = \frac{N_2}{25.8} = \unit{3.48}{\centi\meter}$$
 
 \paragraph{Calcul de la résistance totale de la bobine mobile}
 Pour calculer la résistance totale de la bobine, il ne nous reste plus qu'à multiplier la longueur de fil trouvée 
@@ -115,22 +133,14 @@ précédemment par la résistance linéique du fil de cuivre
 
 $$R = L_{fil} \cdot R_{lin} = \unit{1.72}{\ohm}$$
 
-
-\paragraph{Tableau récapitulatif}
-
-\begin{center}
-	\begin{tabular}{c|c|c}
-		$N_2$ & $I$ & $R$ \\
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{c|c|c|c|c}
+		$N_2$ & $I$ & $R$ & $L_{fil}$ & $L_{bobine}$\\
 		\hline
-		 $90$ & $\unit{0.2357}{\ampere}$ & $\unit{1.72}{\ohm}$
+		 $90$ & $\unit{0.2357}{\ampere}$ & $\unit{1.72}{\ohm}$ & \unit{9.57}{\meter} & \unit{3.48}{\centi\meter}
 	\end{tabular}
-\end{center}
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[scale=0.3]{hautparleur.png}
-\caption{Vue d'ensemble avec la seconde bobine.}
-\label{overview_mobile_coil}
-\end{figure}
+	\caption{Tableau récapitulatif pour la bobine mobile}
+\end{table}
 
 \input{../foot.tex}
