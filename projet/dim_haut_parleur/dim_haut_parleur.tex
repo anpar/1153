@@ -14,11 +14,13 @@ lié à la fréquence de résonance du
 haut-parleur à l'air libre ($F_s$) , la fréquence de résonance du haut-parleur fermé ($F_b$), et au volume
 d'air équivalent à la suspension du haut-parleur\footnote{"Représente le volume auquel serait comprimé
 \unit{1}{\meter\cubed} d'air pour exercer une force équivalente à la compliance (inverse de la raideur) de la suspension"\cite{Vas}.}
-($V_{as}$) , selon l'équation suivante\cite{Vas}:
+($V_{as}$) , selon l'équation suivante\footnote{Les paramètres de ces équations font partie de ce qu'on appelle les paramètres de \textsc{Thiele} et \textsc{Small}. 
+Les fabricants d'enceintes les utilisent pour caractériser les performances de leurs produits.}\cite{Vas}:
 
 $$\frac{F_b}{F_s} = \sqrt{\frac{V_{as}}{V_b} + 1}$$
 
-Nous remarquons qu'un haut-parleur idéal serait de volume infini, étant donné que si $V_b\rightarrow \infty$, la fréquence de résonance serait égale à celle à l'air libre. Mais nous ne voulions pas d'un caisson trop grand, pour des questions pratiques et esthétiques.
+
+Selon cette équation, nous remarquons qu'un haut-parleur idéal serait de volume infini, étant donné que si $V_b\rightarrow \infty$, la fréquence de résonance serait égale à celle à l'air libre. Mais nous ne voulions pas d'un caisson trop grand, pour des questions pratiques et esthétiques.
 Le fait que la fréquence de résonance d'un haut-parleur fermé soit plus élevée que celle à l'air libre implique que
 la fréquence de coupure du passe-haut est également plus élevée. Cela a pour conséquence
 qu'un volume de caisson trop petit ne restitue pas les extrêmes graves. Nous avons finalement opté pour un boîtier
@@ -30,6 +32,15 @@ pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus 
 il aurait fallu que l'on accorde l'event, de manière à exploiter l'onde arrière correctement. Nous nous
 sommes donc finalement limités à une charge\footnote{Manière de séparer les ondes avant et arrière.} dite
 \textit{close}\cite{close}.
+
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[scale=0.4]{charge.jpg}
+\caption{Charge close. (Source: \url{http://www.toutlehautparleur.com/charge-acoustique-enceinte}}
+\label{charge}
+\end{figure}
+
 
 Enfin, pour faciliter l'accès à l'intérieur du haut-parleur, nous avons créé un système de porte coulissante
 à l'arrière de celui-ci.
