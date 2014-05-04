@@ -1,61 +1,68 @@
 \input{../head.tex}
 
+\begin{document}
+
 \section{Dimensionnement du haut-parleur}
-Après avoir réalisé quelques recherches sur les haut-parleurs, nous avons pu imaginer le dispositif idéal 
-à réaliser. En tenant compte des différentes contraintes qui nous étaient imposées, voici les différents 
+
+Après avoir réalisé quelques recherches sur les haut-parleurs, nous avons pu imaginer le dispositif idéal
+à réaliser. En tenant compte des différentes contraintes qui nous étaient imposées, voici les différents
 choix que nous avons effectués.
 
-\subsection{Pour le boîtier}
-Nous devions pouvoir faire varier les fréquences (voir annexe "Cahier des Charges"), ce qui signifie que nous ne 
-pouvions pas faire un caisson trop petit. La taille du caisson influence le son restitué par le haut-parleur :
-un volume trop petit ne restituerait pas les extrêmes graves. Effectivement, à de très basses 
-fréquences, l'enceinte close va se comporter comme une raideur supplémentaire qui augmente la fréquence de
-résonance\footnote{Fréquence pour laquelle la réponse du circuit est maximale}, et donc augmente la 
-fréquence de coupure du passe-haut\cite{volume}. Nous avons finalement opté pour un boîtier cubique de 
-$\unit{25}{\centi\meter}$ de côté, étant donné que ces dimensions avaient eu un très beau résultat lors 
-d'un projet d'une année antérieure. Nous avions pensé placer un évent à l'avant du haut-parleur 
-pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus difficile à construire, et 
-il aurait fallu que l'on accorde l'évent, de manière à exploiter l'onde arrière correctement. Nous nous 
-sommes donc finalement limités à une charge\footnote{Manière de séparer les ondes avant et arrière.} dite "\textit{close}"\cite{close}.  
+\subsection{Le boîtier}
+La première question qui s'est posée était celle du volume du caisson. Or le volume du caisson ($V_b$) est
+lié à la fréquence de résonance du
+haut-parleur à l'air libre ($F_s$) , la fréquence de résonance du haut-parleur fermé ($F_b$), et au volume
+d'air équivalent à la suspension du haut-parleur\footnote{"Représente le volume auquel serait comprimé
+\unit{1}{\meter\cubed} d'air pour exercer une force équivalente à la compliance (inverse de la raideur) de la suspension"\cite{Vas}.}
+($V_{as}$) , selon l'équation suivante\cite{Vas}:
 
-Afin d'améliorer un peu le boîtier, nous avons également pensé aux éléments suivants :
+$$\frac{F_b}{F_s} = \sqrt{\frac{V_{as}}{V_b} + 1}$$
 
-\begin{itemize}
-	\item	Des pieds en caoutchouc : placer des pieds en caoutchouc sur le boîtier de notre haut-parleur
-				permet de réduire les déplacements dûs aux vibrations du haut-parleur ;
-	\item	Un matériau acoustiquement absorbant à l'intérieur du haut-parleur : le but d'un tel matériau
-				dans un haut-parleur est de supprimer le court-circuit acoustique\cite{absorber}.
-\end{itemize}
+Nous remarquons qu'un haut-parleur idéal serait de volume infini, étant donné que si $V_b\rightarrow \infty$, la fréquence de résonance serait égale à celle à l'air libre. Mais nous ne voulions pas d'un caisson trop grand, pour des questions pratiques et esthétiques.
+Le fait que la fréquence de résonance d'un haut-parleur fermé soit plus élevée que celle à l'air libre implique que
+la fréquence de coupure du passe-haut est également plus élevée. Cela a pour conséquence
+qu'un volume de caisson trop petit ne restitue pas les extrêmes graves. Nous avons finalement opté pour un boîtier
+cubique de $\unit{25}{\centi\meter}$ de côté.
 
-\subsection{Pour la membrane}
-Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$. Nous avons choisi cette valeur afin 
+Afin d'améliorer un peu le boîtier, nous avons également pensé à placer des pieds en caoutchouc afin de
+réduire les déplacements dûs aux vibrations du haut-parleur. Nous avions également pensé placer un évent à l'avant du haut-parleur
+pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus difficile à construire, et
+il aurait fallu que l'on accorde l'event, de manière à exploiter l'onde arrière correctement. Nous nous
+sommes donc finalement limités à une charge\footnote{Manière de séparer les ondes avant et arrière.} dite
+\textit{close}\cite{close}.
+
+Enfin, pour faciliter l'accès à l'intérieur du haut-parleur, nous avons créé un système de porte coullisante
+à l'arrière de celui-ci.
+
+\subsection{La membrane}
+Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$. Nous avons choisi cette valeur afin
 d'avoir une membrane assez large, pour exploiter le mieux possible la taille du caisson. C'est également un
 diamètre assez répandu dans le commerce\cite{tlhp}. Nous respectons donc les normes.
 La profondeur de la membrane est de $\unit{6}{\centi\meter}$, comme pour la plupart des membranes de ce
-diamètre\cite{tlhp}. La membrane est réalisée en papier. Afin d'éviter les difficultés de pliage, nous avons opté pour
-du tissus tendu en guise de ressort. 
+diamètre\cite{tlhp}. Elle est réalisée en papier, et nous avons opté pour du tissus tendu en guise de ressort.
+Cette solution nous apparaît comme sortant de l'ordinaire, propre, et efficace. Cela nous a en effet permis
+d'obtenir une constante de raideur minime.
 
-\begin{table}[!htb]
+\begin{table}[htb!]
 	\centering
 	\begin{tabularx}{\textwidth}{|X|X|}
-		\hline
-			 \textbf{Caractéristique} & \textbf{Justification} \\
-		\hline
-			Volume du caisson : $\unit{25\times25\times25}{\centi\meter}$ & Possibilité de faire varier les fréquences.  \\
-		\hline
-			Matériau du caisson : Panneau de 	MDF
-			d'épaisseur \unit{18}{\milli\meter} & Qualité, robustesse et coût. \\
-		\hline
-			Diamètre de membrane : \unit{17}{\centi\meter} & Avoir une membrane assez large pour exploiter le mieux possible la taille du caisson. \\
-		\hline
-			Profondeur de la membrane : \unit{6}{\centi\meter} & Déterminé en fonction du diamètre de la membrane. \\
-		\hline
-			Materiau membrane : papier et tissus & Rigidité et petite constante de raideur. \\
-		\hline
-			Masse surfacique du papier : \unit{200}{\gram\per\meter\squared} & Rigidité et coût. \\
-		\hline
+	\hline
+	\textbf{Caractéristique} & \textbf{Justification} \\
+	\hline
+	Volume du caisson : $\unit{25\times25\times25}{\centi\meter}$ & Possibilité de faire varier les fréquences. \\
+	\hline
+	Matériau du caisson : Panneau de MDF
+	d'épaisseur \unit{18}{\milli\meter} & Qualité, robustesse et coût. \\
+	\hline
+	Diamètre de membrane : \unit{17}{\centi\meter} & Avoir une membrane assez large pour exploiter le mieux possible la taille du caisson. \\
+	\hline
+	Profondeur de la membrane : \unit{6}{\centi\meter} & Déterminé en fonction du diamètre de la membrane. \\
+	\hline
+	Materiau membrane : papier et tissus & Rigidité et petite constante de raideur. \\
+	\hline
+	Masse surfacique du papier : \unit{200}{\gram\per\meter\squared} & Rigidité et coût. \\
+	\hline
 	\end{tabularx}
 	\caption{Tableau récapitulatif.}
 \end{table}
-
 \input{../foot.tex}

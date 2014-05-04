@@ -41,7 +41,7 @@ ylabel={$V_{out}$},]
 Expérimentalement, nous obtenons une fréquence de sortie constante (de $\unit{2.5}{\volt}$ )
 pour les plus basses fréquences. L'équation de la droite horizontale est donc :
 
-$y=2.5$
+$$y=2.5$$
 
 \paragraph{Équation de la droite diagonale}
 
@@ -212,11 +212,11 @@ points mesurés au laboratoire et la droite à déterminer :
 Soit la droite à déterminer $H(x) = ax + b$ et le polynôme $q(x) = \alpha x^2 + \beta x + \gamma$, nous
 cherchons à déterminer la distance :
 
-$$\dist{H-q}^2 = (H-q|H-q) = (H(x_1)-q(x_1))^2 + (H(x_2)-q(x_2))^2 + (H(x_3)-q(x_3))^2$$
+$$\dist({H-q})^2 = (H-q|H-q) = (H(x_1)-q(x_1))^2 + (H(x_2)-q(x_2))^2 + (H(x_3)-q(x_3))^2$$
 
 Sachant que $q(x_i) = y_i$, nous arrivons finalement :
 
-$$\dist{H-q}^2 = (ax_1 + b - y_1)^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
+$$\dist({H-q})^2 = (ax_1 + b - y_1)^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
 
 Nous arrivons exactement à la même solution pour la seconde méthode qui minimise la fonction distance. 
 
@@ -224,11 +224,11 @@ Pour la troisième méthode, nous avons calculé la projection orthogonale de la
 des colonnes de la matrice de notre système. Cela revient à minimiser la distance entre le vecteur $y$ 
 et la projection $y'$ :
 
-$$\dist{y'-y}^2 = (y'-y|y'-y)$$
+$$\dist({y'-y})^2 = (y'-y|y'-y)$$
 
 Nous savons que $y'_i = ax_1 + b$, nous pouvons donc dire que :
 
-$$\dist{ax_1 + b - y_1}^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
+$$\dist({ax_1 + b - y_1})^2 + (ax_2 + b - y_2)^2 + (ax_3 + b - y_3)^2$$
 
 Ce qui nous redonne la même solution que les deux autres méthodes. 
 Néanmoins, les différents arrondis durant les calculs ont mené à des réponses sensiblement différentes. 
