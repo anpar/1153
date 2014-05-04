@@ -1,37 +1,163 @@
 \input{../head.tex}
 
-\section{Dimensionnement du haut-parleur}
-Après avoir réalisé quelques recherches sur les haut-parleurs, nous avons pu imaginer le dispositif idéal 
-à réaliser. En tenant compte des différentes contraintes qui nous étaient imposées, voici les différents 
+\begin{document}
+
+
+\section{Modélisation mécanique et dimensionnement du haut-parleur}
+
+Dans cette section, nous nous intéresserons tout d'abord aux équations de mouvement de la membrane; ce qui nous permettra d'introduire le concept de fréquence de résonance. Ensuite, nous nous pencherons sur les choix effectués à propos des dimensions et caractéristiques du boîtier et de la membrane de notre haut-parleur.
+
+\subsection{Modélisation mécanique}
+
+
+\subsubsection{Composition du haut-parleur}
+%explication intuitive du fonctionnement
+Commençons par un bref rappel des différents constituants du haut-parleur:
+un boîtier, une membrane attachée par des fixations jouant le rôle de ressorts, 
+un électroaimant et une bobine mobile qui s'emboîte (sans frottement)
+dans ce dernier (cfr Figure \ref{vueeclatee}).
+
+L'électroaimant constitué d'une bobine fixe va permettre à la bobine mobile de se déplacer exclusivement de gauche
+à droite, permettant ainsi à la membrane de vibrer (et donc de produire un son). Tout déplacement dans une autre direction serait dommageable car risquerait d'abîmer la membrane.
+
+%schémas et figures supportant le développement théorique
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.3]{vue_eclatee.png}
+\caption{Vue éclatée du haut-parleur}
+\label{vueeclatee}
+\end{figure}
+
+\subsubsection{Étude du mouvement de la bobine mobile}
+Nous allons maintenant écrire les équations du mouvement de la bobine mobile. Cela nous amènera à un cas particulier: la résonance. Ce phénomène apparaît lorsque la fréquence de la force exercée sur la bobine mobile devient très proche de la fréquence propre\footnote{fréquence naturelle, sans force extérieure} du système\cite{resonance}. Nous arrivons à une amplitude maximale, et le son produit sera plus intense. Dans cette section, nous nous pencherons sur l'équation du mouvement de la bobine mobile, et nous en déduirons la fréquence de résonance de notre haut-parleur. Nous vérifierons que cette fréquence particulière est également la fréquence propre de notre dispositif.
+
+
+Pour commencer, plaçons un repère fixe $\{\hat{I}\}$ dont l'origine $O$ se trouve
+au centre de gravité de la bobine mobile à sa position d'équilibre (au
+temps $t=0$). $\hat{I}_1$ est parallèle à la bobine et dirigé vers la gauche, tandis que
+$\hat{I}_2$ est dirigé perpendiculairement à la bobine mobile, vers le haut.
+La bobine mobile ne possède qu'un seul degré de liberté, qui
+est la distance entre $O$ et son centre de gravité; notons-la $\fv{x}(t)$.
+La position de la bobine est donc donnée par :
+
+$$\vec{R(t)} = \fv{x}(t) \hat{I}_1$$
+
+\paragraph{Inventaire des forces}
+Avant d'écrire l'équation du mouvement de la bobine, établissons l'inventaire
+des forces qui agissent sur celle-ci :
+
+\begin{itemize}
+\item Son poids, dont la résultante agit sur son centre de gravité : $-mg\hat{I}_2$ ;
+\item La force de rappel des fixations (que l'on suppose agir comme des simples
+ressorts) : $-k \fv{x}(t) \hat{I}_1$ où $k$ est la constante de raideur des fixations ;
+\item La force électromagnétique causée par l'électroaimant : $BLi(t) \hat{I}_1$ où
+$B$ est le champ magnétique produit par l'électroaimant, $L$ la longueur de fil de cuivre
+utilisée et $i(t)$ le courant électrique ;
+\item Les frottements ;
+\end{itemize}
+%hypothèses de modélisation
+Parmi toute ces forces, nous négligeons les frottements ainsi que le poids
+de la bobine mobile (sa masse étant relativement faible).
+%formalisme de modélisation
+\paragraph{Équation du mouvement}
+Nous avons maintenant tout à notre disposition pour écrire les équations du mouvement
+\footnote{Dans cette section, nous utilisons les notations employées au cours de
+mécanique des corps rigides.} :
+
+$$m\fvdd{x}(t) = -k\fv{x}(t) + BLi(t)$$
+
+En sachant que le signal d'entrée est une fonction de la forme $V(t) = V_0 \cos (\omega t)$ et
+que, par la loi d'Ohm, $V(t) = Ri(t)$ où $R$ est la résistance du circuit,
+nous pouvons réécrire l'équation différentielle du mouvement de la manière suivante :
+
+$$m\fvdd{x}(t) + k\fv{x}(t) = \frac{B2\pi rNV_0}{R}\cos (\omega t)$$
+
+Où nous avons également fait apparaître le nombre de spires $N$ et le rayon de la bobine
+$r$. Il ne reste donc plus qu'à résoudre cette équation différentielle.
+
+\paragraph{Résolution de l'équation différentielle du mouvement}
+Résolvons cette équation différentielle comme appris lors de ce deuxième
+quadrimestre. Cherchons d'abord la solution homogène de cette équation, notée $\fv{x}_h(t)$.
+Pour ce faire, résolvons le polynôme caractéristique :
+
+$$mr^2 + k = 0 \Rightarrow r = \pm i\sqrt{\frac{k}{m}}$$
+
+Nous avons donc, en ne gardant que la partie réelle :
+
+$$\fv{x}_h(t) = Ae^{i\sqrt{\frac{k}{m}}t} + Be^{-i\sqrt{\frac{k}{m}}}$$
+
+Où $A$ et $B$ sont des coefficients complexes. Nous pouvons réécrire cette solution
+en terme de fonctions trigonométriques. En ne gardant que la partie réelle,
+nous obtenons :
+
+$$\fv{x}_h(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t)$$
+
+Où $C$ et $D$ sont cette fois des coefficients réels.
+
+Penchons-nous maintenant sur la solution particulière, notée $\fv{x}_p(t)$. Pour
+cette partie de la résolution, nous réécrivons le terme non-homogène sous la forme d'une
+exponentielle complexe. La solution particulière est de la forme :
+
+$$\fv{x}_p(t) = \alpha e^{\omega it}}$$
+
+En injectant $\fv{x}_p(t)$ et sa dérivée seconde dans l'équation de départ, nous trouvons :
+
+$$\alpha = \frac{2\pi rNV_0}{R(-m\omega^2 + k)} \Rightarrow \fv{x}_p(t) = \frac{2\pi rNV_0}{R(-m\omega^2 + k)}e^{wit}$$
+
+En ne gardant que la partie réelle de l'exponentielle, nous avons finalement :
+
+$$\fv{x}_p(t) = \frac{2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+
+Par le principe de superposition des solutions des équations différentielles :
+
+$$\fv{x}(t) = \fv{x}_h(t) + \fv{x}_p(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t) + \frac{2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+
+En utilisant la première condition initiale, $\fv{x}(0) = 0$, nous trouvons:
+
+$$C = \frac{-BLV_0}{R(-m\omega^2+k}$$
+
+Il reste à trouver une deuxième condition initiale.
+
+\subsubsection{Fréquence de résonance}
+%prévisions en fct des paramètres
+Nous remarquons que si $\omega \rightarrow \sqrt{\frac{k}{m}}$, le dénominateur de l'amplitude du mouvement
+tend vers \numprint{0}, et donc l'amplitude du mouvement tend vers $\infty$. Cette situation n'a physiquement
+pas de sens: le déplacement de la partie mobile serait infini. Nous notons cette fréquence $f_0 = \frac{\omega_0}{2\pi}$; il s'agit de la \textit{fréquence de résonance}.
+Cette fréquence est également la fréquence propre de notre dispositif: nous pouvons identifier cet appareillage à une masse (la bobine) reliée à un ressort et se mouvant dans une direction. La formule de la fréquence d'oscillation d'un tel système correspond exactement à notre fréquence de résonance\cite{resonance}. Pour une masse de \SI{0.02}{\kilogram} et une constante de rigidité de \SI{85}{\frac{\newton}{\meter}}, nous obtenons une fréquence de résonance pour notre haut-parleur de: \SI{10.38}{\hertz}
+
+
+
+\subsection{Dimensionnement}
+Après avoir réalisé quelques recherches sur les haut-parleurs, nous avons pu imaginer le dispositif idéal
+à réaliser. En tenant compte des différentes contraintes qui nous étaient imposées, voici les différents
 choix que nous avons effectués.
 
-\subsection{Pour le boîtier}
-La première question qui s'est posée était celle du volume du caisson. Or le volume du caisson ($V_b$) est 
-lié à la fréquence de résonance\footnote{Fréquence pour laquelle la réponse du circuit est maximale} du 
-haut-parleur à l'air libre ($F_s$) , la fréquence de résonance du haut-parleur fermé ($F_b$), et au volume 
-d'air équivalent à la suspension du haut-parleur\footnote{"Représente le volume auquel serait comprimé 
+\subsubsection{Le boîtier}
+La première question qui s'est posée était celle du volume du caisson. Or le volume du caisson ($V_b$) est
+lié à la fréquence de résonance du
+haut-parleur à l'air libre ($F_s$) , la fréquence de résonance du haut-parleur fermé ($F_b$), et au volume
+d'air équivalent à la suspension du haut-parleur\footnote{"Représente le volume auquel serait comprimé
 $1m^{3}$ d'air pour exercer une force équivalente à la compliance (inverse de la raideur) de la suspension"\cite{Vas}.}
 ($V_{as}$) , selon l'équation suivante\cite{Vas}:
 
 $$\frac{F_b}{F_s} = \sqrt(\frac{V_{as}}{V_b} +1)$$
 
-Nous remarquons qu'un haut-parleur idéal serait de volume infini, étant donné que sa fréquence de résonance 
-se rapprocherait de celle à l'air libre. Mais nous ne voulions pas d'un caisson trop grand, pour des questions pratiques et esthétiques.
+Nous remarquons qu'un haut-parleur idéal serait de volume infini, étant donné que si $V_b\rightarrow \infty$, la fréquence de résonance serait égale à celle à l'air libre. Mais nous ne voulions pas d'un caisson trop grand, pour des questions pratiques et esthétiques.
 Le fait que la fréquence de résonance d'un haut-parleur fermé soit plus élevée que celle à l'air libre implique que
 la fréquence de coupure du passe-haut est également plus élevée. Cela a pour conséquence
-qu'un volume de caisson trop petit ne restitue pas les extrêmes graves. Nous avons finalement opté pour un boîtier 
+qu'un volume de caisson trop petit ne restitue pas les extrêmes graves. Nous avons finalement opté pour un boîtier
 cubique de $\unit{25}{\centi\meter}$ de côté.
 
 Afin d'améliorer un peu le boîtier, nous avons également pensé à placer des pieds en caoutchouc afin de
-réduire les déplacements dûs aux vibrations du haut-parleur. Nous avions également pensé placer un évent à l'avant du haut-parleur 
-pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus difficile à construire, et 
-il aurait fallu que l'on accorde l'event, de manière à exploiter l'onde arrière correctement. Nous nous 
-sommes donc finalement limités à une charge\footnote{Manière de séparer les ondes avant et arrière.} dite 
+réduire les déplacements dûs aux vibrations du haut-parleur. Nous avions également pensé placer un évent à l'avant du haut-parleur
+pour augmenter le rendement en profitant de l'onde arrière, mais c'était plus difficile à construire, et
+il aurait fallu que l'on accorde l'event, de manière à exploiter l'onde arrière correctement. Nous nous
+sommes donc finalement limités à une charge\footnote{Manière de séparer les ondes avant et arrière.} dite
 "\textit{close}"\cite{close}.
 
 
-\subsection{Pour la membrane}
-Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$. Nous avons choisi cette valeur afin 
+\subsubsection{La membrane}
+Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$. Nous avons choisi cette valeur afin
 d'avoir une membrane assez large, pour exploiter le mieux possible la taille du caisson. C'est également un
 diamètre assez répandu dans le commerce\cite{tlhp}. Nous respectons donc les normes.
 La profondeur de la membrane est de $\unit{6}{\centi\meter}$, comme pour la plupart des membranes de ce
@@ -39,29 +165,25 @@ diamètre\cite{tlhp}. Elle est réalisée en papier, et nous avons opté pour du
 Cette solution nous apparaît comme sortant de l'ordinaire, propre, et efficace. Cela nous a en effet permis
 d'obtenir une constante de raideur minime.
 
-
-\paragraph{Tableau récapitulatif}
-
-\begin{table}
-	\centering
-	\begin{tabularx}{\textwidth}{|X|X|}
-		\hline
-			 \textbf{Caractéristique} & \textbf{Justification} \\
-		\hline
-			Volume du caisson : $\unit{25\times25\times25}{\centi\meter}$ & Possibilité de faire varier les fréquences.  \\
-		\hline
-			Matériau du caisson : Panneau de 	MDF
-			d'épaisseur \unit{18}{\milli\meter} & Qualité, robustesse et coût. \\
-		\hline
-			Diamètre de membrane : \unit{17}{\centi\meter} & Avoir une membrane assez large pour exploiter le mieux possible la taille du caisson. \\
-		\hline
-			Profondeur de la membrane : \unit{6}{\centi\meter} & Déterminé en fonction du diamètre de la membrane. \\
-		\hline
-			Materiau membrane : papier et tissus & Rigidité et petite constante de raideur. \\
-		\hline
-			Masse surfacique du papier : \unit{200}{\gram\per\meter\squared} & Rigidité et coût. \\
-		\hline
-	\end{tabularx}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Caractéristique} & \textbf{Justification} \\
+\hline
+Volume du caisson : $\unit{25\times25\times25}{\centi\meter}$ & Possibilité de faire varier les fréquences. \\
+\hline
+Matériau du caisson : Panneau de MDF
+d'épaisseur \unit{18}{\milli\meter} & Qualité, robustesse et coût. \\
+\hline
+Diamètre de membrane : \unit{17}{\centi\meter} & Avoir une membrane assez large pour exploiter le mieux possible la taille du caisson. \\
+\hline
+Profondeur de la membrane : \unit{6}{\centi\meter} & Déterminé en fonction du diamètre de la membrane. \\
+\hline
+Materiau membrane : papier et tissus & Rigidité et petite constante de raideur. \\
+\hline
+Masse surfacique du papier : \unit{200}{\gram\per\meter\squared} & Rigidité et coût. \\
+\hline
+\end{tabularx}
 \end{table}
-
 \input{../foot.tex}
