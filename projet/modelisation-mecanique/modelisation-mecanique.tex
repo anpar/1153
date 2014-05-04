@@ -88,7 +88,7 @@ Penchons-nous maintenant sur la solution particulière, notée $\fv{x}_p(t)$. Po
 cette partie de la résolution, nous réécrivons le terme non-homogène sous la forme d'une
 exponentielle complexe. La solution particulière est de la forme :
 
-$$\fv{x}_p(t) = \alpha e^{\omega it}}$$
+$$\fv{x}_p(t) = \alpha e^{\omega it}$$
 
 En injectant $\fv{x}_p(t)$ et sa dérivée seconde dans l'équation de départ, nous trouvons :
 
@@ -113,47 +113,48 @@ Nous remarquons que si $\omega \rightarrow \sqrt{\frac{k}{m}}$, le dénominateur
 tend vers \numprint{0}, et donc l'amplitude du mouvement tend vers $\infty$. Cette situation n'a physiquement
 pas de sens. Nous notons cette fréquence $\omega_0$; il s'agit de la \textit{fréquence de résonance}.
 
-\subsection{Couplage entre mouvement et son émis}
-Étudions maintenant le mouvement de la deuxième couche
-d'air representée sur la Figure \ref{wave-sound-scheme}.
-La couche numérotée \numprint{0} représente la membrane.
-La pression dans la couche d'air numérotée \numprint{1} 
-est $p_0 + dp(t)$. Dans les couches suivantes, elle est
-constante vaut $P_0$. Nous considérons un problème simplifié
-à une dimension (déplacement de tranche d'air dans un
-tuyau). Nous prenons également l'hypothèse que les couches
-d'air sont incompressibles afin de pouvoir appliquer
-ce que nous avons appris au cours de mécanique des corps
-rigides.
-
-Plaçons le repère inertiel ${\ui}$ tel que $\uv{I}_1$
-est orienté vers la droite horizontalement et $\uv{I}_2$
-orienté vers le haut verticalement. Plaçons l'origine
-$O$ de ce repère à la position initiale de la couche
-d'air. La position de la couche d'air, notée $\vec{R(t)}$ vaut 
-donc :
-
-$$\vec{R(t)} = \fv{x}(t)\uv{I}_1$$
-
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[scale=0.85]{sound-waves.png}
-	\caption{Déplacement de tranche de couche d'air dans un tuyau. (Source : \textit{Modélisation mécanique du haut-parleur} sur iCampus)}
-	\label{wave-sound-scheme}
-\end{figure}
-
-\paragraph{Inventaire des forces}
-Comme pour la bobine mobile, faisons l'inventaire
-des forces qui s'exercent sur la deuxième couche d'air :
-
-\begin{itemize}
-	\item Le poids de la couche d'air : $-\rho A\uv{I}_2$, ou $\rho$ est la densité volumique
-	de l'air et $A$ est la surface de la couche d'air ;
-	\item La pression exercée sur la couche \numprint{2} par la pression dans la couche \numprint{1}
-	: $(p_0 + dp(t))A \uv{I}_1$.
-\end{itemize}
-
-\paragraph{Équation du mouvement}
-Nous pouvons maintenant écrire l'équation du mouvement
+% Facultatif, je le laisse quand même encore au cas ou
+%\subsection{Couplage entre mouvement et son émis}
+%Étudions maintenant le mouvement de la deuxième couche
+%d'air representée sur la Figure \ref{wave-sound-scheme}.
+%La couche numérotée \numprint{0} représente la membrane.
+%La pression dans la couche d'air numérotée \numprint{1} 
+%est $p_0 + dp(t)$. Dans les couches suivantes, elle est
+%constante vaut $P_0$. Nous considérons un problème simplifié
+%à une dimension (déplacement de tranche d'air dans un
+%tuyau). Nous prenons également l'hypothèse que les couches
+%d'air sont incompressibles afin de pouvoir appliquer
+%ce que nous avons appris au cours de mécanique des corps
+%rigides.
+%
+%Plaçons le repère inertiel ${\ui}$ tel que $\uv{I}_1$
+%est orienté vers la droite horizontalement et $\uv{I}_2$
+%orienté vers le haut verticalement. Plaçons l'origine
+%$O$ de ce repère à la position initiale de la couche
+%d'air. La position de la couche d'air, notée $\vec{R(t)}$ vaut 
+%donc :
+%
+%$$\vec{R(t)} = \fv{x}(t)\uv{I}_1$$
+%
+%\begin{figure}[ht!]
+	%\centering
+	%\includegraphics[scale=0.85]{sound-waves.png}
+	%\caption{Déplacement de tranche de couche d'air dans un tuyau. (Source : \textit{Modélisation mécanique du haut-parleur} sur iCampus)}
+	%\label{wave-sound-scheme}
+%\end{figure}
+%
+%\paragraph{Inventaire des forces}
+%Comme pour la bobine mobile, faisons l'inventaire
+%des forces qui s'exercent sur la deuxième couche d'air :
+%
+%\begin{itemize}
+	%\item Le poids de la couche d'air : $-\rho A\uv{I}_2$, ou $\rho$ est la densité volumique
+	%de l'air et $A$ est la surface de la couche d'air ;
+	%\item La pression exercée sur la couche \numprint{2} par la pression dans la couche \numprint{1}
+	%: $(p_0 + dp(t))A \uv{I}_1$.
+%\end{itemize}
+%
+%\paragraph{Équation du mouvement}
+%Nous pouvons maintenant écrire l'équation du mouvement
 
 \input{../foot.tex}

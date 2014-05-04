@@ -13,6 +13,19 @@
 \usepackage{amsmath,amssymb,array}
 \usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
 \usepackage{tabularx}
+% Sert normalement à séparer les sources, mais ne fonctionne pas
+% \usepackage{multibib}
+%\newcites{book,brevet,web,dico,cours}%
+         %{Livres et articles scientifiques,%
+					%Brevets et fiches techniques,%
+					%Sites web,%
+					%Dictionnaires et encyclopédie,%
+          %Cours}
+%\bibliographystylebook{plain}
+%\bibliographystylebrevet{plain}
+%\bibliographystyleweb{plain}
+%\bibliographystyledico{plain}
+%\bibliographystylecours{plain}
 \DeclareMathOperator{\dist}{d}
 \newenvironment{abstract-fr}
 {
@@ -101,7 +114,7 @@
 \input{../../dim_electroaimant/dim_electroaimant.tex}
 \clearpage
 
-% A terminer avant de mettre dans le rapport, sinon tant pis (car pas obligatoire)
+% A déplacer et terminer dans dim HP
 % \input{../../modelisation-mecanique/modelisation-mecanique.tex}
 % \clearpage
 
@@ -121,8 +134,12 @@
 \chapter{Conclusion}
 
 \input{../../conclusion/conclusion.tex}
+\clearpage
 
-% Bibliographie à diviser
+% Bibliographie
+% \bibliography{../../sources/sources}
+% \bibliographystyle{plain}
+% \nocite{*}
 
 \chapter{Annexes}
 

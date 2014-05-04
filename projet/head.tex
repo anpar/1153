@@ -9,10 +9,27 @@
 \usepackage{sistyle}
 \usepackage[autolanguage]{numprint}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
 \usepackage{amsmath,amssymb,array}
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
 \usepackage{url} 
 \usepackage{tabularx}
+\DeclareMathOperator{\dist}{d}
+\newenvironment{abstract-fr}
+{
+	\begin{center}
+		\textbf{Résumé} \\[0.5cm]
+	\end{center}
+}
+{}
 
+\newenvironment{abstract-en}
+{
+	\begin{center}
+		\textbf{Summary} \\[0.5cm]
+	\end{center}
+}
+{}
 % New command pour la modélisation mécanique, tri à effectuer
 \newcommand\fv[1]{{\bf #1}} % free vector
 \newcommand\fvd[1]{\dot{\bf #1}} % free vector derivated
@@ -47,5 +64,14 @@
 \newcommand\ddvec[1]{\ddot{\vec{ #1}}}
 \newcommand\qp{\dot{q}}
 \newcommand\dqp{\Delta \dot{q}}
+\usepackage{url} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \begin{document}

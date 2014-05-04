@@ -22,19 +22,19 @@ Il existe deux types de réactions\cite{correvon} :
 	se soustraient.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 	\centering
 	\begin{circuitikz}
-		\draw (0, 0) node[ocirc];
+		\draw (0, 0) node[ocirc]{};
 		\draw (0, 0)	to[short] (2, 0);
-		\draw (0, -1) node[ocirc];
+		\draw (0, -1) node[ocirc]{};
 		\draw (0, -1) to[short] (2, -1);
 		\draw (3.1, -0.5) node [op amp, yscale=-1.022] (op amp) {}
-					(opamp.-)node[left]
-					(opamp.+)node[left]
-					(opamp.out)node[right];
+					(opamp.-)node[left]{}
+					(opamp.+)node[left]{}
+					(opamp.out)node[right]{};
 		\draw (3.85, -0.5) to[short] (5.6, -0.5);
-		\draw (5.6, -0.5) node[ocirc];
+		\draw (5.6, -0.5) node[ocirc]{};
 		\draw (5.4, -0.5) to[short] (5.4, -2);
 		\draw (5.4, -2) to[short] (1.4, -2);
 		\draw (1.4, -2) to[short] (1.4, -1);
@@ -62,22 +62,22 @@ Les effets des boucles de contre-réaction sur un amplificateur sont nombreux\ci
 Dans notre cas particulier, le principal effet de la boucle de contre-réaction est le contrôle du gain de l'amplificateur 
 qui ramène à $1$ le gain.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 	\centering
 	\begin{circuitikz}
-		\draw (0,0) node[ocirc];
+		\draw (0,0) node[ocirc]{};
 		\draw (3,0) to[short] (opamp+);
-		\draw (4, -0.5) node [op amp, yscale=-1.022] (op amp) {}
-			(opamp.-)node[left] (opamp-)
-			(opamp.+)node[left] (opamp+)
-			(opamp.out)node[right] (opampout);
+		\draw (4, -0.5) node [op amp, yscale=-1.022] (op amp){}
+			(opamp.-)node[left] (opamp-){}
+			(opamp.+)node[left] (opamp+){}
+			(opamp.out)node[right] (opampout){};
 		\draw (5, -0.5) to[short] (7, -0.5);
-		\draw (7, -0.5) node[ocirc];
+		\draw (7, -0.5) node[ocirc]{};
 		\draw (2, -1) to[short] (3, -1);
 		\draw (2, -1) to[short] (2, -3);
 		\draw (2, -3) to[R=$R_1$] (2, -4);
 		\draw (2, -4) to[short] (2, -4.5);
-		\draw (2, -4) node[ground];
+		\draw (2, -4) node[ground]{};
 		\draw (2, -2) to[short] (6, -2);
 		\draw (6, -2) to[R=$R_2$] (6, -0.5);
 	\end{circuitikz}

@@ -20,7 +20,7 @@ transformations peuvent mener à un son plus agréable\cite{encyclopedie}.
 La distorsion harmonique joue sur la superposition de différentes fréquences:
 la fréquence fondamentale et ses harmoniques. Un haut-parleur parfait émettrait seulement la fréquence fondamentale, sans les harmoniques, qui sont donc des "parasites".
 On parle d'harmoniques pour désigner les multiples entiers de la fréquence fondamentale\cite{encyclopedia}.
-Par exemple, la seconde harmonique d'une fréquence de 50 Hz vaut 100Hz, la troisième 150Hz, etc. La figure 
+Par exemple, la seconde harmonique d'une fréquence de \unit{50}{\hertz} vaut \unit{100}{\hertz}, la troisième \unit{150}{\hertz}, etc. La figure 
 ci-dessous illustre adéquatement cette notion.
 Les harmoniques paires sont les moins incommodantes, étant donné qu'elles représentent la même note, mais à quelques octaves de différence.
 Les harmoniques impaires, elles, sont plus gênantes étant donné que la note est différente\cite{hartmann}.
@@ -29,24 +29,24 @@ Il est défini comme le rapport de la valeur efficace des harmoniques par la val
 
 
 \begin{figure}[ht!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-xtick=\empty,
-ytick=\empty,
-axis x line=middle,
-axis y line=middle,
-axis line style=->,
-ylabel={$V$},
-legend entries={ fréq. fondamentale, $3$ème harmonique, distorsion}
-]
-\addplot[samples=500,domain=0:2*pi, color=black]{sin(deg(x))};
-\addplot[samples=500, domain=0:2*pi, color=orange]{-sin(3*deg(x))/3};
-\addplot[samples=500, domain=0:2*pi, color=red]{sin(deg(x))-sin(3*deg(x))/3};
-\end{axis}
-\end{tikzpicture}
-\caption{Superposition d'une fréquence fondamentale et de sa 3e harmonique}
-\label{lwp_ratio} 
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+		xtick=\empty,
+		ytick=\empty,
+		axis x line=middle,
+		axis y line=middle,
+		axis line style=->,
+		ylabel={$V$},
+		legend entries={ fréq. fondamentale, $3$ème harmonique, distorsion}
+		]
+		\addplot[samples=500,domain=0:2*pi, color=black]{sin(deg(x))};
+		\addplot[samples=500, domain=0:2*pi, color=orange]{-sin(3*deg(x))/3};
+		\addplot[samples=500, domain=0:2*pi, color=red]{sin(deg(x))-sin(3*deg(x))/3};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Superposition d'une fréquence fondamentale et de sa 3\up{e} harmonique.}
+	\label{harmonic} 
 \end{figure}
 
 \subsection{Causes}
