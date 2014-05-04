@@ -1,0 +1,14 @@
+% script filtres
+
+clear all; 
+close all; 
+
+% declaration des constantes du circuit
+R1=500;
+R2=10000;
+C=47e-8;
+f=1:10000;
+
+rapportV=(((2*pi*f*R2*C).*(1 + (2*pi*f*R2*C).^2).^(-0.5)).*((1 + (2*3.14*f*R1*C).^2).^(-0.5)));
+figure(1); semilogx(f,rapportV);xlabel('frequence f [Hz]'); ylabel('Vout/Vin');
+figure(2); plot(f,rapportV); xlabel('frequence f [Hz]'); ylabel('Vout/Vin');
