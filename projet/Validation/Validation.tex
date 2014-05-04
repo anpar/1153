@@ -15,6 +15,7 @@ la formule $P = VI$ en utilisant la valeur RMS, on obient \unit{0.23}{\ampere}. 
 donc les deux sources sur cette valeur. Les câbles des deux alimentations sont ensuite connectés 
 au bornier de la plaquette. La sortie de la plaquette est quant à elle reliée à la bobine mobile.
 
+
 L'électroaimant est lui alimenté en courant continu par une troisième source qui 
 fourni un courant de \unit{1}{\ampere}. Le courant maximum supportable par les fils de 
 cuivre dont nous disposons étant de \unit{2}{\ampere}\cite{norme-cuivre}, nous prenons
@@ -42,29 +43,53 @@ qui annonçaient un champ magnétique de \unit{7.54}{\centi\tesla}.
 \subsection{Mesures en différents points du circuit}
 Pour mesurer la tension du signal audio en différents points du circuit, nous utilisons l'oscilloscope
 et sa sonde.
-
-\paragraph{Point d'entrée}
-Nous avons commencé par mesurer la tension du signal audio sortant de la prise jack. Pour ce faire nous avons
-placé la sonde de l'oscilloscope au point IN1 du circuit. Nous avons alors pu visualiser le 
-signal audio, comme le montre la figure \ref{in1}.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[scale=0.15]{IN1.jpg}
-	\caption{Signal audio visualisé au point IN1 du circuit.}
-	\label{in1}
-\end{figure}
-
-En prenant une échelle appropriée, c'est-à-dire \unit{50}{\milli\volt}, on voit que le signal 
-audio a une amplitude de \unit{0.0375}{\volt} à la sortie de la prise jack.
-
-\paragraph{Règlage du volume et filtres}
-
-% Je ne parviens pas à exploiter les photos et mesures prises...
-
-\paragraph{Point de sortie}
+Nous avons commencé par mesurer la tension du signal audio sortant de la prise jack (cfr Figure \ref{jack}). Ensuite nous avons
+placé la sonde de l'oscilloscope au point IN1 du circuit. Nous avons alors pu visualiser le
+signal audio, comme le montre la Figure \ref{in1}.
+En prenant une échelle appropriée, c'est-à-dire \unit{50}{\milli\volt}, on voit que le signal
+audio a une amplitude de \unit{0.0375}{\volt} à la sortie de la prise jack (cfr Figure \ref{jack}).
 Au point de sortie, nous avons mesuré une tension située entre \unit{3}{\volt}
 et \unit{0.22}{\volt} selon que le potentiomètre lié au réglage du volume
-soit sur sa valeur maximale ou sur sa valeur minimale.
+soit sur sa valeur maximale ou sur sa valeur minimale (cfr Figure \ref{out}).
+
+
+\begin{figure}[h]
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[scale=0.10]{jack}
+\caption{Signal audio visualisé à la sortie de la prise jack. Échelle: \unit{50}{\milli\volt}}
+\label{jack}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[scale=0.10]{IN1}
+\caption{Signal audio visualisé au point IN1 du circuit. Échelle: \unit{50}{\milli\volt}}
+\label{in1}
+\end{center}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[scale=0.10]{TP2}
+\caption{Signal audio visualisé au point TP2 du circuit. Échelle: \unit{0.1}{\volt}}
+\label{TP2}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\includegraphics[scale=0.10]{OUT}
+\caption{Signal audio visualisé au point OUT du circuit. Échelle: \unit{0.1}{\volt}}
+\label{out}
+\end{center}
+\end{minipage}
+\end{figure}
+
+
 
 \input{../foot.tex}
