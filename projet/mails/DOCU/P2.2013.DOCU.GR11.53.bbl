@@ -1,0 +1,129 @@
+\begin{thebibliography}{10}
+
+\bibitem{dctopward}
+AMT.
+\newblock Alimentation dc : Topward 3303 ds, Janvier 2007.
+
+\bibitem{encyclopedie}
+Pierre Auger.
+\newblock Encyclopédie internationale des sciences et des techniques, 1969.
+
+\bibitem{black34}
+H.~S. Black.
+\newblock Stabilized feedback amplifiers, 1934.
+
+\bibitem{black77}
+H.~S. Black.
+\newblock Inventing the negative feedback amplifier, 1977.
+
+\bibitem{absorber}
+J.~Chevassus, T.~Nkaoua, J.M. Villafranca, and N.~Benoist.
+\newblock Traitement acoustique: principes de base.
+
+\bibitem{chargeslin}
+Universal~Electric Corporation.
+\newblock {\em Charges non-linéaires et harmoniques}.
+\newblock Starline, Mars 2014.
+
+\bibitem{correvon}
+Marc Correvon.
+\newblock Systèmes électroniques.
+
+\bibitem{cuccia}
+C.~Louis Cuccia.
+\newblock {\em Harmonics, sidebands, and transients in communication
+  engineering: as studies by the Fourier and Laplace analysis}.
+\newblock McGraw-Hill, 1952.
+
+\bibitem{marcel}
+Marcel J.~Van der Houst, Wouter~A Serdijn, and André~C. Linnenbank.
+\newblock {\em EMI-Resilient Apmlifier Circuits}.
+\newblock Springer, 2013.
+
+\bibitem{dusausay}
+S.~Dusausay.
+\newblock Effets de la contre réaction sur les amplificateurs.
+
+\bibitem{Vas}
+Guy Galus.
+\newblock Paramètres de thiele-small.
+
+\bibitem{hartmann}
+William~M. Hartmann.
+\newblock {\em Principles of Musical Acoustics}.
+\newblock Springer, 2013.
+
+\bibitem{datasheetampli}
+Texas Instruments.
+\newblock Lm380 2.5w audio power amplifier.
+
+\bibitem{brevet2}
+Ronald~G. Jawernycky, Michael~Z. Lowenstein, Gerald~L. Park, and Myron Zucker.
+\newblock Apparatus for measuring harmonic distortion in a conductor, and
+  methods of constructing and utilizing same, 1989.
+
+\bibitem{volume}
+J.~Jouhaneau.
+\newblock {\em Enceintes aux basses frequences}.
+\newblock Ed. Techniques Ingénieur, 2014.
+
+\bibitem{THD}
+C.~Kocatepe, R.~Yumurtaci, O.~Arikan, M.~Baysal, B.~Kekezoglu, A.~Bozkurt, and
+  C.~F. Kumru.
+\newblock {\em Harmonic Effects of Power System Loads: An Experimental Study}.
+\newblock Intech, Mai 2014.
+
+\bibitem{dico}
+Larousse.
+\newblock Le lexis - le dictionnaire érudit de la langue française, 2014.
+
+\bibitem{tlhp}
+Tout le~haut parleur.
+\newblock Davis acoustics.
+
+\bibitem{close}
+Tout le~haut parleur.
+\newblock La charge pour le haut-parleur.
+
+\bibitem{brevet1}
+Donald~J. Lucas and Edwin W.~Rowand Jr.
+\newblock Method and apparatus for harmonic distortion correction, 1994.
+
+\bibitem{lynch}
+Lynch and Truxal.
+\newblock {\em Principles of Electronic Instrumentration}.
+\newblock McGraw-Hill, 1962.
+
+\bibitem{norme-cuivre}
+Multi-Contact.
+\newblock Technical data sheet - cable flexi-e 0.10.
+
+\bibitem{encyclopedia}
+Encyclopaedia~Universalis SA.
+\newblock Encyclopaedia universalis, 1990.
+
+\bibitem{sporken}
+R~Sporken and J.L. Longueville.
+\newblock Physique des télétransmissions, 2007.
+
+\bibitem{termans}
+Frederick~Emmons Terman.
+\newblock {\em Radio engineering}.
+\newblock McGraw-Hill, 1947.
+
+\bibitem{resonance}
+Martin Weik.
+\newblock {\em Computer Science and Communication Dictionary}.
+\newblock Kluwer Academic Publishers, 2001.
+
+\bibitem{wiki-perm-magn}
+Wikipédia.
+\newblock Perméabilite magnétique, 2013.
+
+\bibitem{physique}
+Hugh~D. Young and Roger~A. Freedman.
+\newblock {\em Sears and Zemansky's University Physics with Modern Physics
+  Technology Update}.
+\newblock Pearson Education, 13th edition, 2013.
+
+\end{thebibliography}
