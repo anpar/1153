@@ -22,3 +22,49 @@ Antoine :
 
 Marie-Charlotte :
 -----------------
+
+\subsection{Fonctionnement général}
+
+Le GSM ou le MP3 va dans un premier temps envoyer un signal audio via le câble Jack au circuit imprimé. Celui-ci permet
+ de modifier ce signal brut de plusieurs façons :
+
+\begin{itemize}
+\item En réglant le volume, c'est-à-dire en modifiant l'amplitude du signal audio ;
+\item En réglant les graves et les aigus grâce au filtre passe-bande ;
+\item En amplifiant le signal : c'est le rôle de l'amplificateur audio du circuit.
+\end{itemize}
+
+À la sortie du circuit imprimé, le signal est alors \textit{filtré} et \textit{amplifié}.
+Ce signal traité ira ensuite alimenter en courant la bobine mobile. Cette dernière intercepte un champ magnétique constant 
+produit par un électroaimant formé d'une bobine de fil de cuivre, d'un matériau ferromagnétique, et alimenté en courant continu.
+La bobine mobile subit donc une force de \textsc{Laplace}, va osciller en fonction du  signal audio, et reproduira le son voulu.
+Enfin, la membrane pourra revenir à sa position d'équilibregrâce à des attaches qui, à la manière de ressorts, produisent une
+force de rappel dans la direction opposée au mouvement de la bobine mobile. 
+
+\subsection{Dimensionnement}
+
+
+\subsection{Le boîtier}
+La première question qui s'est posée était celle du volume du caisson. Nous nous sommes renseignés sur la fabrication de 
+haut-parleurs, et nous avonsappris que le volume est lié à de nombreux paramètres, et qu'un volume trop petit ne restituerait 
+pas bien les extrèmes graves. Etant donné que nous devions pouvoir faire varier la fréquence sur notre dispositif, nous avons 
+finalement opté pour un boîtier cubique de $\unit{25}{\centi\meter}$ de côté.Afin d'améliorer un peu le boîtier, nous avons
+également pensé à placer des pieds en caoutchouc afin de réduire les déplacements dûs aux vibrations du haut-parleur.Enfin,
+pour faciliter l'accès à l'intérieur du haut-parleur, nous avons créé un système de porte coulissante à l'arrière de celui-ci.
+
+\subsection{La membrane}
+Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$, pour exploiter le mieux possible la taille du
+caisson. C'est également undiamètre assez répandu dans le commerce. La profondeur correspondante est de $\unit{6}{\centi\meter}$.
+Elle est réalisée en papier, et nous avons opté pour du tissus tendu en guise de ressort. Cette solution nous apparaît comme
+sortant de l'ordinaire, propre, et efficace. Cela nous a en effet permis d'obtenir une constante de raideur minime.
+
+\subsection{Modélisation hp}
+
+Pour écrire les équations du mouvement, nous avons d'abord fait l'inventaire des forces agissant sur le système. Ensuite, nous
+avons négligé les frottements, et le poids de la bobine. Nous sommes finalement arrivés à l'équation reprise dans le slide. 
+Nous l'avons réécrite sous forme d'équation différentielle pour ensuite résoudre cette dernière. Nous avons alors remarqué 
+qu'à une certaine fréquence, le dénominateur était nul. C'est bien entendu une situation impossible, et nous avons alors
+étudié cette situaton. La fréquence correspondante est en fait la fréquence de résonance; fréquence à laquelle le dispositif a
+une réponse maximale (ok, pas très bien dit, je ferai encore deux trois recherches là dessus pour avoir des mots plus justes)
+
+
