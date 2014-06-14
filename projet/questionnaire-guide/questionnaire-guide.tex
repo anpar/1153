@@ -1,1 +1,67 @@
-%TODO
+\input{../head.tex}
+\section{Questionnaire guide}
+\subsection{Généralités}
+\begin{enumerate}
+\item Quelles sont les limites de fonctionnement de votre système (ampli, HP) ?
+\item Où se trouvent les fragilités de votre système?
+\item Quel est le lien entre le modèle théorique (équa diff) et la réalité matérielle?
+\item Quels seraient les points forts de votre HP?
+\item Quels seraient les points faibles de votre HP?
+\item Y-a-t'il des astuces particulières que vous auriez utilisées?
+\item Pourquoi avoir utilisé un ampli-suiveur?
+\item Expliquez l'utilité des différents composants
+\item Quelles améliorations apporteriez-vous au circuit, au système, pour éviter des problèmes rencontrés, ou améliorer ses fonctionnalités?
+\item Quelles sont les bandes de fréquence de vos étages? Quel en est l'impact sur le design de votre membrane?
+\item Quelle est la consommation électrique de votre système?
+\item Comment doit etre alimenté le HP?
+\end{enumerate}
+\subsection{analyse par blocs}
+\subsubsection{Généralités}
+\begin{enumerate}
+\item Quels sont les liens entre les recherches documentaires et le projet final?
+\item Quelles sont les caractéristiques du signal rentrant?
+\end{enumerate}
+\subsubsection{Bobine fixe et électroaimant}
+\begin{enumerate}
+\item Quelle est la forme générale du courant dans la bobine primaire (du transformateur) si le générateur de fonction l'attaque par un signal rectangulaire?
+\item Quels éléments et quelles hyp avez-vous utilisés pour dimensionner votre électroaimant?
+\item Que vaut l'énergie magnétique accumulée dans la bobine primaire?
+\end{enumerate}
+\subsubsection{Filtre RC}
+\begin{enumerate}
+\item A quoi sert ce circuit?
+\item Montrez à l'oscilloscope le signal RC de charge et de décharge, et le signal "`rectangulaire"' produit.
+\item Mesurez la période du signal de l'oscillateur à l'oscilloscope, en déduire la fréquence.
+\item Quesl sont les éléments qui interviennent dans la charge de la capacité?
+\item Quelles sont les équations permettant de modéliser le compartement du circuit dans les deux phases(charge-décharge)?
+\end{enumerate}
+\subsubsection{Filtre CR}
+\begin{enumerate}
+\item à quoi sert ce circuit?
+\item Qu'est ce qui change si on change la tension d'alimentation?
+\end{enumerate}
+\subsubsection{Amplificateurs}
+\begin{enumerate}
+\item à quoi sert ce circuit?
+\item que valent les inductances primaires et secondaires du transformateur que vous avez bobiné?
+\item comment avez vous déterminé le nombre de tours nécessaires pour réaliser votre transformateur?
+\end{enumerate}
+\subsubsection{Membrane}
+\begin{enumerate}
+\item à quoi sert elle?
+\item quels éléments et quelles hyp avez vous utilisés pour dimensionner votre baffle et son support?
+\item Que vaut la fréquence de résonance et la période sorrespondante au circuit accumulant l'énergie? (LC)
+\end{enumerate}
+\subsubsection{Tests du système}
+\begin{enumerate}
+\item Qu'est-ce qui change si on modifie la tension d'alimentation?
+\end{enumerate}
+\subsubsection{Divers}
+\begin{enumerate}
+\item Que veut dire le mot trigger? à quoi sert ce bouton sur l'oscillo?
+\item A quoi sert le bouton gnd?
+\item Quelle est la différence  entre les modes d'affichage AC et DC sur l'oscillo?
+\item est-il nécessaire de connecter une masse au probe de l'oscillo?
+\item comment vérifier le bon fonctionnement d'une probe?
+\end{enumerate}
+\input{../foot.tex}
