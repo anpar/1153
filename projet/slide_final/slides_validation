@@ -1,0 +1,65 @@
+\documentclass[pdf]{beamer}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,array}
+
+\usetheme{warsaw}
+\mode<presentation>{}
+
+\title{Jury}
+
+\author{Groupe 115.3}
+
+\begin{document}
+
+\begin{frame}{Validation}
+
+\begin{tabular}{cc}
+   \includegraphics[scale=0.03]{P1010031.jpg}& 
+   \includegraphics[scale=0.03]{P1010034.jpg} \\
+	Sources de tension pour la plaquette & Test de la plaquette\\
+  Sources + et - & Voir où est le problème\\
+	& Données
+\end{tabular}
+\end{frame}
+
+
+
+\begin{frame}
+
+\begin{tabular}{cc}
+   \includegraphics[scale=0.5]{Pmulti.jpg}& 
+   \includegraphics[scale=0.15]{Ptesla.jpg} \\
+	Resistance des bobines & Champ magnétique bobine\\
+	Données pour dimentionnement& Champ suffisant\\
+\end{tabular}
+\end{frame}
+
+
+
+\begin{frame}
+\center\large\underline{Compte-rendu}\\
+
+
+Voltage des sources:  15 V
+\\
+Courant electroaimant: 1A
+\\
+Resistance bobine fixe: 2.38 \Omega
+\\
+Champ magnétique bobin fixe: 0.08 T
+\\
+Courant bobine fixe: 0.116 A
+\\
+IN: 100 mV
+\\
+OUT avec pentotiomètre: 0.22 V
+\\
+OUT sans pentotiomètre: 3 V	
+
+\end{frame}
+\end{document}
