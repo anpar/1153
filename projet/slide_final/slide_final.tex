@@ -79,3 +79,63 @@ Fréquence de résonance, amplitude du mouvement infini.
 \end{frame}
 
 % =======================================================================
+
+\begin{frame}
+\frametitle{Approximation mathématique}
+
+Fréquence de coupure : intersection entre la droite horizontale y = 2.5 V et y = a $\cdot \log(x)$ + b
+
+
+\begin{figure}[!]
+
+\includegraphics[scale=0.6]{GRAPHE.png}
+\caption{Graphe de Vout expérimentale en fonction de la fréquence}
+
+\end{figure}
+
+\end{frame}
+
+% =======================================================================
+
+\begin{frame}
+\frametitle{Approximation mathématique}
+Système approché : 
+\begin{center}
+\begin{array}{rcel}
+$$
+\begin{pmatrix}
+4.204 & 1\\
+4.255 & 1 \\
+4.301 & 1
+\end{pmatrix} &
+
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix} &
+
+= &
+
+\begin{pmatrix}
+1.607\\
+1.565\\
+1.524
+\end{pmatrix}
+$$
+\end{array}
+\end{center}
+
+$$\fbox{y = -1.96 \cdot \log(x) + 9.84}$$
+
+$$\fbox{x = 5557.7 Hz}$$ 
+
+Fréquence théorique : $f = \frac{1}{2\pi RC}$ = 5889.2 Hz 
+\newline
+
+Avec R = 57.5$\Omega$ et C = 470 nF
+
+
+\end{frame}
+
+
+% =======================================================================
