@@ -7,6 +7,26 @@ Thibaut :
 Lise :
 -----
 
+\subsection{Approximation mathématique}
+
+Dans le cadre de notre projet, il nous a été demandé de réaliser une approximation mathématique de la fréquence de coupure
+du le filtre passe-bas. C'est à dire, calculer l'intersection entre une droite constante représentant la tension du circuit à basse fréquence et une droite représentant la tension du circuit à hautes fréquences. 
+
+Tout d'abord, graphiquement, cette droite dans un repère cartésien représente un logarithme. Nous sommes donc passé en échelle semi-logarithmique pour avoir une droite oblique.
+
+Ensuite, à l'aide des données prisent en laboratoire, nous devions déterminer l'équation de cette droite. Trois méthodes permettant de minimiser la distance entre deux droites nous ont été proposé. Nous avons décidé d'utiliser
+la méthode de la solution approchée à l'aide de la projection orthogonale sur une base orthonormée du système. 
+
+Nous avons ensuite posé le système suivant : $y = a log(x) + b$ où y représente la tension de sortie du filtre passe-bas et x la fréquence. Nous cherchons à déterminer les valeurs a et b, 
+respectivement la pente et l'ordonnée à l'origine de la droite. Les données prise en laboratoire n'étant pas précise, nous arrivons à un système impossible. 
+
+Nous avons orthonormée la base des colonnes du système pour ensuite  déterminer une solution approché à l'aide de la projection orthogonale. 
+
+Nous avons ainsi trouver les valeurs pour les coefficients a et b et ensuite déterminer l'intersection avec la droite 2.5V.
+Nous obtenons ainsi une fréquence de coupure de 5557,7 Hz. 
+
+Cette valeur est fort proche de la valeur théorique $f = \frac{1}{2\pi RC}$ qui est égale dans notre cas à 5889,2 Hz.
+
 
 Robin :
 ------
