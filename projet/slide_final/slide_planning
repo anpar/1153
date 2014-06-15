@@ -1,0 +1,62 @@
+\documentclass[pdf]{beamer}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usetheme{warsaw}
+\mode<presentation>{}
+
+\title{Jury}
+
+\author{Groupe 115.3}
+
+\begin{document}
+
+
+\begin{frame}{Le planning}
+\center\large\underline{Les échéances}\\
+%\begin{enumerate}
+
+		\begin{tabular}{|c|c|c|}
+		\hline
+		Semaine & Théorique & Pratique \\
+		\hline
+		S2 & CdC &\\
+		\hline
+		S3 & Modélisation filtres &\\
+		\hline
+		S4 & Dim. électroaimant &\\
+		\hline
+		S5 & Recherches documentaires & \\
+		\hline
+		S6 & Préparation pré)jury & Bobinage + soudure\\
+		\hline
+		S7 & Pré rapport & Pré jury\\
+		\hline
+		S8 & & Test plaquette\\
+		\hline
+		S9-10 & & Membrane et caisson\\
+		\hline
+		S11-12 & Rédaction rapport & test son\\
+		\hline
+		S13-14 & Préparation défense orale &\\
+		\hline
+		
+		\end{tabular}
+%\item S2: CDC
+%\item S3: Modélisation filtres
+%\item S4: Dimensionnement électroaimant
+%\item S5: Recherches documentaires
+%\item S6: Bobinage + Soudure
+%\item S7: pré-rapport
+%\item S8: Test paquette
+%\item S9-10: membrane et caisson
+%\item S11-12: test son, assemblage et rédaction rapport
+%\item S13-14: Préparation défense orale
+%\end{enumerate}
+
+\end{frame}
+\end{document}
