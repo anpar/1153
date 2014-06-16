@@ -49,15 +49,6 @@
 \newcommand\ddvec[1]{\ddot{\vec{ #1}}}
 \newcommand\qp{\dot{q}}
 \newcommand\dqp{\Delta \dot{q}}
-\usepackage{url} 
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
 
 \usetheme{warsaw}
 \mode<presentation>{}
@@ -105,7 +96,7 @@
 			\item Pieds en caoutchoux ;
 			\item Porte coulissante à l'arrière.
 		\end{itemize}
-		
+
 		% Ajouter une image ?
 \end{frame}
 
@@ -115,7 +106,7 @@
 			\item Diamètre de \unit{17}{\centi\meter} ;
 			\item Papier de densité \unit{200}{\gram\per\meter\squared}.
 		\end{itemize}
-		
+
 		% Ajouter une image ?
 \end{frame}
 
@@ -261,7 +252,7 @@
 		\hline
 		S13-14 & Préparation défense orale &\\
 		\hline
-		
+
 		\end{tabular}
 \end{frame}
 
@@ -273,7 +264,7 @@
 		\begin{column}{5cm}
 			\scalebox{0.5}{\includegraphics{hgp_voltages.png}}
 		\end{column}
-		
+
 		\begin{column}{5cm}
 			\begin{itemize}
 				\item $V_{out}$ est en retard de $\arctan{RC\omega}$ par rapport à $V_{in}$ ;
@@ -281,7 +272,7 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
-	
+
 	\begin{columns}
 		\begin{column}{5cm}
 			\begin{itemize}
@@ -304,7 +295,7 @@
 		\begin{column}{5cm}
 			\scalebox{0.5}{\includegraphics{lwp_voltages.png}}
 		\end{column}
-		
+
 		\begin{column}{5cm}
 			\begin{itemize}
 				\item $V_{out}$ est en retard de $\arctan{RC\omega}$ par rapport à $V_{in}$ ;
@@ -312,7 +303,7 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
-	
+
 	\begin{columns}
 		\begin{column}{5cm}
 			\begin{itemize}
@@ -332,14 +323,14 @@
 % =======================================================================
 \begin{frame}{Recherche documentaire}
 	\framesubtitle{La contre-réaction (ou contre réaction négative)}
-	
+
 	\textbf{Principe} : réinjection d'une partie du signal de sortie à l'entrée.
-	
+
 	\begin{columns}
 		\begin{column}{5cm}
 			\includegraphics{opamp_loop.png}
 		\end{column}
-		
+
 		\begin{column}{5cm}
 				\begin{itemize}
 					\item Signal de sortie plus proche du signal d'entrée ;
@@ -354,23 +345,23 @@
 
 \begin{frame}{Recherche documentaire}
 	\framesubtitle{La distorsion}
-	
+
 	\textbf{Principe} : des fréquences harmoniques s'ajoutent à la fréquence fondamentale
 	$\Rightarrow$ modification du signal.
-	
+
 	\bigbreak
-	
+
 	\begin{columns}
 		\begin{column}{5cm}
 			\includegraphics[scale=0.35]{distorsion.jpg}
 		\end{column}
-		
+
 		\begin{column}{5cm}
 			Conséquences :
 			\begin{itemize}
 				\item	Surchauffe des composants électroniques ;
 			\end{itemize}
-			
+
 			Solutions :
 			\begin{itemize}
 				\item	Filtres actifs ou passifs (passe-haut et passe-bas) ;
