@@ -1,12 +1,19 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{amsmath,amssymb,array}
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+
+\begin{document}
+\section{Thibaut}
 % TODO
 
-Thibaut :
----------
-
-
-Lise :
------
-
+\section{Lise}
 \subsection{Approximation mathématique}
 
 Dans le cadre de notre projet, il nous a été demandé de réaliser une approximation mathématique de la fréquence de coupure
@@ -27,31 +34,27 @@ Nous obtenons ainsi une fréquence de coupure de 5557,7 Hz.
 
 Cette valeur est fort proche de la valeur théorique $f = \frac{1}{2\pi RC}$ qui est égale dans notre cas à 5889,2 Hz.
 
+\section{Robin}
+% TODO
 
-Robin :
-------
+\section{Virgile}
+% TODO
 
+\section{Antoine}
+\subsection{Filtres}
 
-Virgile :
----------
+\subsection{Boucles de contre-réaction}
 
-
-Antoine :
----------
-
-
-Marie-Charlotte :
------------------
-
+\section{Marie-Charlotte}
 \subsection{Fonctionnement général}
 
 Le GSM ou le MP3 va dans un premier temps envoyer un signal audio via le câble Jack au circuit imprimé. Celui-ci permet
- de modifier ce signal brut de plusieurs façons :
+de modifier ce signal brut de plusieurs façons :
 
 \begin{itemize}
-\item En réglant le volume, c'est-à-dire en modifiant l'amplitude du signal audio ;
-\item En réglant les graves et les aigus grâce au filtre passe-bande ;
-\item En amplifiant le signal : c'est le rôle de l'amplificateur audio du circuit.
+	\item En réglant le volume, c'est-à-dire en modifiant l'amplitude du signal audio ;
+	\item En réglant les graves et les aigus grâce au filtre passe-bande ;
+	\item En amplifiant le signal : c'est le rôle de l'amplificateur audio du circuit.
 \end{itemize}
 
 À la sortie du circuit imprimé, le signal est alors \textit{filtré} et \textit{amplifié}.
@@ -62,9 +65,7 @@ Enfin, la membrane pourra revenir à sa position d'équilibregrâce à des attac
 force de rappel dans la direction opposée au mouvement de la bobine mobile. 
 
 \subsection{Dimensionnement}
-
-
-\subsection{Le boîtier}
+\subsubsection{Le boîtier}
 La première question qui s'est posée était celle du volume du caisson. Nous nous sommes renseignés sur la fabrication de 
 haut-parleurs, et nous avonsappris que le volume est lié à de nombreux paramètres, et qu'un volume trop petit ne restituerait 
 pas bien les extrèmes graves. Etant donné que nous devions pouvoir faire varier la fréquence sur notre dispositif, nous avons 
@@ -72,14 +73,13 @@ finalement opté pour un boîtier cubique de $\unit{25}{\centi\meter}$ de côté
 également pensé à placer des pieds en caoutchouc afin de réduire les déplacements dûs aux vibrations du haut-parleur.Enfin,
 pour faciliter l'accès à l'intérieur du haut-parleur, nous avons créé un système de porte coulissante à l'arrière de celui-ci.
 
-\subsection{La membrane}
+\subsubsection{La membrane}
 Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$, pour exploiter le mieux possible la taille du
 caisson. C'est également undiamètre assez répandu dans le commerce. La profondeur correspondante est de $\unit{6}{\centi\meter}$.
 Elle est réalisée en papier, et nous avons opté pour du tissus tendu en guise de ressort. Cette solution nous apparaît comme
 sortant de l'ordinaire, propre, et efficace. Cela nous a en effet permis d'obtenir une constante de raideur minime.
 
-\subsection{Modélisation hp}
-
+\subsubsection{Modélisation du haut-parleur}
 Pour écrire les équations du mouvement, nous avons d'abord fait l'inventaire des forces agissant sur le système. Ensuite, nous
 avons négligé les frottements, et le poids de la bobine. Nous sommes finalement arrivés à l'équation reprise dans le slide. 
 Nous l'avons réécrite sous forme d'équation différentielle pour ensuite résoudre cette dernière. Nous avons alors remarqué 
@@ -87,4 +87,4 @@ qu'à une certaine fréquence, le dénominateur était nul. C'est bien entendu u
 étudié cette situaton. La fréquence correspondante est en fait la fréquence de résonance; fréquence à laquelle le dispositif a
 une réponse maximale (ok, pas très bien dit, je ferai encore deux trois recherches là dessus pour avoir des mots plus justes)
 
-
+\end{document}
