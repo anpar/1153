@@ -1,45 +1,52 @@
-% TODO
-% Si vous remarquez des erreurs dans le rapport, signalez les ici.
+\documentclass{article}
 
-1) 5.1, page 24
-Dans la partie discussion, on dit qu'on a expérimentalement 8 cT, à la place des 7.54 cT calculés, et on explique 
-cela par le fait qu'un a supposé tout le champ concentré dns l'enterfer... illogique du coup qu'on ait plus que ce qu'on a calculé.
-Par contre je sais pas si on avait pris en compte le fait qu'on avait rapetissé l'entrefer dans nos calculs, donc ca vient peut
-etre de là qu'on a un plus grand champ.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}      
+\usepackage[francais]{babel}
+\usepackage{color}
 
-2) 2.3.1, page 12
-- La perméabilité relative de l'air n'a pas d'unité, or dans le rapport il est mis H/m.
+\title{Errata du rapport}
+\author{Groupe 115.3}
+\date{\today}
 
-3) 2.2.1, page 7
-Dans la "Recherche de la solution homogène", il est indiqué "A est une constante appartenant
-à l'ensemble des réels", je pense que A appartient en fait à l'ensemble des complexes.
+\begin{document}
+\maketitle
 
-4) 2.4.2, page 15
-Dans la résolution de l'équation différentielle du mouvement, il est noté après le calcul
-des racines du polynôme caractéristiques : "Nous avons donc, en ne gardant que la partie réelle".
-Il faut supprimer la partie "en ne gardant que la partie réelle".
+\section{Fautes de fond}
 
-5) 6.1.1, page 29
-Il est écrit "Pour trouver la fréquence d'intersection entre les deux droites, nous résolvons le système".
-On recherche en fait la fréquence de coupure, qui correspond à l'abscisse à laquelle s'intersecte les
-deux droites, c'est plus précis. De plus, le système a déjà été résolu. Ici on recherche simplement la
-solution de l'équation -1.96 log(x) + 9.84 = 2.5.
+\begin{itemize}
+	\item \textbf{Page 7} : dans le paragraphe intitulé "Recherche de la solution homogène", il est indiqué 
+	"$A$ est une constante appartenant à l'ensemble des réels", $A$ appartient en réalité aux complexes ;
+	\item \textbf{Page 12} : la perméabilité relative de l'air n'a pas d'unité, or dans le rapport il est mis \unit{}{\henry\per\meter} ;
+	\item \textbf{Page 15} : dans la résolution de l'équation différentielle du mouvement, il est noté après le calcul
+	des racines du polynôme caractéristiques : "Nous avons donc, en ne gardant que la partie réelle (...)".
+	Il faut supprimer la partie "en ne gardant que la partie réelle" ;
+	% Trouver l'erreur et reformuler ceci. Et oui on avait bien refait le calcul avec entrefer réduit.
+	%\item \textbf{Page 24} : Dans la partie discussion, on dit qu'on a expérimentalement 8 cT, à la place des 7.54 cT calculés, et on explique 
+	%cela par le fait qu'un a supposé tout le champ concentré dans l'enterfer... illogique du coup qu'on ait plus que ce qu'on a calculé.
+	%Par contre je sais pas si on avait pris en compte le fait qu'on avait rapetissé l'entrefer dans nos calculs, donc ca vient peut
+	%etre de là qu'on a un plus grand champ.
+	\item \textbf{Page 29} : il est écrit "Pour trouver la fréquence d'intersection entre les deux droites, nous résolvons le système".
+	On recherche en fait la fréquence de coupure, qui correspond à l'abscisse à laquelle s'intersecte les
+	deux droites, c'est plus précis. De plus, le système a déjà été résolu. Ici on recherche simplement la
+	solution de l'équation $-1.96\log{x} + 9.84 = 2.5$. Ce n'est pas vraiment une erreure mais plutôt un manque
+	de précision ;
+	\item \textbf{Page 30} : il est sans doute plus juste de dire "la méthode utilisant la projection orthogonale comme outil
+	de résolution d'un système n'ayant pas de solutions exactes" que de dire "la méthode utilisant les
+	bases orthonormées" ;
+	% Erreur à vérifier
+	%\item \textbf{Page 30} :
+	%Je me trompe où cette section parle d'une méthode pour une meilleure approximation mais en parlant
+	%d'une autre méthode que cette qu'on a utilisé?
+\end{itemize}
 
-6) 6.1.2, page 30
-Il est sans doute plus juste de dire "la méthode utilisant la projection orthogonale comme outil
-de résolution d'un système n'ayant pas de solutions exactes" que de dire "la méthode utilisant les
-bases orthonormées".
-
-7) 6.1.3, page 30
-Je me trompe où cette section parle d'une méthode pour une meilleure approximation mais en parlant
-d'une autre méthode que cette qu'on a utilisé?
-
-Orthographe
------------
-Sinon, il restait qqes fautes de frappe/orthographe (shame on me) Mais j'imagine qu'on s'en fout
-- 2.3.1 : auX courantS de Foucault (il y en a plusieurs non?)
-- 2.3.3 : comme cette bobine mobile est traverséE par... (rajouter le E)
-- 2.4.2 : juuste avant qu'elle ne commenceR à retourner... (backer le r)
-- 4.1 : résistanCe (rajouter le C)
-- 5.1 : nous sommes assez fierS (rajouter le S)
-- 6.1.1 : le \vec n'est pas bien passé, il est écrit 'ecf2' (vers les 3/4 de la page)
+\section{Orthographe}
+\begin{itemize}
+	\item \textbf{Page 12} : "(...) au\textcolor{green}{x} courant\textcolor{green}{s} de \textsc{Foucault} (...)" ;
+	\item \textbf{Page 13} : "(...) comme cette bobine mobile est traversé\textcolor{green}{e} par (...)" ;
+	\item \textbf{Page 16} : "(...) juste avant qu'elle ne commence\textcolor{red}{r} à retourner (...)" ;
+	\item \textbf{Page 22} : "(...) résistan\textcolor{green}{c}e" ;
+	\item \textbf{Page 24} : "(...) nous sommes assez fier\textcolor{green}{s}" ;
+	\item \textbf{Page 28} : "(...) Soient $f_1$ et \textcolor{red}{ec}$f_2$" ;
+\end{itemize}
+\end{document}
