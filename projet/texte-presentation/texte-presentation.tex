@@ -146,7 +146,24 @@ est appelé un amplificateur suiveur de tension (impédance d'entrée infinie, d
 
 \section{Distorsion harmonique (Robin)}
 
-\textcolor{blue}{A faire...}
+La distorsion, par défininition, est une transformation du signal de sortie par rapport à celui
+d'entrée. Etant donné que le signal en est déformé, elle n'est pas souhaitée.
+Nous allons vous parler d'un type particulier de distorsion: la distorsion harmonique.
+La distorsion harmonique joue sur la supperposition de différentes fréquences: une fondamentale 
+et ses harmoniques, qui sont parasites. 
+
+Parlons de ses causes. C'est l'appareil lui-même qui crée la distorsion. Dans notre circuit, il 
+s'agit de notre ampli-audio. Les principales causes sont les charges non-linéaires, une charge étant 
+un élément de circuit qui consomme une puissance. Elles apparaissent lorsque la résistance n'est pas constante, 
+et  cause la création des courants harmoniques, responsables de la distorsion harmonique. 
+
+Cette distorsion a pour conséquence un accroissement de courant qui se caractérise par un vieillisement 
+préaturé des compisantes électriques.
+
+Plusieurs moyens sont mis en oeuvre pour l'éviter. C'est le cas des filtres actifs. Ils injectent des fréquences 
+identiques aux courants harmoniques mais déphasés d'une demi période. Il en résulte une interférence destructrice 
+qui ne change pas le signal d'aentrée. La boucle de conre-réaction, est aussi un moyen de diminuer de manière significative
+le TDH, taux de distorsion harmonique.
 
 \section{Planning (Thibaut)}
 
