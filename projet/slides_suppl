@@ -312,4 +312,34 @@ Avec R = 57.5$\Omega$ et C = 470 nF
 \end{figure}
 \end{frame}
 
+\begin{frame}{Gain de l'amplificateur}
+\begin{figure}[ht]
+\minipage{0.4\textwidth}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.4]{ampli.png}
+\end{figure}
+\endminipage\hfill
+\minipage{0.4\textwidth}
+$$V_{in} = \frac{R_1}{R_1 + R_2} V_{out}$$
+$$A = \frac{V_{out}}{V_{in}} = \frac{R_1 + R_2}{R_1}$$
+\bigbreak
+Pour réduire le gain $A$ à $1$, deux possibilités:
+\begin{itemize}
+\item	Choisir $R_1 >> R_2$ ;
+\item Choisir $R_2 = 0$ ;
+\end{itemize}
+\endminipage\hfill
+\end{figure}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}{Vue d'ensemble du circuit}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.4]{plaquette.png}
+\end{figure}
+\end{frame}
+
 \end{document}
