@@ -8,96 +8,31 @@
 \usepackage[autolanguage]{numprint}
 \usepackage{amsmath,amssymb,array}
 \usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+\usepackage{color}
+
+\title{Feuille de route défense orale}
+\author{Groupe 1153}
+\date{\today}
 
 \begin{document}
-\section{Thibaut}
-\subsection{Planning}
+\maketitle
 
-\begin{itemize}
-	\item Récapitulatif des choses réalisées (comme on peut le voir, nous avons fait…) ;
-	\item Première analyse : échéances respectées, bonne organisation (contrairement Q1) ;
-	\item Deuxième analyse : beaucoup de théorie au début- pratique à la fin  (comprendre puis agir) ;
-	\item Troisième analyse : rédaction du rapport tout le long du quadrimestre (Guithub, déjà préjury).
-\end{itemize}
-
-\subsection{Validation}
-Pour savoir faire le haut-parleur : données pour nombre de tour de bobinage,…  A faire avec appareil dont nous ne connaissions rien avant.
-Présentation de chacun et utilité :
-\begin{itemize}
-	\item Source de tension ;
-	\item Oscilloscope ;
-	\item Multimètre ;
-	\item Teslamètre.
-\end{itemize}
-
-Compte-rendu : données 
-Analyse : avec pento + faible que sans pento…  Erreur quelque part
-
-\section{Lise}
-\subsection{Approximation mathématique}
-
-Dans le cadre de notre projet, il nous a été demandé de réaliser une approximation mathématique de la fréquence de coupure
-du le filtre passe-bas. C'est à dire, calculer l'intersection entre une droite constante représentant la tension du circuit à basse fréquence et une droite représentant la tension du circuit à hautes fréquences. 
-
-Tout d'abord, graphiquement, cette droite dans un repère cartésien représente un logarithme. Nous sommes donc passé en échelle semi-logarithmique pour avoir une droite oblique.
-
-Ensuite, à l'aide des données prisent en laboratoire, nous devions déterminer l'équation de cette droite. Trois méthodes permettant de minimiser la distance entre deux droites nous ont été proposé. Nous avons décidé d'utiliser
-la méthode de la solution approchée à l'aide de la projection orthogonale sur une base orthonormée du système. 
-
-Nous avons ensuite posé le système suivant : $y = a log(x) + b$ où y représente la tension de sortie du filtre passe-bas et x la fréquence. Nous cherchons à déterminer les valeurs a et b, 
-respectivement la pente et l'ordonnée à l'origine de la droite. Les données prise en laboratoire n'étant pas précise, nous arrivons à un système impossible. 
-
-Nous avons orthonormée la base des colonnes du système pour ensuite  déterminer une solution approché à l'aide de la projection orthogonale. 
-
-Nous avons ainsi trouver les valeurs pour les coefficients a et b et ensuite déterminer l'intersection avec la droite 2.5V.
-Nous obtenons ainsi une fréquence de coupure de 5557,7 Hz. 
-
-Cette valeur est fort proche de la valeur théorique $f = \frac{1}{2\pi RC}$ qui est égale dans notre cas à 5889,2 Hz.
-
-\section{Robin}
-% TODO
-
-\section{Virgile}
-\subsection{Introduction}
-Chèrs membres du jury bonjour,
+\section{Introduction (Virgile)}
+Chers membres du jury bonjour,
 Selon notre cahier des charges nous devions créer un haut-parleur capable d'émettre un son,
-l'amplifié et faire varier les basses et aigus, la fréquence audible du son devait se trouver entre 500 et 5000Hz
-et délivré une puissance de 2.5W, à partir d'une prise jack de 3.5mm, un voltage de 30V et une membranne de papier.
-C'est ce travail que le groupe 11.53 va vous présenter aujourd'hui.
-Tout d'abord thibaut va vous présenter le fonctionnement général du haut parleur,
-je ferai le dimensionnement de l'électroaiment, ??? s'occupera du dimensionnement du haut parleur,
-??? de l'aproximation mathématique, ??? de la validation, ??? de la modélisation des filtres,
-??? de la recherche documentaire et je finirai avec la conclusion.
-\subsection{Dimensionnement électroaimant}
-Pour fabriquer notre haut-parleur, nous ne disposons pas d'aimant permanent. Nous avons du créer un électroaimant à partir d'un
-matériau ferromagnétique qui nous a été fourni. Cette section présente dans un premier temps le dimensionnement de l'électroaimant, c'est à dire le nombre 
-de spires choisies, la résistance totale de la bobine...
-Le nombre de spires total de la bobine a été choisi de manière arbitraire, sur les conseils de notre tuteur à 420. Pour ce nombre de spires, un entrefer 
-réduit à 7mm et un courant de 1A, nous obtenons une champ magnétique de 75mT.
-Avec 420 spires, nous obtenons une longueur de fil de 42.22m ce qui avec notre résistance linéique de 0.18 \Ohm /m nous donne une résistance totale de 7.6 \Ohm .
-Ensuite la bobine mobile va intercepter le champ magnétique de la bobine fixe qui va lui permettre de faire bouger la membranne,
-dans notre cas de 2mm. Pour obtenir cettre force il faut que la force magnétique soit égal à la force mécanique égal à kx, le nombre de spires nécessaire
-pour obtenir cette force il nous faut un fil long de 9.57m donc 89.7 spires pour une résistance totale de 1.72 \Ohm
-\begin{itemize}
-    \item Fonctionnement
-    \item Champ magnétique dans l'entrefer
-    \item résistance totale dans la bobine
-    \item Constante de raideur
-    \item bobine mobile
-    \item calcul du nombre de spires
-    \item résistance totale
-\subsection{Conclusion}
-\begin{itemize}
-    \item Nos erreurs
-    \item Nos apprentissages
-    \item Notre ressentit
-\section{Antoine}
-\subsection{Filtres}
+l'amplifié et faire varier les basses et aigus, la fréquence audible du son devait se trouver
+entre \unit{500}{\hertz} et \unit{5000}{\hertz} et délivré une puissance de \unit{2.5}{\watt},
+à partir d'une prise jack de \unit{3.5}{\milli\meter}, une tension d'alimentation de $\unit{\pm 15}{\volt}$ 
+et une membrane de papier. C'est ce travail que le groupe 115.3 va vous présenter aujourd'hui.
+Tout d'abord Thibaut va vous présenter le fonctionnement général du haut parleur, Lise
+la modélisation des filtres, je ferai ensuite le dimensionnement de l'électroaiment et de la bobine mobile, 
+Marie-Charlotte s'occupera du dimensionnement de la membrane et du haut parleur. Antoine s'occupera quant à lui
+de la modélisation mécanique de la bobine mobile et de la contre réaction. Enfin, Robin vous parlera de la
+distortion harmonique et je finirai avec la conclusion.
 
-\subsection{Boucles de contre-réaction}
+\section{Fonctionnement général (Thibaut)}
 
-\section{Marie-Charlotte}
-\subsection{Fonctionnement général}
+\textcolor{blue}{J'ai remis le texte que Marie-Charlotte avait fait comme c'était sa partie avant.}
 
 Le GSM ou le MP3 va dans un premier temps envoyer un signal audio via le câble Jack au circuit imprimé. Celui-ci permet
 de modifier ce signal brut de plusieurs façons :
@@ -115,8 +50,34 @@ La bobine mobile subit donc une force de \textsc{Laplace}, va osciller en foncti
 Enfin, la membrane pourra revenir à sa position d'équilibregrâce à des attaches qui, à la manière de ressorts, produisent une
 force de rappel dans la direction opposée au mouvement de la bobine mobile. 
 
-\subsection{Dimensionnement}
-\subsubsection{Le boîtier}
+\section{Modélisation des filtres (Lise)}
+
+\textcolor{blue}{A faire...}
+
+\section{Dimensionnement électroaimant et bobine fixe (Virgile)}
+
+\textcolor{blue}{J'ai rajouté les remarques qu'on avait faite tantôt : les courants de Foucaults, la forme de l'électroaimant, etc.}
+
+Pour fabriquer notre haut-parleur, nous ne disposons pas d'aimant permanent. Nous avons du créer un électroaimant à partir d'un
+matériau ferromagnétique qui nous a été fourni. Deuc choses sont à notée à propos de cet électroaimant :
+
+\begin{itemize}
+	\item Il est constitué de fines lamelles empilées les unes sur les autres, et ce afin de réduire les courants de \textsc{Foucault} ;
+	\item La forme de l'électroaimant (en "E") permet de concentrer tous le champ dans l'entrefer.
+\end{itemize}
+
+ Cette section présente dans un premier temps le dimensionnement de l'électroaimant, c'est à dire le nombre 
+de spires choisies, la résistance totale de la bobine...
+Le nombre de spires total de la bobine fixe a été choisi de manière arbitraire, sur les conseils de notre tuteur à 420. Pour ce nombre de spires, un entrefer 
+réduit à \unit{7}{\milli\meter} et un courant de \unit{1}{\ampere}, nous obtenons une champ magnétique de \unit{75}{\milli\tesla}.
+Avec 420 spires, nous obtenons une longueur de fil de \unit{42.22}{\meter} ce qui avec notre résistance linéique de 0.18$\Omega$ par mètre
+nous donne une résistance totale de 7.6$\Omega$ .
+Ensuite la bobine mobile va intercepter le champ magnétique de la bobine fixe et va donc subir une force de \textsc{Laplace} qui va lui permettre de faire 
+bouger la membrane, dans notre cas de \unit{2}{\milli\meter}. Il faut donc que la force magnétique soit égal à la force de rappel,
+$kx$. Pour obtenir cette force il nous faut un fil long de \unit{9.57}{\meter} donc 90 spires pour une résistance totale de 1.72$\Omega$.
+
+\section{Dimensionnement de la membrane et du haut-parleur (Marie-Charlotte)}
+\subsection{Le boîtier}
 La première question qui s'est posée était celle du volume du caisson. Nous nous sommes renseignés sur la fabrication de 
 haut-parleurs, et nous avonsappris que le volume est lié à de nombreux paramètres, et qu'un volume trop petit ne restituerait 
 pas bien les extrèmes graves. Etant donné que nous devions pouvoir faire varier la fréquence sur notre dispositif, nous avons 
@@ -124,18 +85,83 @@ finalement opté pour un boîtier cubique de $\unit{25}{\centi\meter}$ de côté
 également pensé à placer des pieds en caoutchouc afin de réduire les déplacements dûs aux vibrations du haut-parleur.Enfin,
 pour faciliter l'accès à l'intérieur du haut-parleur, nous avons créé un système de porte coulissante à l'arrière de celui-ci.
 
-\subsubsection{La membrane}
+\subsection{La membrane}
 Nous avons opté pour une membrane de diamètre de $\unit{17}{\centi\meter}$, pour exploiter le mieux possible la taille du
 caisson. C'est également undiamètre assez répandu dans le commerce. La profondeur correspondante est de $\unit{6}{\centi\meter}$.
 Elle est réalisée en papier, et nous avons opté pour du tissus tendu en guise de ressort. Cette solution nous apparaît comme
 sortant de l'ordinaire, propre, et efficace. Cela nous a en effet permis d'obtenir une constante de raideur minime.
 
-\subsubsection{Modélisation du haut-parleur}
-Pour écrire les équations du mouvement, nous avons d'abord fait l'inventaire des forces agissant sur le système. Ensuite, nous
-avons négligé les frottements, et le poids de la bobine. Nous sommes finalement arrivés à l'équation reprise dans le slide. 
-Nous l'avons réécrite sous forme d'équation différentielle pour ensuite résoudre cette dernière. Nous avons alors remarqué 
-qu'à une certaine fréquence, le dénominateur était nul. C'est bien entendu une situation impossible, et nous avons alors
-étudié cette situaton. La fréquence correspondante est en fait la fréquence de résonance; fréquence à laquelle le dispositif a
-une réponse maximale (ok, pas très bien dit, je ferai encore deux trois recherches là dessus pour avoir des mots plus justes)
+\section{Modélisation mécanique de la bobine mobile (Antoine)}
+Après avoir fabriquer l'assemblage membrane/bobine mobile, nous nous sommes pencher
+sur l'équation du mouvement de cette bobine mobile. Pour ce faire, nous avons appliqué
+ce que nous avons appris au cours de mécanique des corps rigides tout au long de ce quadrimestre.
+Nous avons donc commencé par faire le bilan des forces agissant sur la bobine, il y en a 4 en tout :
 
+\begin{itemize}
+	\item Le poids de la bobine ;
+	\item La force de \textsc{Laplace} subie par la bobine ;
+	\item La force de rappel produit par le tissu utilisé ;
+	\item Le frottement dû à l'air.
+\end{itemize}
+
+Parmi toutes ces forces, nous négligeons le frottement dû à l'air et le poids de la bobine.
+Notre équation de base est donc celle indiquée sur le slide. La résolution de cette équation
+nous permet de remarque quelque chose d'important : quand la fréquence d'oscillation
+de la bobine tend vers $\frac{1}{2\pi} \sqrt{\frac{k}{m}}$ (qui est appelée la fréquence de
+résonance), l'amplitude du mouvement de la bobine tend vers l'infini. Cette situation est donc
+dommageable pour notre haut-parleur (car le membrane pourrait s'abîmer). Pour notre haut parleur,
+la fréquence de résonance est de l'ordre de \unit{10}{\hertz}.
+
+\textcolor{blue}{Notes à moi même : 
+\begin{itemize}
+	\item Un système résonant peut accumuler une énergie, si celle-ci est appliquée sous
+				forme périodique, et proche d'une fréquence dite « fréquence de résonance ». Soumis à une telle
+				excitation, le système va être le siège d'oscillations de plus en plus importantes, jusqu'à 
+				atteindre un régime d'équilibre qui dépend des éléments dissipatifs du système, ou bien jusqu'à 
+				une rupture d'un composant du système ;
+	\item Si on veut descendre bas dans le grave, il faut une fréquence de résonance basse.
+\end{itemize}}
+
+\section{Contre-réaction (Antoine)}
+Passons maintenant à la recherche documentaire. Pour cette recherche, nous avons choisi deux 
+sujets qui, comme vous le verrez sont un peu liés. Il s'agit de la distortion harmonique, dont vous
+parlera Robin juste après, et du principe de contre-réaction.
+
+Définissons d'abord ce qu'est le principe de réaction en général. La réaction consiste en la réinjection
+d'une partie du signal de sortie à l'entrée. Plus spécifiquement, dans la contre-réaction (aussi appelée 
+réaction négative), le signal réinjecté est en opposition de phase avec la signal d'entrée. Les effets
+de la contre-réaction sont multiples :
+
+\begin{itemize}
+	\item Signal de sortie plus proche du signal d'entrée ;
+	\item	Réduction des signaux parasites et de la distorsion ;
+	\item \textbf{Contrôle du gain} ;
+	\item Elargissement de la bande passante ;
+	\item Réduction de l'impédance de sortie.
+\end{itemize}
+
+Dans le cas particulier du circuit de notre haut-parleur, l'effet principal de la boucle de contre-réaction
+est de ramener le gain de l'amplificateur à 1 (tension de sortie $=$ tension d'entrée). Un tel amplificateur
+est appelé un amplificateur suiveur de tension (impédance d'entrée infinie, donc courant d'entrée nul).
+
+\section{Distorsion harmonique (Robin)}
+
+\textcolor{blue}{A faire...}
+
+\section{Planning (Thibaut)}
+
+\begin{itemize}
+	\item Récapitulatif des choses réalisées (comme on peut le voir, nous avons fait…) ;
+	\item Première analyse : échéances respectées, bonne organisation (contrairement Q1) ;
+	\item Deuxième analyse : beaucoup de théorie au début- pratique à la fin  (comprendre puis agir) ;
+	\item Troisième analyse : rédaction du rapport tout le long du quadrimestre (Guithub, déjà préjury).
+\end{itemize}
+
+\section{Conclusion (Virgile)}
+\begin{itemize}
+    \item Nos erreurs ;
+    \item Nos apprentissages ;
+    \item Notre ressenti.
+\end{itemize}
+		
 \end{document}
