@@ -1,0 +1,315 @@
+\documentclass[pdf]{beamer}
+
+\usepackage[Latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+\usepackage{lmodern}
+\usepackage[squaren, Gray]{SIunits}
+\usepackage{sistyle}
+\usepackage[autolanguage]{numprint}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usepackage{amsmath,amssymb,array}
+\usepackage{tabularx}
+% New command pour la modélisation mécanique, tri à effectuer
+\newcommand\fv[1]{{\bf #1}} % free vector
+\newcommand\fvd[1]{\dot{\bf #1}} % free vector derivated
+\newcommand\fvdd[1]{\ddot{\bf #1}} % free vector derivated
+\newcommand\fvr[1]{\mathring{\bf #1}} % free vector relatively derivated
+\newcommand\fvrr[1]{\overset{\circ\circ}{\bf #1}} % free vector relatively derivated
+\newcommand\uv[1]{{\bf\hat{ #1}}} % unit vector
+\newcommand\ui{{\bf\hat{I}}} % unit vector I
+\newcommand\uj{{\bf\hat{J}}} % unit vector J
+\newcommand\uk{{\bf\hat{K}}} % unit vector K
+\newcommand\wrt[2]{\ensuremath{\tensor*[_{ #1}]{ #2}{}}} % With Respect To
+\newcommand\wtr[3]{\ensuremath{\tensor*[_{ #1}]{ #2}{^{ #3}}}} % With Two Respect
+\newcommand\omegaf{{\bm \omega}}
+\newcommand\omegafr{\mathring{\bm \omega}}
+\newcommand\omegafd{\dot{\bm \omega}}
+\newcommand\omegaft{\tilde{\bm \omega}}
+\newcommand\omegaftr{\mathring{\tilde{\bm \omega}}}
+\newcommand\omegat{\tilde{\omega}}
+\newcommand\omegatd{\tilde{\dot{\omega}}}
+\newcommand\ine{{\bf I}}
+\newcommand\st{{\bf L}}
+\newcommand\pst{{\bf M}}
+\newcommand\lm{{\bf N}}
+\newcommand\am{{\bf H}}
+\newcommand\amd{\dot{\am}}
+\newcommand\fo{{\bf F}}
+\newcommand\po{\mathcal{P}}
+\newcommand\xg{\ensuremath{\fv{R}}}
+\newcommand\xgd{\ensuremath{\fvd{R}}}
+\newcommand\xgdd{\ensuremath{\fvdd{R}}}
+\newcommand\dvec[1]{\dot{\vec{ #1}}}
+\newcommand\ddvec[1]{\ddot{\vec{ #1}}}
+\newcommand\qp{\dot{q}}
+\newcommand\dqp{\Delta \dot{q}}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usetheme{Warsaw}
+\mode<presentation>{}
+
+\title{LFSABP1502 - Projet 2 : Concevoir un haut-parleur}
+\author{Groupe 115.3}
+\date{\today}
+
+\begin{document}
+
+
+\begin{frame}{Slides supplémentaires}
+\begin{itemize}
+\item  Lois physiques clefs;
+\item  Filtre passe-bas;
+\item  Filtre passe-haut;
+\item  Filtre passe-bande;
+\item  Dimensionnement électroaimant;
+\item  Dimensionnement bobine mobile;
+\item  Modélisation mécanique;
+\item  Volume du caisson;
+\item  Approximation fréquence de coupure;
+\item  Planning;
+\item  Cahier des Charges;
+\end{itemize}
+\end{frame}
+%------------------------------------------------------
+\begin{frame}{Lois physiques clefs}
+
+Loi d'\textsc{Ampère} :
+$$B = \mu_0\mu_r\frac{NI}{e}$$
+
+Force de \textsc{Laplace} :
+$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
+
+Loi de \textsc{Hooke} :
+$$\vec{F} = -k \vec{x}$$ 
+
+\end{frame}
+
+%----------------------------------
+\begin{frame}{Filtre passe-bas}
+
+	\begin{figure}[ht]
+\minipage{0.4\textwidth}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.3]{passe_bas.png}
+\end{figure}
+\endminipage\hfill
+\minipage{0.35\textwidth}
+\underline{Équation différentielle}
+$$V_{in} = V_R + V_{out}$$
+$$V \cdot \cos (\omega t) = RC\frac{dV_C}{dt} + V_C$$
+$$RCy' + y = V \cdot \cos (\omega t)$$
+\endminipage\hfill
+\end{figure}
+$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
+\left(-\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} + \cos(\arctan(-RC\omega) + \omega t)\right)
+$
+
+\end{frame}
+
+%--------------------------------------------------------------
+\begin{frame}{Filtre passe-haut}
+
+	\begin{figure}[ht]
+\minipage{0.4\textwidth}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.3]{passe_haut.png}
+\end{figure}
+\endminipage\hfill
+\minipage{0.35\textwidth}
+\underline{Loi de Kirchhoff}
+$$V_{in} = V_R + V_C$$
+$$V_R = V_{in} - V_C$$
+\endminipage\hfill
+\end{figure}
+$V_{out} = \frac{V}{\sqrt{1 + R^2\omega^2C^2}}
+\left(\frac{e^{\frac{-t}{RC}}}{\sqrt{1 + R^2\omega^2C^2}} - \cos(\arctan(-RC\omega) + \omega t) \right)$
+\centering{$+\cos(\omega t)$}
+
+\end{frame}
+
+%-----------------------------------------------------------
+\begin{frame}{Filtre passe-bande}
+
+$$V_{out,3} = \frac{V_{out,1} \cdot V_{out,2}}{V_{in,1}}$$
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[>=stealth]
+\begin{axis}[
+xmin=0,xmax=2000,
+ymin=0,ymax=1.2,
+axis x line=middle,
+axis y line=middle,
+axis line style=->,
+xlabel={$f$},
+ylabel={$V_{out} / V_{in}$},
+legend entries = {passe-bande, fréq. coupure 1, fréq. coupure 2}
+]
+
+\addplot[no marks,red,-] expression[domain=0:2000,samples=100]
+{(((2*3.14*x*10000*0.00000047)*(1 + (2*3.14*x*10000*0.00000047)^2)^(-0.5))*
+((1 + (2*3.14*x*500*0.00000047)^2)^(-0.5)))};
+\addplot[no marks, gray] coordinates
+{(33.86,0) (33.86,1.1)};
+\addplot[no marks, gray] coordinates
+{(677.26,0) (677.26,1.1)};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphe de $V_{out} / V_{in}$ pour le filtre passe-bande, pour les valeurs
+suivantes: $R_{1} = \unit{500}{\ohm}$, $R_{2} = \unit{10000}{\ohm}$, et
+$C = {\unit{0.00000047}{\farad}}$}
+\label{pbf_ratio}
+\end{figure}
+\end{frame}
+%--------------------------------------------------------
+\begin{frame}{Dimensionnement électroaimant}
+\underline{Champ magnétique dans l'entrefer}
+$$H_e \cdot e = N_1 I \Rightarrow \frac{B_e}{\mu_0 \mu_r} e = N_1 I$$
+$$B_e = \unit{0.07539825}{\tesla}$$
+\underline{Résistance totale bobine}
+$$L_{fil} = N_1 \cdot 2\pi r$$ 
+$$L_{fil} = \unit{42.22}{\meter}$$
+$$R = L_{fil} \cdot R_{lin} = 7.6 \Omega$$
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Dimensionnement bobine mobile}
+\underline{Force de \textsc{Laplace}}
+$$\vec{F} = i(t)\vec{L}\times{\vec{B}}$$ 
+\underline{Nombre de spires}
+$$I = \frac{P}{V} \cdot{\sqrt{2}} = \unit{0.2357}{\ampere}$$
+$$IL_{fil}B = kx \Rightarrow L_{fil} = \frac{kx}{IB} = \unit{9.57}{\meter}$$
+$$L_{fil} = N_2 \cdot 2\pi r \Rightarrow N_2 = \frac{L_{fil}}{2\pi r} = 89.6$$
+\underline{Résistance totale bobine}
+$$R = L_{fil} \cdot R_{lin} = 1.72 \Omega$$
+\end{frame}
+%--------------------------------------------------
+\begin{frame}{Modélisation mécanique}
+\underline{Équation du mouvement}
+$$m\fvdd{x}(t) = -k\fv{x}(t) + BLi(t)$$
+$$m\fvdd{x}(t) + k\fv{x}(t) = \frac{B2\pi rNV_0}{R}\cos (\omega t)$$
+\underline{Résolution de l'équation différentielle}
+$$\fv{x}_h(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t)$$
+$$\fv{x}_p(t) = \frac{B2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+$$\fv{x}(t) = C\cos(\sqrt{\frac{k}{m}}t) - D\sin(\sqrt{\frac{k}{m}}t) + \frac{B2\pi rNV_0}{R(-m\omega^2 + k)} \cos (\omega t)$$
+\end{frame}
+%------------------------------------------------------
+\begin{frame}{Volume du caisson}
+\framesubtitle{Les paramètres de \textsc{Thiele} et \textsc{Small}}
+$$\frac{F_b}{F_s} = \sqrt{\frac{V_{as}}{V_b} + 1}$$
+$V_b$ volume du caisson \\
+$F_s$ fréquence de résonance du haut-parleur à l'air libre \\
+$F_b$ fréquence de résonance du haut-parleur fermé\\
+$V_{as}$ volume d'air équivalent à la suspension du haut-parleur\\
+\bigbreak
+\underline{Si} $V_b\rightarrow \infty$ \\
+\underline{alors} 
+la fréquence de résonance égale celle à l'air libre.
+\end{frame}
+%--------------------------------------------
+\begin{frame}{Approximation de la fréquence de coupure}
+\framesubtitle{Filtre passe-bas}
+
+\begin{figure}[ht]
+\minipage{0.4\textwidth}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.5]
+\begin{axis}[
+xlabel={$f$},
+ylabel={$V_{out}$},]
+\addplot coordinates
+{(0,2.5) (5000,2.5) (10000,2.5) (16000,1.7) (18000,1.55) (20000,1.45)};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphe de $V_{out}$ expérimentale en fonction de la fréquence}
+\label{experimental_data}
+\end{figure}
+\endminipage\hfill
+\minipage{0.4\textwidth}
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[scale=0.5]
+\begin{semilogxaxis}[ xlabel=Frequence, ylabel= $\frac{V_{out}}{V_{in}}$, xmin=1, xmax=1000000, ymin=0, ymax=1.2]
+
+\addplot[domain=1:1e6, black] {(1/((1 + (2*3.14*x*57.5*0.00000047)^2)^(0.5))};
+\addplot[no marks, red] coordinates
+{(1,1) (5889,1)};
+\addplot[no marks, red] coordinates
+{(5889,1) (104811,0)};
+\addplot[no marks, gray] coordinates
+{(5889,0) (5889,1.2)};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Confrontation du graphe théorique et des droites expérimentales}
+\label{theory_vs_experiment}
+\end{figure}
+\endminipage\hfill
+\end{figure}
+\end{frame}
+%---------------------------------------------
+\begin{frame}{Approximation de la fréquence de coupure}
+Système approché :
+\begin{center}
+\begin{array}{rcel}
+$$
+\begin{pmatrix}
+4.204 & 1\\
+4.255 & 1 \\
+4.301 & 1
+\end{pmatrix} &
+
+\begin{pmatrix}
+a\\
+b
+\end{pmatrix} &
+
+= &
+
+\begin{pmatrix}
+1.607\\
+1.565\\
+1.524
+\end{pmatrix}
+$$
+\end{array}
+\end{center}
+
+$$\fbox{y = -1.96 \cdot \log(x) + 9.84}$$
+
+$$\fbox{x = 5557.7 Hz}$$
+
+Fréquence théorique : $f = \frac{1}{2\pi RC}$ = 5889.2 Hz
+\newline
+
+Avec R = 57.5$\Omega$ et C = 470 nF
+\end{frame}
+%--------------------------------------------
+\begin{frame} {Planning}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.5]{planning.png}
+\end{figure}
+\end{frame}
+%----------------------------------------
+\begin{frame} {Cahier des charges}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.45]{cdc.png}
+\end{figure}
+\end{frame}
+
+\end{document}
