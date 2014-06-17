@@ -1,5 +1,5 @@
 \documentclass[pdf]{beamer}
-\documentclass[pdf]{beamer}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}      
 \usepackage[francais]{babel}
@@ -70,10 +70,18 @@
 %                  INTRODUCTION ET PLAN DE L'EXPOSE
 % =======================================================================
 \begin{frame}{Introduction}
- \begin{itemize}
-		\item Déroulement de l'exposé;
-		\item Recap game of thrones
- \end{itemize}
+	\begin{itemize}
+		\item Fonctionnement général du haut parleur ;
+		\item Dimensionnement de l'électroaimant ;
+ 		\item Dimensi	onnement haut-parleur ;
+ 		\item Modélisation mécanique du haut-parleur ;
+ 		\item Aproximation mathématique ;
+ 		\item Validation ;
+ 		\item Planning ;
+ 		\item Modélisation des filtres ;
+ 		\item Recherches documentaires ;
+ 		\item Conclusion.
+	\end{itemize}
 \end{frame}
 
 % =======================================================================
@@ -88,12 +96,10 @@
 \end{figure}
 \end{frame}
 
-
 % =======================================================================
 %                   DIMENSIONNEMENT ELECTROAIMANT
 % =======================================================================
-\begin{frame}
-	\frametitle{Dimensionnement des bobines}
+\begin{frame}{Dimensionnement des bobines}
 
 	\begin{columns}
 		\begin{column}{5cm}
@@ -112,31 +118,11 @@
 	{
 		\begin{center}
 		\begin{tabular}{c|c|c|c|c|c}
-			$$ & 
-			$N$ & 
-			$I$ & 
-			$R$ & 
-			$L$ & 
-			$L_{fil}$ \\
-			
+										& $N$ 	& $I$ 										& $R$ 								& $L$ 										& $L_{fil}$ \\
 			\hline
-			
-			Bobine fixe & 
-			$400$ & 
-			$\unit{2.5}{\ampere}$ & 
-			$7.254 \Omega$ & 
-			$\unit{0.01475}{\henry}$ & 
-			$\unit{40.3}{\meter}$ \\
-			
+			Bobine fixe 	& $400$ & \unit{2.5}{\ampere} 		& $7.254\Omega$ 	& \unit{0.01475}{\henry} 	& \unit{40.3}{\meter} \\
 			\hline
-			
-			Bobine mobile & 
-			$ 118 $ & 
-			$\unit{0.1667}{\ampere}$ & 
-			$2.38 \Omega$ & $\unit{0.0734}{\henry}$ & 
-			$\unit{12.6}{\meter}$$$ \\
-			
-		
+			Bobine mobile & $118$ & \unit{0.1667}{\ampere}  & $2.38\Omega$ 	& \unit{0.0734}{\henry} 	& \unit{12.6}{\meter} \\
 		\end{tabular}
 		\end{center}
 	}
@@ -150,7 +136,8 @@
 		\begin{itemize}
 			\item Cube de \unit{25}{\centi\meter} de côté ;
 			\item Matériau MDF d'épaisseur \unit{18}{\milli\meter} ;
-			\item Pieds en caoutchoux ;
+			\item Pieds en caoutchouc ;
+			% Pieds en caoutchouc à rajouter!
 			\item Porte coulissante à l'arrière.
 		\end{itemize}
 
