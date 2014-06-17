@@ -53,9 +53,9 @@
 \usetheme{warsaw}
 \mode<presentation>{}
 
-\title{LFSABP1502 - Projet 2 : Concevoir un haut-parleur}
+\title{LFSAB1502 - Projet 2 : Concevoir un haut-parleur}
 \author{Groupe 115.3}
-\date{\today}
+\date{18 juin 2014}
 
 \begin{document}
 
@@ -85,7 +85,7 @@
 \end{frame}
 
 % =======================================================================
-%               								Fil rouge
+%               	Schéma de fonctionnement général
 % =======================================================================
 \begin{frame}{Fonctionnement général du haut-parleur}
 \begin{figure}[ht!]
@@ -93,6 +93,17 @@
     \includegraphics[scale=0.53]{schema_fonctionnel.png}
     \caption{Schéma fonctionnel du haut-parleur}
     \label{schema_fonctionnel}
+\end{figure}
+\end{frame}
+
+% =======================================================================
+%               			Fil rouge 1 : les filtres
+% =======================================================================
+\begin{frame}{Fil rouge}
+\framesubtitle{Les filtres}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.53]{fil_rouge1.png}
 \end{figure}
 \end{frame}
 
@@ -159,14 +170,13 @@
 \end{frame}
 
 % =======================================================================
-%               								Fil rouge
+%            Fil rouge 2 : l'électroaimanent et la bobine mobile
 % =======================================================================
-\begin{frame}{Fonctionnement général du haut-parleur}
+\begin{frame}{Fil rouge}
+\framesubtitle{L'électroaimant et la bobine mobile}
 \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=0.53]{schema_fonctionnel.png}
-    \caption{Schéma fonctionnel du haut-parleur}
-    \label{schema_fonctionnel}
+    \includegraphics[scale=0.53]{fil_rouge2.png}
 \end{figure}
 \end{frame}
 
@@ -181,7 +191,7 @@
 		\end{column}
 
 		\begin{column}{5cm}
-			La bobine fixe joue un rôle d'électroaimant. Dans des conditions idéales, le champ total crée est $B = \unit{0.1143}{\tesla}$.
+			La bobine fixe joue un rôle d'électroaimant. Dans des conditions idéales, le champ total crée est $B = \unit{0.0753}{\tesla}$.
 		\end{column}
 	\end{columns}
 
@@ -192,33 +202,34 @@
 	{
 		\begin{center}
 		\begin{tabular}{c|c|c|c|c|c}
-										& $N$ 	& $I$ 										& $R$ 								& $L$ 										& $L_{fil}$ \\
+										& $N$ 	& $I$ 										& $R$ 							& $L_{fil}$ \\
 			\hline
-			Bobine fixe 	& $400$ & \unit{2.5}{\ampere} 		& $7.254\Omega$ 	& \unit{0.01475}{\henry} 	& \unit{40.3}{\meter} \\
+			Bobine fixe 	& $420$ & \unit{1}{\ampere} 			& $7.6\Omega$ 			& \unit{42.22}{\meter} \\
 			\hline
-			Bobine mobile & $118$ & \unit{0.1667}{\ampere}  & $2.38\Omega$ 	& \unit{0.0734}{\henry} 	& \unit{12.6}{\meter} \\
+			Bobine mobile & $118$ & \unit{0.2357}{\ampere}  & $1.72\Omega$ 	 		& \unit{9.57}{\meter} \\
 		\end{tabular}
 		\end{center}
 	}
 \end{frame}
 
 % =======================================================================
-%               								Fil rouge
+%               								Fil rouge 3
 % =======================================================================
-\begin{frame}{Fonctionnement général du haut-parleur}
+\begin{frame}{Fil rouge}
+\framesubtitle{Dimensionnent du haut-parleur et de la membrane}
 \begin{figure}[ht!]
     \centering
-    \includegraphics[scale=0.53]{schema_fonctionnel.png}
+    \includegraphics[scale=0.53]{fil_rouge3.png}
     \caption{Schéma fonctionnel du haut-parleur}
     \label{schema_fonctionnel}
 \end{figure}
 \end{frame}
 
 % =======================================================================
-%                   DIMENSIONNEMENT DU HAUT-PARLEUR 
+%            DIMENSIONNEMENT DU HAUT-PARLEUR ET DE LA MEMBRANE
 % =======================================================================
 \begin{frame}{Dimensionnement du haut-parleur}
-	\framesubtitle{Le boîtier}
+	\underline{Le boîtier}
 		\begin{itemize}
 			\item Cube de \unit{25}{\centi\meter} de côté ;
 			\item Matériau MDF d'épaisseur \unit{18}{\milli\meter} ;
@@ -226,26 +237,11 @@
 			% Pieds en caoutchouc à rajouter!
 			\item Porte coulissante à l'arrière.
 		\end{itemize}
-\end{frame}
-
-\begin{frame}{Dimensionnement du haut-parleur}
-	\framesubtitle{La membrane}
+	\underline{La membrane}
 		\begin{itemize}
-			\item Diamètre de \unit{17}{\centi\meter} ;
+			\item Diamètre de \unit{17}{\centi\meter} (taille standard) ;
 			\item Papier de densité \unit{200}{\gram\per\meter\squared}.
 		\end{itemize}
-\end{frame}
-
-% =======================================================================
-%               								Fil rouge
-% =======================================================================
-\begin{frame}{Fonctionnement général du haut-parleur}
-\begin{figure}[ht!]
-    \centering
-    \includegraphics[scale=0.53]{schema_fonctionnel.png}
-    \caption{Schéma fonctionnel du haut-parleur}
-    \label{schema_fonctionnel}
-\end{figure}
 \end{frame}
 
 % =======================================================================
@@ -274,7 +270,7 @@
 %                			RECHERCHES DOCUMENTAIRES
 % =======================================================================
 \begin{frame}{Recherche documentaire}
-	\framesubtitle{La contre-réaction (ou contre réaction négative)}
+	\framesubtitle{La contre-réaction (ou contre-réaction négative)}
 
 	\textbf{Principe} : réinjection d'une partie du signal de sortie à l'entrée.
 
@@ -288,7 +284,7 @@
 					\item Signal de sortie plus proche du signal d'entrée ;
 					\item	Réduction des signaux parasites et de la distorsion ;
 					\item Contrôle du gain ;
-					\item Elargissement de la bance passante ;
+					\item Elargissement de la bande passante ;
 					\item Réduction de l'impédance de sortie.
 				\end{itemize}
 		\end{column}
@@ -296,7 +292,7 @@
 \end{frame}
 
 \begin{frame}{Recherche documentaire}
-	\framesubtitle{La distorsion}
+	\framesubtitle{La distorsion harmonique}
 
 	\textbf{Principe} : des fréquences harmoniques s'ajoutent à la fréquence fondamentale
 	$\Rightarrow$ modification du signal.
@@ -305,7 +301,7 @@
 
 	\begin{columns}
 		\begin{column}{5cm}
-			\includegraphics[scale=0.35]{distorsion.jpg}
+			\includegraphics[scale=0.35]{distorsion.png}
 		\end{column}
 
 		\begin{column}{5cm}
@@ -314,9 +310,8 @@
 				\item	Surchauffe des composants électroniques ;
 			\end{itemize}
 
-			Solutions :
+			Solution (entre autres) :
 			\begin{itemize}
-				\item	Filtres actifs ou passifs (passe-haut et passe-bas) ;
 				\item Boucle de contre-réaction (réduction du TDH de 1\% à 0.001\%).
 			\end{itemize}
 		\end{column}
@@ -326,35 +321,34 @@
 % =======================================================================
 %                 							PLANNING 
 % =======================================================================
-% Partie peut-être superflue aussi, à discuter demain.
 \begin{frame}{Le planning}
-
-		\begin{tabular}{|c|c|c|}
+	\begin{table}[htb!]
+		\centering
+		\begin{tabularx}{\textwidth}{c|X|X}
+		Semaine & Théorie 										& Pratique \\
 		\hline
-		Semaine & Théorique & Pratique \\
+		S2 			& Cahier des charges 					&	\\
 		\hline
-		S2 & CdC &\\
+		S3 			& Modélisation des filtres		&	\\
 		\hline
-		S3 & Modélisation filtres &\\
+		S4 			& Dimensionnement des bobines	&	\\
 		\hline
-		S4 & Dim. électroaimant &\\
+		S5 			& Recherches documentaires 		& \\
 		\hline
-		S5 & Recherches documentaires & \\
+		S6 			& Préparation du pré-jury 		& Bobinage et soudure\\
 		\hline
-		S6 & Préparation pré)jury & Bobinage + soudure\\
+		S7 			& Pré-rapport 								& Pré-jury	\\
 		\hline
-		S7 & Pré rapport & Pré jury\\
+		S8 			& 														& Test de la plaquette	\\
 		\hline
-		S8 & & Test plaquette\\
+		S9-10 	& 														& Membrane et caisson	\\
 		\hline
-		S9-10 & & Membrane et caisson\\
+		S11-12 	& Rédaction rapport 					& Tests finaux\\
 		\hline
-		S11-12 & Rédaction rapport & test son\\
-		\hline
-		S13-14 & Préparation défense orale &\\
-		\hline
-
-		\end{tabular}
+		S13-14 	& Préparation de la défense 
+							orale 											&	\\
+		\end{tabularx}
+	\end{table}
 \end{frame}
 
 % =======================================================================
@@ -363,9 +357,9 @@
 \begin{frame}
  \frametitle{Conclusion}
  \begin{itemize}
-		\item Nos erreurs;
-		\item Nos apprentissages;
-		\item Notre ressentit;
+		\item Nos erreurs ;
+		\item Nos apprentissages ;
+		\item Notre ressenti.
  \end{itemize}
 \end{frame}
 
