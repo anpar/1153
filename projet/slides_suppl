@@ -79,6 +79,8 @@
 \item  Approximation fréquence de coupure;
 \item  Planning;
 \item  Cahier des Charges;
+\item  Gain amplificateur
+\item  Vue d'ensemble du circuit
 \end{itemize}
 \end{frame}
 %------------------------------------------------------
